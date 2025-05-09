@@ -1,11 +1,8 @@
 :root {
-  --primary: #FA7268;
-  --primary-light: #FFEEEE;
-  --secondary: #5C6BC0;
-  --secondary-light: #EEF2FF;
-  --accent: #FFB74D;
-  --yellow-light: #FFF8E6;
-  --mint-light: #E8F5F1;
+  --primary: #FF6B9A;
+  --primary-light: #F6E9EC;
+  --secondary: #FFFDFD;
+  --accent: #FF6B9A;
   --text-dark: #333333;
   --text-gray: #666666;
   --white: #FFFFFF;
@@ -20,16 +17,37 @@
 }
 
 body {
-  font-family: 'Noto Sans JP', 'Kosugi Maru', sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   color: var(--text-dark);
-  line-height: 1.7;
+  line-height: 1.6;
   background-color: #FFFFFF;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Shippori Mincho', serif;
   font-weight: 700;
   line-height: 1.3;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.small {
+  font-size: 14px;
 }
 
 img {
@@ -41,18 +59,162 @@ img {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 16px;
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 24px 0;
   position: relative;
   overflow: hidden;
 }
 
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 32px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+}
+
+/* ボタンスタイル */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: 0 5px 15px rgba(255, 107, 154, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 154, 0.4);
+}
+
+/* ヒーローセクション - リデザイン */
+.hero {
+  min-height: 60vh;
+  background-color: var(--primary-light);
+  background-image: url('../assets/images/kv_mom_pc.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+}
+
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--primary-light);
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-content {
+  background-color: var(--secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-family: 'Shippori Mincho', serif;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.hero-content .sub-heading {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.hero-badge {
+  background-color: var(--white);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hero-image {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+  
+  .hero-container {
+    padding: 3rem 0;
+  }
+  
+  .hero-content {
+    padding: 3rem;
+  }
+  
+  .btn-primary {
+    padding: 1.2rem 3rem;
+  }
+}
+
 /* 潜在的欲求セクション (新規追加) */
 .desire-intro {
-  background-color: var(--secondary-light);
+  background-color: var(--primary-light);
   padding: 5rem 0;
 }
 
@@ -545,12 +707,12 @@ header {
 }
 
 .section-title {
-  font-size: 2rem;
-  margin-bottom: 3rem;
+  font-size: 24px;
+  margin-bottom: 2rem;
   text-align: center;
   position: relative;
   padding-bottom: 1rem;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Shippori Mincho', serif;
 }
 
 .section-title:after {
@@ -560,7 +722,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   width: 5rem;
-  height: 3px;
+  height: 2px;
   background-color: var(--primary);
 }
 
@@ -901,7 +1063,7 @@ header {
 }
 
 .gradient-yellow {
-  background: linear-gradient(135deg, var(--yellow-light) 0%, var(--mint-light) 100%);
+  background: linear-gradient(135deg, var(--primary-light) 0%, #FFF8E6 100%);
 }
 
 .floating-shape {
@@ -1227,13 +1389,13 @@ footer {
   max-width: 600px;
   margin: 0 auto;
   background: white;
-  padding: 2rem;
+  padding: 24px 16px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 16px;
 }
 
 .form-group label {
@@ -2356,5 +2518,33 @@ select {
     font-size: 40px;
     left: -10px;
     top: -15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .features-grid,
+  .voices-grid,
+  .values-columns,
+  .solution-columns,
+  .support-grid {
+    gap: 30px;
+  }
+  
+  .feature-card,
+  .value-card,
+  .voice-card,
+  .solution-card,
+  .testimonial-card,
+  .support-card,
+  .risk-step-content {
+    margin-bottom: 0;
   }
 }
