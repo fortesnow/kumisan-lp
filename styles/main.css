@@ -2548,3 +2548,70 @@ select {
     margin-bottom: 0;
   }
 }
+
+/* 成功ビジョンセクション - 新デザイン */
+.success-vision {
+  background-color: #f9f7f4;
+  padding: 4rem 0;
+}
+
+.vision-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vision-card {
+  background-color: #f5f2ea;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vision-icon {
+  margin-bottom: 1rem;
+}
+
+.vision-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+.vision-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.vision-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .vision-cards {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  .vision-card {
+    width: calc(33.33% - 1rem);
+  }
+}
