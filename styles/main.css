@@ -2131,3 +2131,230 @@ select {
   text-align: center;
   margin-top: 2rem;
 }
+
+/* 新しいセクション - ベビー発育アドバイザーにできること */
+.advisor-features {
+  background-color: #f9f7fe;
+  padding: 60px 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #563d7c;
+}
+
+.feature-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.features-cta {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* 価値観とスタンスセクション */
+.values-stance {
+  background: linear-gradient(135deg, #f8f8ff 0%, #e6e6fa 100%);
+  padding: 60px 0;
+}
+
+.values-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 40px 0;
+  justify-content: center;
+}
+
+.value-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 540px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.value-icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.value-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #563d7c;
+  text-align: center;
+}
+
+.value-points {
+  list-style: none;
+  padding: 0;
+}
+
+.value-points li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.value-points li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff8ba7;
+  font-weight: bold;
+}
+
+/* 先輩アドバイザーの声セクション */
+.advisor-voices {
+  padding: 70px 0;
+  background-color: #fff;
+}
+
+.voices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.voice-card {
+  background: #fafafa;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.voice-card:hover {
+  transform: translateY(-5px);
+}
+
+.highlight-voice {
+  background: linear-gradient(135deg, #fff6f8 0%, #ffeef2 100%);
+  border: 2px solid #ffccd5;
+}
+
+.voice-quote {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.voice-quote:before {
+  content: """;
+  font-size: 50px;
+  color: #ffccd5;
+  position: absolute;
+  left: -15px;
+  top: -20px;
+  opacity: 0.5;
+}
+
+.voice-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-name {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.author-detail {
+  font-size: 14px;
+  color: #666;
+}
+
+.voices-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.voices-cta p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 768px) {
+  .features-grid,
+  .voices-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .values-columns {
+    flex-direction: column;
+  }
+  
+  .value-card {
+    max-width: 100%;
+  }
+  
+  .feature-card,
+  .voice-card {
+    padding: 20px;
+  }
+  
+  .voice-quote {
+    font-size: 15px;
+  }
+  
+  .voice-quote:before {
+    font-size: 40px;
+    left: -10px;
+    top: -15px;
+  }
+}
