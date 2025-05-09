@@ -1,14 +1,15 @@
 :root {
-  --primary: #6B8E9D;
-  --primary-light: #E6F1F6;
-  --secondary: #D38CAB;
-  --secondary-light: #FCEEF4;
-  --accent: #F2C94C;
+  --primary: #FA7268;
+  --primary-light: #FFEEEE;
+  --secondary: #5C6BC0;
+  --secondary-light: #EEF2FF;
+  --accent: #FFB74D;
   --yellow-light: #FFF8E6;
   --text-dark: #333333;
   --text-gray: #666666;
   --white: #FFFFFF;
   --gray-50: #F9F9FD;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -21,6 +22,7 @@ body {
   font-family: 'Kosugi Maru', sans-serif;
   color: var(--text-dark);
   line-height: 1.7;
+  background-color: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5 {
@@ -273,9 +275,64 @@ header {
   color: var(--primary);
 }
 
+.header-cta {
+  display: none;
+}
+
+/* キャンペーンセクション */
+.campaign-section {
+  background-color: var(--yellow-light);
+  padding: 2rem 0;
+}
+
+.campaign-banner {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--accent);
+  color: white;
+  padding: 0.3rem 1.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transform: translateY(-50%) rotate(-5deg) translateX(-5%);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+}
+
+.campaign-title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+.campaign-details {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.campaign-date {
+  background-color: var(--primary-light);
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  margin-top: 0.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
 /* ヒーローセクション */
 .hero {
-  min-height: 100vh;
+  min-height: 90vh;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7)), url('../assets/images/hero_bg.jpg');
   background-size: cover;
   background-position: center;
@@ -338,7 +395,8 @@ header {
 
 .trust-badges {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 2rem;
 }
 
@@ -349,6 +407,37 @@ header {
   font-size: 0.85rem;
   font-weight: 700;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  color: var(--primary);
+  border: 1px solid var(--primary-light);
+}
+
+/* モバイルスタイルでは固定CTA非表示 */
+.mobile-fixed-cta {
+  display: none;
+}
+
+/* レスポンシブ調整 */
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .trust-badges {
+    flex-wrap: nowrap;
+  }
+  
+  .header-cta {
+    display: inline-block;
+  }
+  
+  .campaign-title {
+    font-size: 2rem;
+  }
 }
 
 /* 痛みポイントセクション */
@@ -1502,5 +1591,299 @@ select {
 @media (min-width: 768px) {
   .desires-cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* コースプログラムセクション */
+.course-program {
+  background-color: var(--gray-50);
+  padding: 5rem 0;
+}
+
+.course-overview {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--box-shadow);
+}
+
+.course-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.course-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.course-period, .course-style {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-bottom: 0.3rem;
+}
+
+.info-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.course-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.pricing-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pricing-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+  max-width: 100%;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-premium {
+  position: relative;
+  border: 2px solid var(--primary);
+}
+
+.pricing-ribbon {
+  position: absolute;
+  top: 1.5rem;
+  right: -2.5rem;
+  transform: rotate(45deg);
+  background-color: var(--primary);
+  color: white;
+  padding: 0.3rem 3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.pricing-header {
+  padding: 2rem;
+  background-color: var(--primary-light);
+  position: relative;
+}
+
+.pricing-tag {
+  display: inline-block;
+  background-color: white;
+  color: var(--primary);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pricing-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.pricing-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.original-price {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  color: var(--text-gray);
+  margin-bottom: 0.3rem;
+}
+
+.current-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.monthly-price {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.pricing-body {
+  padding: 2rem;
+}
+
+.course-features {
+  margin-bottom: 2rem;
+}
+
+.pricing-features {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.pricing-features li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.pricing-features li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.premium-feature {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.premium-feature:before {
+  content: '★';
+}
+
+.course-point {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--primary-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.point-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.course-point p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.course-cta {
+  text-align: center;
+}
+
+.pricing-notes {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+/* 比較テーブル */
+.class-comparison {
+  margin-bottom: 4rem;
+}
+
+.compare-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.comparison-table th {
+  background-color: var(--primary-light);
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.cta-section {
+  background-color: white;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.cta-heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-gray);
+}
+
+@media (min-width: 768px) {
+  .course-details {
+    flex-direction: row;
+  }
+  
+  .course-info {
+    width: 30%;
+  }
+  
+  .course-description {
+    width: 70%;
+  }
+  
+  .pricing-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cta-heading {
+    font-size: 2rem;
   }
 }

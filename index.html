@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/mobile-optimization.css">
   
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,7 +35,7 @@
           <span class="organization-name">一般社団法人乳幼児発達推進協会</span>
           <span class="course-name">ベビー発育アドバイザー講座</span>
         </div>
-        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
+        <a href="#form" class="btn btn-primary header-cta">無料説明会に申し込む</a>
       </div>
     </div>
   </header>
@@ -49,6 +50,7 @@
         <ul class="benefit-list">
           <li>子どもの発達を専門的に支援できる</li>
           <li>社会的信頼のある資格を取得</li>
+          <li>収入と社会貢献を両立できる</li>
         </ul>
         <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
         <div class="trust-badges">
@@ -59,6 +61,20 @@
       </div>
       <div class="hero-image">
         <img src="assets/images/kv_mom_pc.png" alt="子どもの発達をサポートする専門家">
+      </div>
+    </div>
+  </section>
+
+  <!-- キャンペーンセクション -->
+  <section class="section campaign-section">
+    <div class="container">
+      <div class="campaign-banner">
+        <div class="campaign-badge">期間限定</div>
+        <h2 class="campaign-title">経済産業省支援事業による<br>受講料最大70%還元キャンペーン実施中！</h2>
+        <div class="campaign-details">
+          <p>約35万円相当が還付されるチャンス</p>
+          <p class="campaign-date">2023年6月30日まで</p>
+        </div>
       </div>
     </div>
   </section>
@@ -142,9 +158,27 @@
   </section>
 
   <!-- プログラムセクション -->
-  <section class="section pricing" id="pricing">
+  <section class="section course-program" id="pricing">
     <div class="container">
       <h2 class="section-title">認定カリキュラム & 講座内容</h2>
+      <div class="course-overview">
+        <div class="course-details">
+          <div class="course-info">
+            <div class="course-period">
+              <span class="info-label">期間</span>
+              <span class="info-value">2週間〜1ヶ月</span>
+            </div>
+            <div class="course-style">
+              <span class="info-label">受講形式</span>
+              <span class="info-value">オンライン</span>
+            </div>
+          </div>
+          <div class="course-description">
+            <p>子どもの発達支援に必要な専門知識と実践スキルを総合的に学び、乳幼児の発達をサポートするプロフェッショナルを育成する講座です。理論と実践をバランスよく学ぶことで、高い専門性を身につけられます。</p>
+          </div>
+        </div>
+      </div>
+      
       <div class="pricing-container">
         <div class="pricing-card">
           <div class="pricing-header">
@@ -157,13 +191,22 @@
             </div>
           </div>
           <div class="pricing-body">
-            <h4>学習内容</h4>
-            <ul class="pricing-features">
-              <li>子どもの発達段階と特性</li>
-              <li>発達評価の基礎知識</li>
-              <li>脳科学からみた子どもの成長</li>
-              <li>保護者サポート技術</li>
-            </ul>
+            <div class="course-features">
+              <h4>学習内容</h4>
+              <ul class="pricing-features">
+                <li>子どもの発達段階と特性</li>
+                <li>発達評価の基礎知識</li>
+                <li>脳科学からみた子どもの成長</li>
+                <li>保護者サポート技術</li>
+              </ul>
+            </div>
+            <div class="course-point">
+              <div class="point-icon">🎓</div>
+              <p>協会認定資格の取得により、専門家としての地位を確立</p>
+            </div>
+            <div class="course-cta">
+              <a href="#form" class="btn btn-primary">詳しく話を聞く</a>
+            </div>
           </div>
         </div>
         
@@ -179,16 +222,25 @@
             </div>
           </div>
           <div class="pricing-body">
-            <h4>学習内容</h4>
-            <ul class="pricing-features">
-              <li>基礎コース全内容</li>
-              <li>発達障害の理解と支援方法</li>
-              <li>事例研究とケーススタディ</li>
-              <li>個別支援計画の立案手法</li>
-              <li class="premium-feature">臨床実習（オンライン）</li>
-              <li class="premium-feature">専門家ネットワーク参加権</li>
-              <li class="premium-feature">開業・就職サポート</li>
-            </ul>
+            <div class="course-features">
+              <h4>学習内容</h4>
+              <ul class="pricing-features">
+                <li>基礎コース全内容</li>
+                <li>発達障害の理解と支援方法</li>
+                <li>事例研究とケーススタディ</li>
+                <li>個別支援計画の立案手法</li>
+                <li class="premium-feature">臨床実習（オンライン）</li>
+                <li class="premium-feature">専門家ネットワーク参加権</li>
+                <li class="premium-feature">開業・就職サポート</li>
+              </ul>
+            </div>
+            <div class="course-point">
+              <div class="point-icon">💼</div>
+              <p>独立開業のためのサポート体制が整っています</p>
+            </div>
+            <div class="course-cta">
+              <a href="#form" class="btn btn-primary">詳しく話を聞く</a>
+            </div>
           </div>
         </div>
       </div>
@@ -197,7 +249,57 @@
         <p>※ 協会認定資格は厚生労働省後援の信頼性の高い資格として認められています</p>
       </div>
       
-      <div class="text-center">
+      <div class="class-comparison">
+        <h3 class="compare-title">他の資格講座との比較</h3>
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>一般社団法人<br>乳幼児発達推進協会</th>
+                <th>他社A</th>
+                <th>他社B</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>受講期間</td>
+                <td>2週間〜1ヶ月</td>
+                <td>3ヶ月〜</td>
+                <td>6ヶ月〜</td>
+              </tr>
+              <tr>
+                <td>料金</td>
+                <td>39,800円〜</td>
+                <td>98,000円〜</td>
+                <td>150,000円〜</td>
+              </tr>
+              <tr>
+                <td>サポート体制</td>
+                <td>専任講師による<br>個別指導</td>
+                <td>グループ指導</td>
+                <td>質問対応のみ</td>
+              </tr>
+              <tr>
+                <td>就業支援</td>
+                <td>あり ◎</td>
+                <td>△</td>
+                <td>×</td>
+              </tr>
+              <tr>
+                <td>コミュニティ</td>
+                <td>あり ◎</td>
+                <td>△</td>
+                <td>×</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="text-center cta-section">
+        <h3 class="cta-heading">まずは無料説明会に参加してみませんか？</h3>
+        <p class="cta-text">カリキュラムの詳細や受講生の声など、詳しくご説明します</p>
         <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
       </div>
     </div>
