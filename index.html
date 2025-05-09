@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://example.com/baby-growth-advisor-lp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/mobile-optimization.css">
   
@@ -53,10 +53,10 @@
           <li>収入と社会貢献を両立できる</li>
         </ul>
         <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
-        <div class="trust-badges">
-          <span class="badge">受講生満足度94%</span>
-          <span class="badge">協会認定資格</span>
-          <span class="badge">厚生労働省後援</span>
+        <div class="benefit-badges">
+          <div class="benefit-badge"><span class="badge-icon">✓</span>受講生満足度94%</div>
+          <div class="benefit-badge"><span class="badge-icon">✓</span>協会認定資格</div>
+          <div class="benefit-badge"><span class="badge-icon">✓</span>厚生労働省後援</div>
         </div>
       </div>
       <div class="hero-image">
@@ -75,6 +75,42 @@
           <p>約35万円相当が還付されるチャンス</p>
           <p class="campaign-date">2023年6月30日まで</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3ステップで始めるセクション -->
+  <section class="section steps-section">
+    <div class="container">
+      <h2 class="section-title">3ステップで簡単スタート</h2>
+      <div class="steps-container">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>申し込みは30秒で完了</h3>
+            <p>名前とメールアドレスを入力するだけの簡単フォームで、すぐに次のステップに進めます。</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>無料説明会に参加</h3>
+            <p>オンラインで開催される説明会に参加し、講座の詳細や質問の回答を受けられます。</p>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>受講スタート</h3>
+            <p>説明会後、受講を決めたら最短3日でスタート。すぐに学習を始められます。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="steps-cta">
+        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
       </div>
     </div>
   </section>
@@ -130,19 +166,20 @@
   </section>
 
   <!-- ベネフィットサマリーセクション -->
-  <section class="section benefit-summary" id="benefit">
+  <section class="section benefit-summary gradient-section gradient-yellow" id="benefit">
+    <div class="floating-shape floating-shape-1"></div>
     <div class="container">
-      <h2 class="section-title">一般社団法人乳幼児発達推進協会の使命</h2>
+      <h2 class="section-title fade-in">一般社団法人乳幼児発達推進協会の使命</h2>
       <div class="benefit-container">
         <div class="benefit-text">
-          <div class="benefit-item">
+          <div class="benefit-item fade-in">
             <div class="benefit-icon">🌱</div>
             <div class="benefit-content">
               <h3>専門的な知識で子どもの発達を支援</h3>
               <p>科学的根拠に基づいた専門知識で、子どもの健やかな発達を促進します。</p>
             </div>
           </div>
-          <div class="benefit-item">
+          <div class="benefit-item fade-in">
             <div class="benefit-icon">👨‍👩‍👧‍👦</div>
             <div class="benefit-content">
               <h3>親子の絆を深める環境づくり</h3>
@@ -150,7 +187,7 @@
             </div>
           </div>
         </div>
-        <div class="benefit-image">
+        <div class="benefit-image fade-in">
           <img src="assets/images/benefit_summary.svg.txt" alt="乳幼児発達推進協会の使命">
         </div>
       </div>
@@ -158,10 +195,11 @@
   </section>
 
   <!-- プログラムセクション -->
-  <section class="section course-program" id="pricing">
+  <section class="section course-program gradient-section gradient-primary" id="pricing">
+    <div class="floating-shape floating-shape-2"></div>
     <div class="container">
-      <h2 class="section-title">認定カリキュラム & 講座内容</h2>
-      <div class="course-overview">
+      <h2 class="section-title fade-in">認定カリキュラム & 講座内容</h2>
+      <div class="course-overview fade-in">
         <div class="course-details">
           <div class="course-info">
             <div class="course-period">
@@ -180,7 +218,7 @@
       </div>
       
       <div class="pricing-container">
-        <div class="pricing-card">
+        <div class="pricing-card fade-in">
           <div class="pricing-header">
             <span class="pricing-tag">基礎コース</span>
             <h3>乳幼児発達支援プログラム</h3>
@@ -210,7 +248,7 @@
           </div>
         </div>
         
-        <div class="pricing-card pricing-premium">
+        <div class="pricing-card pricing-premium fade-in">
           <div class="pricing-ribbon">専門コース</div>
           <div class="pricing-header">
             <span class="pricing-tag">上級コース</span>
@@ -249,7 +287,7 @@
         <p>※ 協会認定資格は厚生労働省後援の信頼性の高い資格として認められています</p>
       </div>
       
-      <div class="class-comparison">
+      <div class="class-comparison fade-in">
         <h3 class="compare-title">他の資格講座との比較</h3>
         <div class="comparison-table-wrap">
           <table class="comparison-table">
@@ -297,7 +335,7 @@
         </div>
       </div>
       
-      <div class="text-center cta-section">
+      <div class="text-center cta-section fade-in">
         <h3 class="cta-heading">まずは無料説明会に参加してみませんか？</h3>
         <p class="cta-text">カリキュラムの詳細や受講生の声など、詳しくご説明します</p>
         <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
@@ -353,8 +391,110 @@
     </div>
   </section>
 
+  <!-- 受講生の声セクション -->
+  <section class="section testimonials gradient-section" id="testimonials">
+    <div class="floating-shape floating-shape-1"></div>
+    <div class="floating-shape floating-shape-2"></div>
+    <div class="container">
+      <h2 class="section-title">受講生のリアルな声</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonials-slider">
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="assets/images/testimonial1.jpg" alt="佐藤さん">
+              </div>
+              <div class="testimonial-info">
+                <h4>佐藤 美穂さん</h4>
+                <p>2歳児ママ / 受講後3ヶ月</p>
+                <div class="testimonial-case">CASE 01</div>
+              </div>
+            </div>
+            <h3 class="testimonial-title">子連れでもママ友5人から依頼獲得！</h3>
+            <div class="testimonial-body">
+              <p>「育児の合間に学べる動画講座と、実践的なテンプレートのおかげで、迷わず行動できました。子どもが喜ぶ遊びを教えてくれて"ありがとう"と言われる喜びを日々感じています。」</p>
+              <div class="testimonial-results">
+                <div class="testimonial-result">
+                  <div class="result-label">Before</div>
+                  <div class="result-value">月収 0円</div>
+                </div>
+                <div class="testimonial-arrow">→</div>
+                <div class="testimonial-result result-after">
+                  <div class="result-label">After</div>
+                  <div class="result-value">月収 5.2万円</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="assets/images/testimonial2.jpg" alt="山田さん">
+              </div>
+              <div class="testimonial-info">
+                <h4>山田 恵理さん</h4>
+                <p>3歳&1歳ママ / 受講後6ヶ月</p>
+                <div class="testimonial-case">CASE 02</div>
+              </div>
+            </div>
+            <h3 class="testimonial-title">完全在宅で月7万円の安定収入！</h3>
+            <div class="testimonial-body">
+              <p>「子どもの送り迎えや急な発熱にも対応できる働き方が実現できました。お客様から"子どもの成長が楽しみになった"と言ってもらえることが何よりやりがいです。」</p>
+              <div class="testimonial-results">
+                <div class="testimonial-result">
+                  <div class="result-label">Before</div>
+                  <div class="result-value">月10時間</div>
+                </div>
+                <div class="testimonial-arrow">→</div>
+                <div class="testimonial-result result-after">
+                  <div class="result-label">After</div>
+                  <div class="result-value">月20時間</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">
+                <img src="assets/images/testimonial3.jpg" alt="田中さん">
+              </div>
+              <div class="testimonial-info">
+                <h4>田中 優子さん</h4>
+                <p>4歳児ママ / 受講後8ヶ月</p>
+                <div class="testimonial-case">CASE 03</div>
+              </div>
+            </div>
+            <h3 class="testimonial-title">発達支援教室を開業！月12万円達成</h3>
+            <div class="testimonial-body">
+              <p>「専門的な知識と資格を身につけたことで自信がつき、念願の教室を開くことができました。今では地域の子育て支援の中心的存在として活動しています。」</p>
+              <div class="testimonial-results">
+                <div class="testimonial-result">
+                  <div class="result-label">Before</div>
+                  <div class="result-value">月収 3万円</div>
+                </div>
+                <div class="testimonial-arrow">→</div>
+                <div class="testimonial-result result-after">
+                  <div class="result-label">After</div>
+                  <div class="result-value">月収 12万円</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-nav">
+          <div class="nav-dot active"></div>
+          <div class="nav-dot"></div>
+          <div class="nav-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- サポート体制セクション -->
-  <section class="support-section" id="support">
+  <section class="support-section gradient-section gradient-secondary" id="support">
+    <div class="floating-shape floating-shape-1"></div>
     <div class="container">
       <div class="support-section-inner">
         <div class="support-bubble">
@@ -367,67 +507,55 @@
           <h3>挫折させない<br>サポート体制をご紹介</h3>
         </div>
         
-        <div class="shelikes-features">
-          <div class="shelikes-feature-card">
-            <div class="shelikes-feature-header">
-              個別カウンセリング<br>でマンツーマン指導
-            </div>
-            <div class="shelikes-feature-body">
-              <div class="shelikes-feature-icon">
-                <img src="assets/images/shelikes/feature_icon1.svg.txt" alt="個別カウンセリング">
-              </div>
-              <div class="shelikes-feature-text">
-                月1回の<span class="shelikes-feature-highlight">カウンセリングで</span>スキルアップの道筋を明確にします。
-              </div>
-            </div>
+        <div class="support-grid">
+          <div class="support-card">
+            <div class="support-icon">👩‍🏫</div>
+            <h3>個別カウンセリング</h3>
+            <p>月1回のマンツーマン指導で学習の進捗を確認し、個別にアドバイスします。</p>
           </div>
-
-          <div class="shelikes-feature-card">
-            <div class="shelikes-feature-header">
-              ビギナー向け<br>初心者講座も完備
-            </div>
-            <div class="shelikes-feature-body">
-              <div class="shelikes-feature-icon">
-                <img src="assets/images/shelikes/feature_icon2.svg.txt" alt="初心者講座">
-              </div>
-              <div class="shelikes-feature-text">
-                PC操作や基本スキルも<span class="shelikes-feature-highlight">ゼロから</span>学べるので安心です。
-              </div>
-            </div>
+          
+          <div class="support-card">
+            <div class="support-icon">💻</div>
+            <h3>初心者講座完備</h3>
+            <p>PC操作や基本スキルもゼロから学べるので、未経験でも安心です。</p>
           </div>
-
-          <div class="shelikes-feature-card">
-            <div class="shelikes-feature-header">
-              24時間質問対応<br>の専用チャット
-            </div>
-            <div class="shelikes-feature-body">
-              <div class="shelikes-feature-icon">
-                <img src="assets/images/shelikes/feature_icon3.svg.txt" alt="24時間質問対応">
-              </div>
-              <div class="shelikes-feature-text">
-                <span class="shelikes-feature-highlight">いつでも質問OK</span>なので、つまずいても長く停滞しません。
-              </div>
-            </div>
+          
+          <div class="support-card">
+            <div class="support-icon">💬</div>
+            <h3>24時間質問対応</h3>
+            <p>いつでも質問できる専用チャットで、疑問を即解決できます。</p>
           </div>
-
-          <div class="shelikes-feature-card">
-            <div class="shelikes-feature-header">
-              仲間と励まし合える<br>コミュニティ
-            </div>
-            <div class="shelikes-feature-body">
-              <div class="shelikes-feature-icon">
-                <img src="assets/images/shelikes/feature_icon4.svg.txt" alt="コミュニティ">
-              </div>
-              <div class="shelikes-feature-text">
-                同じ目標を持つ仲間との<span class="shelikes-feature-highlight">交流</span>で孤独感なくスキルアップ。
-              </div>
-            </div>
+          
+          <div class="support-card">
+            <div class="support-icon">👨‍👩‍👧‍👦</div>
+            <h3>コミュニティサポート</h3>
+            <p>同じ目標を持つ仲間と交流でき、モチベーションを維持できます。</p>
+          </div>
+          
+          <div class="support-card">
+            <div class="support-icon">📱</div>
+            <h3>スマホ受講OK</h3>
+            <p>通勤中や家事の合間でも、スマホで気軽に学習できます。</p>
+          </div>
+          
+          <div class="support-card">
+            <div class="support-icon">📚</div>
+            <h3>教材ダウンロード</h3>
+            <p>オフラインでも学習できるよう、教材をダウンロードして活用できます。</p>
+          </div>
+          
+          <div class="support-card">
+            <div class="support-icon">🎯</div>
+            <h3>実践型カリキュラム</h3>
+            <p>理論だけでなく実践重視で、すぐに活かせるスキルを身につけられます。</p>
+          </div>
+          
+          <div class="support-card">
+            <div class="support-icon">🔄</div>
+            <h3>サポート無期限</h3>
+            <p>卒業後も継続的にサポートを受けられるので、長期的な成長を実現できます。</p>
           </div>
         </div>
-      </div>
-      
-      <div class="support-image">
-        <img src="assets/images/shelikes/support_woman.svg.txt" alt="サポート">
       </div>
     </div>
   </section>
@@ -501,70 +629,6 @@
         </div>
         <div class="community-feature">
           <p>イベント企画は任意参加で選択自由</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 受講生の声セクション -->
-  <section class="section testimonials" id="testimonials">
-    <div class="container">
-      <h2 class="section-title">受講生のリアルな声</h2>
-      <div class="testimonials-carousel">
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">
-              <img src="assets/images/testimonial1.jpg" alt="佐藤さん">
-            </div>
-            <div class="testimonial-info">
-              <h4>佐藤 美穂さん</h4>
-              <p>2歳児ママ / 受講後3ヶ月</p>
-              <div class="testimonial-case">CASE 01</div>
-            </div>
-          </div>
-          <h3 class="testimonial-title">子連れでもママ友5人から依頼獲得！</h3>
-          <div class="testimonial-body">
-            <p>「育児の合間に学べる動画講座と、実践的なテンプレートのおかげで、迷わず行動できました。子どもが喜ぶ遊びを教えてくれて"ありがとう"と言われる喜びを日々感じています。」</p>
-            <div class="testimonial-results">
-              <div class="testimonial-result">
-                <div class="result-label">Before</div>
-                <div class="result-value">月収 0円</div>
-              </div>
-              <div class="testimonial-arrow">→</div>
-              <div class="testimonial-result result-after">
-                <div class="result-label">After</div>
-                <div class="result-value">月収 5.2万円</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">
-              <img src="assets/images/testimonial2.jpg" alt="山田さん">
-            </div>
-            <div class="testimonial-info">
-              <h4>山田 恵理さん</h4>
-              <p>3歳&1歳ママ / 受講後6ヶ月</p>
-              <div class="testimonial-case">CASE 02</div>
-            </div>
-          </div>
-          <h3 class="testimonial-title">完全在宅で月7万円の安定収入！</h3>
-          <div class="testimonial-body">
-            <p>「子どもの送り迎えや急な発熱にも対応できる働き方が実現できました。お客様から"子どもの成長が楽しみになった"と言ってもらえることが何よりやりがいです。」</p>
-            <div class="testimonial-results">
-              <div class="testimonial-result">
-                <div class="result-label">Before</div>
-                <div class="result-value">月10時間</div>
-              </div>
-              <div class="testimonial-arrow">→</div>
-              <div class="testimonial-result result-after">
-                <div class="result-label">After</div>
-                <div class="result-value">月20時間</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
