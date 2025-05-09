@@ -1,0 +1,7 @@
+このフォルダには以下の画像ファイルを配置します：
+
+1. feature_icon1.svg - スキルのつまみ食いで好きが見つかる！
+2. feature_icon2.svg - 未経験もしっかりサポート！
+3. feature_icon3.svg - コーチングでなりたい姿を明確に！
+4. feature_icon4.svg - お仕事チャレンジし放題！
+5. badge_bg.svg - 会員数バッジの背景 

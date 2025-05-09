@@ -1,0 +1,5 @@
+<!-- 未経験もしっかりサポートアイコン -->
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" fill="white"/>
+  <text x="90" y="90" font-family="sans-serif" font-size="14" text-anchor="middle" fill="#999">未経験もしっかりサポート！</text>
+</svg> 

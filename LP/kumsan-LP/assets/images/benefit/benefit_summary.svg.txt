@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="380" height="280" rx="10" fill="#FFF8E6" stroke="#FFD6E5" stroke-width="3"/>
+  <circle cx="200" cy="100" r="50" fill="#FFD6E5"/>
+  <rect x="100" y="170" width="200" height="20" rx="5" fill="#FFD6E5"/>
+  <rect x="130" y="200" width="140" height="20" rx="5" fill="#FFD6E5"/>
+  <rect x="150" y="230" width="100" height="20" rx="5" fill="#FFD6E5"/>
+  <text x="200" y="105" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">ベネフィット画像</text>
+</svg> 

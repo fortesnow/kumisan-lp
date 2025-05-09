@@ -1,0 +1,6 @@
+このフォルダには以下の画像ファイルを配置します：
+
+1. hero_bg.jpg - ヒーローセクションの背景画像
+2. kv_mom_pc.png - キービジュアル（PCサイズ）
+3. testimonial1.jpg - 受講生の声用アバター画像
+4. og_baby_growth_advisor.jpg - OGP用画像 
