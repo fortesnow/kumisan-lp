@@ -1218,6 +1218,34 @@ select {
   }
 }
 
+/* スマホ表示時の2カラム設定を追加 */
+@media (max-width: 767px) {
+  .shelikes-features {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .shelikes-feature-header {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .shelikes-feature-body {
+    padding: 1rem;
+  }
+  
+  .shelikes-feature-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+  }
+  
+  .shelikes-feature-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
 /* サポート体制セクション */
 .support-section {
   padding: 5rem 0;
