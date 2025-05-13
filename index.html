@@ -50,9 +50,6 @@
      /* ヘッダーの新しいスタイル */
      header {
        padding: 15px 0;
-       position: fixed;
-       top: 0;
-       left: 0;
        width: 100%;
        background-color: rgba(255, 255, 255, 0.95);
        backdrop-filter: blur(5px);
@@ -94,7 +91,6 @@
        background-color: #fff8f8;
        position: relative;
        overflow: hidden;
-       margin-top: 70px; /* ヘッダーの高さ分の余白 */
      }
      
      .hero .container {
@@ -264,12 +260,13 @@
      
      @media (max-width: 768px) {
        .hero-image-container {
-         height: 60vh;
+         width: 100%;
+         height: 100%;
        }
        
        .hero-image {
          width: 100%;
-         height: 100%;
+         height: auto;
          object-fit: cover;
          object-position: center;
        }
@@ -306,11 +303,12 @@
        }
        
        .hero {
-         margin-top: 60px;
+         margin-top: 0; /* 追従ヘッダーがなくなったので余白も不要 */
        }
        
        .hero-image-container {
-         height: 50vh;
+         width: 100%;
+         height: auto;
        }
        
        .hero-content {
@@ -1746,32 +1744,27 @@
     <div class="container">
       <h2 class="section-title">先輩アドバイザーの声</h2>
       
-      <div class="voices-container">
-        <img src="assets/images/advisors_voices_1.png" alt="先輩アドバイザーの声 1" class="advisors-voices-image">
-        <img src="assets/images/advisors_voices_2.png" alt="先輩アドバイザーの声 2" class="advisors-voices-image">
+      <div class="testimonials-image-container">
+        <img src="assets/images/advisors_voices_1.png" alt="先輩アドバイザーの声 1" class="testimonials-main-image">
+        <img src="assets/images/advisors_voices_2.png" alt="先輩アドバイザーの声 2" class="testimonials-main-image">
       </div>
       
       <div class="advisors-voices-quotes">
         <div class="voice-quote-box">
-          <p class="voice-quote">"受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて、💫"</p>
+          <p class="voice-quote">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
         </div>
         
         <div class="voice-quote-box">
-          <p class="voice-quote">"講座で学んだ内容で特に活かしたいことは？→お教室を通して素敵な縁を広げて、人生を子育てで豊かにしたいです🙏子どもたちと共に私も一緒に成長していきます✨"</p>
+          <p class="voice-quote">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
         </div>
         
         <div class="voice-quote-box">
-          <p class="voice-quote">"心愛協会が世界に広がれば、みんながハッピーになれる存在です💕💕私にとって人生のお守りであり、療育です✨"</p>
+          <p class="voice-quote">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
         </div>
         
         <div class="voice-quote-box">
-          <p class="voice-quote">"知識も経験もないところからのスタートでしたが、講座で学んだ事をコツコツ実践することで、受講完了後、翌月にはお教室オープン。そしてありがたい事に、初回から毎レッスン満席させて頂いています。"</p>
+          <p class="voice-quote">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
         </div>
-      </div>
-      
-      <div class="voices-cta">
-        <p>あなたも仲間と一緒に、大切な想いを形にしませんか？</p>
-        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
       </div>
     </div>
   </section>
@@ -1785,6 +1778,24 @@
       
       <div class="testimonials-image-container">
         <img src="assets/images/7.png" alt="受講生の声" class="testimonials-main-image">
+      </div>
+      
+      <div class="advisors-voices-quotes">
+        <div class="voice-quote-box">
+          <p class="voice-quote">「受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです」</p>
+        </div>
+        
+        <div class="voice-quote-box">
+          <p class="voice-quote">「専業主婦期間が長かったため、育児をしかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました」</p>
+        </div>
+        
+        <div class="voice-quote-box">
+          <p class="voice-quote">「フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます」</p>
+        </div>
+        
+        <div class="voice-quote-box">
+          <p class="voice-quote">「特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです」</p>
+        </div>
       </div>
     </div>
   </section>

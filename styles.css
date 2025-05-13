@@ -47,70 +47,71 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: rgba(255, 107, 107, 0.2);
   z-index: -1;
+  border-radius: 5px;
 }
 
 .shelike-community-subtitle {
   font-size: 1.1rem;
   color: #666;
+  line-height: 1.6;
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
 }
 
 .shelike-community-content {
   display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  gap: 40px;
+  align-items: flex-start;
 }
 
 .shelike-community-image {
   flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-  margin: 0 auto;
+  max-width: 50%;
 }
 
 .community-photo {
   width: 100%;
-  height: auto;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .shelike-community-benefits {
-  flex: 1.5;
-  min-width: 300px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .shelike-benefit-card {
   display: flex;
-  background-color: white;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
   border-radius: 12px;
-  padding: 1.5rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .shelike-benefit-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
 .benefit-icon {
-  font-size: 2rem;
-  margin-right: 1.5rem;
   min-width: 50px;
+  height: 50px;
+  background-color: #ffe8e8;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #ff6b6b;
+  font-size: 1.5rem;
 }
 
 .benefit-content {
@@ -121,37 +122,34 @@
   font-size: 1.2rem;
   font-weight: 700;
   color: #333;
-  margin: 0 0 0.8rem;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .benefit-text {
   font-size: 0.95rem;
   color: #666;
-  line-height: 1.6;
-  margin: 0;
+  line-height: 1.5;
 }
 
 .shelike-community-cta {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .shelike-community-cta .btn {
-  padding: 1rem 2.5rem;
+  padding: 12px 30px;
   font-size: 1.1rem;
-  font-weight: 600;
-  border-radius: 50px;
 }
 
 @media (max-width: 992px) {
   .shelike-community-content {
     flex-direction: column;
-    align-items: center;
   }
   
   .shelike-community-image {
-    max-width: 400px;
-    margin-bottom: 1rem;
+    max-width: 100%;
+    margin: 0 auto 2rem;
   }
 }
 
@@ -162,20 +160,37 @@
   
   .shelike-community-subtitle {
     font-size: 1rem;
+    padding: 0 15px;
   }
   
   .benefit-title {
     font-size: 1.1rem;
+  }
+  
+  .testimonials-main-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .shelike-benefit-card {
     flex-direction: column;
+    align-items: flex-start;
   }
   
   .benefit-icon {
     margin: 0 0 1rem 0;
+  }
+  
+  .shelike-community-benefits {
+    padding: 0 15px;
+  }
+  
+  .testimonials-image-container {
+    padding: 0 15px;
   }
 }
 
@@ -187,7 +202,14 @@
   margin-bottom: 40px;
 }
 
-.advisors-voices-image {
+.testimonials-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.testimonials-main-image {
   width: 100%;
   max-width: 1000px;
   height: auto;
@@ -240,6 +262,96 @@
 @media (max-width: 768px) {
   .advisors-voices-quotes {
     grid-template-columns: 1fr;
+  }
+}
+
+/* スワイプスライダーの修正スタイル */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  touch-action: pan-y;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.slider-item {
+  min-width: 20%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  opacity: 0.6;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slider-item.active-slide {
+  opacity: 1;
+}
+
+.slider-item img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.slider-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #ff85a2;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .slider-item {
+    min-width: 80%;
+  }
+  
+  .slider-track {
+    touch-action: pan-x;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item {
+    min-width: 100%;
+    padding: 0 5px;
+  }
+  
+  .swipe-indicator {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
   }
 }
 
