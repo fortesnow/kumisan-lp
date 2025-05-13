@@ -97,6 +97,7 @@
        max-width: 1200px;
        margin: 0 auto;
        padding: 0;
+       position: relative;
      }
      
      .hero-image-container {
@@ -108,7 +109,7 @@
      .hero-image {
        width: 100%;
        height: auto;
-       object-fit: cover;
+       object-fit: contain; /* cover から contain に変更 */
        display: block;
      }
      
@@ -261,14 +262,15 @@
      @media (max-width: 768px) {
        .hero-image-container {
          width: 100%;
-         height: 100%;
+         height: auto;
+         /* PCと同様に表示するように修正 */
        }
        
        .hero-image {
          width: 100%;
          height: auto;
-         object-fit: cover;
-         object-position: center;
+         object-fit: contain; /* cover から contain に変更して全体を表示 */
+         max-height: none; /* 高さ制限を解除 */
        }
        
        .hero-content {
@@ -309,6 +311,14 @@
        .hero-image-container {
          width: 100%;
          height: auto;
+         /* PCと同様に表示するように修正 */
+       }
+       
+       .hero-image {
+         width: 100%;
+         height: auto;
+         object-fit: contain; /* cover から contain に変更して全体を表示 */
+         max-height: none; /* 高さ制限を解除 */
        }
        
        .hero-content {
@@ -1189,6 +1199,197 @@
          font-size: 0.9rem;
        }
      }
+     
+     /* コミュニティセクションのスタイル */
+     .community-section {
+       padding: 5rem 0;
+       background-color: #fffaf9;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .community-container {
+       position: relative;
+       z-index: 1;
+     }
+     
+     .community-header {
+       text-align: center;
+       margin-bottom: 3rem;
+     }
+     
+     .community-headline {
+       font-size: 1.5rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 1rem;
+       line-height: 1.5;
+     }
+     
+     .community-headline .highlight {
+       background: linear-gradient(transparent 60%, rgba(255, 133, 162, 0.3) 40%);
+       padding: 0 2px;
+     }
+     
+     .community-subtext {
+       font-size: 1.1rem;
+       color: #555;
+       margin: 0;
+     }
+     
+     .community-content {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       gap: 2rem;
+       margin-bottom: 3rem;
+     }
+     
+     /* 2カラムグリッドレイアウトスタイル - 画像なしバージョン */
+     .community-features-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 2rem;
+       width: 100%;
+     }
+     
+     .community-image-wrapper {
+       flex: 0 0 40%;
+       min-width: 300px;
+     }
+     
+     .community-img {
+       width: 100%;
+       height: auto;
+       border-radius: 15px;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+     }
+     
+     .community-features {
+       flex: 1;
+       display: flex;
+       flex-direction: column;
+       gap: 1.5rem;
+       min-width: 300px;
+     }
+     
+     .community-feature {
+       background-color: white;
+       border-radius: 15px;
+       padding: 1.8rem;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+     
+     .community-feature:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+     }
+     
+     .feature-icon {
+       font-size: 2rem;
+       margin-bottom: 1rem;
+       color: #ff6b6b;
+     }
+     
+     .feature-title {
+       font-size: 1.2rem;
+       color: #333;
+       margin-bottom: 0.8rem;
+       font-weight: 700;
+     }
+     
+     .feature-description {
+       font-size: 1rem;
+       color: #555;
+       line-height: 1.6;
+       margin: 0;
+     }
+     
+     .community-cta {
+       text-align: center;
+       margin-top: 2rem;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 992px) {
+       .community-content {
+         flex-direction: column;
+       }
+       
+       .community-image-wrapper {
+         width: 100%;
+         max-width: 500px;
+         margin: 0 auto;
+       }
+       
+       /* 2カラムグリッドのレスポンシブ対応 */
+       .community-features-grid {
+         grid-template-columns: repeat(2, 1fr);
+       }
+     }
+     
+     @media (max-width: 768px) {
+       .community-section {
+         padding: 4rem 0;
+       }
+       
+       .community-headline {
+         font-size: 1.3rem;
+       }
+       
+       .community-subtext {
+         font-size: 1rem;
+       }
+       
+       .feature-title {
+         font-size: 1.1rem;
+       }
+       
+       .feature-description {
+         font-size: 0.95rem;
+       }
+       
+       /* タブレットサイズでの2カラムグリッド */
+       .community-features-grid {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1.5rem;
+       }
+     }
+     
+     @media (max-width: 576px) {
+       .community-section {
+         padding: 3rem 0;
+       }
+       
+       .community-headline {
+         font-size: 1.2rem;
+       }
+       
+       .community-feature {
+         padding: 1.5rem;
+       }
+       
+       .feature-icon {
+         font-size: 1.8rem;
+         margin-bottom: 0.8rem;
+       }
+       
+       .feature-title {
+         font-size: 1rem;
+         margin-bottom: 0.6rem;
+       }
+       
+       .feature-description {
+         font-size: 0.9rem;
+       }
+       
+       /* スマホサイズでは1カラムに */
+       .community-features-grid {
+         grid-template-columns: 1fr;
+         gap: 1.2rem;
+       }
+     }
    </style>
 </head>
 <body>
@@ -1789,38 +1990,6 @@
     </div>
   </section>
 
-  <!-- 成功ビジョンセクション -->
-  <section class="section success-vision" id="vision">
-    <div class="container">
-      <h2 class="section-title">受講後に描ける3つの未来</h2>
-      <div class="vision-cards">
-        <div class="vision-card">
-          <div class="vision-icon">
-            <div class="vision-circle">¥</div>
-          </div>
-          <h3>月3万円の副収入</h3>
-          <p>子どもの習い事や貯金に回せる安心の副収入を得られます。</p>
-        </div>
-        
-        <div class="vision-card">
-          <div class="vision-icon">
-            <div class="vision-circle">✓</div>
-          </div>
-          <h3>子ども優先フリーランス</h3>
-          <p>体調不良や行事でも自分でスケジュール調整が可能に。</p>
-        </div>
-        
-        <div class="vision-card">
-          <div class="vision-icon">
-            <div class="vision-circle">𝓐</div>
-          </div>
-          <h3>場所に縛られない全国クライアント</h3>
-          <p>引っ越しや夫の転勤があっても、継続できる安定した働き方。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- コミュニティセクション -->
   <section class="section community-section" id="community">
     <div class="floating-shape floating-shape-1"></div>
@@ -1835,11 +2004,8 @@
         </div>
         
         <div class="community-content">
-          <div class="community-image-wrapper">
-            <img src="assets/images/members.webp" alt="ベビー発育アドバイザーコミュニティのメンバー" class="community-img">
-          </div>
-          
-          <div class="community-features">
+          <!-- 画像は削除し、コンテンツを2カラムのカードレイアウトに変更 -->
+          <div class="community-features-grid">
             <div class="community-feature">
               <div class="feature-icon">👨‍👩‍👧‍👦</div>
               <h3 class="feature-title">仲間との交流</h3>
