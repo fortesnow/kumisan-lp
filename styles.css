@@ -383,13 +383,23 @@
   margin-bottom: 2.5rem;
 }
 
+.problem-flex-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 3rem;
+}
+
 .problem-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
 }
 
 .problem-list li {
@@ -429,9 +439,8 @@
 }
 
 .problem-image-container {
-  width: 100%;
-  max-width: 600px;
-  margin-top: 2rem;
+  flex: 1;
+  max-width: 45%;
 }
 
 .problem-image {
@@ -629,8 +638,14 @@
   }
   
   /* やりたいのに動けない理由セクション */
-  .problem-list {
-    grid-template-columns: repeat(2, 1fr);
+  .problem-flex-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .problem-image-container {
+    max-width: 60%;
+    order: -1;
   }
   
   .problem-statement .section-title::after {
@@ -717,9 +732,16 @@
     font-size: 1rem;
   }
   
-  .problem-list {
-    grid-template-columns: 1fr;
+  .problem-flex-container {
     gap: 1.5rem;
+  }
+  
+  .problem-image-container {
+    max-width: 80%;
+  }
+  
+  .problem-list {
+    width: 100%;
   }
   
   .problem-icon {
@@ -730,10 +752,6 @@
   
   .problem-text {
     font-size: 0.95rem;
-  }
-  
-  .problem-image-container {
-    max-width: 100%;
   }
   
   /* 貴女の経験が輝く場所セクション */
@@ -854,6 +872,14 @@
     font-size: 0.95rem;
     margin-bottom: 2rem;
     padding: 0 0.5rem;
+  }
+  
+  .problem-flex-container {
+    gap: 1.2rem;
+  }
+  
+  .problem-image-container {
+    max-width: 90%;
   }
   
   .problem-list {
@@ -1005,6 +1031,10 @@
     line-height: 1.5;
     padding: 0 0.8rem;
     margin-bottom: 1.5rem;
+  }
+  
+  .problem-image-container {
+    max-width: 100%;
   }
   
   .problem-list {
