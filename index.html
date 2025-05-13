@@ -33,52 +33,45 @@
   <!-- End Microsoft Clarity -->
    
    <style>
+     /* 共通フォントスタイル - 中段以降のセクション用 */
+     body {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+     }
+     
+     h2.section-title {
+       font-family: 'Shippori Mincho', serif;
+     }
+     
+     p, li, .btn {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+     }
+     
      /* ヒーローセクションの新しいスタイル */
      .hero {
-       position: relative;
-       width: 100%;
-       min-height: 100vh;
-       overflow: hidden;
        padding: 0;
-       margin: 0;
-       background: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.4));
-       background-blend-mode: overlay;
-     }
-     
-     .hero::before {
-       content: "";
-       position: absolute;
-       top: 0;
-       left: 0;
        width: 100%;
-       height: 100%;
-       background-image: url('assets/images/members.webp');
-       background-size: cover;
-       background-position: center;
-       background-repeat: no-repeat;
-       z-index: -1;
-       filter: brightness(1.05) contrast(1.15) saturate(1.1);
-     }
-     
-     .hero-overlay {
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background: linear-gradient(135deg, rgba(255, 192, 203, 0.25) 0%, rgba(255, 222, 173, 0.25) 100%);
-       z-index: -1;
-     }
-     
-     .hero-container {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-       height: 100vh;
-       padding: 0 20px;
+       background-color: #fff8f8;
        position: relative;
-       z-index: 2;
+       overflow: hidden;
+     }
+     
+     .hero .container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 0;
+     }
+     
+     .hero-image-container {
+       width: 100%;
+       height: auto;
+       overflow: hidden;
+     }
+     
+     .hero-image {
+       width: 100%;
+       height: auto;
+       object-fit: cover;
+       display: block;
      }
      
      .hero-content {
@@ -86,21 +79,22 @@
        max-width: 700px;
        margin: 0 auto;
        padding: 3rem;
-       background-color: rgba(255, 255, 255, 0.92);
+       background-color: #fff;
        border-radius: 20px;
-       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-       animation: fadeIn 1.2s ease-out;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+       margin-top: -50px;
+       position: relative;
+       z-index: 2;
      }
      
      .hero h1 {
+       font-family: 'Shippori Mincho', serif;
        color: #333;
        font-size: 2.6rem;
        font-weight: 700;
        line-height: 1.3;
        margin-bottom: 1rem;
        letter-spacing: 0.05em;
-       text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-       font-family: 'Shippori Mincho', serif;
      }
      
      .hero .sub-heading {
@@ -109,6 +103,7 @@
        font-weight: 500;
        margin-bottom: 2rem;
        line-height: 1.5;
+       font-family: 'M PLUS Rounded 1c', sans-serif;
      }
      
      .hero-badges {
@@ -127,228 +122,108 @@
        padding: 0.5rem 1rem;
        border-radius: 50px;
        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+       font-family: 'M PLUS Rounded 1c', sans-serif;
      }
      
-     .btn-primary {
-       background: linear-gradient(135deg, #ff85a2 0%, #ff6b6b 100%);
-       color: white;
-       font-weight: 700;
-       padding: 0.8rem 2rem;
-       border-radius: 50px;
-       text-decoration: none;
-       display: inline-block;
-       box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
-       transition: all 0.3s ease;
-       font-size: 1.1rem;
-       border: none;
-       cursor: pointer;
-     }
-     
-     .btn-primary:hover {
-       transform: translateY(-3px);
-       box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
-     }
-     
-     .btn-primary:active {
-       transform: translateY(1px);
-     }
-     
-     /* 潜在的欲求セクションの新しいスタイル */
-     .desire-intro {
+     /* 受講生の声セクションの新しいスタイル */
+     .testimonials {
        padding: 5rem 0;
-       background-color: #fff9fa;
+       background-color: #fff8f8;
        position: relative;
      }
      
-     .desire-intro::before {
-       content: "";
-       position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="%23ffecf1" /></svg>');
-       background-size: 20px 20px;
-       opacity: 0.5;
-       z-index: 0;
-     }
-     
-     .desire-intro-heading {
+     .testimonials-image-container {
+       max-width: 900px;
+       margin: 0 auto 3rem;
        text-align: center;
-       margin-bottom: 3rem;
-       position: relative;
      }
      
-     .desire-intro-heading h2 {
-       display: inline-block;
-       font-size: 2.2rem;
-       color: #333;
-       margin: 0;
-       padding: 0.5rem 2rem;
-       position: relative;
-       font-family: 'Shippori Mincho', serif;
+     .testimonials-main-image {
+       width: 100%;
+       height: auto;
+       border-radius: 15px;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
      }
      
-     .desire-intro-heading h2::after {
-       content: "";
-       position: absolute;
-       bottom: -10px;
-       left: 50%;
-       transform: translateX(-50%);
-       width: 100px;
-       height: 3px;
-       background: linear-gradient(to right, #ff85a2, #ff6b6b);
-       border-radius: 5px;
+     .testimonials-grid {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 1.5rem;
+       max-width: 1200px;
+       margin: 0 auto 3rem;
      }
      
-     .desire-quotes {
-       display: flex;
-       flex-wrap: wrap;
-       gap: 2rem;
-       justify-content: center;
-       margin-bottom: 3rem;
-       position: relative;
-       z-index: 1;
-     }
-     
-     .desire-quote {
-       flex: 1 1 300px;
-       max-width: 350px;
+     .testimonial-card {
        background-color: white;
-       padding: 2rem;
        border-radius: 15px;
        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-       position: relative;
+       padding: 1.5rem;
        transition: transform 0.3s ease, box-shadow 0.3s ease;
+       display: flex;
+       flex-direction: column;
      }
      
-     .desire-quote:hover {
+     .testimonial-card:hover {
        transform: translateY(-5px);
        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
      }
      
-     .quote-mark {
-       font-size: 3rem;
-       color: #ff85a2;
-       line-height: 0;
-       position: absolute;
-       top: 15px;
-       left: 15px;
-       opacity: 0.3;
-     }
-     
-     .desire-quote p {
-       position: relative;
-       z-index: 1;
-       margin: 0;
-       color: #555;
-       font-size: 1.1rem;
-       line-height: 1.6;
-     }
-     
-     .desire-quote strong {
-       color: #ff6b6b;
-       font-weight: 700;
-     }
-     
-     .desire-conclusion {
-       background: linear-gradient(135deg, #fff9fa 0%, #fff5f5 100%);
-       padding: 3rem;
-       border-radius: 20px;
-       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-       margin-top: 2rem;
-       position: relative;
-       z-index: 1;
-     }
-     
-     .conclusion-text {
-       text-align: center;
-     }
-     
-     .conclusion-text p {
-       color: #666;
-       font-size: 1.1rem;
+     .testimonial-header {
        margin-bottom: 1rem;
      }
      
-     .conclusion-text h3 {
-       font-size: 1.8rem;
-       color: #333;
-       margin-bottom: 2rem;
-       line-height: 1.4;
-       font-family: 'Shippori Mincho', serif;
-     }
-     
-     .conclusion-points {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
-       gap: 2rem;
-       margin: 2rem 0;
-     }
-     
-     .conclusion-point {
-       display: flex;
-       align-items: center;
-       gap: 1rem;
-       text-align: left;
-       max-width: 400px;
-     }
-     
-     .point-icon {
-       font-size: 2rem;
-       color: #ff85a2;
-       flex-shrink: 0;
-     }
-     
-     .conclusion-point p {
-       margin: 0;
-       font-size: 1.1rem;
-       color: #555;
-       line-height: 1.5;
-     }
-     
-     .conclusion-point strong {
+     .testimonial-case {
+       display: inline-block;
+       background-color: #f8e6ea;
        color: #ff6b6b;
+       font-weight: 600;
+       padding: 0.3rem 0.8rem;
+       border-radius: 4px;
+       margin-bottom: 0.8rem;
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       font-size: 0.85rem;
      }
      
-     @keyframes fadeIn {
-       from {
-         opacity: 0;
-         transform: translateY(30px);
-       }
-       to {
-         opacity: 1;
-         transform: translateY(0);
+     .testimonial-title {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       font-size: 1.1rem;
+       font-weight: 700;
+       color: #333;
+       line-height: 1.4;
+       margin: 0;
+     }
+     
+     .testimonial-body {
+       flex-grow: 1;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-between;
+     }
+     
+     .testimonial-body p {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       color: #555;
+       font-size: 0.9rem;
+       line-height: 1.6;
+       margin: 0;
+     }
+     
+     .testimonials-cta {
+       text-align: center;
+       margin-top: 2rem;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 1024px) {
+       .testimonials-grid {
+         grid-template-columns: repeat(2, 1fr);
        }
      }
      
-     @keyframes float {
-       0% {
-         transform: translateY(0px);
-       }
-       50% {
-         transform: translateY(-10px);
-       }
-       100% {
-         transform: translateY(0px);
-       }
-     }
-     
-     /* レスポンシブスタイル */
      @media (max-width: 768px) {
-       .hero {
-         min-height: 90vh;
-       }
-       
-       .hero-container {
-         height: 90vh;
-         padding: 1rem;
-       }
-       
        .hero-content {
+         margin-top: -30px;
          padding: 2rem 1.5rem;
-         margin-top: 2rem;
        }
        
        .hero h1 {
@@ -359,77 +234,35 @@
          font-size: 1rem;
        }
        
-       .hero-badges {
-         flex-direction: column;
-         align-items: center;
-         gap: 0.7rem;
-       }
-       
-       .btn-primary {
-         padding: 0.7rem 1.5rem;
+       .testimonial-title {
          font-size: 1rem;
-         width: 100%;
-       }
-       
-       .desire-intro {
-         padding: 3rem 0;
-       }
-       
-       .desire-intro-heading h2 {
-         font-size: 1.8rem;
-         padding: 0.5rem 1rem;
-       }
-       
-       .desire-quotes {
-         flex-direction: column;
-         align-items: center;
-         gap: 1.5rem;
-       }
-       
-       .desire-quote {
-         max-width: 100%;
-         width: 100%;
-         padding: 1.5rem;
-       }
-       
-       .desire-quote p {
-         font-size: 1rem;
-       }
-       
-       .desire-conclusion {
-         padding: 2rem 1.5rem;
-       }
-       
-       .conclusion-text h3 {
-         font-size: 1.5rem;
-       }
-       
-       .conclusion-point {
-         width: 100%;
        }
      }
      
      @media (max-width: 480px) {
+       .testimonials-grid {
+         grid-template-columns: 1fr;
+       }
+       
        .hero h1 {
          font-size: 1.8rem;
        }
        
        .hero-content {
+         margin-top: -20px;
          padding: 1.5rem 1rem;
        }
        
-       .desire-intro-heading h2 {
-         font-size: 1.6rem;
+       .testimonial-card {
+         padding: 1.2rem;
        }
        
-       .conclusion-text h3 {
-         font-size: 1.3rem;
+       .testimonial-title {
+         font-size: 1rem;
        }
        
-       .conclusion-point {
-         flex-direction: column;
-         text-align: center;
-         gap: 0.5rem;
+       .testimonial-body p {
+         font-size: 0.85rem;
        }
      }
 
@@ -1087,6 +920,225 @@
          padding: 2rem 1.2rem;
        }
      }
+     
+     /* 問題提起セクションのスタイル */
+     .problem-statement {
+       padding: 5rem 0;
+       background-color: #fffaf9;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .problem-statement::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1.5" fill="%23ffecf1" /></svg>');
+       background-size: 24px 24px;
+       opacity: 0.4;
+       z-index: 0;
+     }
+     
+     .problem-container {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 3rem;
+       align-items: center;
+       position: relative;
+       z-index: 1;
+     }
+     
+     .problem-content {
+       flex: 1;
+       min-width: 300px;
+     }
+     
+     .problem-image-container {
+       flex: 1;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       min-width: 300px;
+     }
+     
+     .problem-image {
+       max-width: 100%;
+       height: auto;
+       border-radius: 15px;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s ease;
+     }
+     
+     .problem-image:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+     }
+     
+     .problem-statement .section-title {
+       color: #333;
+       text-align: left;
+       font-family: 'Shippori Mincho', serif;
+       font-size: 2.3rem;
+       font-weight: 700;
+       margin-bottom: 1.5rem;
+       position: relative;
+       padding-bottom: 1rem;
+     }
+     
+     .problem-statement .section-title::after {
+       content: "";
+       position: absolute;
+       bottom: 0;
+       left: 0;
+       width: 80px;
+       height: 3px;
+       background: linear-gradient(to right, #ff85a2, #ff6b6b);
+       border-radius: 3px;
+     }
+     
+     .problem-intro {
+       color: #555;
+       font-size: 1.1rem;
+       line-height: 1.7;
+       margin-bottom: 2rem;
+     }
+     
+     .problem-list {
+       list-style: none;
+       padding: 0;
+       margin: 0 0 2rem;
+     }
+     
+     .problem-list li {
+       display: flex;
+       margin-bottom: 1.2rem;
+       background: white;
+       padding: 1.2rem;
+       border-radius: 12px;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+     
+     .problem-list li:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+     }
+     
+     .problem-icon {
+       font-size: 1.5rem;
+       margin-right: 1rem;
+       min-width: 40px;
+       height: 40px;
+       background: linear-gradient(135deg, #ff85a2 0%, #ff6b6b 100%);
+       color: white;
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       box-shadow: 0 5px 15px rgba(255, 133, 162, 0.3);
+     }
+     
+     .problem-text {
+       font-size: 1.05rem;
+       color: #555;
+       line-height: 1.5;
+       flex: 1;
+       display: flex;
+       align-items: center;
+     }
+     
+     .problem-cta {
+       text-align: center;
+       margin-top: 2.5rem;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 992px) {
+       .problem-container {
+         flex-direction: column-reverse;
+         gap: 2rem;
+       }
+       
+       .problem-content {
+         width: 100%;
+       }
+       
+       .problem-image-container {
+         width: 100%;
+         max-width: 500px;
+         margin: 0 auto;
+       }
+       
+       .problem-statement .section-title {
+         text-align: center;
+         font-size: 2rem;
+       }
+       
+       .problem-statement .section-title::after {
+         left: 50%;
+         transform: translateX(-50%);
+       }
+       
+       .problem-intro {
+         text-align: center;
+       }
+     }
+     
+     @media (max-width: 768px) {
+       .problem-statement {
+         padding: 4rem 0;
+       }
+       
+       .problem-statement .section-title {
+         font-size: 1.8rem;
+       }
+       
+       .problem-list li {
+         padding: 1rem;
+       }
+       
+       .problem-icon {
+         font-size: 1.3rem;
+         min-width: 35px;
+         height: 35px;
+       }
+       
+       .problem-text {
+         font-size: 0.95rem;
+       }
+     }
+     
+     @media (max-width: 480px) {
+       .problem-statement {
+         padding: 3rem 0;
+       }
+       
+       .problem-statement .section-title {
+         font-size: 1.6rem;
+       }
+       
+       .problem-intro {
+         font-size: 1rem;
+       }
+       
+       .problem-list li {
+         padding: 0.8rem;
+       }
+       
+       .problem-icon {
+         font-size: 1.2rem;
+         min-width: 30px;
+         height: 30px;
+         margin-right: 0.8rem;
+       }
+       
+       .problem-text {
+         font-size: 0.9rem;
+       }
+     }
    </style>
 </head>
 <body>
@@ -1109,8 +1161,10 @@
 
   <!-- ヒーローセクション - リデザイン -->
   <section class="hero" id="hero">
-    <div class="hero-overlay"></div>
-    <div class="container hero-container">
+    <div class="container">
+      <div class="hero-image-container">
+        <img src="assets/images/members.webp" alt="ベビー発育アドバイザーコミュニティのメンバー" class="hero-image">
+      </div>
       <div class="hero-content">
         <h1>子育ても仕事も、<br>もう諦めない。</h1>
         <p class="sub-heading">ベビー発育アドバイザー講座｜自宅から始める新しい働き方</p>
@@ -1161,24 +1215,34 @@
   <!-- 問題提起セクション -->
   <section class="section problem-statement" id="problem">
     <div class="container">
-      <h2 class="section-title">"やりたい"のに動けない理由</h2>
-      <p class="problem-intro">
-        「いつか自分のスキルを活かした仕事をしたい」と思っていても、一歩が踏み出せない。なぜなら...
-      </p>
-      <ul class="problem-list">
-        <li>
-          <div class="problem-icon">⏱️</div>
-          <div class="problem-text">時間も方法もわからず何も始められないまま月日だけが過ぎていく</div>
-        </li>
-        <li>
-          <div class="problem-icon">📊</div>
-          <div class="problem-text">資格を取っても集客方法がわからず、クライアントゼロの状態が続く</div>
-        </li>
-        <li>
-          <div class="problem-icon">😔</div>
-          <div class="problem-text">「私にできるのかな...」という不安が常につきまとい行動できない</div>
-        </li>
-      </ul>
+      <div class="problem-container">
+        <div class="problem-content">
+          <h2 class="section-title">"やりたい"のに動けない理由</h2>
+          <p class="problem-intro">
+            「いつか自分のスキルを活かした仕事をしたい」と思っていても、一歩が踏み出せない。なぜなら...
+          </p>
+          <ul class="problem-list">
+            <li>
+              <div class="problem-icon">⏱️</div>
+              <div class="problem-text">時間も方法もわからず何も始められないまま月日だけが過ぎていく</div>
+            </li>
+            <li>
+              <div class="problem-icon">📊</div>
+              <div class="problem-text">資格を取っても集客方法がわからず、クライアントゼロの状態が続く</div>
+            </li>
+            <li>
+              <div class="problem-icon">😔</div>
+              <div class="problem-text">「私にできるのかな...」という不安が常につきまとい行動できない</div>
+            </li>
+          </ul>
+          <div class="problem-cta">
+            <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
+          </div>
+        </div>
+        <div class="problem-image-container">
+          <img src="assets/images/worry5.png" alt="動けない理由のイメージ" class="problem-image">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1711,97 +1775,55 @@
     <div class="floating-shape floating-shape-2"></div>
     <div class="container">
       <h2 class="section-title">受講生のリアルな声</h2>
-      <div class="testimonials-carousel">
-        <div class="testimonials-slider">
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img src="assets/images/testimonial1.jpg" alt="佐藤さん">
-              </div>
-              <div class="testimonial-info">
-                <h4>佐藤 美穂さん</h4>
-                <p>2歳児ママ / 受講後3ヶ月</p>
-                <div class="testimonial-case">CASE 01</div>
-              </div>
-            </div>
-            <h3 class="testimonial-title">子連れでもママ友5人から依頼獲得！</h3>
-            <div class="testimonial-body">
-              <p>「育児の合間に学べる動画講座と、実践的なテンプレートのおかげで、迷わず行動できました。子どもが喜ぶ遊びを教えてくれて"ありがとう"と言われる喜びを日々感じています。」</p>
-              <div class="testimonial-results">
-                <div class="testimonial-result">
-                  <div class="result-label">Before</div>
-                  <div class="result-value">月収 0円</div>
-                </div>
-                <div class="testimonial-arrow">→</div>
-                <div class="testimonial-result result-after">
-                  <div class="result-label">After</div>
-                  <div class="result-value">月収 5.2万円</div>
-                </div>
-              </div>
-            </div>
+      
+      <div class="testimonials-image-container">
+        <img src="assets/images/7.png" alt="受講生の声" class="testimonials-main-image">
+      </div>
+      
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-case">CASE 01</div>
+            <h3 class="testimonial-title">社会人歴2ヶ月の主婦から<br>月収50万のフリーライターに</h3>
           </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img src="assets/images/testimonial2.jpg" alt="山田さん">
-              </div>
-              <div class="testimonial-info">
-                <h4>山田 恵理さん</h4>
-                <p>3歳&1歳ママ / 受講後6ヶ月</p>
-                <div class="testimonial-case">CASE 02</div>
-              </div>
-            </div>
-            <h3 class="testimonial-title">完全在宅で月7万円の安定収入！</h3>
-            <div class="testimonial-body">
-              <p>「子どもの送り迎えや急な発熱にも対応できる働き方が実現できました。お客様から"子どもの成長が楽しみになった"と言ってもらえることが何よりやりがいです。」</p>
-              <div class="testimonial-results">
-                <div class="testimonial-result">
-                  <div class="result-label">Before</div>
-                  <div class="result-value">月10時間</div>
-                </div>
-                <div class="testimonial-arrow">→</div>
-                <div class="testimonial-result result-after">
-                  <div class="result-label">After</div>
-                  <div class="result-value">月20時間</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-header">
-              <div class="testimonial-avatar">
-                <img src="assets/images/testimonial3.jpg" alt="田中さん">
-              </div>
-              <div class="testimonial-info">
-                <h4>田中 優子さん</h4>
-                <p>4歳児ママ / 受講後8ヶ月</p>
-                <div class="testimonial-case">CASE 03</div>
-              </div>
-            </div>
-            <h3 class="testimonial-title">発達支援教室を開業！月12万円達成</h3>
-            <div class="testimonial-body">
-              <p>「専門的な知識と資格を身につけたことで自信がつき、念願の教室を開くことができました。今では地域の子育て支援の中心的存在として活動しています。」</p>
-              <div class="testimonial-results">
-                <div class="testimonial-result">
-                  <div class="result-label">Before</div>
-                  <div class="result-value">月収 3万円</div>
-                </div>
-                <div class="testimonial-arrow">→</div>
-                <div class="testimonial-result result-after">
-                  <div class="result-label">After</div>
-                  <div class="result-value">月収 12万円</div>
-                </div>
-              </div>
-            </div>
+          <div class="testimonial-body">
+            <p>飲食店の接客だったのですが、妊娠がきっかけて「働き方を変えたい」と思い、夫の勧めでSHElikesに入会。ライティングを中心に勉強し、3ヶ月目にはお仕事を獲得できました。</p>
           </div>
         </div>
-        <div class="testimonial-nav">
-          <div class="nav-dot active"></div>
-          <div class="nav-dot"></div>
-          <div class="nav-dot"></div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-case">CASE 02</div>
+            <h3 class="testimonial-title">未経験から副業でも活躍する<br>動画クリエイターに</h3>
+          </div>
+          <div class="testimonial-body">
+            <p>特別なスキルも持っていなかったので、このままで将来大丈夫なのかなと漠然と不安を感じていました。さまざまなコースをつまみ食いしていくうちに、動画編集が好きだと気づきました。</p>
+          </div>
         </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-case">CASE 03</div>
+            <h3 class="testimonial-title">未経験から完全在宅の<br>フリーのWebデザイナーに</h3>
+          </div>
+          <div class="testimonial-body">
+            <p>一度会社を辞めて専業主婦になったのですが、もう一度復帰できる自信を失っていました。「1年後にデザインの仕事で生活する」と決めて、集中的に勉強し、半年後にはお仕事獲得もできました。</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-case">CASE 04</div>
+            <h3 class="testimonial-title">営業職から<br>月収2倍以上でマーケターに</h3>
+          </div>
+          <div class="testimonial-body">
+            <p>新卒時代からマーケターに憧れがあり、スキルを身につけたい、一緒に頑張る仲間がほしいと思いSHElikesに入会。SHElikesで学んだことを、当時の仕事で積極的に実践。マーケターとして転職できました。</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonials-cta">
+        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
       </div>
     </div>
   </section>
@@ -2217,206 +2239,215 @@
       let currentIndex = 0;
       const itemCount = sliderItems.length;
       
-      // スライダーを自動で動かす
-      function startSlider() {
-        return setInterval(() => {
-          currentIndex = (currentIndex + 1) % itemCount;
-          updateSlider();
-        }, 5000); // 5秒ごとに切り替え
-      }
-      
-      // スライダーの位置を更新
-      function updateSlider() {
-        // CSS アニメーションを一時停止
-        sliderTrack.style.animation = 'none';
+      if (sliderTrack && sliderDots.length && sliderItems.length) {
+        // スライダーを自動で動かす
+        function startSlider() {
+          return setInterval(() => {
+            currentIndex = (currentIndex + 1) % itemCount;
+            updateSlider();
+          }, 5000); // 5秒ごとに切り替え
+        }
         
-        // 手動位置更新
-        sliderTrack.style.transform = `translateX(-${currentIndex * 20}%)`;
-        
-        // アクティブなドットを更新
-        sliderDots.forEach((dot, index) => {
-          if (index === currentIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-        
-        // フォーカスアイテムのエフェクト
-        sliderItems.forEach((item, index) => {
-          if (index === currentIndex) {
-            item.classList.add('active-slide');
-          } else {
-            item.classList.remove('active-slide');
-          }
-        });
-        
-        // リフロー後にアニメーション再開
-        setTimeout(() => {
-          sliderTrack.style.animation = '';
-        }, 50);
-      }
-      
-      // ドットクリックでスライダー移動
-      sliderDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentIndex = index;
-          updateSlider();
+        // スライダーの位置を更新
+        function updateSlider() {
+          // CSS アニメーションを一時停止
+          sliderTrack.style.animation = 'none';
           
-          // 自動スライドをリセット
-          clearInterval(sliderInterval);
-          sliderInterval = startSlider();
-        });
-      });
-      
-      // スライダーを開始
-      let sliderInterval = startSlider();
-      
-      // スマホでのスワイプ機能
-      let touchStartX = 0;
-      let touchEndX = 0;
-      let isSwiping = false;
-      
-      const sliderContainer = document.querySelector('.slider-container');
-      const swipeIndicator = document.querySelector('.swipe-indicator');
-      
-      // 初回タッチでスワイプインジケーターを非表示
-      sliderContainer.addEventListener('touchstart', () => {
-        if (swipeIndicator && !isSwiping) {
+          // 手動位置更新
+          sliderTrack.style.transform = `translateX(-${currentIndex * 20}%)`;
+          
+          // アクティブなドットを更新
+          sliderDots.forEach((dot, index) => {
+            if (index === currentIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+          
+          // フォーカスアイテムのエフェクト
+          sliderItems.forEach((item, index) => {
+            if (index === currentIndex) {
+              item.classList.add('active-slide');
+            } else {
+              item.classList.remove('active-slide');
+            }
+          });
+          
+          // リフロー後にアニメーション再開
           setTimeout(() => {
-            swipeIndicator.style.opacity = '0';
-            swipeIndicator.style.visibility = 'hidden';
-          }, 1500);
-          isSwiping = true;
-        }
-      }, { once: true });
-      
-      sliderContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        
-        // タッチ中は自動アニメーション停止
-        sliderTrack.style.animationPlayState = 'paused';
-      }, false);
-      
-      sliderContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-        
-        // タッチ終了後にアニメーション再開
-        sliderTrack.style.animationPlayState = 'running';
-      }, false);
-      
-      function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-          // 左スワイプ（次へ）
-          currentIndex = (currentIndex + 1) % itemCount;
-        } else if (touchEndX > touchStartX + 50) {
-          // 右スワイプ（前へ）
-          currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            sliderTrack.style.animation = '';
+          }, 50);
         }
         
-        updateSlider();
+        // ドットクリックでスライダー移動
+        sliderDots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlider();
+            
+            // 自動スライドをリセット
+            clearInterval(sliderInterval);
+            sliderInterval = startSlider();
+          });
+        });
         
-        // 自動スライドをリセット
-        clearInterval(sliderInterval);
-        sliderInterval = startSlider();
+        // スライダーを開始
+        let sliderInterval = startSlider();
+        
+        // スマホでのスワイプ機能
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let isSwiping = false;
+        
+        const sliderContainer = document.querySelector('.slider-container');
+        const swipeIndicator = document.querySelector('.swipe-indicator');
+        
+        if (sliderContainer && swipeIndicator) {
+          // 初回タッチでスワイプインジケーターを非表示
+          sliderContainer.addEventListener('touchstart', () => {
+            if (!isSwiping) {
+              setTimeout(() => {
+                swipeIndicator.style.opacity = '0';
+                swipeIndicator.style.visibility = 'hidden';
+              }, 1500);
+              isSwiping = true;
+            }
+          }, { once: true });
+          
+          sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            
+            // タッチ中は自動アニメーション停止
+            sliderTrack.style.animationPlayState = 'paused';
+          }, false);
+          
+          sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            
+            // タッチ終了後にアニメーション再開
+            sliderTrack.style.animationPlayState = 'running';
+          }, false);
+          
+          function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+              // 左スワイプ（次へ）
+              currentIndex = (currentIndex + 1) % itemCount;
+            } else if (touchEndX > touchStartX + 50) {
+              // 右スワイプ（前へ）
+              currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            }
+            
+            updateSlider();
+            
+            // 自動スライドをリセット
+            clearInterval(sliderInterval);
+            sliderInterval = startSlider();
+          }
+        }
+        
+        // 初期状態で最初のスライドをアクティブにする
+        sliderItems[0].classList.add('active-slide');
       }
-      
-      // 初期状態で最初のスライドをアクティブにする
-      sliderItems[0].classList.add('active-slide');
     });
 
     // 協会紹介スライダーの実装
     document.addEventListener('DOMContentLoaded', function() {
       const sliderTrack = document.querySelector('.association-slider-track');
       const slides = document.querySelectorAll('.association-slide');
-      const dots = document.querySelectorAll('.slider-dot');
+      const dots = document.querySelectorAll('.association-slider-nav .slider-dot');
       const prevBtn = document.querySelector('.slider-nav-btn.prev');
       const nextBtn = document.querySelector('.slider-nav-btn.next');
-      let currentIndex = 0;
-      const slideCount = slides.length;
       
-      // スライダーの位置を更新する関数
-      function updateSlider() {
-        sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      if (sliderTrack && slides.length && dots.length && prevBtn && nextBtn) {
+        let currentIndex = 0;
+        const slideCount = slides.length;
         
-        // アクティブなドットを更新
-        dots.forEach((dot, index) => {
-          if (index === currentIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
-      }
-      
-      // 前へボタンのクリックイベント
-      prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-        updateSlider();
-      });
-      
-      // 次へボタンのクリックイベント
-      nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateSlider();
-      });
-      
-      // ドットクリックでスライド移動
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', function() {
-          currentIndex = index;
-          updateSlider();
-        });
-      });
-      
-      // タッチスワイプ対応
-      let touchStartX = 0;
-      let touchEndX = 0;
-      
-      const slider = document.querySelector('.association-slider');
-      
-      slider.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-      });
-      
-      slider.addEventListener('touchend', function(e) {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-      });
-      
-      function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-          // 左スワイプ（次へ）
-          currentIndex = (currentIndex + 1) % slideCount;
-          updateSlider();
-        } else if (touchEndX > touchStartX + 50) {
-          // 右スワイプ（前へ）
+        // スライダーの位置を更新する関数
+        function updateSlider() {
+          sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+          
+          // アクティブなドットを更新
+          dots.forEach((dot, index) => {
+            if (index === currentIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
+        }
+        
+        // 前へボタンのクリックイベント
+        prevBtn.addEventListener('click', function() {
           currentIndex = (currentIndex - 1 + slideCount) % slideCount;
           updateSlider();
-        }
-      }
-      
-      // 自動スライド切り替え
-      function startAutoSlide() {
-        return setInterval(() => {
+        });
+        
+        // 次へボタンのクリックイベント
+        nextBtn.addEventListener('click', function() {
           currentIndex = (currentIndex + 1) % slideCount;
           updateSlider();
-        }, 5000); // 5秒ごとに切り替え
+        });
+        
+        // ドットクリックでスライド移動
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', function() {
+            currentIndex = index;
+            updateSlider();
+          });
+        });
+        
+        // タッチスワイプ対応
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        const slider = document.querySelector('.association-slider');
+        
+        if (slider) {
+          slider.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+          });
+          
+          slider.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+          });
+          
+          function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+              // 左スワイプ（次へ）
+              currentIndex = (currentIndex + 1) % slideCount;
+              updateSlider();
+            } else if (touchEndX > touchStartX + 50) {
+              // 右スワイプ（前へ）
+              currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+              updateSlider();
+            }
+          }
+          
+          // 自動スライド切り替え
+          function startAutoSlide() {
+            return setInterval(() => {
+              currentIndex = (currentIndex + 1) % slideCount;
+              updateSlider();
+            }, 5000); // 5秒ごとに切り替え
+          }
+          
+          // 自動スライド開始
+          let autoSlideInterval = startAutoSlide();
+          
+          // スライダーにマウスオーバーしたら自動切り替えを停止
+          slider.addEventListener('mouseenter', function() {
+            clearInterval(autoSlideInterval);
+          });
+          
+          // スライダーからマウスが離れたら自動切り替えを再開
+          slider.addEventListener('mouseleave', function() {
+            autoSlideInterval = startAutoSlide();
+          });
+        }
       }
-      
-      // 自動スライド開始
-      let autoSlideInterval = startAutoSlide();
-      
-      // スライダーにマウスオーバーしたら自動切り替えを停止
-      slider.addEventListener('mouseenter', function() {
-        clearInterval(autoSlideInterval);
-      });
-      
-      // スライダーからマウスが離れたら自動切り替えを再開
-      slider.addEventListener('mouseleave', function() {
-        autoSlideInterval = startAutoSlide();
-      });
     });
   </script>
 
