@@ -337,59 +337,76 @@
 /* やりたいのに動けない理由セクション */
 .problem-statement {
   padding: 5rem 0;
-  background-color: #fff;
+  background-color: #fffaf9;
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-statement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1.5" fill="%23ffecf1" /></svg>');
+  background-size: 24px 24px;
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .problem-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
 }
 
 .problem-content {
   width: 100%;
-  max-width: 900px;
-  margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
 }
 
 .problem-statement .section-title {
-  font-size: 2.2rem;
-  font-weight: 700;
   color: #333;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 2.3rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  line-height: 1.3;
   position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
 }
 
 .problem-statement .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #ff85a2, #ff6b6b);
-  border-radius: 2px;
+  height: 3px;
+  background: linear-gradient(to right, #ff85a2, #ff6b6b);
+  border-radius: 3px;
 }
 
 .problem-intro {
+  color: #555;
   font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .problem-flex-container {
   display: flex;
   align-items: flex-start;
   gap: 3rem;
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto 3rem auto;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .problem-list {
@@ -400,6 +417,7 @@
   flex-direction: column;
   gap: 1.5rem;
   flex: 1;
+  max-width: 600px;
 }
 
 .problem-list li {
@@ -439,8 +457,8 @@
 }
 
 .problem-image-container {
-  flex: 0 0 45%;
-  max-width: 45%;
+  flex: 0 0 42%;
+  max-width: 42%;
 }
 
 .problem-image {
@@ -640,41 +658,18 @@
   /* やりたいのに動けない理由セクション */
   .problem-flex-container {
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
+  }
+  
+  .problem-list {
+    max-width: 90%;
+    order: 1;
   }
   
   .problem-image-container {
     max-width: 60%;
-    order: -1;
-  }
-  
-  .problem-statement .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .problem-statement .section-title,
-  .problem-intro {
-    text-align: center;
-  }
-  
-  /* 貴女の経験が輝く場所セクション */
-  .desire-content {
-    gap: 2rem;
-  }
-  
-  .desire-image-container {
-    max-width: 40%;
-  }
-  
-  .desire-quotes {
-    max-width: 60%;
-  }
-  
-  .conclusion-points {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    order: 2;
   }
 }
 
@@ -730,22 +725,16 @@
   
   .problem-intro {
     font-size: 1rem;
-  }
-  
-  .problem-flex-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .problem-image-container {
-    max-width: 80%;
-    margin: 0 auto;
-    order: 2;
+    margin-bottom: 2rem;
   }
   
   .problem-list {
     width: 100%;
-    order: 1;
+    max-width: 95%;
+  }
+  
+  .problem-image-container {
+    max-width: 70%;
   }
   
   .problem-icon {
@@ -756,29 +745,6 @@
   
   .problem-text {
     font-size: 0.95rem;
-  }
-  
-  /* 貴女の経験が輝く場所セクション */
-  .desire-intro-heading h2 {
-    font-size: 1.8rem;
-  }
-  
-  .desire-content {
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  .desire-image-container,
-  .desire-quotes {
-    max-width: 100%;
-  }
-  
-  .desire-conclusion {
-    padding: 2rem 1.5rem;
-  }
-  
-  .conclusion-text h3 {
-    font-size: 1.4rem;
   }
 }
 
@@ -857,10 +823,6 @@
   }
   
   /* やりたいのに動けない理由セクション */
-  .problem-content {
-    margin-bottom: 2rem;
-  }
-  
   .problem-statement .section-title {
     font-size: 1.6rem;
     margin-bottom: 1.2rem;
@@ -874,22 +836,21 @@
   
   .problem-intro {
     font-size: 0.95rem;
-    margin-bottom: 2rem;
-    padding: 0 0.5rem;
+    margin-bottom: 1.8rem;
+    padding: 0 1rem;
   }
   
   .problem-flex-container {
-    gap: 1.2rem;
-  }
-  
-  .problem-image-container {
-    max-width: 90%;
-    order: 2;
+    gap: 1.5rem;
   }
   
   .problem-list {
     gap: 1.2rem;
-    order: 1;
+    max-width: 100%;
+  }
+  
+  .problem-image-container {
+    max-width: 85%;
   }
   
   .problem-list li {
