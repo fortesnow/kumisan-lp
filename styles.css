@@ -385,11 +385,11 @@
 
 .problem-flex-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   width: 100%;
   max-width: 1000px;
-  margin-bottom: 3rem;
+  margin: 0 auto 3rem auto;
 }
 
 .problem-list {
@@ -439,7 +439,7 @@
 }
 
 .problem-image-container {
-  flex: 1;
+  flex: 0 0 45%;
   max-width: 45%;
 }
 
@@ -733,15 +733,19 @@
   }
   
   .problem-flex-container {
+    flex-direction: column;
     gap: 1.5rem;
   }
   
   .problem-image-container {
     max-width: 80%;
+    margin: 0 auto;
+    order: 2;
   }
   
   .problem-list {
     width: 100%;
+    order: 1;
   }
   
   .problem-icon {
@@ -880,10 +884,12 @@
   
   .problem-image-container {
     max-width: 90%;
+    order: 2;
   }
   
   .problem-list {
     gap: 1.2rem;
+    order: 1;
   }
   
   .problem-list li {
@@ -970,7 +976,7 @@
   .values-stance,
   .problem-statement,
   .desire-intro {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
   }
   
   /* コミュニティセクション */
@@ -1035,10 +1041,12 @@
   
   .problem-image-container {
     max-width: 100%;
+    margin: 0 auto 1rem;
   }
   
   .problem-list {
     gap: 1rem;
+    margin-bottom: 1.5rem;
   }
   
   .problem-list li {
@@ -1063,7 +1071,13 @@
   }
   
   .problem-cta {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .problem-cta .btn {
+    width: 100%;
+    max-width: 300px;
   }
   
   /* 貴女の経験が輝く場所セクション */
