@@ -64,12 +64,14 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin-bottom: 3rem;
 }
 
 .community-image-wrapper {
-  width: 100%;
-  border-radius: 20px;
+  max-width: 700px;
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 15px;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -88,17 +90,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .community-feature {
   background-color: white;
   border-radius: 15px;
-  padding: 1.5rem;
+  padding: 1.8rem;
+  text-align: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .community-feature:hover {
@@ -108,15 +108,15 @@
 
 .feature-icon {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   color: #ff6b6b;
+  margin-bottom: 1.2rem;
 }
 
 .feature-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: #333;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .feature-description {
@@ -612,6 +612,7 @@
 
 /* レスポンシブ対応 */
 @media (max-width: 992px) {
+  /* コミュニティセクション */
   .community-content {
     flex-direction: column;
   }
@@ -621,6 +622,13 @@
     margin: 0 auto 2rem;
   }
   
+  /* 価値観セクション */
+  .values-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* やりたいのに動けない理由セクション */
   .problem-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -635,13 +643,36 @@
     text-align: center;
   }
   
-  .values-cards {
-    grid-template-columns: repeat(2, 1fr);
+  /* 貴女の経験が輝く場所セクション */
+  .desire-content {
+    gap: 2rem;
+  }
+  
+  .desire-image-container {
+    max-width: 40%;
+  }
+  
+  .desire-quotes {
+    max-width: 60%;
+  }
+  
+  .conclusion-points {
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 767px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 4rem 0;
+  }
+  
+  /* コミュニティセクション */
   .community-headline {
     font-size: 1.5rem;
   }
@@ -653,8 +684,11 @@
   .community-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
+  /* 価値観セクション */
   .values-cards {
     grid-template-columns: 1fr;
     max-width: 500px;
@@ -674,6 +708,7 @@
     font-size: 1rem;
   }
   
+  /* やりたいのに動けない理由セクション */
   .problem-statement .section-title {
     font-size: 1.8rem;
   }
@@ -696,285 +731,12 @@
   .problem-text {
     font-size: 0.95rem;
   }
-}
-
-@media (max-width: 576px) {
-  .community-features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  
+  .problem-image-container {
+    max-width: 100%;
   }
   
-  .feature-icon {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-  }
-  
-  .feature-title {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .feature-description {
-    font-size: 0.9rem;
-  }
-  
-  .community-feature {
-    padding: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .benefit-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .benefit-icon {
-    margin: 0 0 1rem 0;
-  }
-  
-  .community-benefits {
-    padding: 0 15px;
-  }
-  
-  .testimonials-image-container {
-    padding: 0 15px;
-  }
-  
-  .slider-item {
-    min-width: 100%;
-    padding: 0 5px;
-  }
-  
-  .swipe-indicator {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    z-index: 10;
-    pointer-events: none;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-  }
-  
-  .struggle-bubble {
-    padding: 1.2rem 2rem;
-  }
-  
-  .struggle-bubble p {
-    font-size: 1.1rem;
-  }
-  
-  .reassurance-text {
-    font-size: 1rem;
-  }
-  
-  .problem-list li {
-    padding: 1rem;
-  }
-  
-  .problem-icon {
-    min-width: 40px;
-    height: 40px;
-    font-size: 1.1rem;
-  }
-  
-  .problem-text {
-    font-size: 0.9rem;
-  }
-  
-  .value-card {
-    padding: 1.5rem;
-  }
-  
-  .value-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-  
-  .value-card h3 {
-    font-size: 1.2rem;
-  }
-}
-
-/* 潜在的欲求セクション */
-.desire-intro {
-  padding: 5rem 0;
-  background-color: #fff;
-  position: relative;
-}
-
-.desire-intro-heading {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.desire-intro-heading h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0;
-  line-height: 1.3;
-  position: relative;
-  display: inline-block;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
-.desire-intro-heading h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(90deg, #ff85a2, #ff6b6b);
-  border-radius: 2px;
-}
-
-.desire-content {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.desire-image-container {
-  flex: 1;
-  max-width: 45%;
-}
-
-.desire-image {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.desire-quotes {
-  flex: 1;
-  max-width: 55%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.desire-quote {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.desire-quote:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-}
-
-.quote-mark {
-  position: absolute;
-  top: -15px;
-  left: 20px;
-  font-size: 2.5rem;
-  color: #ff6b6b;
-  opacity: 0.3;
-}
-
-.desire-quote p {
-  font-size: 1.05rem;
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
-.desire-quote p strong {
-  color: #ff6b6b;
-  font-weight: 600;
-}
-
-.desire-conclusion {
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  padding: 3rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
-
-.conclusion-text p {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 1rem;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
-.conclusion-text h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 2rem;
-  line-height: 1.4;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
-.conclusion-points {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.conclusion-point {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.point-icon {
-  font-size: 1.8rem;
-  color: #ff6b6b;
-}
-
-.conclusion-point p {
-  font-size: 1rem;
-  color: #555;
-  text-align: left;
-  margin: 0;
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-}
-
-/* 潜在的欲求セクションのレスポンシブ調整 */
-@media (max-width: 992px) {
-  .desire-content {
-    gap: 2rem;
-  }
-  
-  .desire-image-container {
-    max-width: 40%;
-  }
-  
-  .desire-quotes {
-    max-width: 60%;
-  }
-  
-  .conclusion-points {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-}
-
-@media (max-width: 767px) {
+  /* 貴女の経験が輝く場所セクション */
   .desire-intro-heading h2 {
     font-size: 1.8rem;
   }
@@ -995,5 +757,354 @@
   
   .conclusion-text h3 {
     font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 3rem 0;
+  }
+  
+  /* コミュニティセクション */
+  .community-headline {
+    font-size: 1.3rem;
+  }
+  
+  .community-subtext {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+  
+  .community-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .feature-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-description {
+    font-size: 0.9rem;
+  }
+  
+  .community-feature {
+    padding: 1.2rem;
+  }
+  
+  /* 価値観セクション */
+  .values-cards {
+    margin-top: 2rem;
+    gap: 1.2rem;
+  }
+  
+  .value-card {
+    padding: 1.2rem;
+  }
+  
+  .value-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .value-quote {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-points li {
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-content {
+    margin-bottom: 2rem;
+  }
+  
+  .problem-statement .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .problem-statement .section-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
+  .problem-intro {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+  
+  .problem-list {
+    gap: 1.2rem;
+  }
+  
+  .problem-list li {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  
+  .problem-icon {
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .problem-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .problem-cta {
+    margin-top: 2rem;
+  }
+  
+  /* 貴女の経験が輝く場所セクション */
+  .desire-intro-heading {
+    margin-bottom: 2rem;
+  }
+  
+  .desire-intro-heading h2 {
+    font-size: 1.6rem;
+  }
+  
+  .desire-intro-heading h2::after {
+    width: 80px;
+    height: 3px;
+  }
+  
+  .desire-content {
+    gap: 1.5rem;
+  }
+  
+  .desire-quote {
+    padding: 1.2rem;
+  }
+  
+  .quote-mark {
+    top: -10px;
+    font-size: 2rem;
+  }
+  
+  .desire-quote p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .desire-conclusion {
+    padding: 1.8rem 1.2rem;
+  }
+  
+  .conclusion-text p {
+    font-size: 1rem;
+  }
+  
+  .conclusion-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .conclusion-point {
+    gap: 0.8rem;
+  }
+  
+  .point-icon {
+    font-size: 1.5rem;
+  }
+  
+  .conclusion-point p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 2.5rem 0;
+  }
+  
+  /* コミュニティセクション */
+  .community-headline {
+    font-size: 1.2rem;
+  }
+  
+  .community-feature {
+    padding: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .feature-title {
+    font-size: 0.95rem;
+  }
+  
+  .feature-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  /* 価値観セクション */
+  .value-card {
+    padding: 1rem;
+  }
+  
+  .value-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1rem;
+  }
+  
+  .value-quote {
+    font-size: 0.85rem;
+  }
+  
+  .value-points li {
+    font-size: 0.85rem;
+    padding-left: 1.3rem;
+    line-height: 1.4;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-statement .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .problem-intro {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .problem-list {
+    gap: 1rem;
+  }
+  
+  .problem-list li {
+    padding: 1rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+  }
+  
+  .problem-icon {
+    min-width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .problem-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .problem-image {
+    border-radius: 12px;
+  }
+  
+  .problem-cta {
+    margin-top: 1.5rem;
+  }
+  
+  /* 貴女の経験が輝く場所セクション */
+  .desire-intro-heading h2 {
+    font-size: 1.4rem;
+  }
+  
+  .desire-content {
+    gap: 1.2rem;
+  }
+  
+  .desire-image-container {
+    margin: 0 auto;
+  }
+  
+  .desire-image {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  .desire-quotes {
+    gap: 1rem;
+  }
+  
+  .desire-quote {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .quote-mark {
+    top: -8px;
+    left: 10px;
+    font-size: 1.8rem;
+  }
+  
+  .desire-quote p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .desire-conclusion {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+  
+  .conclusion-text p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .conclusion-text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+  
+  .conclusion-points {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .conclusion-point {
+    gap: 0.6rem;
+  }
+  
+  .point-icon {
+    font-size: 1.3rem;
+  }
+  
+  .conclusion-point p {
+    font-size: 0.85rem;
+    line-height: 1.3;
   }
 }
