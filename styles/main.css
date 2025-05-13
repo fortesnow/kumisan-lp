@@ -726,6 +726,58 @@ header {
   background-color: var(--primary);
 }
 
+.problem-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+}
+
+/* 悩みカードスタイル */
+.worry-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.worry-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.worry-image {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.worry-text {
+  font-weight: 500;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .worry-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .worry-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .icon-bullets {
   list-style: none;
   max-width: 800px;
@@ -748,108 +800,6 @@ header {
   content: '😢';
   margin-right: 1rem;
   font-size: 1.5rem;
-}
-
-/* 独学リスクセクション */
-.risk-section {
-  background-color: #FFF5F7;
-  padding: 5rem 0;
-}
-
-.risk-timeline {
-  max-width: 800px;
-  margin: 0 auto 4rem;
-  position: relative;
-}
-
-.risk-timeline:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 25px;
-  width: 3px;
-  background: linear-gradient(to bottom, var(--primary), #e05858);
-}
-
-.risk-step {
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 80px;
-}
-
-.risk-step-number {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  border: 3px solid var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary);
-  z-index: 2;
-}
-
-.risk-step-content {
-  background-color: white;
-  padding: 1.5rem 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.risk-step-content h3 {
-  color: #e05858;
-  margin-bottom: 0.75rem;
-  font-size: 1.3rem;
-}
-
-.risk-step-content p {
-  line-height: 1.6;
-  color: var(--text-gray);
-}
-
-.risk-cta {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.risk-cta p {
-  font-size: 1.3rem;
-  color: var(--text-dark);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-@media (min-width: 768px) {
-  .risk-timeline:before {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .risk-step {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  .risk-step:nth-child(odd) {
-    padding-right: calc(50% + 2rem);
-  }
-  
-  .risk-step:nth-child(even) {
-    padding-left: calc(50% + 2rem);
-  }
-  
-  .risk-step-number {
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 /* ソリューションセクション */
