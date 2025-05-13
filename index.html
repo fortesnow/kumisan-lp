@@ -1254,15 +1254,44 @@
      }
      
      .community-image-wrapper {
-       flex: 0 0 40%;
-       min-width: 300px;
+       max-width: 800px;
+       margin: 0 auto 3rem;
+       overflow: hidden;
+       border-radius: 15px;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
      }
      
      .community-img {
        width: 100%;
        height: auto;
-       border-radius: 15px;
-       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+       display: block;
+       transition: transform 0.5s ease;
+     }
+     
+     .community-img:hover {
+       transform: scale(1.02);
+     }
+     
+     @media (max-width: 767px) {
+       .community-image-wrapper {
+         max-width: 100%;
+         margin-bottom: 2rem;
+         border-radius: 12px;
+       }
+     }
+     
+     @media (max-width: 576px) {
+       .community-image-wrapper {
+         margin-bottom: 1.5rem;
+         border-radius: 10px;
+       }
+     }
+     
+     @media (max-width: 480px) {
+       .community-image-wrapper {
+         margin-bottom: 1.2rem;
+         border-radius: 8px;
+       }
      }
      
      .community-features {
@@ -1998,6 +2027,11 @@
       <h2 class="section-title">"一人じゃない"から続けられる</h2>
       
       <div class="community-container">
+        <!-- 画像を追加 -->
+        <div class="community-image-wrapper">
+          <img src="assets/images/members.webp" alt="一緒に学ぶ仲間たち" class="community-img">
+        </div>
+        
         <div class="community-header">
           <p class="community-headline">子育て×キャリアを一緒に歩む<span class="highlight">仲間との繋がり</span>が継続の秘訣です</p>
           <p class="community-subtext">同じ志を持つ仲間と学び、支え合い、喜びも悩みも分かち合える環境が、長く続けられる理由です</p>
