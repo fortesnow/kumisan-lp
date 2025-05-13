@@ -1,0 +1,164 @@
+/* フォームスタイル */
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 説明会情報スタイル */
+.seminar-info {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.seminar-info h3 {
+  font-size: 1.5rem;
+  color: #5c6bc0;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.seminar-info h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #5c6bc0, #8e99f3);
+  border-radius: 3px;
+}
+
+.seminar-info p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.seminar-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.seminar-schedule li {
+  background-color: #fff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid #5c6bc0;
+}
+
+.seminar-schedule li:hover {
+  background-color: #f1f3f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* フォーム要素スタイル */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235c6bc0' d='M6 8.825L1.175 4 2.25 2.925l3.75 3.75 3.75-3.75L10.825 4 6 8.825z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #5c6bc0;
+  box-shadow: 0 0 0 2px rgba(92, 107, 192, 0.2);
+}
+
+.form-group select option {
+  padding: 10px;
+}
+
+/* セミナー日時選択用スタイル */
+#seminar-date option {
+  position: relative;
+}
+
+#seminar-date option[value^="2025"] {
+  font-weight: normal;
+}
+
+/* 残席表示のハイライト */
+#seminar-date option:not(:first-child) {
+  background-color: white;
+}
+
+#seminar-date option:nth-child(odd):not(:first-child) {
+  background-color: #f9fbff;
+}
+
+/* フォームのヒントテキスト */
+.form-hint {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+.required {
+  color: #e53935;
+  margin-left: 2px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .seminar-schedule {
+    grid-template-columns: 1fr;
+  }
+  
+  .seminar-info h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* 以下、既存のコードが続きます */
