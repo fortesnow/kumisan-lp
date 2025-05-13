@@ -33,17 +33,58 @@
   <!-- End Microsoft Clarity -->
    
    <style>
-     /* 共通フォントスタイル - 中段以降のセクション用 */
+     /* 共通フォントスタイル - 全体統一 */
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
      }
      
-     h2.section-title {
-       font-family: 'Shippori Mincho', serif;
+     h1, h2, h3, h4, h5, h6 {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       font-weight: 700;
      }
      
      p, li, .btn {
        font-family: 'M PLUS Rounded 1c', sans-serif;
+     }
+     
+     /* ヘッダーの新しいスタイル */
+     header {
+       padding: 15px 0;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: rgba(255, 255, 255, 0.95);
+       backdrop-filter: blur(5px);
+       z-index: 1000;
+       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+       transition: all 0.3s ease;
+     }
+     
+     .header-inner {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     
+     .logo {
+       text-align: center;
+     }
+     
+     .organization-name {
+       display: block;
+       font-size: 0.85rem;
+       color: #777;
+       letter-spacing: 0.05em;
+       margin-bottom: 3px;
+     }
+     
+     .course-name {
+       display: block;
+       font-size: 1.1rem;
+       font-weight: 600;
+       color: #333;
+       letter-spacing: 0.1em;
      }
      
      /* ヒーローセクションの新しいスタイル */
@@ -53,6 +94,7 @@
        background-color: #fff8f8;
        position: relative;
        overflow: hidden;
+       margin-top: 70px; /* ヘッダーの高さ分の余白 */
      }
      
      .hero .container {
@@ -88,7 +130,7 @@
      }
      
      .hero h1 {
-       font-family: 'Shippori Mincho', serif;
+       font-family: 'M PLUS Rounded 1c', serif;
        color: #333;
        font-size: 2.6rem;
        font-weight: 700;
@@ -221,6 +263,17 @@
      }
      
      @media (max-width: 768px) {
+       .hero-image-container {
+         height: 60vh;
+       }
+       
+       .hero-image {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+       }
+       
        .hero-content {
          margin-top: -30px;
          padding: 2rem 1.5rem;
@@ -240,17 +293,33 @@
      }
      
      @media (max-width: 480px) {
-       .testimonials-grid {
-         grid-template-columns: 1fr;
+       header {
+         padding: 10px 0;
        }
        
-       .hero h1 {
-         font-size: 1.8rem;
+       .organization-name {
+         font-size: 0.75rem;
+       }
+       
+       .course-name {
+         font-size: 1rem;
+       }
+       
+       .hero {
+         margin-top: 60px;
+       }
+       
+       .hero-image-container {
+         height: 50vh;
        }
        
        .hero-content {
          margin-top: -20px;
          padding: 1.5rem 1rem;
+       }
+       
+       .hero h1 {
+         font-size: 1.8rem;
        }
        
        .testimonial-card {
@@ -347,17 +416,17 @@
        margin-right: auto;
      }
      
+     /* 協会スライダーのスタイル */
      .association-slider-wrapper {
-       position: relative;
-       max-width: 1000px;
+       max-width: 900px;
        margin: 0 auto 3rem;
-       z-index: 1;
      }
      
      .association-slider {
-       overflow: hidden;
        border-radius: 15px;
-       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+       overflow: hidden;
+       position: relative;
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
      }
      
      .association-slider-track {
@@ -366,7 +435,7 @@
      }
      
      .association-slide {
-       min-width: 100%;
+       flex: 0 0 100%;
        position: relative;
      }
      
@@ -374,7 +443,6 @@
        width: 100%;
        height: auto;
        display: block;
-       object-fit: cover;
      }
      
      .association-caption {
@@ -382,54 +450,39 @@
        bottom: 0;
        left: 0;
        width: 100%;
-       background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-       color: white;
-       padding: 2rem 1.5rem 1.5rem;
+       background-color: rgba(255, 255, 255, 0.9);
+       padding: 1.5rem;
        text-align: center;
      }
      
      .association-caption h3 {
-       font-size: 1.5rem;
-       margin: 0 0 0.5rem;
+       font-size: 1.3rem;
        font-weight: 700;
-       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+       color: #333;
+       margin-bottom: 0.5rem;
      }
      
      .association-caption p {
        font-size: 1rem;
+       color: #555;
        margin: 0;
-       opacity: 0.9;
      }
      
      .association-slider-nav {
        display: flex;
        justify-content: center;
        align-items: center;
-       margin-top: 1rem;
-       position: relative;
+       padding: 1rem 0;
+       background-color: white;
      }
      
      .slider-nav-btn {
-       background-color: #ff85a2;
-       color: white;
+       background: none;
        border: none;
-       width: 36px;
-       height: 36px;
-       border-radius: 50%;
-       font-size: 1rem;
+       font-size: 1.5rem;
+       color: #ff85a2;
        cursor: pointer;
-       transition: all 0.3s ease;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       margin: 0 1rem;
-       box-shadow: 0 3px 8px rgba(255, 133, 162, 0.3);
-     }
-     
-     .slider-nav-btn:hover {
-       background-color: #ff6b6b;
-       transform: translateY(-2px);
-       box-shadow: 0 5px 12px rgba(255, 133, 162, 0.4);
+       padding: 0 1rem;
      }
      
      .slider-dots {
@@ -438,17 +491,16 @@
      }
      
      .slider-dot {
-       width: 10px;
-       height: 10px;
+       width: 12px;
+       height: 12px;
        border-radius: 50%;
-       background-color: #ccc;
+       background-color: #ddd;
        cursor: pointer;
-       transition: all 0.3s ease;
+       transition: background-color 0.3s ease;
      }
      
      .slider-dot.active {
        background-color: #ff85a2;
-       transform: scale(1.3);
      }
      
      .association-cta {
@@ -1154,7 +1206,6 @@
           <span class="organization-name">一般社団法人乳幼児発達推進協会</span>
           <span class="course-name">ベビー発育アドバイザー講座</span>
         </div>
-        <a href="#form" class="btn btn-primary header-cta">無料説明会に申し込む</a>
       </div>
     </div>
   </header>
