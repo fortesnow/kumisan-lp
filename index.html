@@ -2023,6 +2023,121 @@
        position: relative;
        display: inline-block;
      }
+
+     /* セクション区切りデザイン */
+     .section-divider {
+       position: relative;
+       width: 100%;
+       height: 100px;
+       margin-top: -1px;
+       margin-bottom: -1px;
+       z-index: 10;
+       overflow: hidden;
+     }
+
+     .wave-divider {
+       height: 150px;
+     }
+
+     .wave-divider svg {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       display: block;
+     }
+
+     .diagonal-divider {
+       position: relative;
+       height: 100px;
+     }
+
+     .diagonal-divider svg {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       display: block;
+     }
+
+     .curve-divider {
+       height: 120px;
+       position: relative;
+     }
+
+     .curve-divider svg {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       display: block;
+     }
+
+     .paper-fold-divider {
+       height: 100px;
+       position: relative;
+     }
+
+     .paper-fold-divider svg {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       display: block;
+     }
+
+     .cloud-divider {
+       height: 120px;
+       position: relative;
+     }
+
+     .cloud-divider svg {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       display: block;
+     }
+
+     /* レスポンシブ対応 */
+     @media (max-width: 768px) {
+       .section-divider {
+         height: 70px;
+       }
+       
+       .wave-divider {
+         height: 100px;
+       }
+       
+       .diagonal-divider,
+       .curve-divider,
+       .paper-fold-divider,
+       .cloud-divider {
+         height: 80px;
+       }
+     }
+
+     @media (max-width: 576px) {
+       .section-divider {
+         height: 50px;
+       }
+       
+       .wave-divider {
+         height: 70px;
+       }
+       
+       .diagonal-divider,
+       .curve-divider,
+       .paper-fold-divider,
+       .cloud-divider {
+         height: 60px;
+       }
+     }
    </style>
 </head>
 <body>
@@ -2060,6 +2175,20 @@
       </div>
     </div>
   </section>
+
+  <!-- ヒーローセクションと痛みポイントセクションの間の波型区切り -->
+  <div class="section-divider wave-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wave-gradient-1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#ffffff" />
+          <stop offset="60%" style="stop-color:#ffe5eb" />
+          <stop offset="100%" style="stop-color:#ff85a2" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,120 L1200,120 L1200,0 C1050,60 750,0 600,50 C450,100 150,30 0,0 Z" fill="url(#wave-gradient-1)"></path>
+    </svg>
+  </div>
 
   <!-- 痛みポイントセクション -->
   <section class="section pain gradient-section gradient-primary">
@@ -2127,6 +2256,20 @@
       </div>
     </div>
   </section>
+
+  <!-- 問題提起セクションと潜在的欲求セクションの間の紙がめくれたような区切り -->
+  <div class="section-divider paper-fold-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="fold-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fffaf9" />
+          <stop offset="50%" style="stop-color:#fff0f5" />
+          <stop offset="100%" style="stop-color:#fffafc" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,120 L1200,120 L1200,0 L0,0 C300,50 900,80 1200,30 L1200,0 Z" fill="url(#fold-gradient)"></path>
+    </svg>
+  </div>
 
   <!-- 潜在的欲求セクション（リデザイン） -->
   <section class="section desire-intro" id="desire-intro">
@@ -2218,6 +2361,20 @@
       </div>
     </div>
   </section>
+
+  <!-- 独学リスクセクションとベビー発育アドバイザー講座セクションの間の斜め区切り -->
+  <div class="section-divider diagonal-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="diagonal-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fff" />
+          <stop offset="50%" style="stop-color:#fff4f6" />
+          <stop offset="100%" style="stop-color:#fff8f8" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,30 C400,90 800,30 1200,70 L1200,0 Z" fill="url(#diagonal-gradient)"></path>
+    </svg>
+  </div>
 
   <!-- ベビー発育アドバイザー講座セクション -->
   <section class="solution-section">
@@ -2406,6 +2563,20 @@
     </div>
   </section>
 
+  <!-- 協会紹介セクションとベビー発育アドバイザーとしてできることセクションの間の円弧区切り -->
+  <div class="section-divider curve-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="curve-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fff8f8" />
+          <stop offset="50%" style="stop-color:#fff4f4" />
+          <stop offset="100%" style="stop-color:#fff" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,120 L1200,120 L1200,0 C900,90 300,90 0,0 Z" fill="url(#curve-gradient)"></path>
+    </svg>
+  </div>
+
   <!-- ベビー発育アドバイザーにできることセクション -->
   <section class="section advisor-features" id="advisor-features">
     <div class="container">
@@ -2420,28 +2591,28 @@
               <div class="advisor-caption">
                 <h3>発達段階に合わせた遊びの提案</h3>
                 <p>月齢・年齢に応じた発達を促す遊びや玩具の選び方、適切な関わり方を提案し、子どもの成長をサポートします。</p>
-              </div>
+            </div>
             </div>
             <div class="advisor-slide">
               <img src="assets/images/advisor_observe.png" alt="発達の気になるポイントの専門的観察" class="advisor-image">
               <div class="advisor-caption">
                 <h3>発達の気になるポイントの専門的観察</h3>
                 <p>専門的な知識をもとに子どもの発達状況を観察し、必要に応じて早期支援や専門機関への橋渡しをします。</p>
-              </div>
+            </div>
             </div>
             <div class="advisor-slide">
               <img src="assets/images/advisor_support.png" alt="保護者の子育て不安の軽減" class="advisor-image">
               <div class="advisor-caption">
                 <h3>保護者の子育て不安の軽減</h3>
                 <p>科学的根拠に基づく子育てアドバイスを提供し、「これでいいのかな」という不安を解消します。</p>
-              </div>
             </div>
+          </div>
             <div class="advisor-slide">
               <img src="assets/images/advisor_versatile.png" alt="多様な子育て支援の場での活躍" class="advisor-image">
               <div class="advisor-caption">
                 <h3>多様な子育て支援の場での活躍</h3>
                 <p>児童館、子育て支援センター、保育園など様々な場所で知識を活かした支援活動ができます。</p>
-              </div>
+          </div>
             </div>
             <div class="advisor-slide">
               <img src="assets/images/advisor_online.png" alt="オンラインでの相談・アドバイス" class="advisor-image">
@@ -2453,15 +2624,15 @@
           </div>
           <div class="advisor-slider-nav">
             <button class="slider-nav-btn prev" aria-label="前へ">&#10094;</button>
-            <div class="slider-dots">
-              <span class="slider-dot active" data-index="0"></span>
-              <span class="slider-dot" data-index="1"></span>
-              <span class="slider-dot" data-index="2"></span>
-              <span class="slider-dot" data-index="3"></span>
-              <span class="slider-dot" data-index="4"></span>
-            </div>
-            <button class="slider-nav-btn next" aria-label="次へ">&#10095;</button>
+          <div class="slider-dots">
+            <span class="slider-dot active" data-index="0"></span>
+            <span class="slider-dot" data-index="1"></span>
+            <span class="slider-dot" data-index="2"></span>
+            <span class="slider-dot" data-index="3"></span>
+            <span class="slider-dot" data-index="4"></span>
           </div>
+            <button class="slider-nav-btn next" aria-label="次へ">&#10095;</button>
+        </div>
         </div>
       </div>
       
@@ -2476,7 +2647,7 @@
     <div class="container">
       <div class="reason-heading">
         <span class="reason-label">Reason</span>
-        <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
+      <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
       </div>
       
       <div class="reason-items">
@@ -2486,9 +2657,9 @@
             <h3 class="reason-title">子育ての大変だった経験が役に立つ</h3>
             <p class="reason-quote">「自分が子育てで苦しかったとき、誰かに寄り添ってほしかった」</p>
             <ul class="reason-points">
-              <li>今度は"私が"寄り添う側になりたいという気持ち</li>
-              <li>辛かった自分の体験が誰かのためになる喜び</li>
-            </ul>
+            <li>今度は"私が"寄り添う側になりたいという気持ち</li>
+            <li>辛かった自分の体験が誰かのためになる喜び</li>
+          </ul>
           </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
@@ -2510,9 +2681,9 @@
             <h3 class="reason-title">大切なわが子のためにしてきた＆学んだことが無駄にならない</h3>
             <p class="reason-quote">「我が子の笑顔を守るために学んだことが、他のママや子にも役立つ」</p>
             <ul class="reason-points">
-              <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
-              <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
-            </ul>
+            <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
+            <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
+          </ul>
           </div>
         </div>
         
@@ -2522,9 +2693,9 @@
             <h3 class="reason-title">自分の価値を感じたい</h3>
             <p class="reason-quote">「ただの"ママ"じゃなくて、"社会とつながる私"でいたい」</p>
             <ul class="reason-points">
-              <li>何のスキルもないと思っていた自分でもできることがある！</li>
-              <li>誰かに必要とされる存在でいたい</li>
-            </ul>
+            <li>何のスキルもないと思っていた自分でもできることがある！</li>
+            <li>誰かに必要とされる存在でいたい</li>
+          </ul>
           </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
@@ -2546,9 +2717,9 @@
             <h3 class="reason-title">誰かの笑顔と感謝に直結するやりがい</h3>
             <p class="reason-quote">「子どもができるようになる瞬間に立ち会うのが、心からうれしい」</p>
             <ul class="reason-points">
-              <li>日々の活動が喜びや感謝の言葉につながる</li>
-              <li>目の前で変化が見られる達成感がある</li>
-            </ul>
+            <li>日々の活動が喜びや感謝の言葉につながる</li>
+            <li>目の前で変化が見られる達成感がある</li>
+          </ul>
           </div>
         </div>
         
@@ -2558,10 +2729,10 @@
             <h3 class="reason-title">ママとしてだけじゃなく"私"としての人生を生きたい</h3>
             <p class="reason-quote">「子育ても大切だけど、"私"自身の人生も大切にしたい」</p>
             <ul class="reason-points">
-              <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
-              <li>好きなことで、社会と関わり続けたいという希望</li>
-            </ul>
-          </div>
+            <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
+            <li>好きなことで、社会と関わり続けたいという希望</li>
+          </ul>
+        </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
               <img src="assets/images/stance5.jpg" alt="私としての人生" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>私としての人生画像</text></svg>'">
@@ -2689,6 +2860,20 @@
       </div>
     </div>
   </section>
+
+  <!-- コミュニティセクションとフォームセクションの間の雲のような区切り -->
+  <div class="section-divider cloud-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="cloud-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fffafa" />
+          <stop offset="50%" style="stop-color:#fff6f6" />
+          <stop offset="100%" style="stop-color:#fff" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,120 L1200,120 L1200,0 C1000,60 800,0 600,30 C400,60 200,0 0,30 L0,0 Z" fill="url(#cloud-gradient)"></path>
+    </svg>
+  </div>
 
   <!-- フォームセクション -->
   <section class="section" id="form">
@@ -3053,21 +3238,21 @@
       const nextBtn = document.querySelector('#advisor-features .slider-nav-btn.next');
       
       if (sliderTrack && slides.length && dots.length && prevBtn && nextBtn) {
-        let currentIndex = 0;
+      let currentIndex = 0;
         const slideCount = slides.length;
         
         // スライダーの位置を更新する関数
-        function updateSlider() {
+      function updateSlider() {
           sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-          
-          // アクティブなドットを更新
+        
+        // アクティブなドットを更新
           dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-              dot.classList.add('active');
-            } else {
-              dot.classList.remove('active');
-            }
-          });
+          if (index === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
         }
         
         // 前へボタンのクリックイベント
@@ -3085,36 +3270,36 @@
         // ドットクリックでスライド移動
         dots.forEach((dot, index) => {
           dot.addEventListener('click', function() {
-            currentIndex = index;
-            updateSlider();
-          });
+          currentIndex = index;
+          updateSlider();
         });
-        
+      });
+      
         // タッチスワイプ対応
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
         const slider = document.querySelector('.advisor-slider');
-        
+      
         if (slider) {
           slider.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
+          touchStartX = e.changedTouches[0].screenX;
           });
-          
+        
           slider.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
+          touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
           });
           
           function handleSwipe() {
-            if (touchEndX < touchStartX - 50) {
-              // 左スワイプ（次へ）
+          if (touchEndX < touchStartX - 50) {
+            // 左スワイプ（次へ）
               currentIndex = (currentIndex + 1) % slideCount;
               updateSlider();
-            } else if (touchEndX > touchStartX + 50) {
-              // 右スワイプ（前へ）
+          } else if (touchEndX > touchStartX + 50) {
+            // 右スワイプ（前へ）
               currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-              updateSlider();
+          updateSlider();
             }
           }
           
@@ -3122,7 +3307,7 @@
           function startAutoSlide() {
             return setInterval(() => {
               currentIndex = (currentIndex + 1) % slideCount;
-              updateSlider();
+        updateSlider();
             }, 5000); // 5秒ごとに切り替え
           }
           
