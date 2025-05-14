@@ -1488,6 +1488,145 @@
        margin-bottom: 1rem;
        position: relative;
      }
+     
+     @media (max-width: 576px) {
+       .community-image-wrapper {
+         margin-bottom: 1.2rem;
+         border-radius: 8px;
+       }
+     }
+     
+     /* 新しいコミュニティセクションスタイル */
+     .community-section {
+       padding: 5rem 0;
+       background-color: #fffafa;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .sakura-bg {
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><path d="M50,30 Q60,5 70,30 T90,30 Q115,20 90,40 T90,60 Q80,85 70,60 T50,60 Q25,70 50,40 Z" fill="%23ffebf1" opacity="0.6" transform="rotate(15)"/></svg>');
+       background-size: 200px;
+       opacity: 0.5;
+       z-index: 0;
+       pointer-events: none;
+     }
+     
+     .community-section .section-title {
+       font-family: 'Noto Sans JP', sans-serif;
+       font-size: 2.3rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 2rem;
+       text-align: center;
+       position: relative;
+       z-index: 1;
+     }
+     
+     .community-description {
+       font-size: 1.1rem;
+       color: #555;
+       text-align: center;
+       max-width: 800px;
+       margin: 0 auto 2.5rem;
+       position: relative;
+       z-index: 1;
+     }
+     
+     .community-cards {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 1.5rem;
+       margin: 3rem 0;
+       position: relative;
+       z-index: 1;
+     }
+     
+     .community-card {
+       background-color: #fff;
+       border-radius: 10px;
+       padding: 2rem 1.5rem;
+       text-align: center;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+     
+     .community-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     }
+     
+     .community-card-icon {
+       width: 80px;
+       height: 80px;
+       margin: 0 auto 1.5rem;
+     }
+     
+     .community-card-icon img {
+       width: 100%;
+       height: 100%;
+       object-fit: contain;
+     }
+     
+     .community-card-title {
+       font-size: 1.2rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 1rem;
+     }
+     
+     .community-card-text {
+       font-size: 0.95rem;
+       color: #666;
+       line-height: 1.6;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 992px) {
+       .community-cards {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1.2rem;
+       }
+     }
+     
+     @media (max-width: 576px) {
+       .community-section {
+         padding: 3rem 0;
+       }
+       
+       .community-section .section-title {
+         font-size: 1.8rem;
+       }
+       
+       .community-description {
+         font-size: 1rem;
+         margin-bottom: 2rem;
+       }
+       
+       .community-cards {
+         grid-template-columns: 1fr;
+         gap: 1rem;
+       }
+       
+       .community-card {
+         padding: 1.5rem;
+       }
+       
+       .community-card-icon {
+         width: 60px;
+         height: 60px;
+         margin-bottom: 1rem;
+       }
+       
+       .community-card-title {
+         font-size: 1.1rem;
+       }
+     }
    </style>
 </head>
 <body>
@@ -2080,48 +2219,50 @@
 
   <!-- コミュニティセクション -->
   <section class="section community-section" id="community">
-    <div class="floating-shape floating-shape-1"></div>
-    <div class="floating-shape floating-shape-2"></div>
+    <div class="sakura-bg"></div>
     <div class="container">
-      <h2 class="section-title">"一人じゃない"から続けられる</h2>
+      <h2 class="section-title">子育て×キャリアを一緒に歩む仲間との<br>繋がりが継続の秘訣です</h2>
       
       <div class="community-container">
+        <p class="community-description">同じ志を持つ仲間と共に支え合い、喜びも悩みも分かち合える環境が、長く続ける力に繋がります。</p>
+        
         <!-- 画像を追加 -->
         <div class="community-image-wrapper">
           <img src="assets/images/members.webp" alt="一緒に学ぶ仲間たち" class="community-img">
         </div>
         
-        <div class="community-header">
-          <p class="community-headline">子育て×キャリアを一緒に歩む<span class="highlight">仲間との繋がり</span>が継続の秘訣です</p>
-          <p class="community-subtext">同じ志を持つ仲間と学び、支え合い、喜びも悩みも分かち合える環境が、長く続けられる理由です</p>
-        </div>
-        
-        <div class="community-content">
-          <!-- 画像は削除し、コンテンツを2カラムのカードレイアウトに変更 -->
-          <div class="community-features-grid">
-            <div class="community-feature">
-              <div class="feature-icon">👨‍👩‍👧‍👦</div>
-              <h3 class="feature-title">仲間との交流</h3>
-              <p class="feature-description">同じ志を持つママたちとの出会いで、孤独な奮闘から解放されます。お互いの経験や知識を共有し、共に成長できる関係を築けます。</p>
+        <!-- 4つのカードを追加 -->
+        <div class="community-cards">
+          <div class="community-card">
+            <div class="community-card-icon">
+              <img src="assets/images/icon-community.svg" alt="仲間との交流" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;70&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;12&quot; fill=&quot;%23f8c4c4&quot;/></svg>'">
             </div>
-            
-            <div class="community-feature">
-              <div class="feature-icon">🌟</div>
-              <h3 class="feature-title">モチベーション維持</h3>
-              <p class="feature-description">一人では続かないことも、仲間がいると頑張れる。日々の小さな成功体験を共有し、長く続けるための原動力になります。</p>
+            <h3 class="community-card-title">仲間との交流</h3>
+            <p class="community-card-text">同じ悩みを持つママたちと出会い、定期的な情報交換を行えます</p>
+          </div>
+          
+          <div class="community-card">
+            <div class="community-card-icon">
+              <img src="assets/images/icon-motivation.svg" alt="モチベーション継続" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><polygon points=&quot;50,10 61,35 90,35 67,55 75,80 50,65 25,80 33,55 10,35 39,35&quot; fill=&quot;%23f7b05f&quot;/></svg>'">
             </div>
-            
-            <div class="community-feature">
-              <div class="feature-icon">💼</div>
-              <h3 class="feature-title">ビジネスコラボ</h3>
-              <p class="feature-description">コミュニティ内で協力して企画を実施したり、お互いの強みを活かした共同プロジェクトも生まれています。</p>
+            <h3 class="community-card-title">モチベーション継続</h3>
+            <p class="community-card-text">励まし合える仲間がいることで、継続的にもモチベーションを保てます</p>
+          </div>
+          
+          <div class="community-card">
+            <div class="community-card-icon">
+              <img src="assets/images/icon-collaboration.svg" alt="ビジネスコラボ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;20&quot; y=&quot;30&quot; width=&quot;60&quot; height=&quot;40&quot; rx=&quot;5&quot; fill=&quot;%23e4a0a0&quot;/><rect x=&quot;30&quot; y=&quot;20&quot; width=&quot;40&quot; height=&quot;10&quot; rx=&quot;3&quot; fill=&quot;%23e4a0a0&quot;/></svg>'">
             </div>
-            
-            <div class="community-feature">
-              <div class="feature-icon">📱</div>
-              <h3 class="feature-title">オンライン相談</h3>
-              <p class="feature-description">困ったときはいつでも質問できるオンラインコミュニティで、迅速に悩みを解決できる安心感があります。</p>
+            <h3 class="community-card-title">ビジネスコラボ</h3>
+            <p class="community-card-text">コミュニティ内で知り合った先輩同士で、自分の事業と様々プロジェクトも支えます</p>
+          </div>
+          
+          <div class="community-card">
+            <div class="community-card-icon">
+              <img src="assets/images/icon-online.svg" alt="オンライン相談" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;15&quot; y=&quot;20&quot; width=&quot;70&quot; height=&quot;60&quot; rx=&quot;5&quot; fill=&quot;%238b85c1&quot;/><rect x=&quot;25&quot; y=&quot;30&quot; width=&quot;50&quot; height=&quot;30&quot; rx=&quot;3&quot; fill=&quot;white&quot;/></svg>'">
             </div>
+            <h3 class="community-card-title">オンライン相談</h3>
+            <p class="community-card-text">オンラインコミュニティですので、子育てや悩み事について気軽に相談できます</p>
           </div>
         </div>
         
