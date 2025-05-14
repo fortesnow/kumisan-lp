@@ -1627,6 +1627,247 @@
          font-size: 1.1rem;
        }
      }
+     
+     /* 価値観とスタンスセクション */
+     .values-stance {
+       padding: 6rem 0;
+       background-color: #fff;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .reason-heading {
+       text-align: center;
+       margin-bottom: 5rem;
+       position: relative;
+     }
+     
+     .reason-label {
+       display: block;
+       font-family: 'Noto Sans JP', cursive;
+       font-size: 2.5rem;
+       color: #ff85a2;
+       margin-bottom: 1rem;
+       font-weight: 300;
+     }
+     
+     .values-stance .section-title {
+       font-family: 'Noto Sans JP', sans-serif;
+       font-size: 2.2rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 0;
+     }
+     
+     .reason-items {
+       display: flex;
+       flex-direction: column;
+       gap: 6rem;
+     }
+     
+     .reason-item {
+       display: flex;
+       align-items: center;
+       gap: 4rem;
+       width: 100%;
+       max-width: 100%;
+       margin: 0 auto;
+       background: none;
+       box-shadow: none;
+       padding: 0;
+     }
+     
+     .reason-item.reverse {
+       flex-direction: row-reverse;
+     }
+     
+     .reason-content {
+       flex: 1;
+       padding-right: 2rem;
+     }
+     
+     .reason-item.reverse .reason-content {
+       padding-right: 0;
+       padding-left: 2rem;
+     }
+     
+     .reason-number {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       font-size: 4.5rem;
+       font-weight: 700;
+       color: #ff85a2;
+       line-height: 1;
+       margin-bottom: 1.5rem;
+       position: relative;
+       display: inline-block;
+     }
+     
+     .reason-title {
+       font-family: 'Noto Sans JP', sans-serif;
+       font-size: 1.5rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 1.5rem;
+     }
+     
+     .reason-quote {
+       font-size: 1.1rem;
+       color: #555;
+       margin-bottom: 1.5rem;
+       font-weight: 500;
+       line-height: 1.6;
+     }
+     
+     .reason-points {
+       list-style: none;
+       padding-left: 0;
+       margin-bottom: 0;
+     }
+     
+     .reason-points li {
+       position: relative;
+       font-size: 1rem;
+       color: #555;
+       padding-left: 1.5rem;
+       margin-bottom: 0.8rem;
+       line-height: 1.6;
+     }
+     
+     .reason-points li:before {
+       content: "";
+       position: absolute;
+       left: 0;
+       top: 0.5rem;
+       width: 0.5rem;
+       height: 0.5rem;
+       background-color: #ff85a2;
+       border-radius: 50%;
+     }
+     
+     .reason-image-wrap {
+       flex: 1;
+       position: relative;
+       margin: 0;
+     }
+     
+     .reason-image {
+       width: 100%;
+       height: auto;
+       aspect-ratio: 4/3;
+       border-radius: 0;
+       overflow: hidden;
+       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+     }
+     
+     .reason-image img {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+     }
+     
+     .reason-accent-line {
+       position: absolute;
+       bottom: -15px;
+       right: -15px;
+       width: 65%;
+       height: 40px;
+       background: repeating-linear-gradient(
+         -45deg,
+         #ff85a2,
+         #ff85a2 8px,
+         transparent 8px,
+         transparent 16px
+       );
+       z-index: -1;
+     }
+     
+     .reason-item.reverse .reason-accent-line {
+       right: auto;
+       left: -15px;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 992px) {
+       .reason-item {
+         flex-direction: column;
+         gap: 3rem;
+       }
+       
+       .reason-item.reverse {
+         flex-direction: column;
+       }
+       
+       .reason-content,
+       .reason-item.reverse .reason-content {
+         padding: 0;
+       }
+       
+       .reason-image-wrap {
+         width: 100%;
+       }
+       
+       .reason-accent-line {
+         width: 50%;
+       }
+     }
+     
+     @media (max-width: 768px) {
+       .values-stance {
+         padding: 4rem 0;
+       }
+       
+       .reason-label {
+         font-size: 2rem;
+       }
+       
+       .values-stance .section-title {
+         font-size: 1.8rem;
+       }
+       
+       .reason-items {
+         gap: 4rem;
+       }
+       
+       .reason-number {
+         font-size: 3rem;
+       }
+       
+       .reason-title {
+         font-size: 1.3rem;
+       }
+     }
+     
+     @media (max-width: 576px) {
+       .reason-label {
+         font-size: 1.8rem;
+       }
+       
+       .values-stance .section-title {
+         font-size: 1.5rem;
+       }
+       
+       .reason-number {
+         font-size: 2.5rem;
+       }
+       
+       .reason-title {
+         font-size: 1.2rem;
+       }
+       
+       .reason-quote {
+         font-size: 1rem;
+       }
+     }
+     
+     .pain-solutions-title {
+       font-family: 'Noto Sans JP', sans-serif;
+       font-size: 2.3rem;
+       font-weight: 700;
+       color: #333;
+       margin-bottom: 1.5rem;
+       position: relative;
+       display: inline-block;
+     }
    </style>
 </head>
 <body>
@@ -2101,56 +2342,100 @@
   <!-- 価値観とスタンスセクション -->
   <section class="section values-stance gradient-section gradient-light" id="values">
     <div class="container">
-      <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
+      <div class="reason-heading">
+        <span class="reason-label">Reason</span>
+        <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
+      </div>
       
-      <div class="values-cards">
-        <div class="value-card">
-          <div class="value-icon">👶</div>
-          <h3>子育ての大変だった経験が役に立つ</h3>
-          <p class="value-quote">「自分が子育てで苦しかったとき、誰かに寄り添ってほしかった」</p>
-          <ul class="value-points">
-            <li>今度は"私が"寄り添う側になりたいという気持ち</li>
-            <li>辛かった自分の体験が誰かのためになる喜び</li>
-          </ul>
+      <div class="reason-items">
+        <div class="reason-item">
+          <div class="reason-content">
+            <div class="reason-number">01</div>
+            <h3 class="reason-title">子育ての大変だった経験が役に立つ</h3>
+            <p class="reason-quote">「自分が子育てで苦しかったとき、誰かに寄り添ってほしかった」</p>
+            <ul class="reason-points">
+              <li>今度は"私が"寄り添う側になりたいという気持ち</li>
+              <li>辛かった自分の体験が誰かのためになる喜び</li>
+            </ul>
+          </div>
+          <div class="reason-image-wrap">
+            <div class="reason-image">
+              <img src="assets/images/stance1.jpg" alt="子育ての経験が役に立つ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>子育ての経験画像</text></svg>'">
+            </div>
+            <div class="reason-accent-line"></div>
+          </div>
         </div>
         
-        <div class="value-card">
-          <div class="value-icon">💖</div>
-          <h3>大切なわが子のためにしてきた＆学んだことが無駄にならない</h3>
-          <p class="value-quote">「我が子の笑顔を守るために学んだことが、他のママや子にも役立つ」</p>
-          <ul class="value-points">
-            <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
-            <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
-          </ul>
+        <div class="reason-item reverse">
+          <div class="reason-image-wrap">
+            <div class="reason-image">
+              <img src="assets/images/stance2.jpg" alt="わが子のために学んだこと" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>学んだこと画像</text></svg>'">
+            </div>
+            <div class="reason-accent-line"></div>
+          </div>
+          <div class="reason-content">
+            <div class="reason-number">02</div>
+            <h3 class="reason-title">大切なわが子のためにしてきた＆学んだことが無駄にならない</h3>
+            <p class="reason-quote">「我が子の笑顔を守るために学んだことが、他のママや子にも役立つ」</p>
+            <ul class="reason-points">
+              <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
+              <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
+            </ul>
+          </div>
         </div>
         
-        <div class="value-card">
-          <div class="value-icon">✨</div>
-          <h3>自分の価値を感じたい</h3>
-          <p class="value-quote">「ただの"ママ"じゃなくて、"社会とつながる私"でいたい」</p>
-          <ul class="value-points">
-            <li>何のスキルもないと思っていた自分でもできることがある！</li>
-            <li>誰かに必要とされる存在でいたい</li>
-          </ul>
+        <div class="reason-item">
+          <div class="reason-content">
+            <div class="reason-number">03</div>
+            <h3 class="reason-title">自分の価値を感じたい</h3>
+            <p class="reason-quote">「ただの"ママ"じゃなくて、"社会とつながる私"でいたい」</p>
+            <ul class="reason-points">
+              <li>何のスキルもないと思っていた自分でもできることがある！</li>
+              <li>誰かに必要とされる存在でいたい</li>
+            </ul>
+          </div>
+          <div class="reason-image-wrap">
+            <div class="reason-image">
+              <img src="assets/images/stance3.jpg" alt="自分の価値を感じる" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>自分の価値画像</text></svg>'">
+            </div>
+            <div class="reason-accent-line"></div>
+          </div>
         </div>
         
-        <div class="value-card">
-          <div class="value-icon">😊</div>
-          <h3>誰かの笑顔と感謝に直結するやりがい</h3>
-          <p class="value-quote">「子どもができるようになる瞬間に立ち会うのが、心からうれしい」</p>
-          <ul class="value-points">
-            <li>日々の活動が喜びや感謝の言葉につながる</li>
-            <li>目の前で変化が見られる達成感がある</li>
-          </ul>
+        <div class="reason-item reverse">
+          <div class="reason-image-wrap">
+            <div class="reason-image">
+              <img src="assets/images/stance4.jpg" alt="やりがいと笑顔" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'">
+            </div>
+            <div class="reason-accent-line"></div>
+          </div>
+          <div class="reason-content">
+            <div class="reason-number">04</div>
+            <h3 class="reason-title">誰かの笑顔と感謝に直結するやりがい</h3>
+            <p class="reason-quote">「子どもができるようになる瞬間に立ち会うのが、心からうれしい」</p>
+            <ul class="reason-points">
+              <li>日々の活動が喜びや感謝の言葉につながる</li>
+              <li>目の前で変化が見られる達成感がある</li>
+            </ul>
+          </div>
         </div>
         
-        <div class="value-card">
-          <div class="value-icon">🌱</div>
-          <h3>ママとしてだけじゃなく"私"としての人生を生きたい</h3>
-          <ul class="value-points">
-            <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
-            <li>好きなことで、社会と関わり続けたいという希望</li>
-          </ul>
+        <div class="reason-item">
+          <div class="reason-content">
+            <div class="reason-number">05</div>
+            <h3 class="reason-title">ママとしてだけじゃなく"私"としての人生を生きたい</h3>
+            <p class="reason-quote">「子育ても大切だけど、"私"自身の人生も大切にしたい」</p>
+            <ul class="reason-points">
+              <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
+              <li>好きなことで、社会と関わり続けたいという希望</li>
+            </ul>
+          </div>
+          <div class="reason-image-wrap">
+            <div class="reason-image">
+              <img src="assets/images/stance5.jpg" alt="私としての人生" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>私としての人生画像</text></svg>'">
+            </div>
+            <div class="reason-accent-line"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -2236,27 +2521,27 @@
           <div class="community-card">
             <div class="community-card-icon">
               <img src="assets/images/icon-community.svg" alt="仲間との交流" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;70&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;12&quot; fill=&quot;%23f8c4c4&quot;/></svg>'">
-            </div>
+        </div>
             <h3 class="community-card-title">仲間との交流</h3>
             <p class="community-card-text">同じ悩みを持つママたちと出会い、定期的な情報交換を行えます</p>
-          </div>
-          
+            </div>
+            
           <div class="community-card">
             <div class="community-card-icon">
               <img src="assets/images/icon-motivation.svg" alt="モチベーション継続" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><polygon points=&quot;50,10 61,35 90,35 67,55 75,80 50,65 25,80 33,55 10,35 39,35&quot; fill=&quot;%23f7b05f&quot;/></svg>'">
             </div>
             <h3 class="community-card-title">モチベーション継続</h3>
             <p class="community-card-text">励まし合える仲間がいることで、継続的にもモチベーションを保てます</p>
-          </div>
-          
+            </div>
+            
           <div class="community-card">
             <div class="community-card-icon">
               <img src="assets/images/icon-collaboration.svg" alt="ビジネスコラボ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;20&quot; y=&quot;30&quot; width=&quot;60&quot; height=&quot;40&quot; rx=&quot;5&quot; fill=&quot;%23e4a0a0&quot;/><rect x=&quot;30&quot; y=&quot;20&quot; width=&quot;40&quot; height=&quot;10&quot; rx=&quot;3&quot; fill=&quot;%23e4a0a0&quot;/></svg>'">
             </div>
             <h3 class="community-card-title">ビジネスコラボ</h3>
             <p class="community-card-text">コミュニティ内で知り合った先輩同士で、自分の事業と様々プロジェクトも支えます</p>
-          </div>
-          
+            </div>
+            
           <div class="community-card">
             <div class="community-card-icon">
               <img src="assets/images/icon-online.svg" alt="オンライン相談" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;15&quot; y=&quot;20&quot; width=&quot;70&quot; height=&quot;60&quot; rx=&quot;5&quot; fill=&quot;%238b85c1&quot;/><rect x=&quot;25&quot; y=&quot;30&quot; width=&quot;50&quot; height=&quot;30&quot; rx=&quot;3&quot; fill=&quot;white&quot;/></svg>'">
