@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/mobile-optimization.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -36,15 +37,55 @@
      /* 共通フォントスタイル - 全体統一 */
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
+       color: #333; /* デフォルトテキストカラーを濃いグレーに変更 */
      }
      
      h1, h2, h3, h4, h5, h6 {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        font-weight: 700;
+       color: #333; /* 見出しのカラーを濃いグレーに統一 */
      }
      
      p, li, .btn {
        font-family: 'M PLUS Rounded 1c', sans-serif;
+     }
+     
+     /* 重要ポイント強調スタイル */
+     .highlight-text {
+       color: #e6587c; /* 重要テキストを強調する濃いピンク */
+       font-weight: 700;
+     }
+     
+     /* コントラスト強化のためのボタンスタイル更新 */
+     .btn-primary {
+       background-color: #ff4778; /* CTAボタンの色を鮮やかなピンクに変更 */
+       color: #fff;
+       font-weight: 700;
+       padding: 0.8rem 2rem;
+       border-radius: 50px;
+       border: none;
+       box-shadow: 0 4px 10px rgba(255, 71, 120, 0.3);
+       transition: all 0.3s ease;
+     }
+     
+     .btn-primary:hover {
+       background-color: #e63e6c;
+       transform: translateY(-2px);
+       box-shadow: 0 6px 15px rgba(255, 71, 120, 0.4);
+     }
+     
+     /* カード要素のコントラスト改善 */
+     .card-style {
+       background-color: #fff;
+       border-radius: 12px;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+       border: 1px solid #f0f0f0; /* 薄いグレーの境界線を追加 */
+       transition: all 0.3s ease;
+     }
+     
+     .card-style:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
      }
      
      /* ヘッダーの新しいスタイル */
@@ -424,65 +465,7 @@
        margin-right: auto;
      }
      
-     /* 協会スライダーのスタイル */
-     .association-slider-wrapper {
-       max-width: 900px;
-       margin: 0 auto 3rem;
-     }
-     
-     .association-slider {
-       border-radius: 15px;
-       overflow: hidden;
-       position: relative;
-       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-     }
-     
-     .association-slider-track {
-       display: flex;
-       transition: transform 0.5s ease;
-     }
-     
-     .association-slide {
-       flex: 0 0 100%;
-       position: relative;
-     }
-     
-     .association-image {
-       width: 100%;
-       height: auto;
-       display: block;
-     }
-     
-     .association-caption {
-       position: absolute;
-       bottom: 0;
-       left: 0;
-       width: 100%;
-       background-color: rgba(255, 255, 255, 0.9);
-       padding: 1.5rem;
-       text-align: center;
-     }
-     
-     .association-caption h3 {
-       font-size: 1.3rem;
-       font-weight: 700;
-       color: #333;
-       margin-bottom: 0.5rem;
-     }
-     
-     .association-caption p {
-       font-size: 1rem;
-       color: #555;
-       margin: 0;
-     }
-     
-     .association-slider-nav {
-       display: flex;
-       justify-content: center;
-       align-items: center;
-       padding: 1rem 0;
-       background-color: white;
-     }
+     /* 協会スライダーのスタイルはベビー発育アドバイザーにできることセクションと統一 */
      
      .slider-nav-btn {
        background: none;
@@ -2138,9 +2121,226 @@
          height: 60px;
        }
      }
+
+     /* アニメーション効果 - 修正版 */
+     .fade-in-up {
+       opacity: 1; /* 初期状態から表示されるように変更 */
+       transform: translateY(0); /* 初期位置を正常に */
+     }
+     
+     .fade-in {
+       opacity: 1; /* 初期状態から表示されるように変更 */
+     }
+
+     /* スタガー表示アニメーション - 修正版 */
+     .stagger-item {
+       opacity: 1; /* 初期状態から表示されるように変更 */
+       transform: translateY(0); /* 初期位置を正常に */
+     }
+     
+     /* 強調アニメーション */
+     .pulse {
+       animation: pulse-animation 2s infinite;
+     }
+     
+     @keyframes pulse-animation {
+       0% {
+         box-shadow: 0 0 0 0 rgba(255, 71, 120, 0.4);
+       }
+       70% {
+         box-shadow: 0 0 0 12px rgba(255, 71, 120, 0);
+       }
+       100% {
+         box-shadow: 0 0 0 0 rgba(255, 71, 120, 0);
+       }
+     }
+       /* スマホ表示の最適化 */
+     @media (max-width: 768px) {
+       h1 {
+         font-size: 2rem;
+         line-height: 1.3;
+       }
+       
+       h2 {
+         font-size: 1.6rem;
+         line-height: 1.3;
+       }
+       
+       p {
+         font-size: 1rem;
+         line-height: 1.6;
+       }
+       
+       .btn-primary {
+         padding: 0.7rem 1.5rem;
+         font-size: 1rem;
+         width: 90%;
+         max-width: 320px;
+         margin: 0 auto;
+         display: block;
+       }
+       
+       .card-style {
+         padding: 1.2rem;
+         margin-bottom: 1.5rem;
+       }
+       
+       .section-spacing {
+         padding: 3rem 0;
+       }
+       
+       .container {
+         padding-left: 15px;
+         padding-right: 15px;
+       }
+     }
+     
+     /* スマホでの固定CTAボタン */
+     .mobile-fixed-cta {
+       display: none;
+     }
+     
+     @media (max-width: 768px) {
+       .mobile-fixed-cta {
+         display: block;
+         position: fixed;
+         bottom: 20px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 85%;
+         max-width: 300px;
+         z-index: 1000;
+       }
+       
+       .mobile-fixed-cta .btn-primary {
+         width: 100%;
+         padding: 0.8rem;
+         font-size: 1rem;
+         box-shadow: 0 4px 20px rgba(255, 71, 120, 0.4);
+       }
+       
+       /* スマホ表示の最適化 */
+       h1 {
+         font-size: 2rem;
+         line-height: 1.3;
+       }
+       
+       h2 {
+         font-size: 1.6rem;
+         line-height: 1.3;
+       }
+       
+       h3 {
+         font-size: 1.4rem;
+         line-height: 1.3;
+       }
+       
+       p {
+         font-size: 1rem;
+         line-height: 1.6;
+       }
+       
+       .btn-primary {
+         padding: 0.7rem 1.5rem;
+         font-size: 1rem;
+         width: 90%;
+         max-width: 320px;
+         margin: 0 auto;
+         display: block;
+       }
+       
+       .section-spacing {
+         padding: 3rem 0;
+       }
+       
+       .container {
+         padding-left: 15px;
+         padding-right: 15px;
+       }
+       
+       /* スマホでのカードレイアウト調整 */
+       .card-grid, .testimonials-grid, .risk-questions, .worry-cards {
+         grid-template-columns: 1fr !important;
+         display: flex;
+         flex-direction: column;
+         gap: 1.5rem;
+       }
+     }
+         /* スタイル改善 - コントラスト強化 */
+     .text-primary {
+       color: #e6587c !important;
+     }
+     
+     .btn-primary {
+       background-color: #ff4778;
+       color: #fff;
+       font-weight: 700;
+       padding: 0.8rem 2rem;
+       border-radius: 50px;
+       border: none;
+       box-shadow: 0 4px 10px rgba(255, 71, 120, 0.3);
+       transition: all 0.3s ease;
+     }
+     
+     .btn-primary:hover {
+       background-color: #e63e6c;
+       transform: translateY(-2px);
+       box-shadow: 0 6px 15px rgba(255, 71, 120, 0.4);
+     }
+     
+     /* アニメーション効果 */
+     .fade-in-up {
+       opacity: 0;
+       transform: translateY(30px);
+     }
+     
+     .pulse {
+       animation: pulse-animation 2s infinite;
+     }
+     
+     @keyframes pulse-animation {
+       0% {
+         box-shadow: 0 0 0 0 rgba(255, 71, 120, 0.4);
+       }
+       70% {
+         box-shadow: 0 0 0 12px rgba(255, 71, 120, 0);
+       }
+       100% {
+         box-shadow: 0 0 0 0 rgba(255, 71, 120, 0);
+       }
+     }
+     
+     /* スマホでの固定CTAボタン */
+     .mobile-fixed-cta {
+       display: none;
+     }
+     
+     @media (max-width: 768px) {
+       .mobile-fixed-cta {
+         display: block;
+         position: fixed;
+         bottom: 20px;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 85%;
+         max-width: 300px;
+         z-index: 1000;
+       }
+       
+       .mobile-fixed-cta .btn-primary {
+         width: 100%;
+         padding: 0.8rem;
+         font-size: 1rem;
+         box-shadow: 0 4px 20px rgba(255, 71, 120, 0.4);
+       }
+     }
    </style>
 </head>
 <body>
+    <!-- スマホ用固定CTAボタン -->
+    <div class="mobile-fixed-cta">
+      <button class="btn btn-primary pulse">今すぐ資料請求・お申し込み</button>
+    </div>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -2160,17 +2360,17 @@
   <!-- ヒーローセクション - リデザイン -->
   <section class="hero" id="hero">
     <div class="container">
-      <div class="hero-image-container">
+      <div class="hero-image-container" data-aos="fade-in">
         <img src="assets/images/FV.png" alt="子育ても、仕事も、もう諦めない" class="hero-image">
       </div>
-      <div class="hero-content">
+      <div class="hero-content" data-aos="fade-up">
         <h1>子育ても、仕事も、<br>もう諦めない。</h1>
         <p class="sub-heading">ベビー発育アドバイザー講座｜自宅から始める新しい働き方</p>
-        <a href="#form" class="btn btn-primary">今すぐ無料説明会へ</a>
+        <a href="#form" class="btn btn-primary pulse">今すぐ無料説明会へ</a>
         <div class="hero-badges">
-          <div class="hero-badge">受講生満足度94%</div>
-          <div class="hero-badge">返金保証14日</div>
-          <div class="hero-badge">ママ支持率No.1</div>
+          <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">受講生満足度94%</div>
+          <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">返金保証14日</div>
+          <div class="hero-badge" data-aos="fade-up" data-aos-delay="300">ママ支持率No.1</div>
         </div>
       </div>
     </div>
@@ -2518,32 +2718,32 @@
         </p>
         
         <!-- 協会画像スライダー -->
-        <div class="association-slider-wrapper">
-          <div class="association-slider">
-            <div class="association-slider-track">
-              <div class="association-slide">
-                <img src="assets/images/3.png" alt="協会の活動写真1" class="association-image">
-                <div class="association-caption">
+        <div class="advisor-image-slider">
+          <div class="advisor-slider">
+            <div class="advisor-slider-track">
+              <div class="advisor-slide">
+                <img src="assets/images/3.png" alt="協会の活動写真1" class="advisor-image">
+                <div class="advisor-caption">
                   <h3>メディア27社掲載実績</h3>
                   <p>全国の子育て支援の現場で活躍する専門家たち</p>
                 </div>
               </div>
-              <div class="association-slide">
-                <img src="assets/images/4.png" alt="協会の活動写真2" class="association-image">
-                <div class="association-caption">
+              <div class="advisor-slide">
+                <img src="assets/images/4.png" alt="協会の活動写真2" class="advisor-image">
+                <div class="advisor-caption">
                   <h3>実績（メンバー内で協力・応援）</h3>
                   <p>おうちレッスン4〜8組、3年で1,000組以上ご参加</p>
                 </div>
               </div>
-              <div class="association-slide">
-                <img src="assets/images/5.png" alt="協会の活動写真3" class="association-image">
-                <div class="association-caption">
+              <div class="advisor-slide">
+                <img src="assets/images/5.png" alt="協会の活動写真3" class="advisor-image">
+                <div class="advisor-caption">
                   <h3>おやこ体験型イベント企画</h3>
                   <p>受講生メンバーと0から企画開催、進学塾さま提携も！</p>
                 </div>
               </div>
             </div>
-            <div class="association-slider-nav">
+            <div class="advisor-slider-nav">
               <button class="slider-nav-btn prev" aria-label="前へ">&#10094;</button>
               <div class="slider-dots">
                 <span class="slider-dot active" data-index="0"></span>
@@ -2575,7 +2775,7 @@
       </defs>
       <path d="M0,0 L0,120 L1200,120 L1200,0 C900,90 300,90 0,0 Z" fill="url(#curve-gradient)"></path>
     </svg>
-  </div>
+      </div>
 
   <!-- ベビー発育アドバイザーにできることセクション -->
   <section class="section advisor-features" id="advisor-features">
@@ -3201,8 +3401,7 @@
     // スライダーの自動切り替え機能
     document.addEventListener('DOMContentLoaded', function() {
       // 各スライダーの初期化
-      initAssociationSlider();
-      initAdvisorSlider();
+      initAdvisorSlider(); // 両方のスライダーを処理
       
       // モバイルメニュートグルのイベント
       const menuToggle = document.querySelector('.mobile-menu-toggle');
@@ -3327,105 +3526,45 @@
       }
     }
 
-    // 協会紹介スライダーの実装
+    // 協会紹介スライダーの実装 - アドバイザースライダーと同様に処理するよう変更
     function initAssociationSlider() {
-      const sliderTrack = document.querySelector('.association-slider-track');
-      const slides = document.querySelectorAll('.association-slide');
-      const dots = document.querySelectorAll('.association-slider-nav .slider-dot');
-      const prevBtn = document.querySelector('.slider-nav-btn.prev');
-      const nextBtn = document.querySelector('.slider-nav-btn.next');
-      
-      if (sliderTrack && slides.length && dots.length && prevBtn && nextBtn) {
-        let currentIndex = 0;
-        const slideCount = slides.length;
-        
-        // スライダーの位置を更新する関数
-        function updateSlider() {
-          sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-          
-          // アクティブなドットを更新
-          dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-              dot.classList.add('active');
-            } else {
-              dot.classList.remove('active');
-            }
-          });
-        }
-        
-        // 前へボタンのクリックイベント
-        prevBtn.addEventListener('click', function() {
-          currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-          updateSlider();
-        });
-        
-        // 次へボタンのクリックイベント
-        nextBtn.addEventListener('click', function() {
-          currentIndex = (currentIndex + 1) % slideCount;
-          updateSlider();
-        });
-        
-        // ドットクリックでスライド移動
-        dots.forEach((dot, index) => {
-          dot.addEventListener('click', function() {
-            currentIndex = index;
-            updateSlider();
-          });
-        });
-        
-        // タッチスワイプ対応
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        const slider = document.querySelector('.association-slider');
-        
-        if (slider) {
-          slider.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-          });
-          
-          slider.addEventListener('touchend', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-          });
-          
-          function handleSwipe() {
-            if (touchEndX < touchStartX - 50) {
-              // 左スワイプ（次へ）
-              currentIndex = (currentIndex + 1) % slideCount;
-              updateSlider();
-            } else if (touchEndX > touchStartX + 50) {
-              // 右スワイプ（前へ）
-              currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-              updateSlider();
-            }
-          }
-          
-          // 自動スライド切り替え
-          function startAutoSlide() {
-            return setInterval(() => {
-              currentIndex = (currentIndex + 1) % slideCount;
-              updateSlider();
-            }, 5000); // 5秒ごとに切り替え
-          }
-          
-          // 自動スライド開始
-          let autoSlideInterval = startAutoSlide();
-          
-          // スライダーにマウスオーバーしたら自動切り替えを停止
-          slider.addEventListener('mouseenter', function() {
-            clearInterval(autoSlideInterval);
-          });
-          
-          // スライダーからマウスが離れたら自動切り替えを再開
-          slider.addEventListener('mouseleave', function() {
-            autoSlideInterval = startAutoSlide();
-          });
-        }
-      }
+      // 協会紹介スライダーもアドバイザーセクションと同じクラス名になったのでこの関数は必要なくなりました
+      // アドバイザーセクションのスライダー初期化関数が両方のスライダーを処理します
     }
   </script>
 
   <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    // AOS初期化 - スクロールアニメーション
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      disable: 'mobile' // モバイルでは無効化して安定性を高める
+    });
+    
+    // スクロール監視 - カスタムアニメーション
+    document.addEventListener('DOMContentLoaded', function() {
+      // アニメーション効果を追加する関数は削除（過剰なアニメーションが問題を引き起こしている）
+      // この関数を呼び出さないことで、HTML内に手動で追加されたアニメーションのみが有効になる
+      
+      // スマホ用CTAボタンのスクロール表示制御
+      const heroSection = document.querySelector('#hero');
+      const mobileCta = document.querySelector('.mobile-fixed-cta');
+      
+      if (heroSection && mobileCta) {
+        window.addEventListener('scroll', function() {
+          const heroBottom = heroSection.getBoundingClientRect().bottom;
+          if (heroBottom < 0) {
+            mobileCta.style.opacity = '1';
+          } else {
+            mobileCta.style.opacity = '0';
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html> 
