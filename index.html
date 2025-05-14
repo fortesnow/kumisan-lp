@@ -581,34 +581,9 @@
      /* 独学リスクセクションの新スタイル */
      .risk-section {
        padding: 5rem 0;
-       background-color: #fff7f7;
+       background-color: #fff;
        position: relative;
        overflow: hidden;
-     }
-     
-     .risk-section::before,
-     .risk-section::after {
-       content: "";
-       position: absolute;
-       border-radius: 50%;
-       background: linear-gradient(135deg, #ffecf1 0%, #ffdede 100%);
-       z-index: 0;
-     }
-     
-     .risk-section::before {
-       width: 300px;
-       height: 300px;
-       top: -150px;
-       right: -100px;
-       opacity: 0.4;
-     }
-     
-     .risk-section::after {
-       width: 250px;
-       height: 250px;
-       bottom: -100px;
-       left: -50px;
-       opacity: 0.3;
      }
      
      .risk-section .container {
@@ -621,75 +596,95 @@
        font-size: 2.3rem;
        font-weight: 700;
        color: #333;
-       margin-bottom: 2rem;
+       margin-bottom: 3rem;
        text-align: center;
        position: relative;
      }
      
-     .risk-section .section-title::after {
-       content: "";
-       position: absolute;
-       bottom: 0;
-       left: 50%;
-       transform: translateX(-50%);
-       width: 80px;
-       height: 3px;
-       background: linear-gradient(to right, #ff85a2, #ff6b6b);
-       border-radius: 3px;
+     /* 新しい質問カードスタイル */
+     .risk-questions {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 2rem;
+       max-width: 1100px;
+       margin: 0 auto 3rem;
      }
      
-     .risk-cards {
+     .risk-question {
+       position: relative;
+       background-color: #fff;
+       border-radius: 0;
+       width: 100%;
+       aspect-ratio: 1 / 1;
+       padding: 1.5rem;
        display: flex;
        flex-direction: column;
-       gap: 1.5rem;
-       max-width: 850px;
-       margin: 0 auto;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+       border: none;
+       position: relative;
+       overflow: visible;
      }
      
-     .risk-card {
-       display: flex;
-       background: white;
-       border-radius: 16px;
-       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-       overflow: hidden;
-       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     .risk-question::before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       border: 10px solid transparent;
+       background: repeating-linear-gradient(
+         45deg,
+         transparent,
+         transparent 2px,
+         #ff85a2 2px,
+         #ff85a2 4px
+       );
+       border-image: repeating-linear-gradient(
+         45deg,
+         transparent,
+         transparent 2px,
+         #ff85a2 2px,
+         #ff85a2 4px
+       ) 10;
+       border-radius: 0;
+       z-index: -1;
      }
      
-     .risk-card:hover {
-       transform: translateY(-5px);
-       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-     }
-     
-     .risk-number {
-       min-width: 90px;
+     .risk-question-content {
        display: flex;
        align-items: center;
        justify-content: center;
-       background: linear-gradient(135deg, #ff85a2 0%, #ff6b6b 100%);
-       color: white;
-       font-size: 2.2rem;
-       font-weight: 700;
-       line-height: 1;
-       padding: 1.5rem 0;
+       background-color: #fff;
+       width: 100%;
+       height: 100%;
+       padding: 1rem;
      }
      
-     .risk-content {
-       padding: 1.5rem 2rem;
-       flex-grow: 1;
-     }
-     
-     .risk-content h3 {
-       color: #ff6b6b;
-       font-size: 1.3rem;
-       margin: 0 0 0.8rem;
-       font-weight: 700;
-     }
-     
-     .risk-content p {
-       color: #555;
+     .risk-question-content p {
+       color: #333;
        font-size: 1rem;
        line-height: 1.6;
        margin: 0;
+       font-weight: 500;
+     }
+     
+     .risk-question-mark {
+       position: absolute;
+       top: -10px;
+       right: -10px;
+       width: 35px;
+       height: 35px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background-color: #ff85a2;
+       color: #fff;
+       font-size: 1.5rem;
+       font-weight: 700;
+       border-radius: 50%;
      }
      
      .risk-cta {
@@ -707,6 +702,44 @@
        margin-bottom: 1.5rem;
        font-weight: 600;
        font-family: 'Noto Sans JP', sans-serif;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 992px) {
+       .risk-questions {
+         grid-template-columns: repeat(2, 1fr);
+       }
+     }
+     
+     @media (max-width: 768px) {
+       .risk-questions {
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1.5rem;
+       }
+       
+       .risk-question-content p {
+         font-size: 0.9rem;
+       }
+       
+       .risk-cta {
+         padding: 2rem 1.5rem;
+       }
+       
+       .risk-cta p {
+         font-size: 1.1rem;
+       }
+     }
+     
+     @media (max-width: 480px) {
+       .risk-questions {
+         grid-template-columns: 1fr;
+       }
+       
+       .risk-question {
+         aspect-ratio: auto;
+         height: auto;
+         min-height: 150px;
+       }
      }
      
      /* 「あなたの「叶えたい」にこたえます」セクションの更新スタイル */
@@ -1190,7 +1223,6 @@
          font-size: 1.2rem;
          min-width: 30px;
          height: 30px;
-         margin-right: 0.8rem;
        }
        
        .problem-text {
@@ -1456,6 +1488,156 @@
        margin-bottom: 1rem;
        position: relative;
      }
+     
+     @media (max-width: 480px) {
+       .community-features-grid {
+         grid-template-columns: 1fr;
+         gap: 1.5rem;
+       }
+       
+       .feature-icon {
+         font-size: 1.8rem;
+       }
+       
+       .feature-title {
+         font-size: 1.1rem;
+       }
+     }
+     
+     /* ソリューションセクションのスタイル */
+     .solution-section {
+       padding: 5rem 0;
+       background-color: #fff7f7;
+       position: relative;
+       overflow: hidden;
+     }
+     
+     .solution-header {
+       text-align: center;
+       margin-bottom: 3rem;
+     }
+     
+     .solution-title {
+       font-family: 'Noto Sans JP', sans-serif;
+       font-size: 2rem;
+       font-weight: 700;
+       color: #333;
+       line-height: 1.5;
+       margin-bottom: 1rem;
+     }
+     
+     .solution-cards {
+       display: flex;
+       flex-direction: column;
+       gap: 1.5rem;
+       max-width: 800px;
+       margin: 0 auto 3rem;
+     }
+     
+     .solution-card {
+       background-color: white;
+       border-radius: 10px;
+       padding: 1.5rem;
+       display: flex;
+       align-items: flex-start;
+       gap: 1.5rem;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+     }
+     
+     .solution-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+     }
+     
+     .solution-icon {
+       background-color: #ff85a2;
+       color: white;
+       width: 40px;
+       height: 40px;
+       min-width: 40px;
+       border-radius: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       font-size: 1.2rem;
+       font-weight: bold;
+     }
+     
+     .solution-content h3 {
+       font-size: 1.3rem;
+       color: #333;
+       margin-bottom: 0.8rem;
+       font-weight: 600;
+     }
+     
+     .solution-content p {
+       font-size: 1rem;
+       color: #555;
+       line-height: 1.6;
+       margin: 0;
+     }
+     
+     .solution-cta {
+       text-align: center;
+     }
+     
+     /* レスポンシブ対応 */
+     @media (max-width: 768px) {
+       .solution-section {
+         padding: 4rem 0;
+       }
+       
+       .solution-title {
+         font-size: 1.8rem;
+       }
+       
+       .solution-card {
+         padding: 1.2rem;
+         gap: 1.2rem;
+       }
+       
+       .solution-icon {
+         width: 35px;
+         height: 35px;
+         min-width: 35px;
+         font-size: 1.1rem;
+       }
+       
+       .solution-content h3 {
+         font-size: 1.2rem;
+       }
+     }
+     
+     @media (max-width: 480px) {
+       .solution-section {
+         padding: 3rem 0;
+       }
+       
+       .solution-title {
+         font-size: 1.5rem;
+       }
+       
+       .solution-card {
+         padding: 1rem;
+         gap: 1rem;
+       }
+       
+       .solution-icon {
+         width: 30px;
+         height: 30px;
+         min-width: 30px;
+         font-size: 1rem;
+       }
+       
+       .solution-content h3 {
+         font-size: 1.1rem;
+       }
+       
+       .solution-content p {
+         font-size: 0.95rem;
+       }
+     }
    </style>
 </head>
 <body>
@@ -1565,7 +1747,7 @@
   <section class="section desire-intro" id="desire-intro">
     <div class="container">
       <div class="desire-intro-heading">
-        <h2>貴女の経験が輝く場所が必ずあります</h2>
+        <h2>貴女の経験が輝く場所が必ずここにあります</h2>
       </div>
       
       <div class="desire-content">
@@ -1622,50 +1804,79 @@
     <div class="container">
       <h2 class="section-title">独学だと陥りがちな5つの落とし穴</h2>
       
-      <div class="risk-cards">
-        <div class="risk-card">
-          <div class="risk-number">1</div>
-          <div class="risk-content">
-            <h3>時間もお金も消耗</h3>
-            <p>無料情報を探し回り、SNSに毎日投稿しても成果が出ず、貴重な時間とエネルギーが消費されていく一方に。集客に力を注ぎすぎて肝心のサービスは育たないまま...</p>
+      <div class="risk-questions">
+        <div class="risk-question">
+          <div class="risk-question-content">
+            <p>復帰をしたはいいけれど、<br>この先ずっと両立して<br>いけるだろうか</p>
+          </div>
+          <div class="risk-question-mark">?</div>
+        </div>
+        
+        <div class="risk-question">
+          <div class="risk-question-content">
+            <p>自分にとっても子供にとっても<br>いいバランスって<br>どんな形なんだろう</p>
+          </div>
+          <div class="risk-question-mark">?</div>
+        </div>
+        
+        <div class="risk-question">
+          <div class="risk-question-content">
+            <p>子供が小さいうちは<br>仕事をペースダウン<br>できるといいのに</p>
+          </div>
+          <div class="risk-question-mark">?</div>
+        </div>
+        
+        <div class="risk-question">
+          <div class="risk-question-content">
+            <p>フルタイムで働け<br>なければ、専業主婦か<br>近所でパートしか<br>ないのかな</p>
+          </div>
+          <div class="risk-question-mark">?</div>
+        </div>
+        
+        <div class="risk-question">
+          <div class="risk-question-content">
+            <p>一度辞めてしまったら、<br>やりたい仕事って本当に<br>見つかるのだろうか</p>
+          </div>
+          <div class="risk-question-mark">?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ソリューションセクション -->
+  <section class="section solution-section" id="solution">
+    <div class="container">
+      <div class="solution-header">
+        <h2 class="solution-title">1人じゃがんばれない...という方も安心！<br>ベビー発育アドバイザー講座<br>なら解決できます</h2>
+      </div>
+      
+      <div class="solution-cards">
+        <div class="solution-card">
+          <div class="solution-icon">✓</div>
+          <div class="solution-content">
+            <h3>専門的な知識が身につく</h3>
+            <p>発達心理学や小児科医監修の乳幼児発達学を基にした、科学的根拠のある専門知識を学べます</p>
           </div>
         </div>
         
-        <div class="risk-card">
-          <div class="risk-number">2</div>
-          <div class="risk-content">
-            <h3>自信喪失</h3>
-            <p>「このままで本当にいいのかな...」という不安が消えず、頑張っているのに結果が出ないことで自己否定感が強まり、「私には向いていないのかも」と諦めてしまう</p>
+        <div class="solution-card">
+          <div class="solution-icon">✓</div>
+          <div class="solution-content">
+            <h3>実践的なスキルが学べる</h3>
+            <p>子どもの発達を促す関わり方や、成長に合わせた遊び方など、すぐに活用できる実践的スキルが身につきます</p>
           </div>
         </div>
         
-        <div class="risk-card">
-          <div class="risk-number">3</div>
-          <div class="risk-content">
-            <h3>理想と逆行</h3>
-            <p>子どもとの時間を大切にしたくて始めたはずなのに、家にいてもパソコンとにらめっこ、情報収集に追われて子どもを放置する状況に...理想とは真逆の毎日</p>
-          </div>
-        </div>
-        
-        <div class="risk-card">
-          <div class="risk-number">4</div>
-          <div class="risk-content">
-            <h3>孤立</h3>
-            <p>周りに相談できる仲間がおらず、一人で悩み続けるうちに孤独感が深まり、モチベーションが低下。うまくいかないのは自分がダメなんだと自己否定の繰り返し</p>
-          </div>
-        </div>
-        
-        <div class="risk-card">
-          <div class="risk-number">5</div>
-          <div class="risk-content">
-            <h3>出戻り</h3>
-            <p>結局、安定を求めて嫌々会社に戻り、「やっぱり無理だった」と夢を諦める日々。フリーランスを諦めて、好きなことを仕事にできなかった自分に自己嫌悪...</p>
+        <div class="solution-card">
+          <div class="solution-icon">✓</div>
+          <div class="solution-content">
+            <h3>仲間と共に成長できる</h3>
+            <p>同じ志を持つ仲間と学ぶことで、孤独感なく、互いに高め合いながら成長できる環境があります</p>
           </div>
         </div>
       </div>
       
-      <div class="risk-cta">
-        <p>失敗したくないなら、実績ある方法で最短ルートを進みませんか？</p>
+      <div class="solution-cta">
         <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
       </div>
     </div>
@@ -1817,32 +2028,42 @@
     </div>
   </section>
 
-  <!-- 1人じゃがんばれない吹き出しセクション -->
-  <section class="section struggle-section">
+  <!-- ベビー発育アドバイザー講座セクション -->
+  <section class="solution-section">
     <div class="container">
-      <div class="struggle-bubble">
-        <p>1人じゃがんばれない...</p>
+      <div class="solution-intro">
+        <h3 class="solution-intro-heading">1人じゃがんばれない...という方も安心！</h3>
       </div>
-      <p class="reassurance-text">という方も<span class="highlight">安心</span>！</p>
-    </div>
-  </section>
-
-  <!-- ソリューションセクション -->
-  <section class="section solution" id="solution">
-    <div class="container">
-      <h2 class="section-title">ベビー発育アドバイザー講座なら解決できます</h2>
-      <div class="solution-columns">
-        <div class="solution-card">
-          <h3>最短2週間で収益化</h3>
-          <p>案件テンプレ＆即実践ワークで最短ルート</p>
-        </div>
-        <div class="solution-card">
-          <h3>家事育児と両立OK</h3>
-          <p>週3h×自宅完結カリキュラム</p>
-        </div>
-        <div class="solution-card">
-          <h3>仲間と伴走コミュニティ</h3>
-          <p>相談・コラボで孤独ゼロ</p>
+      <div class="solution-main">
+        <h2 class="solution-heading">ベビー発育アドバイザー講座<br>なら解決できます</h2>
+        
+        <div class="solution-cards">
+          <!-- カード1：最短2週間で収益化 -->
+          <div class="solution-card solution-card-pink">
+            <div class="solution-card-icon">
+              <img src="assets/images/icon-baby.svg" alt="赤ちゃんアイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;30&quot; fill=&quot;%23d58e9e&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;20&quot; fill=&quot;white&quot;/><circle cx=&quot;45&quot; cy=&quot;43&quot; r=&quot;2&quot; fill=&quot;%23333&quot;/><circle cx=&quot;55&quot; cy=&quot;43&quot; r=&quot;2&quot; fill=&quot;%23333&quot;/><path d=&quot;M 45 55 Q 50 60 55 55&quot; stroke=&quot;%23333&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/><path d=&quot;M 35 40 Q 40 30 50 35&quot; stroke=&quot;%23d58e9e&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/></svg>'">
+            </div>
+            <h3 class="solution-card-title">最短2週間で<br>収益化</h3>
+            <p class="solution-card-text">案件テンプレ＆<br>教材完備で即実</p>
+          </div>
+          
+          <!-- カード2：家事育児と両立OK -->
+          <div class="solution-card solution-card-orange">
+            <div class="solution-card-icon">
+              <img src="assets/images/icon-house.svg" alt="家のアイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><path d=&quot;M 50 20 L 20 45 L 30 45 L 30 75 L 70 75 L 70 45 L 80 45 Z&quot; fill=&quot;%23e67e22&quot;/><path d=&quot;M 40 75 L 40 55 L 60 55 L 60 75&quot; fill=&quot;white&quot; stroke=&quot;%23e67e22&quot; stroke-width=&quot;2&quot;/></svg>'">
+            </div>
+            <h3 class="solution-card-title">家事育児と<br>両立OK</h3>
+            <p class="solution-card-text">スキマ時間で<br>学べるカリキュラム</p>
+          </div>
+          
+          <!-- カード3：仲間と伴走コミュニティ -->
+          <div class="solution-card solution-card-purple">
+            <div class="solution-card-icon">
+              <img src="assets/images/icon-handshake.svg" alt="握手アイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><path d=&quot;M 20 40 C 25 35 35 45 40 50 C 50 40 65 45 75 55 C 80 60 85 70 75 75 C 65 80 60 70 50 65 C 40 60 30 50 20 55 C 10 60 15 45 20 40&quot; fill=&quot;%239b59b6&quot;/></svg>'">
+            </div>
+            <h3 class="solution-card-title">仲間と伴走<br>コミュニティ</h3>
+            <p class="solution-card-text">相談・コラボで<br>孤独ゼロ</p>
+          </div>
         </div>
       </div>
     </div>
@@ -2425,6 +2646,18 @@
   <script>
     // スライダーの自動切り替え機能
     document.addEventListener('DOMContentLoaded', function() {
+      // 共通スライダー機能
+      initGeneralSlider();
+      
+      // ベビー発育アドバイザースライダー
+      initAdvisorSlider();
+      
+      // 協会紹介スライダー
+      initAssociationSlider();
+    });
+    
+    // 共通スライダー機能
+    function initGeneralSlider() {
       const sliderTrack = document.querySelector('.slider-track');
       const sliderDots = document.querySelectorAll('.slider-dot');
       const sliderItems = document.querySelectorAll('.slider-item');
@@ -2542,10 +2775,138 @@
         // 初期状態で最初のスライドをアクティブにする
         sliderItems[0].classList.add('active-slide');
       }
-    });
+    }
+    
+    // ベビー発育アドバイザースライダー
+    function initAdvisorSlider() {
+      const sliderSection = document.getElementById('advisor-features');
+      if (!sliderSection) return;
+      
+      const sliderTrack = sliderSection.querySelector('.slider-track');
+      const sliderDots = sliderSection.querySelectorAll('.slider-dot');
+      const sliderItems = sliderSection.querySelectorAll('.slider-item');
+      
+      if (!sliderTrack || !sliderDots.length || !sliderItems.length) return;
+      
+      let currentIndex = 0;
+      const itemCount = sliderItems.length;
+      
+      // 表示幅に基づくアイテム幅の計算
+      function calculateItemWidth() {
+        let itemWidth = 20; // デフォルト: PC表示で5アイテム (20%)
+        
+        if (window.innerWidth <= 480) {
+          itemWidth = 100; // モバイル表示で1アイテム
+        } else if (window.innerWidth <= 768) {
+          itemWidth = 50; // タブレット表示で2アイテム
+        } else if (window.innerWidth <= 992) {
+          itemWidth = 33.333; // 小さいデスクトップで3アイテム
+        }
+        
+        return itemWidth;
+      }
+      
+      // スライダーの位置を更新
+      function updateSlider() {
+        const itemWidth = calculateItemWidth();
+        sliderTrack.style.transform = `translateX(-${currentIndex * itemWidth}%)`;
+        
+        // アクティブなドットを更新
+        sliderDots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+        
+        // フォーカスアイテムのエフェクト
+        sliderItems.forEach((item, index) => {
+          if (index === currentIndex) {
+            item.classList.add('active-slide');
+          } else {
+            item.classList.remove('active-slide');
+          }
+        });
+      }
+      
+      // 自動スライド
+      function startSlider() {
+        return setInterval(() => {
+          currentIndex = (currentIndex + 1) % itemCount;
+          updateSlider();
+        }, 4000);
+      }
+      
+      // ドットクリックでスライダー移動
+      sliderDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateSlider();
+          
+          // 自動スライドをリセット
+          clearInterval(sliderInterval);
+          sliderInterval = startSlider();
+        });
+      });
+      
+      // スマホでのスワイプ機能
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      const sliderContainer = sliderSection.querySelector('.slider-container');
+      const swipeIndicator = sliderSection.querySelector('.swipe-indicator');
+      
+      if (sliderContainer) {
+        // スワイプ処理
+        sliderContainer.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        sliderContainer.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          
+          if (touchEndX < touchStartX - 50) {
+            // 左スワイプ（次へ）
+            currentIndex = (currentIndex + 1) % itemCount;
+          } else if (touchEndX > touchStartX + 50) {
+            // 右スワイプ（前へ）
+            currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+          }
+          
+          updateSlider();
+          
+          // 自動スライドをリセット
+          clearInterval(sliderInterval);
+          sliderInterval = startSlider();
+        }, false);
+        
+        // スワイプインジケーター管理
+        if (swipeIndicator) {
+          sliderContainer.addEventListener('touchstart', () => {
+            setTimeout(() => {
+              swipeIndicator.style.opacity = '0';
+              swipeIndicator.style.visibility = 'hidden';
+            }, 1000);
+          }, { once: true });
+        }
+      }
+      
+      // リサイズ対応
+      window.addEventListener('resize', () => {
+        updateSlider();
+      });
+      
+      // 初期状態
+      updateSlider();
+      let sliderInterval = startSlider();
+      
+      // 初期状態で最初のスライドをアクティブにする
+      sliderItems[0].classList.add('active-slide');
+    }
 
     // 協会紹介スライダーの実装
-    document.addEventListener('DOMContentLoaded', function() {
+    function initAssociationSlider() {
       const sliderTrack = document.querySelector('.association-slider-track');
       const slides = document.querySelectorAll('.association-slide');
       const dots = document.querySelectorAll('.association-slider-nav .slider-dot');
@@ -2640,7 +3001,7 @@
           });
         }
       }
-    });
+    }
   </script>
 
   <script src="js/main.js"></script>

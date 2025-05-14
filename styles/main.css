@@ -3248,3 +3248,328 @@ select {
     will-change: transform;
   }
 }
+
+/* ベビー発育アドバイザー講座セクション */
+.solution-section {
+  padding: 5rem 0;
+  background-color: #fff8f8;
+  position: relative;
+  overflow: hidden;
+}
+
+.solution-section::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 180px;
+  height: 180px;
+  background-color: #ffecf1;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.solution-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 250px;
+  height: 250px;
+  background-color: #ffecf1;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.solution-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.solution-intro-heading {
+  display: inline-block;
+  background-color: #FFF;
+  color: #ff6b9a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(255, 107, 154, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.solution-main {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.solution-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 3rem;
+  line-height: 1.3;
+  position: relative;
+  display: inline-block;
+}
+
+.solution-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #ff85a2, #ff6b6b);
+  border-radius: 3px;
+}
+
+.solution-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.solution-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.solution-card-pink {
+  border-top: 5px solid #ff6b9a;
+}
+
+.solution-card-orange {
+  border-top: 5px solid #ff9a5a;
+}
+
+.solution-card-purple {
+  border-top: 5px solid #9b69ff;
+}
+
+.solution-card-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-card-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.solution-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.solution-card-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  .solution-cards {
+    gap: 1.5rem;
+  }
+  
+  .solution-card {
+    padding: 1.8rem;
+    max-width: 280px;
+  }
+  
+  .solution-card-title {
+    font-size: 1.3rem;
+  }
+  
+  .solution-card-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-section {
+    padding: 4rem 0;
+  }
+  
+  .solution-heading {
+    font-size: 1.8rem;
+  }
+  
+  .solution-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .solution-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .solution-intro-heading {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .solution-section {
+    padding: 3rem 0;
+  }
+  
+  .solution-heading {
+    font-size: 1.6rem;
+  }
+  
+  .solution-intro-heading {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .solution-card {
+    padding: 1.5rem;
+  }
+  
+  .solution-card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+  
+  .solution-card-title {
+    font-size: 1.2rem;
+  }
+  
+  .solution-card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* メンバーと参加者の声のノートブックデザイン */
+.advisors-voices-quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.voice-quote-box {
+  position: relative;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+  /* ノートブックの罫線背景 */
+  background-image: 
+    linear-gradient(#f1f1f1 1px, transparent 1px);
+  background-size: 100% 25px;
+  background-position: 0 1rem;
+  min-height: 250px;
+  border: 1px solid #e5e5e5;
+  /* 上部のノートブック赤線 */
+  border-top: 3px solid #ff6b9a;
+}
+
+.voice-quote-box:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.voice-quote-box::before {
+  /* ノートの角を折り曲げる効果 */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 20px 20px 0;
+  border-style: solid;
+  border-color: #f3f3f3 #fff;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.voice-quote-box:hover {
+  transform: translateY(-5px) rotate(0);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.voice-quote-box:hover::before {
+  border-width: 0 25px 25px 0;
+}
+
+.voice-quote {
+  position: relative;
+  font-size: 1rem;
+  line-height: 2;
+  margin: 0;
+  color: #444;
+  text-align: left;
+  font-style: italic;
+  z-index: 1;
+  padding-top: 1rem;
+}
+
+.voice-quote::before {
+  content: '\201C'; /* 左引用符 */
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-size: 3rem;
+  color: rgba(255, 107, 154, 0.2);
+  z-index: -1;
+}
+
+.voice-quote::after {
+  content: '\201D'; /* 右引用符 */
+  position: absolute;
+  bottom: -2rem;
+  right: 0;
+  font-size: 3rem;
+  color: rgba(255, 107, 154, 0.2);
+  z-index: -1;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .advisors-voices-quotes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .voice-quote-box {
+    min-height: 200px;
+  }
+  
+  .voice-quote {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+}
