@@ -3195,6 +3195,19 @@
         できれば子どもが小さいうちは<br>おうちで働きたいけど<br>特別なスキルも経験もなくて<br>在宅ワークも何がむいているのかわからない
       </p>
       
+      <style>
+        @media (max-width: 768px) {
+          .worry-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+          .worry-card {
+            margin-bottom: 0;
+          }
+        }
+      </style>
+      
       <div class="worry-cards">
         <div class="worry-card">
           <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
@@ -3227,6 +3240,19 @@
       <p class="problem-intro">
         「いつか自分に合ったお仕事をしたい」と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
       </p>
+      
+      <style>
+        @media (max-width: 768px) {
+          .problem-statement .worry-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+          .problem-statement .worry-card {
+            margin-bottom: 0;
+          }
+        }
+      </style>
       
       <div class="worry-cards">
         <div class="worry-card">
@@ -3663,11 +3689,11 @@
         <img src="assets/images/advisors_voices_2.png" alt="先輩アドバイザーの声 2" class="testimonials-main-image">
       </div>
       
-      <!-- 新しいスライダー構造 -->
-      <div class="advisor-voice-slider-container">
-        <div class="advisor-voice-slider-track">
+      <!-- 新しいスライダー構造 - 受講生のリアルな声と同じ構造 -->
+      <div class="testimonial-slider-container-v2">
+        <div class="testimonial-slider-track-v2">
           <!-- 口コミカード 1 -->
-          <div class="advisor-voice-card testimonial-card-v2"> <!-- testimonial-card-v2 クラスを追加 -->
+          <div class="testimonial-card-v2">
             <div class="testimonial-card-v2-header">
               <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー1" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
               <span class="testimonial-voice-label-v2">先輩の声 01</span>
@@ -3676,13 +3702,11 @@
               <p class="testimonial-quote-v2">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩A</span> 様 
-                <!-- <span class="testimonial-author-age-v2">XX歳</span> -->
               </p>
-              <!-- <p class="testimonial-full-text-v2">ここに詳細な口コミ全文が入ります。</p> -->
             </div>
           </div>
           <!-- 口コミカード 2 -->
-          <div class="advisor-voice-card testimonial-card-v2">
+          <div class="testimonial-card-v2">
             <div class="testimonial-card-v2-header">
               <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー2" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
               <span class="testimonial-voice-label-v2">先輩の声 02</span>
@@ -3695,7 +3719,7 @@
             </div>
           </div>
           <!-- 口コミカード 3 -->
-          <div class="advisor-voice-card testimonial-card-v2">
+          <div class="testimonial-card-v2">
             <div class="testimonial-card-v2-header">
               <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー3" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
               <span class="testimonial-voice-label-v2">先輩の声 03</span>
@@ -3708,7 +3732,7 @@
             </div>
           </div>
           <!-- 口コミカード 4 -->
-          <div class="advisor-voice-card testimonial-card-v2">
+          <div class="testimonial-card-v2">
             <div class="testimonial-card-v2-header">
               <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー4" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
               <span class="testimonial-voice-label-v2">先輩の声 04</span>
@@ -3721,12 +3745,12 @@
             </div>
           </div>
         </div>
-        <div class="advisor-voice-slider-nav">
-          <button class="advisor-voice-prev-btn">◀</button>
-          <div class="advisor-voice-dots">
+        <div class="testimonial-slider-nav-v2">
+          <button class="testimonial-prev-btn-v2">◀</button>
+          <div class="testimonial-dots-v2">
             <!-- ドットはJSで動的に生成 -->
           </div>
-          <button class="advisor-voice-next-btn">▶</button>
+          <button class="testimonial-next-btn-v2">▶</button>
         </div>
       </div>
     </div>
@@ -4205,13 +4229,17 @@
     document.addEventListener('DOMContentLoaded', initTestimonialSliderV2);
 
     function initAdvisorVoicesSlider() {
-      const track = document.querySelector('.advisor-voice-slider-track');
+      // 先輩アドバイザーの声セクションでも受講生のリアルな声と同じクラス名で初期化
+      const advisorVoicesSection = document.querySelector('.advisor-voices');
+      if (!advisorVoicesSection) return;
+      
+      const track = advisorVoicesSection.querySelector('.testimonial-slider-track-v2');
       if (!track) return;
 
       const cards = Array.from(track.children);
-      const nextButton = document.querySelector('.advisor-voice-next-btn');
-      const prevButton = document.querySelector('.advisor-voice-prev-btn');
-      const dotsContainer = document.querySelector('.advisor-voice-dots');
+      const nextButton = advisorVoicesSection.querySelector('.testimonial-prev-btn-v2');
+      const prevButton = advisorVoicesSection.querySelector('.testimonial-next-btn-v2');
+      const dotsContainer = advisorVoicesSection.querySelector('.testimonial-dots-v2');
 
       if (!cards.length || !nextButton || !prevButton || !dotsContainer) return;
 
