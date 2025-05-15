@@ -3128,6 +3128,188 @@
          font-size: 1rem;
        }
      }
+     
+     /* フォームセクションのスタイル */
+     .contact-form {
+       padding: 5rem 0;
+       background-color: #fff;
+       position: relative;
+     }
+     
+     .contact-description {
+       text-align: center;
+       font-size: 1.1rem;
+       color: #555;
+       margin-bottom: 2.5rem;
+     }
+     
+     .form-container {
+       max-width: 700px;
+       margin: 0 auto;
+       background-color: #f9f9f9;
+       padding: 2.5rem;
+       border-radius: 12px;
+       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+     }
+     
+     .form-group {
+       margin-bottom: 1.5rem;
+     }
+     
+     .form-group label {
+       display: block;
+       margin-bottom: 0.5rem;
+       font-weight: 500;
+       color: #333;
+     }
+     
+     .form-group input,
+     .form-group select,
+     .form-group textarea {
+       width: 100%;
+       padding: 0.8rem;
+       border: 1px solid #ddd;
+       border-radius: 6px;
+       font-family: inherit;
+       font-size: 1rem;
+     }
+     
+     .form-group textarea {
+       resize: vertical;
+     }
+     
+     .required {
+       color: #ff4778;
+       font-weight: bold;
+     }
+     
+     .privacy-policy {
+       display: flex;
+       align-items: flex-start;
+     }
+     
+     .privacy-policy input {
+       width: auto;
+       margin-right: 0.5rem;
+       margin-top: 0.25rem;
+     }
+     
+     .privacy-policy label {
+       display: inline;
+       font-size: 0.9rem;
+     }
+     
+     .privacy-policy a {
+       color: #ff4778;
+       text-decoration: underline;
+     }
+     
+     .form-submit {
+       text-align: center;
+       margin-top: 2rem;
+     }
+     
+     .form-submit .btn {
+       min-width: 200px;
+     }
+     
+     @media (max-width: 768px) {
+       .contact-form {
+         padding: 4rem 0;
+       }
+       
+       .contact-description {
+         font-size: 1rem;
+         padding: 0 1rem;
+       }
+       
+       .form-container {
+         padding: 2rem 1.5rem;
+         margin: 0 1rem;
+       }
+     }
+     
+     @media (max-width: 480px) {
+       .contact-form {
+         padding: 3rem 0;
+       }
+       
+       .form-container {
+         padding: 1.5rem 1rem;
+       }
+       
+       .form-group {
+         margin-bottom: 1.2rem;
+       }
+       
+       .form-group label {
+         font-size: 0.95rem;
+       }
+       
+       .form-group input,
+       .form-group select,
+       .form-group textarea {
+         padding: 0.7rem;
+         font-size: 0.95rem;
+       }
+       
+       .form-submit .btn {
+         min-width: 180px;
+         font-size: 0.95rem;
+       }
+     }
+     
+     /* フッタースタイル */
+     footer {
+       background-color: #333;
+       color: #fff;
+       padding: 3rem 0;
+     }
+     
+     .footer-container {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       margin-bottom: 2rem;
+     }
+     
+     .footer-info {
+       max-width: 300px;
+     }
+     
+     .footer-logo {
+       font-size: 1.2rem;
+       margin-bottom: 1rem;
+     }
+     
+     .footer-address,
+     .footer-contact {
+       font-size: 0.9rem;
+       line-height: 1.6;
+       margin-bottom: 1rem;
+     }
+     
+     .copyright {
+       text-align: center;
+       font-size: 0.8rem;
+       color: #aaa;
+     }
+     
+     @media (max-width: 768px) {
+       footer {
+         padding: 2.5rem 0;
+       }
+       
+       .footer-container {
+         flex-direction: column;
+         gap: 2rem;
+       }
+       
+       .footer-info {
+         max-width: 100%;
+         text-align: center;
+       }
+     }
    </style>
 </head>
 <body>
@@ -3863,6 +4045,72 @@
 
   <!-- コミュニティセクションとフォームセクションの間の雲のような区切り -->
   <div class="section-divider cloud-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="cloud-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#fffafc" />
+          <stop offset="50%" style="stop-color:#fff4f6" />
+          <stop offset="100%" style="stop-color:#fff" />
+        </linearGradient>
+      </defs>
+      <path d="M0,0 L0,120 L1200,120 L1200,0 C1000,60 800,0 600,60 C400,120 200,60 0,0 Z" fill="url(#cloud-gradient)"></path>
+    </svg>
+  </div>
+
+  <!-- 資料請求・お申し込みフォームセクション -->
+  <section class="section contact-form" id="contact">
+    <div class="container">
+      <h2 class="section-title">資料請求・お申し込み</h2>
+      <p class="contact-description">
+        ベビー発育アドバイザー講座に関する詳しい資料をお送りします。<br>
+        以下のフォームに必要事項をご記入の上、送信ボタンをクリックしてください。
+      </p>
+      
+      <div class="form-container">
+        <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/xxxxxxxxxxxxxxxxxxxxx/formResponse" method="POST">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">*</span></label>
+            <input type="text" id="name" name="entry.xxxxxxxx" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" name="entry.xxxxxxxx" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="entry.xxxxxxxx">
+          </div>
+          
+          <div class="form-group">
+            <label for="inquiry">お問い合わせ内容 <span class="required">*</span></label>
+            <select id="inquiry" name="entry.xxxxxxxx" required>
+              <option value="">選択してください</option>
+              <option value="資料請求">資料請求</option>
+              <option value="受講申し込み">受講申し込み</option>
+              <option value="その他">その他</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="entry.xxxxxxxx" rows="5"></textarea>
+          </div>
+          
+          <div class="form-group privacy-policy">
+            <input type="checkbox" id="privacy" required>
+            <label for="privacy"><a href="#" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span></label>
+          </div>
+          
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">送信する</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
   <!-- フッター -->
   <footer>
     <div class="container">
