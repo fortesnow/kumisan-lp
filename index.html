@@ -2258,7 +2258,287 @@
          padding-right: 15px;
        }
        
-       /* スマホでのカードレイアウト調整 */
+       /* 悩みカードスタイル調整 */
+     .worry-card {
+       flex: 1;
+       background-color: #fff;
+       border-radius: 10px;
+       overflow: hidden;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+     }
+     
+     .worry-card:hover {
+       transform: translateY(-5px);
+       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+     }
+     
+     .worry-image {
+       width: 80%; /* 画像サイズを小さく */
+       height: auto;
+       display: block;
+       margin: 1rem auto 0;
+     }
+     
+     .worry-text {
+       padding: 1.5rem;
+       text-align: center;
+       color: #333;
+       font-size: 1.1rem;
+       font-weight: 500;
+       width: 100%;
+     }
+     
+     .solution-transition {
+       margin-top: 3rem;
+       text-align: center;
+       background-color: rgba(255, 255, 255, 0.9);
+       padding: 2rem;
+       border-radius: 12px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+     }
+     
+     .solution-transition h3 {
+       font-size: 1.6rem;
+       color: #ff4778;
+       font-weight: 700;
+       margin: 0;
+       line-height: 1.5;
+     }
+     
+     /* 子育て経験の価値セクション */
+     .experience-list {
+       margin: 2rem 0;
+     }
+     
+     .experience-item {
+       display: flex;
+       align-items: center;
+       margin-bottom: 1.2rem;
+       background-color: #fff;
+       padding: 1rem 1.5rem;
+       border-radius: 10px;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+     }
+     
+     .experience-item i {
+       color: #ff4778;
+       font-size: 1.5rem;
+       margin-right: 1rem;
+     }
+     
+     .experience-item p {
+       margin: 0;
+       font-size: 1.1rem;
+     }
+     
+     .value-message {
+       background-color: rgba(255, 71, 120, 0.1);
+       padding: 2rem;
+       border-radius: 10px;
+       text-align: center;
+       margin-top: 2rem;
+     }
+     
+     .value-message p {
+       font-size: 1.3rem;
+       font-weight: 600;
+       color: #ff4778;
+       margin: 0;
+     }
+     
+     /* ベビー発育アドバイザーが選ばれる理由セクション */
+     .reason-cards {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 2rem;
+       margin-top: 2rem;
+     }
+     
+     .reason-card {
+       background-color: #fff;
+       border-radius: 10px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+       padding: 2rem;
+       transition: transform 0.3s ease;
+     }
+     
+     .reason-card:hover {
+       transform: translateY(-5px);
+     }
+     
+     .reason-card h3 {
+       color: #ff4778;
+       font-size: 1.3rem;
+       margin-bottom: 1rem;
+       text-align: center;
+     }
+     
+     .reason-card p {
+       margin: 0;
+       line-height: 1.6;
+     }
+     
+     .association-intro-message {
+       background-color: #fff;
+       padding: 2rem;
+       border-radius: 10px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+       max-width: 800px;
+       margin: 2rem auto;
+       text-align: center;
+     }
+     
+     .association-intro-message p {
+       font-size: 1.2rem;
+       line-height: 1.8;
+       margin: 0;
+     }
+     
+     /* スマホ対応 */
+           @media (max-width: 768px) {
+        .reason-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      /* ベビー発育アドバイザーになると何ができる？セクション */
+           /* ベビー発育アドバイザーとは？セクション */
+     .features-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+     }
+     
+     .feature-card {
+       background-color: #fff;
+       border-radius: 10px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+       padding: 2rem;
+       transition: transform 0.3s ease;
+     }
+     
+     .feature-card:hover {
+       transform: translateY(-5px);
+     }
+     
+     .feature-card h3 {
+       color: #ff4778;
+       font-size: 1.2rem;
+       margin-bottom: 1rem;
+       font-weight: 700;
+     }
+     
+     .feature-card p {
+       margin: 0;
+       line-height: 1.6;
+     }
+     
+     .advisor-description {
+       text-align: center;
+       font-size: 1.3rem;
+       margin: 1rem 0 2rem;
+       color: #666;
+     }
+     
+     .job-cards {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+     }
+      
+      .job-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      
+      .job-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .job-card-inner {
+        padding: 2rem;
+      }
+      
+      .job-card h3 {
+        color: #ff4778;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      
+      .job-card p {
+        margin: 0;
+        line-height: 1.6;
+      }
+      
+      /* あなたらしい活躍を応援セクション */
+      .your-style-section {
+        background-color: #fff8f8;
+      }
+      
+      .style-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      
+      .style-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        padding: 2rem;
+        transition: transform 0.3s ease;
+      }
+      
+      .style-card:hover {
+        transform: translateY(-5px);
+      }
+      
+      .style-card h3 {
+        color: #ff4778;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        text-align: center;
+      }
+      
+      .style-card p {
+        margin: 0;
+        line-height: 1.6;
+      }
+      
+      .style-conclusion {
+        background-color: rgba(255, 71, 120, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      
+      .style-conclusion p {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ff4778;
+        margin: 0;
+      }
+      
+      @media (max-width: 768px) {
+        .job-cards, .style-cards, .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+     /* スマホでのカードレイアウト調整 */
        .card-grid, .testimonials-grid, .risk-questions, .worry-cards {
          grid-template-columns: 1fr !important;
          display: flex;
@@ -2366,7 +2646,6 @@
       <div class="hero-content" data-aos="fade-up">
         <h1>子育ても、仕事も、<br>もう諦めない。</h1>
         <p class="sub-heading">ベビー発育アドバイザー講座｜自宅から始める新しい働き方</p>
-        <a href="#form" class="btn btn-primary pulse">今すぐ無料説明会へ</a>
         <div class="hero-badges">
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">受講生満足度94%</div>
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="200">返金保証14日</div>
@@ -2397,28 +2676,27 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container">
-      <h2 class="section-title">現代の子育てママが抱える本当の悩み</h2>
+      <h2 class="section-title">子育てママの９０％が<br>抱えているお悩み</h2>
       <p class="problem-intro">
-        せっかく子育ての経験や知識があるのに、それを活かす機会がない。家事や育児に追われる<br>
-        毎日で自分のための時間がとれず、将来への不安だけが募っていく...
+        できれば子どもが小さいうちは<br>おうちで働きたいけど<br>特別なスキルも経験もなくて<br>在宅ワークも何がむいているのかわからない
       </p>
       
       <div class="worry-cards">
         <div class="worry-card">
           <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
-          <div class="worry-text">好きなことを仕事にしたいけど、<br>何から始めれば良いかわからない</div>
+          <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
         </div>
         <div class="worry-card">
           <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
-          <div class="worry-text">子どもと過ごす時間と仕事を<br>両立させる方法が見つからない</div>
-        </div>
-        <div class="worry-card">
-          <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
           <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
         </div>
         <div class="worry-card">
+          <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
+          <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
+        </div>
+        <div class="worry-card">
           <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
-          <div class="worry-text">孤独な子育てから抜け出し、<br>社会とつながる場所が欲しい</div>
+          <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
         </div>
       </div>
     </div>
@@ -2431,28 +2709,32 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container">
-      <h2 class="section-title">"やりたい"のに動けない理由</h2>
+      <h2 class="section-title">多くのママが同じ気持ちです。でも…</h2>
       <p class="problem-intro">
-        「いつか自分のスキルを活かした仕事をしたい」と思っていても、一歩が踏み出せない。なぜなら...
+        「いつか自分に合ったお仕事をしたい」と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
       </p>
       
       <div class="worry-cards">
         <div class="worry-card">
           <img src="assets/images/worry5.png" alt="動けない理由のイメージ1" class="worry-image">
-          <div class="worry-text">時間も方法もわからず何も始められないまま月日だけが過ぎていく</div>
+          <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
         <div class="worry-card">
           <img src="assets/images/worry5.png" alt="動けない理由のイメージ2" class="worry-image">
-          <div class="worry-text">資格を取っても集客方法がわからず、クライアントゼロの状態が続く</div>
+          <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
         <div class="worry-card">
           <img src="assets/images/worry5.png" alt="動けない理由のイメージ3" class="worry-image">
-          <div class="worry-text">「私にできるのかな...」という不安が常につきまとい行動できない</div>
+          <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
         <div class="worry-card">
           <img src="assets/images/worry5.png" alt="動けない理由のイメージ4" class="worry-image">
-          <div class="worry-text">情報過多で何を信じていいかわからず、選択肢の前で立ち止まってしまう</div>
+          <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
+      </div>
+      
+      <div class="solution-transition">
+        <h3>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事です</h3>
       </div>
     </div>
   </section>
@@ -2479,10 +2761,6 @@
       </div>
       
       <div class="desire-content">
-        <div class="desire-image-container">
-          <img src="assets/images/3.png" alt="貴女の経験が輝く場所" class="desire-image">
-        </div>
-      
         <div class="desire-quotes">
           <div class="desire-quote">
             <div class="quote-mark">❝</div>
@@ -2511,55 +2789,9 @@
             <div class="point-icon">✦</div>
             <p>子育ての経験を活かして、新しい可能性を広げてみませんか？</p>
           </div>
-        </div>
-        
-        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 独学リスクセクション -->
-  <section class="section risk-section" id="risk_of_self_learning">
-    <div class="container">
-      <h2 class="section-title">独学だと陥りがちな5つの落とし穴</h2>
-      
-      <div class="risk-questions">
-        <div class="risk-question">
-          <div class="risk-question-content">
-            <p>復帰をしたはいいけれど、<br>この先ずっと両立して<br>いけるだろうか</p>
           </div>
-          <div class="risk-question-mark">?</div>
-        </div>
-        
-        <div class="risk-question">
-          <div class="risk-question-content">
-            <p>自分にとっても子供にとっても<br>いいバランスって<br>どんな形なんだろう</p>
           </div>
-          <div class="risk-question-mark">?</div>
         </div>
-        
-        <div class="risk-question">
-          <div class="risk-question-content">
-            <p>子供が小さいうちは<br>仕事をペースダウン<br>できるといいのに</p>
-          </div>
-          <div class="risk-question-mark">?</div>
-        </div>
-        
-        <div class="risk-question">
-          <div class="risk-question-content">
-            <p>フルタイムで働け<br>なければ、専業主婦か<br>近所でパートしか<br>ないのかな</p>
-          </div>
-          <div class="risk-question-mark">?</div>
-        </div>
-        
-        <div class="risk-question">
-          <div class="risk-question-content">
-            <p>一度辞めてしまったら、<br>やりたい仕事って本当に<br>見つかるのだろうか</p>
-          </div>
-          <div class="risk-question-mark">?</div>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- 独学リスクセクションとベビー発育アドバイザー講座セクションの間の斜め区切り -->
@@ -2574,191 +2806,196 @@
       </defs>
       <path d="M0,0 L0,30 C400,90 800,30 1200,70 L1200,0 Z" fill="url(#diagonal-gradient)"></path>
     </svg>
-  </div>
+      </div>
 
   <!-- ベビー発育アドバイザー講座セクション -->
-  <section class="solution-section">
+  <!-- 子育て経験の価値セクション -->
+  <section class="section experience-value">
     <div class="container">
-      <div class="solution-intro">
-        <h3 class="solution-intro-heading">1人じゃがんばれない...という方も安心！</h3>
-      </div>
-      <div class="solution-main">
-        <h2 class="solution-heading">ベビー発育アドバイザー講座<br>なら解決できます</h2>
+      <h2 class="section-title">ふと思い返してみてください。<br>子育て中、こんな経験ありませんでしたか？</h2>
+      
+      <div class="experience-list">
+        <div class="experience-item">
+          <i class="fas fa-check-circle"></i>
+          <p>まわりの子はたくさん寝るのにわが子は全然寝なくて辛い</p>
+          </div>
+        <div class="experience-item">
+          <i class="fas fa-check-circle"></i>
+          <p>毎日何しよう？どこにいこう？で検索ばかりしていた</p>
+        </div>
+        <div class="experience-item">
+          <i class="fas fa-check-circle"></i>
+          <p>離乳食のレパートリーがなくてＳＮＳを見漁っていた</p>
+          </div>
+        </div>
         
-        <div class="solution-cards">
-          <!-- カード1：最短2週間で収益化 -->
-          <div class="solution-card solution-card-pink">
-            <div class="solution-card-icon">
-              <img src="assets/images/icon-baby.svg" alt="赤ちゃんアイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;30&quot; fill=&quot;%23d58e9e&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;20&quot; fill=&quot;white&quot;/><circle cx=&quot;45&quot; cy=&quot;43&quot; r=&quot;2&quot; fill=&quot;%23333&quot;/><circle cx=&quot;55&quot; cy=&quot;43&quot; r=&quot;2&quot; fill=&quot;%23333&quot;/><path d=&quot;M 45 55 Q 50 60 55 55&quot; stroke=&quot;%23333&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/><path d=&quot;M 35 40 Q 40 30 50 35&quot; stroke=&quot;%23d58e9e&quot; fill=&quot;none&quot; stroke-width=&quot;2&quot;/></svg>'">
-            </div>
-            <h3 class="solution-card-title">最短2週間で<br>収益化</h3>
-            <p class="solution-card-text">案件テンプレ＆<br>教材完備で即実</p>
-          </div>
-          
-          <!-- カード2：家事育児と両立OK -->
-          <div class="solution-card solution-card-orange">
-            <div class="solution-card-icon">
-              <img src="assets/images/icon-house.svg" alt="家のアイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><path d=&quot;M 50 20 L 20 45 L 30 45 L 30 75 L 70 75 L 70 45 L 80 45 Z&quot; fill=&quot;%23e67e22&quot;/><path d=&quot;M 40 75 L 40 55 L 60 55 L 60 75&quot; fill=&quot;white&quot; stroke=&quot;%23e67e22&quot; stroke-width=&quot;2&quot;/></svg>'">
-            </div>
-            <h3 class="solution-card-title">家事育児と<br>両立OK</h3>
-            <p class="solution-card-text">スキマ時間で<br>学べるカリキュラム</p>
-          </div>
-          
-          <!-- カード3：仲間と伴走コミュニティ -->
-          <div class="solution-card solution-card-purple">
-            <div class="solution-card-icon">
-              <img src="assets/images/icon-handshake.svg" alt="握手アイコン" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><path d=&quot;M 20 40 C 25 35 35 45 40 50 C 50 40 65 45 75 55 C 80 60 85 70 75 75 C 65 80 60 70 50 65 C 40 60 30 50 20 55 C 10 60 15 45 20 40&quot; fill=&quot;%239b59b6&quot;/></svg>'">
-            </div>
-            <h3 class="solution-card-title">仲間と伴走<br>コミュニティ</h3>
-            <p class="solution-card-text">相談・コラボで<br>孤独ゼロ</p>
+      <div class="value-message">
+        <p>あなたが積み重ねてきた子育て経験やお悩みは、<br>今同じように悩むママへ笑顔と価値をお届けできるのです</p>
           </div>
         </div>
-      </div>
-    </div>
   </section>
-
-  <!-- SHElikesスタイルセクション -->
-  <section class="shelikes-section" id="features">
+  
+  <!-- ベビー発育アドバイザーが選ばれる理由 -->
+  <section class="section reason-section-updated">
     <div class="container">
-      <div class="shelikes-title-container">
-        <span class="shelikes-sparkle shelikes-sparkle-1">✦</span>
-        <span class="shelikes-sparkle shelikes-sparkle-2">✦</span>
-        <h2 class="shelikes-title">ベビー発育アドバイザーとは？</h2>
-        <span class="shelikes-sparkle shelikes-sparkle-3">✦</span>
-        <span class="shelikes-sparkle shelikes-sparkle-4">✦</span>
+      <div class="reason-section-header">
+        <span class="reason-decorative-text">Reason</span>
+        <h2 class="section-title">ベビー発育アドバイザーが選ばれる理由</h2>
       </div>
-
-      <div class="shelikes-headline-container">
-        <h3 class="shelikes-headline">
-          <span class="shelikes-headline-primary">赤ちゃんの発達を専門的に支援</span>できる<br>
-          子育て支援の専門家です
-        </h3>
-
-        <div class="shelikes-badge">
-          <div class="shelikes-badge-content">
-            <div class="shelikes-badge-text">乳幼児発達推進協会<br>認定資格</div>
-            <div class="shelikes-badge-number">公式</div>
-            <div class="shelikes-badge-circle">全国で<br>活躍中！</div>
+      <div class="reason-items-container">
+        <!-- Item 1 -->
+        <div class="reason-item">
+          <div class="reason-text-content">
+            <span class="reason-number">01</span>
+            <h3 class="reason-item-title">最短１ヶ月で収益化</h3>
+            <p class="reason-item-description">受講生全員が未経験から！<br>初めに何をしたら良いかから丁寧にひとつずつ<br>講義の中で一緒に行動にうつしていけるので<br>最短ルートでお仕事として確立できます</p>
+          </div>
+          <div class="reason-image-content">
+            <img src="assets/images/reason_placeholder_1.png" alt="最短１ヶ月で収益化 イメージ">
           </div>
         </div>
-      </div>
-
-      <div class="shelikes-features">
-        <div class="shelikes-feature-card">
-          <div class="shelikes-feature-header">
-            発達に合わせた<br>適切な関わり方
+        <!-- Item 2 -->
+        <div class="reason-item reverse">
+          <div class="reason-text-content">
+            <span class="reason-number">02</span>
+            <h3 class="reason-item-title">家事育児と両立ができる</h3>
+            <p class="reason-item-description">学ぶ知識は今の子育てにも活かせたり<br>わが子と一緒に実践できるあそびもたくさん！<br>パソコンだけの在宅ワークと異なるので<br>子どもとの時間を大切にしたい方におすすめ</p>
           </div>
-          <div class="shelikes-feature-body">
-            <div class="shelikes-feature-icon">
-              <img src="assets/images/shelikes/feature_icon1.svg.txt" alt="発達に合わせた適切な関わり方">
-            </div>
-            <div class="shelikes-feature-text">
-              月齢・年齢に応じた<span class="shelikes-feature-highlight">発達段階</span>を理解し、適切な遊びや関わり方を提案できます。
-            </div>
+          <div class="reason-image-content">
+            <img src="assets/images/reason_placeholder_2.png" alt="家事育児と両立ができる イメージ">
           </div>
         </div>
-
-        <div class="shelikes-feature-card">
-          <div class="shelikes-feature-header">
-            発達の遅れの<br>早期発見と支援
+        <!-- Item 3 -->
+        <div class="reason-item">
+          <div class="reason-text-content">
+            <span class="reason-number">03</span>
+            <h3 class="reason-item-title">一人で悩まない環境</h3>
+            <p class="reason-item-description">全国で活躍中のメンバーとつながったり<br>わからないことはいつでも質問できるサポート付<br>これで良いのかな？をすぐに解決できるのは<br>ゼロから始める方に必須な環境です</p>
           </div>
-          <div class="shelikes-feature-body">
-            <div class="shelikes-feature-icon">
-              <img src="assets/images/shelikes/feature_icon2.svg.txt" alt="発達の遅れの早期発見と支援">
-            </div>
-            <div class="shelikes-feature-text">
-              <span class="shelikes-feature-highlight">発達の気になるポイント</span>を専門的に観察し、適切な支援方法を提案できます。
-            </div>
-          </div>
-        </div>
-
-        <div class="shelikes-feature-card">
-          <div class="shelikes-feature-header">
-            子育て不安への<br>専門的アドバイス
-          </div>
-          <div class="shelikes-feature-body">
-            <div class="shelikes-feature-icon">
-              <img src="assets/images/shelikes/feature_icon3.svg.txt" alt="子育て不安への専門的アドバイス">
-            </div>
-            <div class="shelikes-feature-text">
-              科学的根拠に基づいた<span class="shelikes-feature-highlight">子育て支援</span>で、保護者の不安や疑問に答えられます。
-            </div>
-          </div>
-        </div>
-
-        <div class="shelikes-feature-card">
-          <div class="shelikes-feature-header">
-            子どもの可能性を<br>引き出す関わり
-          </div>
-          <div class="shelikes-feature-body">
-            <div class="shelikes-feature-icon">
-              <img src="assets/images/shelikes/feature_icon4.svg.txt" alt="子どもの可能性を引き出す関わり">
-            </div>
-            <div class="shelikes-feature-text">
-              一人ひとりの<span class="shelikes-feature-highlight">個性や特性</span>を尊重し、その子の才能や可能性を最大限に伸ばします。
-            </div>
+          <div class="reason-image-content">
+            <img src="assets/images/reason_placeholder_3.png" alt="一人で悩まない環境 イメージ">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 協会紹介セクション -->
-  <section class="association-intro" id="association">
+  <!-- ベビー発育アドバイザーとは？セクション -->
+  <section class="section child-experience" id="features">
+    <div class="container">
+      <h2 class="section-title">ベビー発育アドバイザーとは？</h2>
+      <p class="advisor-description">赤ちゃんの発育を専門的に支援できる<br>子育てサポートの専門家です</p>
+      
+      <!-- ベビー発育アドバイザーとは？スライダー -->
+      <div class="advisor-slider" id="advisor-slider">
+        <div class="advisor-slider-track">
+          <div class="advisor-slide">
+            <img src="assets/images/advisor1.jpg" alt="ベビー発育アドバイザーとは 1" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ1</text></svg>'">
+            <div class="advisor-caption">
+              <h3>発達に合わせた適切な関わり方</h3>
+              <p>月齢・年齢に応じた発達段階を理解し、適切な遊びや関わり方を提案できます。子どもたちが自然と好奇心を広げられる環境づくりをサポートします。</p>
+        </div>
+      </div>
+
+          <div class="advisor-slide">
+            <img src="assets/images/advisor2.jpg" alt="ベビー発育アドバイザーとは 2" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ2</text></svg>'">
+            <div class="advisor-caption">
+              <h3>子育て不安への専門的アドバイス</h3>
+              <p>科学的・学問的根拠に基づいた知識で、ママたちの不安やお悩みをサポートできます。同じ子育て経験を持つからこそ共感力の高いサポートが可能です。</p>
+          </div>
+        </div>
+
+          <div class="advisor-slide">
+            <img src="assets/images/advisor3.jpg" alt="ベビー発育アドバイザーとは 3" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ3</text></svg>'">
+            <div class="advisor-caption">
+              <h3>子育て支援のプロとして活躍</h3>
+              <p>知識の習得だけではなく、お仕事として大切なポイントや親子との関わりもゼロから習得。あなたの子育て経験が社会で活かせる専門職として注目されています。</p>
+          </div>
+          </div>
+        </div>
+
+        <div class="advisor-slider-nav">
+          <button class="slider-nav-btn prev">◀</button>
+          <div class="slider-dots">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+          </div>
+          <button class="slider-nav-btn next">▶</button>
+          </div>
+        </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>発達に合わせた適切な関わり方</h3>
+          <p>月齢・年齢に応じた発達段階を理解し、<br>適切な遊びや関わり方を提案できます。</p>
+          </div>
+        <div class="feature-card">
+          <h3>子育て不安への専門的アドバイス</h3>
+          <p>科学的・学問的根拠に基づいた知識で、<br>ママたちの不安やお悩みをサポートできます。</p>
+            </div>
+        <div class="feature-card">
+          <h3>子どもの可能性を引き出す関わり</h3>
+          <p>一人ひとりの個性や特性を尊重し、<br>その子の才能や可能性を最大限に伸ばします。</p>
+            </div>
+        <div class="feature-card">
+          <h3>子育て支援のプロとして活躍</h3>
+          <p>知識の習得だけではなく、お仕事として<br>大切なポイントや親子との関わりもゼロから習得</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 協会紹介セクション（短縮版） -->
+  <section class="section association-intro" id="association">
     <div class="container">
       <div class="association-title-container">
-        <div class="association-title-icon">🌸</div>
+        <span class="association-title-icon">🏢</span>
         <h2 class="association-title">協会の紹介</h2>
       </div>
       
-      <div class="association-content">
         <p class="association-description">
-          一般社団法人乳幼児発達推進協会は、子どもの健やかな成長を支援するために設立された組織です。<br>
-          専門的な知識と経験を持つ講師陣が、全国の子育て支援の現場で活躍しています。
-        </p>
-        
-        <!-- 協会画像スライダー -->
-        <div class="advisor-image-slider">
-          <div class="advisor-slider">
-            <div class="advisor-slider-track">
-              <div class="advisor-slide">
-                <img src="assets/images/3.png" alt="協会の活動写真1" class="advisor-image">
-                <div class="advisor-caption">
-                  <h3>メディア27社掲載実績</h3>
-                  <p>全国の子育て支援の現場で活躍する専門家たち</p>
-                </div>
-              </div>
-              <div class="advisor-slide">
-                <img src="assets/images/4.png" alt="協会の活動写真2" class="advisor-image">
-                <div class="advisor-caption">
-                  <h3>実績（メンバー内で協力・応援）</h3>
-                  <p>おうちレッスン4〜8組、3年で1,000組以上ご参加</p>
-                </div>
-              </div>
-              <div class="advisor-slide">
-                <img src="assets/images/5.png" alt="協会の活動写真3" class="advisor-image">
-                <div class="advisor-caption">
-                  <h3>おやこ体験型イベント企画</h3>
-                  <p>受講生メンバーと0から企画開催、進学塾さま提携も！</p>
-                </div>
-              </div>
-            </div>
-            <div class="advisor-slider-nav">
-              <button class="slider-nav-btn prev" aria-label="前へ">&#10094;</button>
-              <div class="slider-dots">
-                <span class="slider-dot active" data-index="0"></span>
-                <span class="slider-dot" data-index="1"></span>
-                <span class="slider-dot" data-index="2"></span>
-              </div>
-              <button class="slider-nav-btn next" aria-label="次へ">&#10095;</button>
-            </div>
+        一般社団法人乳幼児発達推進協会は、子どもたちの健やかな成長を支援するために設立されました。<br>
+        全国２３０名が受講し、優良企業提携・専門家監修と実績ある組織です。
+      </p>
+      
+      <!-- 協会紹介スライダー -->
+      <div class="advisor-slider" id="association-slider">
+        <div class="advisor-slider-track">
+          <div class="advisor-slide">
+            <img src="assets/images/association1.jpg" alt="協会について 1" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ1</text></svg>'">
+            <div class="advisor-caption">
+              <h3>子どもの可能性を引き出す</h3>
+              <p>最新の発達科学に基づいたアプローチで、子どもの自然な発達を促進します。全ての子どもが持つ可能性を最大限に引き出す環境づくりをサポートしています。</p>
           </div>
         </div>
         
-        <div class="association-cta">
-          <p>あなたも協会認定の資格を取得して子育て支援の輪に加わりませんか？</p>
-          <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
+          <div class="advisor-slide">
+            <img src="assets/images/association2.jpg" alt="協会について 2" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ2</text></svg>'">
+            <div class="advisor-caption">
+              <h3>親子のきずなを深める</h3>
+              <p>子どもとの関わり方や遊び方を通じて、親子の絆を深めるお手伝いをしています。日常の中での小さな関わりが、大きな成長につながることをお伝えしています。</p>
         </div>
+      </div>
+          
+          <div class="advisor-slide">
+            <img src="assets/images/association3.jpg" alt="協会について 3" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ3</text></svg>'">
+            <div class="advisor-caption">
+              <h3>プロフェッショナルの育成</h3>
+              <p>乳幼児発達の専門知識を持ったアドバイザーを育成し、地域の子育て支援の質を高めています。受講生の多くが活躍の場を広げています。</p>
+      </div>
+            </div>
+          </div>
+          
+        <div class="advisor-slider-nav">
+          <button class="slider-nav-btn prev">◀</button>
+          <div class="slider-dots">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+            </div>
+          <button class="slider-nav-btn next">▶</button>
+          </div>
       </div>
     </div>
   </section>
@@ -2777,70 +3014,44 @@
     </svg>
       </div>
 
-  <!-- ベビー発育アドバイザーにできることセクション -->
-  <section class="section advisor-features" id="advisor-features">
+  <!-- ベビー発育アドバイザーになると何ができる？セクション -->
+  <section class="section job-options" id="advisor-features">
     <div class="container">
-      <h2 class="section-title">ベビー発育アドバイザーとして<br>できること</h2>
+      <h2 class="section-title">ベビー発育アドバイザーになると<br>どんなふうにお仕事ができる？</h2>
       
-      <!-- 写真スライダー部分 -->
-      <div class="advisor-image-slider">
-        <div class="advisor-slider">
-          <div class="advisor-slider-track">
-            <div class="advisor-slide">
-              <img src="assets/images/advisor_play.png" alt="発達段階に合わせた遊びの提案" class="advisor-image">
-              <div class="advisor-caption">
-                <h3>発達段階に合わせた遊びの提案</h3>
-                <p>月齢・年齢に応じた発達を促す遊びや玩具の選び方、適切な関わり方を提案し、子どもの成長をサポートします。</p>
-            </div>
-            </div>
-            <div class="advisor-slide">
-              <img src="assets/images/advisor_observe.png" alt="発達の気になるポイントの専門的観察" class="advisor-image">
-              <div class="advisor-caption">
-                <h3>発達の気になるポイントの専門的観察</h3>
-                <p>専門的な知識をもとに子どもの発達状況を観察し、必要に応じて早期支援や専門機関への橋渡しをします。</p>
-            </div>
-            </div>
-            <div class="advisor-slide">
-              <img src="assets/images/advisor_support.png" alt="保護者の子育て不安の軽減" class="advisor-image">
-              <div class="advisor-caption">
-                <h3>保護者の子育て不安の軽減</h3>
-                <p>科学的根拠に基づく子育てアドバイスを提供し、「これでいいのかな」という不安を解消します。</p>
-            </div>
-          </div>
-            <div class="advisor-slide">
-              <img src="assets/images/advisor_versatile.png" alt="多様な子育て支援の場での活躍" class="advisor-image">
-              <div class="advisor-caption">
-                <h3>多様な子育て支援の場での活躍</h3>
-                <p>児童館、子育て支援センター、保育園など様々な場所で知識を活かした支援活動ができます。</p>
-          </div>
-            </div>
-            <div class="advisor-slide">
-              <img src="assets/images/advisor_online.png" alt="オンラインでの相談・アドバイス" class="advisor-image">
-              <div class="advisor-caption">
-                <h3>オンラインでの相談・アドバイス</h3>
-                <p>場所を選ばず、全国の子育て中の方にオンラインで専門的なアドバイスを提供できます。</p>
-              </div>
-            </div>
-          </div>
-          <div class="advisor-slider-nav">
-            <button class="slider-nav-btn prev" aria-label="前へ">&#10094;</button>
-          <div class="slider-dots">
-            <span class="slider-dot active" data-index="0"></span>
-            <span class="slider-dot" data-index="1"></span>
-            <span class="slider-dot" data-index="2"></span>
-            <span class="slider-dot" data-index="3"></span>
-            <span class="slider-dot" data-index="4"></span>
-          </div>
-            <button class="slider-nav-btn next" aria-label="次へ">&#10095;</button>
-        </div>
+      <div class="job-cards">
+        <div class="job-card">
+          <div class="job-card-inner">
+            <h3>「カフェやおうちでおやこサポート」</h3>
+            <p>地域のおやこ向けに、好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
         </div>
       </div>
       
-      <div class="features-cta">
-        <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
+        <div class="job-card">
+          <div class="job-card-inner">
+            <h3>「子育て支援のプロとして地域連携」</h3>
+            <p>子育て支援センターや地域のおやこ広場など<br>他にも定期開催として活躍できる場所がたくさん！</p>
+        </div>
+        </div>
+        
+        <div class="job-card">
+          <div class="job-card-inner">
+            <h3>「おうちでＺＯＯＭを使ってもＯＫ」</h3>
+            <p>ＺＯＯＭサポートで全国的に広めてもＯＫです<br>マンツーマンでのお悩み相談も、ママたちに大好評！</p>
+        </div>
+        </div>
+        
+        <div class="job-card">
+          <div class="job-card-inner">
+            <h3>「企業提携のイベント企画も」</h3>
+            <p>ベビー関連の企業提携イベントも開催しています<br>実績・経験づくりや認知拡大の場にもなります</p>
+        </div>
+      </div>
       </div>
     </div>
   </section>
+  
+
 
   <!-- 価値観とスタンスセクション -->
   <section class="section values-stance gradient-section gradient-light" id="values">
@@ -3005,60 +3216,32 @@
     </div>
   </section>
 
-  <!-- コミュニティセクション -->
-  <section class="section community-section" id="community">
-    <div class="sakura-bg"></div>
+  <!-- あなたらしい活躍を応援セクション -->
+  <section class="section your-style-section">
     <div class="container">
-      <h2 class="section-title">子育て×キャリアを一緒に歩む仲間との<br>繋がりが継続の秘訣です</h2>
+      <h2 class="section-title">あなたらしい活躍を応援</h2>
       
-      <div class="community-container">
-        <p class="community-description">同じ志を持つ仲間と共に支え合い、喜びも悩みも分かち合える環境が、長く続ける力に繋がります。</p>
-        
-        <!-- 画像を追加 -->
-        <div class="community-image-wrapper">
-          <img src="assets/images/members.webp" alt="一緒に学ぶ仲間たち" class="community-img">
+      <div class="style-cards">
+        <div class="style-card">
+          <h3>「子ども時間・お仕事のバランス自由」</h3>
+          <p>今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
         </div>
         
-        <!-- 4つのカードを追加 -->
-        <div class="community-cards">
-          <div class="community-card">
-            <div class="community-card-icon">
-              <img src="assets/images/icon-community.svg" alt="仲間との交流" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><circle cx=&quot;30&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;70&quot; cy=&quot;40&quot; r=&quot;15&quot; fill=&quot;%237f78bd&quot;/><circle cx=&quot;50&quot; cy=&quot;45&quot; r=&quot;12&quot; fill=&quot;%23f8c4c4&quot;/></svg>'">
-        </div>
-            <h3 class="community-card-title">仲間との交流</h3>
-            <p class="community-card-text">同じ悩みを持つママたちと出会い、定期的な情報交換を行えます</p>
-            </div>
-            
-          <div class="community-card">
-            <div class="community-card-icon">
-              <img src="assets/images/icon-motivation.svg" alt="モチベーション継続" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><polygon points=&quot;50,10 61,35 90,35 67,55 75,80 50,65 25,80 33,55 10,35 39,35&quot; fill=&quot;%23f7b05f&quot;/></svg>'">
-            </div>
-            <h3 class="community-card-title">モチベーション継続</h3>
-            <p class="community-card-text">励まし合える仲間がいることで、継続的にもモチベーションを保てます</p>
-            </div>
-            
-          <div class="community-card">
-            <div class="community-card-icon">
-              <img src="assets/images/icon-collaboration.svg" alt="ビジネスコラボ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;20&quot; y=&quot;30&quot; width=&quot;60&quot; height=&quot;40&quot; rx=&quot;5&quot; fill=&quot;%23e4a0a0&quot;/><rect x=&quot;30&quot; y=&quot;20&quot; width=&quot;40&quot; height=&quot;10&quot; rx=&quot;3&quot; fill=&quot;%23e4a0a0&quot;/></svg>'">
-            </div>
-            <h3 class="community-card-title">ビジネスコラボ</h3>
-            <p class="community-card-text">コミュニティ内で知り合った先輩同士で、自分の事業と様々プロジェクトも支えます</p>
-            </div>
-            
-          <div class="community-card">
-            <div class="community-card-icon">
-              <img src="assets/images/icon-online.svg" alt="オンライン相談" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 100 100&quot;><rect x=&quot;15&quot; y=&quot;20&quot; width=&quot;70&quot; height=&quot;60&quot; rx=&quot;5&quot; fill=&quot;%238b85c1&quot;/><rect x=&quot;25&quot; y=&quot;30&quot; width=&quot;50&quot; height=&quot;30&quot; rx=&quot;3&quot; fill=&quot;white&quot;/></svg>'">
-            </div>
-            <h3 class="community-card-title">オンライン相談</h3>
-            <p class="community-card-text">オンラインコミュニティですので、子育てや悩み事について気軽に相談できます</p>
-          </div>
+        <div class="style-card">
+          <h3>「わが子のためにがんばってきたことが価値に」</h3>
+          <p>子育ての経験はみんなそれぞれちがいます<br>だからこそ、今から始めてもあなたらしく活躍できます</p>
         </div>
         
-        <div class="community-cta">
-          <a href="#form" class="btn btn-primary">無料説明会に申し込む</a>
-        </div>
-      </div>
-    </div>
+        <div class="style-card">
+          <h3>「"自分らしい"を発見できる働き方」</h3>
+          <p>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
+            </div>
+            </div>
+            
+      <div class="style-conclusion">
+        <p>あなたも無理なく"自分らしい"<br>働き方をはじめてみませんか？</p>
+            </div>
+            </div>
   </section>
 
   <!-- コミュニティセクションとフォームセクションの間の雲のような区切り -->
@@ -3073,7 +3256,7 @@
       </defs>
       <path d="M0,0 L0,120 L1200,120 L1200,0 C1000,60 800,0 600,30 C400,60 200,0 0,30 L0,0 Z" fill="url(#cloud-gradient)"></path>
     </svg>
-  </div>
+        </div>
 
   <!-- フォームセクション -->
   <section class="section" id="form">
@@ -3437,21 +3620,21 @@
       const nextBtn = document.querySelector('#advisor-features .slider-nav-btn.next');
       
       if (sliderTrack && slides.length && dots.length && prevBtn && nextBtn) {
-      let currentIndex = 0;
+        let currentIndex = 0;
         const slideCount = slides.length;
         
         // スライダーの位置を更新する関数
-      function updateSlider() {
+        function updateSlider() {
           sliderTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // アクティブなドットを更新
+          
+          // アクティブなドットを更新
           dots.forEach((dot, index) => {
-          if (index === currentIndex) {
-            dot.classList.add('active');
-          } else {
-            dot.classList.remove('active');
-          }
-        });
+            if (index === currentIndex) {
+              dot.classList.add('active');
+            } else {
+              dot.classList.remove('active');
+            }
+          });
         }
         
         // 前へボタンのクリックイベント
@@ -3469,36 +3652,36 @@
         // ドットクリックでスライド移動
         dots.forEach((dot, index) => {
           dot.addEventListener('click', function() {
-          currentIndex = index;
-          updateSlider();
+            currentIndex = index;
+            updateSlider();
+          });
         });
-      });
-      
+        
         // タッチスワイプ対応
-      let touchStartX = 0;
-      let touchEndX = 0;
-      
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
         const slider = document.querySelector('.advisor-slider');
-      
+        
         if (slider) {
           slider.addEventListener('touchstart', function(e) {
-          touchStartX = e.changedTouches[0].screenX;
+            touchStartX = e.changedTouches[0].screenX;
           });
-        
+          
           slider.addEventListener('touchend', function(e) {
-          touchEndX = e.changedTouches[0].screenX;
+            touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
           });
           
           function handleSwipe() {
-          if (touchEndX < touchStartX - 50) {
-            // 左スワイプ（次へ）
+            if (touchEndX < touchStartX - 50) {
+              // 左スワイプ（次へ）
               currentIndex = (currentIndex + 1) % slideCount;
               updateSlider();
-          } else if (touchEndX > touchStartX + 50) {
-            // 右スワイプ（前へ）
+            } else if (touchEndX > touchStartX + 50) {
+              // 右スワイプ（前へ）
               currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-          updateSlider();
+              updateSlider();
             }
           }
           
@@ -3506,7 +3689,7 @@
           function startAutoSlide() {
             return setInterval(() => {
               currentIndex = (currentIndex + 1) % slideCount;
-        updateSlider();
+              updateSlider();
             }, 5000); // 5秒ごとに切り替え
           }
           
