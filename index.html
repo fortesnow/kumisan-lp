@@ -2614,6 +2614,520 @@
          box-shadow: 0 4px 20px rgba(255, 71, 120, 0.4);
        }
      }
+
+     /* あなたらしい活躍を応援セクション - 画像風デザイン */
+     .your-style-section--image-inspired {
+       background-color: #fdfaf2; /* 淡いベージュ */
+       position: relative;
+       padding-top: 4rem;
+       padding-bottom: 4rem;
+       overflow: hidden;
+     }
+
+     .your-style-section--image-inspired .container {
+       position: relative; /* For positioning decorative circles within container bounds */
+       z-index: 1;
+     }
+
+     /* 装飾用の円 */
+     .your-style-section--image-inspired .decorative-circle {
+       position: absolute;
+       border-radius: 50%;
+       opacity: 0.15; /* 少し濃く */
+       z-index: 0;
+     }
+
+     .your-style-section--image-inspired .circle-1 { /* 右上 薄水色 大 */
+       width: 220px;
+       height: 220px;
+       background-color: #a0d8ef;
+       top: -80px;
+       right: -80px;
+     }
+
+     .your-style-section--image-inspired .circle-2 { /* 左上 ピンク 中 */
+       width: 70px;
+       height: 70px;
+       background-color: #f7c0c0;
+       top: 20px;
+       left: 10px;
+     }
+
+     .your-style-section--image-inspired .circle-3 { /* 左中下 水色 小 */
+       width: 40px;
+       height: 40px;
+       background-color: #a0d8ef;
+       top: 200px;
+       left: 40px;
+     }
+
+     .your-style-section--image-inspired .circle-4 { /* 右下 ピンク 小 */
+       width: 50px;
+       height: 50px;
+       background-color: #f7c0c0;
+       bottom: 30px;
+       right: 50px;
+     }
+     .your-style-section--image-inspired .circle-5 { /* 左下 ピンク 中 */
+       width: 150px;
+       height: 150px;
+       background-color: #f7c0c0;
+       bottom: -70px;
+       left: -50px;
+       opacity: 0.1;
+     }
+
+
+     .your-style-section--image-inspired .section-title {
+       color: #e6587c; /* メインタイトルに近い濃いピンク */
+       font-size: 2.2rem;
+       text-align: center;
+       margin-bottom: 1rem; /* 点線との間隔調整 */
+       position: relative;
+       z-index: 2; /* 円より手前 */
+     }
+
+     .your-style-section--image-inspired .section-title::after {
+       content: '・・・・・・・・・・・・・・'; /* 全角の点 */
+       display: block;
+       color: #a0d8ef; /* 薄い水色 */
+       font-size: 1.2rem; /* 少し大きく */
+       letter-spacing: 4px;
+       text-align: center;
+       margin-top: 0.8rem;
+       font-weight: bold; /* 点を太く */
+     }
+
+     .your-style-content {
+       max-width: 650px; /* 少し広めに */
+       margin: 2.5rem auto 2.5rem auto; /* 上下のマージン調整 */
+       position: relative;
+       z-index: 2; /* 円より手前 */
+     }
+
+     .your-style-point {
+       margin-bottom: 1.8rem; /* 間隔調整 */
+       padding: 1.5rem;
+       background-color: rgba(255, 255, 255, 0.6); /* 背景を少し透明に */
+       border-radius: 8px; /* 角を少し丸く */
+       /* box-shadow: 0 2px 8px rgba(0,0,0,0.04); */ /* 影は控えめに、または無しも検討 */
+       border: 1px solid rgba(0,0,0,0.05);
+     }
+
+     .your-style-point h3 {
+       font-size: 1.25rem; /* 少し調整 */
+       color: #4a4a4a; /* やや濃いめのグレー */
+       font-weight: 500; /* 少し細めに */
+       margin-bottom: 0.7rem;
+       text-align: center; /* 画像に合わせて中央寄せ */
+     }
+
+     .your-style-point p {
+       font-size: 1rem;
+       line-height: 1.65; /* 少し調整 */
+       color: #606060; /* やや濃いめのグレー */
+       text-align: center; /* 画像に合わせて中央寄せ */
+     }
+
+     .your-style-conclusion-new {
+       text-align: center;
+       margin-top: 2.5rem;
+       padding: 2rem; /* パディング調整 */
+       /* background-color: rgba(255, 235, 240, 0.7); */ /* 背景色は一旦なしに。またはもっと薄く */
+       border-radius: 8px;
+       position: relative;
+       z-index: 2; /* 円より手前 */
+       max-width: 600px;
+       margin-left: auto;
+       margin-right: auto;
+     }
+
+     .your-style-conclusion-new p {
+       font-size: 1.3rem; /* 少し調整 */
+       font-weight: 500; /* 少し細めに */
+       color: #333; /* 黒に近い色 */
+       line-height: 1.6;
+     }
+     .your-style-conclusion-new p .highlight-pink {
+         color: #e6587c;
+         font-weight: 700;
+     }
+
+
+     /* レスポンシブ */
+     @media (max-width: 768px) {
+       .your-style-section--image-inspired .section-title {
+         font-size: 1.9rem;
+       }
+       .your-style-section--image-inspired .section-title::after {
+         font-size: 1rem;
+         letter-spacing: 3px;
+       }
+       .your-style-content {
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+       }
+       .your-style-point {
+         padding: 1.2rem;
+       }
+       .your-style-point h3 {
+         font-size: 1.15rem;
+       }
+       .your-style-point p {
+         font-size: 0.95rem;
+       }
+       .your-style-conclusion-new {
+         padding: 1.5rem;
+       }
+       .your-style-conclusion-new p {
+         font-size: 1.15rem;
+       }
+
+       .your-style-section--image-inspired .circle-1 {
+         width: 150px;
+         height: 150px;
+         top: -50px;
+         right: -50px;
+       }
+       .your-style-section--image-inspired .circle-2 {
+         width: 50px;
+         height: 50px;
+       }
+        .your-style-section--image-inspired .circle-5 {
+         width: 100px;
+         height: 100px;
+         bottom: -50px;
+         left: -30px;
+       }
+
+     }
+
+     @media (max-width: 480px) {
+         .your-style-section--image-inspired .section-title {
+             font-size: 1.7rem;
+         }
+         .your-style-section--image-inspired .section-title::after {
+             font-size: 0.9rem;
+             letter-spacing: 2px;
+         }
+         .your-style-point h3 {
+           font-size: 1.1rem;
+         }
+         .your-style-point p {
+           font-size: 0.9rem;
+         }
+         .your-style-conclusion-new p {
+           font-size: 1.1rem;
+         }
+     }
+
+     /* 既存の .your-style-section のスタイルとの競合を避けるため、
+        もし .your-style-section に直接指定されている padding や background-color があれば、
+        .your-style-section--image-inspired で上書きされるように注意。
+        既存の .style-cards, .style-card, .style-conclusion のスタイルは、
+        HTML構造の変更により適用されなくなる想定。
+     */
+
+     /* YAML指示に基づく「あなたらしい活躍を応援」セクションのスタイル */
+     .your-style-section--yaml-inspired {
+       background: linear-gradient(to bottom, #fff0f5 0%, #fff0f5 20%, #fdfdfd 20%, #fdfdfd 80%, #fff0f5 80%, #fff0f5 100%); /* 上下淡いピンク、中央オフホワイト */
+       position: relative;
+       padding: 5rem 0;
+       overflow: hidden;
+       font-family: 'M PLUS Rounded 1c', sans-serif; /* 丸ゴシック体 */
+     }
+
+     .your-style-section--yaml-inspired .container {
+       position: relative;
+       z-index: 1;
+       max-width: 800px; /* 少し広げる */
+       text-align: center; /* 全体的に中央寄せの傾向 */
+     }
+
+     /* 装飾図形 */
+     .your-style-section--yaml-inspired .decorative-shape {
+       position: absolute;
+       opacity: 0.4;
+       z-index: 0;
+     }
+
+     .your-style-section--yaml-inspired .shape-top-left { /* ピンク円 左上 */
+       width: 60px;
+       height: 60px;
+       background-color: #f7c0c0; /* 淡いピンク */
+       border-radius: 50%;
+       top: 10%;
+       left: 5%;
+     }
+
+     .your-style-section--yaml-inspired .shape-top-right { /* ミント円 右上 -> ピンク系に変更 */
+       width: 120px;
+       height: 120px;
+       background-color: #fbc2d0; /* やや濃いめの淡いピンク */
+       border-radius: 50%;
+       top: 5%;
+       right: 3%;
+       opacity: 0.3;
+     }
+
+     .your-style-section--yaml-inspired .shape-bottom-left { /* ミント水玉 左下 -> ピンク系グラデーションに変更 */
+       width: 10px;
+       height: 10px;
+       background-color: #f7c0c0; /* 淡いピンク */
+       border-radius: 50%;
+       bottom: 20%;
+       left: 15%;
+       box-shadow: 15px 15px 0 #f8d0d8, -10px 30px 0 #fce0e5; /* ピンク系のバリエーション */
+     }
+
+     .your-style-section--yaml-inspired .shape-bottom-right { /* ピンク水玉 右下 */
+       width: 8px;
+       height: 8px;
+       background-color: #f7c0c0;
+       border-radius: 50%;
+       bottom: 10%;
+       right: 10%;
+       box-shadow: -15px -10px 0 #f7c0c0, 10px -25px 0 #f7c0c0;
+     }
+
+     .your-style-section--yaml-inspired .shape-center-dot-line {
+       height: 4px; 
+       width: 150px;
+       background-image: radial-gradient(circle, #f7c0c0 2px, transparent 2px);
+       background-size: 10px 10px;
+       position: absolute;
+       top: 25%; 
+       left: 50%;
+       transform: translateX(-50%);
+       opacity: 0.5;
+     }
+
+
+     .your-style-section--yaml-inspired .main-catchphrase {
+       font-size: 24pt; /* 24pt */
+       font-weight: bold;
+       color: #4A4A4A; /* ダークグレー */
+       text-align: center;
+       margin-bottom: 1rem;
+     }
+
+     .your-style-section--yaml-inspired .sub-catchphrase {
+       font-size: 20pt; /* 20pt */
+       text-align: center;
+       color: #333; /* やや濃いめのグレーが読みやすい */
+       margin-bottom: 2.5rem;
+       font-weight: 500;
+     }
+
+     .your-style-section--yaml-inspired .dotted-underline-mint {
+       border-bottom: 3px dotted #ff85a2; /* メインのピンク色に変更 */
+       padding-bottom: 0.3rem;
+       display: inline-block; /* アンダーラインがテキスト幅に合うように */
+     }
+
+     .your-style-section--yaml-inspired .body-text-group {
+       margin-bottom: 2.5rem;
+       text-align: left; /* 本文は左揃え */
+       max-width: 600px; /* 本文エリアの最大幅 */
+       margin-left: auto;
+       margin-right: auto;
+     }
+
+     .your-style-section--yaml-inspired .body-paragraph {
+       font-size: 16pt; /* 16pt */
+       line-height: 1.8; /* 行間広め */
+       color: #555;
+       margin-bottom: 1.5em;
+     }
+
+     .your-style-section--yaml-inspired .closing-text {
+       font-size: 18pt; /* 18pt */
+       font-weight: 500; /* やや太字 (normalより少し太い程度) */
+       color: #e6587c; /* 濃いピンクに変更 */
+       text-align: center;
+       margin-top: 1rem;
+       line-height: 1.7;
+     }
+
+     .your-style-section--yaml-inspired .highlight-mint {
+       font-weight: bold; /* "自分らしい" の強調 */
+       color: #e6587c; /* 濃いピンクに変更 */
+     }
+
+
+     /* 以前の .your-style-section--image-inspired のスタイルは削除またはコメントアウトを推奨 */
+
+     /* レスポンシブ調整 */
+     @media (max-width: 768px) {
+       .your-style-section--yaml-inspired {
+         padding: 3.5rem 0;
+       }
+       .your-style-section--yaml-inspired .main-catchphrase {
+         font-size: 20pt;
+       }
+       .your-style-section--yaml-inspired .sub-catchphrase {
+         font-size: 17pt;
+         margin-bottom: 2rem;
+       }
+       .your-style-section--yaml-inspired .body-paragraph {
+         font-size: 14pt;
+       }
+       .your-style-section--yaml-inspired .closing-text {
+         font-size: 15pt;
+       }
+       .your-style-section--yaml-inspired .shape-top-right {
+         width: 90px;
+         height: 90px;
+       }
+     }
+
+     @media (max-width: 480px) {
+       .your-style-section--yaml-inspired {
+         padding: 2.5rem 0;
+       }
+       .your-style-section--yaml-inspired .main-catchphrase {
+         font-size: 18pt;
+       }
+       .your-style-section--yaml-inspired .sub-catchphrase {
+         font-size: 15pt;
+         margin-bottom: 1.5rem;
+       }
+       .your-style-section--yaml-inspired .body-paragraph {
+         font-size: 12pt;
+       }
+       .your-style-section--yaml-inspired .closing-text {
+         font-size: 13pt;
+       }
+       .your-style-section--yaml-inspired .shape-top-left {
+         width: 40px;
+         height: 40px;
+       }
+       .your-style-section--yaml-inspired .shape-top-right {
+         width: 70px;
+         height: 70px;
+       }
+         .your-style-section--yaml-inspired .shape-center-dot-line {
+         width: 100px;
+       }
+     }
+
+     /* 先輩アドバイザーの声 - スライダーデザイン */
+     .advisor-voice-slider-container {
+       position: relative;
+       width: 100%;
+       max-width: 900px; /* 最大幅は受講生の声と合わせるか、調整 */
+       margin: 2rem auto; /* 画像の下に配置 */
+       overflow: hidden;
+     }
+
+     .advisor-voice-slider-track {
+       display: flex;
+       transition: transform 0.5s ease;
+     }
+
+     .advisor-voice-card {
+       min-width: 100%; /* 1カードずつ表示 */
+       box-sizing: border-box;
+       padding: 1.5rem; /* カード内のパディング */
+       background-color: #fff;
+       border-radius: 12px;
+       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+       margin: 0 10px; /* カード間のマージン（左右に少しだけ）*/
+       display: flex; /* 中央寄せのため */
+       flex-direction: column; /* 中央寄せのため */
+       justify-content: center; /* 中央寄せのため */
+     }
+
+     .advisor-voice-card-body {
+       text-align: left;
+     }
+
+     .advisor-voice-quote {
+       font-size: 1rem;
+       line-height: 1.7;
+       color: #555;
+       margin: 0;
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+     }
+
+     .advisor-voice-quote::before {
+       content: '「';
+       margin-right: 0.2em;
+       color: #ff85a2;
+       font-weight: bold;
+     }
+
+     .advisor-voice-quote::after {
+       content: '」';
+       margin-left: 0.2em;
+       color: #ff85a2;
+       font-weight: bold;
+     }
+
+     .advisor-voice-slider-nav {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin-top: 1.5rem;
+     }
+
+     .advisor-voice-prev-btn,
+     .advisor-voice-next-btn {
+       background-color: #ff85a2;
+       color: white;
+       border: none;
+       border-radius: 50%;
+       width: 40px;
+       height: 40px;
+       font-size: 1.2rem;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+       margin: 0 10px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+
+     .advisor-voice-prev-btn:hover,
+     .advisor-voice-next-btn:hover {
+       background-color: #e6587c;
+     }
+
+     .advisor-voice-dots {
+       display: flex;
+       gap: 8px;
+     }
+
+     .advisor-voice-dots .testimonial-dot-v2 { /* 受講生の声のドットスタイルを再利用 */
+       width: 10px;
+       height: 10px;
+       border-radius: 50%;
+       background-color: #ddd;
+       cursor: pointer;
+       border: none;
+       padding: 0;
+       transition: background-color 0.3s ease;
+     }
+
+     .advisor-voice-dots .testimonial-dot-v2.active {
+       background-color: #ff85a2;
+     }
+
+     @media (max-width: 768px) {
+       .advisor-voice-card {
+         padding: 1.2rem;
+         margin: 0 5px;
+       }
+       .advisor-voice-quote {
+         font-size: 0.95rem;
+       }
+       .advisor-voice-prev-btn,
+       .advisor-voice-next-btn {
+         width: 35px;
+         height: 35px;
+         font-size: 1rem;
+       }
+     }
    </style>
 </head>
 <body>
@@ -2961,41 +3475,35 @@
       
       <!-- 協会紹介スライダー -->
       <div class="advisor-slider" id="association-slider">
-        <div class="advisor-slider-track">
-          <div class="advisor-slide">
-            <img src="assets/images/association1.jpg" alt="協会について 1" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ1</text></svg>'">
-            <div class="advisor-caption">
-              <h3>子どもの可能性を引き出す</h3>
-              <p>最新の発達科学に基づいたアプローチで、子どもの自然な発達を促進します。全ての子どもが持つ可能性を最大限に引き出す環境づくりをサポートしています。</p>
-          </div>
-        </div>
-        
-          <div class="advisor-slide">
-            <img src="assets/images/association2.jpg" alt="協会について 2" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ2</text></svg>'">
-            <div class="advisor-caption">
-              <h3>親子のきずなを深める</h3>
-              <p>子どもとの関わり方や遊び方を通じて、親子の絆を深めるお手伝いをしています。日常の中での小さな関わりが、大きな成長につながることをお伝えしています。</p>
-        </div>
-      </div>
-          
-          <div class="advisor-slide">
-            <img src="assets/images/association3.jpg" alt="協会について 3" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>協会イメージ3</text></svg>'">
-            <div class="advisor-caption">
-              <h3>プロフェッショナルの育成</h3>
-              <p>乳幼児発達の専門知識を持ったアドバイザーを育成し、地域の子育て支援の質を高めています。受講生の多くが活躍の場を広げています。</p>
-      </div>
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="slider-item">
+              <img src="assets/images/3.png" alt="協会紹介スライド1">
+              <div class="slider-caption">メディア掲載実績</div>
+            </div>
+            <div class="slider-item">
+              <img src="assets/images/4.png" alt="協会紹介スライド2">
+              <div class="slider-caption">実績（メンバー内で協力・応援）</div>
+            </div>
+            <div class="slider-item">
+              <img src="assets/images/5.png" alt="協会紹介スライド3">
+              <div class="slider-caption">おやこ体験型イベント企画</div>
+            </div>
+            <div class="slider-item">
+              <img src="assets/images/3.png" alt="協会紹介スライド1">
+              <div class="slider-caption">メディア掲載実績</div>
+            </div>
+            <div class="slider-item">
+              <img src="assets/images/4.png" alt="協会紹介スライド2">
+              <div class="slider-caption">実績（メンバー内で協力・応援）</div>
             </div>
           </div>
-          
-        <div class="advisor-slider-nav">
-          <button class="slider-nav-btn prev">◀</button>
-          <div class="slider-dots">
-            <div class="slider-dot active"></div>
-            <div class="slider-dot"></div>
-            <div class="slider-dot"></div>
-            </div>
-          <button class="slider-nav-btn next">▶</button>
-          </div>
+        </div>
+        <div class="slider-dots">
+          <span class="slider-dot active" data-index="0"></span>
+          <span class="slider-dot" data-index="1"></span>
+          <span class="slider-dot" data-index="2"></span>
+        </div>
       </div>
     </div>
   </section>
@@ -3019,34 +3527,24 @@
     <div class="container">
       <h2 class="section-title">ベビー発育アドバイザーになると<br>どんなふうにお仕事ができる？</h2>
       
-      <div class="job-cards">
-        <div class="job-card">
-          <div class="job-card-inner">
-            <h3>「カフェやおうちでおやこサポート」</h3>
-            <p>地域のおやこ向けに、好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
+      <div class="job-cards-updated">
+        <div class="job-card-updated">
+          <img src="assets/images/job_image_1.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'">
+          <h3>「カフェやおうちでおやこサポート」</h3>
+          <p>地域のおやこ向けに、好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
         </div>
-      </div>
       
-        <div class="job-card">
-          <div class="job-card-inner">
-            <h3>「子育て支援のプロとして地域連携」</h3>
-            <p>子育て支援センターや地域のおやこ広場など<br>他にも定期開催として活躍できる場所がたくさん！</p>
-        </div>
-        </div>
-        
-        <div class="job-card">
-          <div class="job-card-inner">
-            <h3>「おうちでＺＯＯＭを使ってもＯＫ」</h3>
-            <p>ＺＯＯＭサポートで全国的に広めてもＯＫです<br>マンツーマンでのお悩み相談も、ママたちに大好評！</p>
-        </div>
+        <div class="job-card-updated">
+          <img src="assets/images/job_image_2.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
+          <h3>「子育て支援のプロとして地域連携」</h3>
+          <p>子育て支援センターや地域のおやこ広場など<br>他にも定期開催として活躍できる場所がたくさん！</p>
         </div>
         
-        <div class="job-card">
-          <div class="job-card-inner">
-            <h3>「企業提携のイベント企画も」</h3>
-            <p>ベビー関連の企業提携イベントも開催しています<br>実績・経験づくりや認知拡大の場にもなります</p>
+        <div class="job-card-updated">
+          <img src="assets/images/job_image_3.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
+          <h3>「おうちでＺＯＯＭを使ってもＯＫ」</h3>
+          <p>ＺＯＯＭサポートで全国的に広めてもＯＫです<br>マンツーマンでのお悩み相談も、ママたちに大好評！</p>
         </div>
-      </div>
       </div>
     </div>
   </section>
@@ -3165,333 +3663,182 @@
         <img src="assets/images/advisors_voices_2.png" alt="先輩アドバイザーの声 2" class="testimonials-main-image">
       </div>
       
-      <div class="advisors-voices-quotes">
-        <div class="voice-quote-box">
-          <p class="voice-quote">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
+      <!-- 新しいスライダー構造 -->
+      <div class="advisor-voice-slider-container">
+        <div class="advisor-voice-slider-track">
+          <!-- 口コミカード 1 -->
+          <div class="advisor-voice-card testimonial-card-v2"> <!-- testimonial-card-v2 クラスを追加 -->
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー1" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">先輩の声 01</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">先輩A</span> 様 
+                <!-- <span class="testimonial-author-age-v2">XX歳</span> -->
+              </p>
+              <!-- <p class="testimonial-full-text-v2">ここに詳細な口コミ全文が入ります。</p> -->
+            </div>
+          </div>
+          <!-- 口コミカード 2 -->
+          <div class="advisor-voice-card testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー2" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">先輩の声 02</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">先輩B</span> 様
+              </p>
+            </div>
+          </div>
+          <!-- 口コミカード 3 -->
+          <div class="advisor-voice-card testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー3" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">先輩の声 03</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">先輩C</span> 様
+              </p>
+            </div>
+          </div>
+          <!-- 口コミカード 4 -->
+          <div class="advisor-voice-card testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="先輩アドバイザー4" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">先輩の声 04</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">先輩D</span> 様
+              </p>
+            </div>
+          </div>
         </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
-        </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
-        </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
+        <div class="advisor-voice-slider-nav">
+          <button class="advisor-voice-prev-btn">◀</button>
+          <div class="advisor-voice-dots">
+            <!-- ドットはJSで動的に生成 -->
+          </div>
+          <button class="advisor-voice-next-btn">▶</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 受講生の声セクション -->
-  <section class="section testimonials gradient-section" id="testimonials">
-    <div class="floating-shape floating-shape-1"></div>
-    <div class="floating-shape floating-shape-2"></div>
+  <section class="section testimonials-v2" id="testimonials">
     <div class="container">
-      <h2 class="section-title">受講生のリアルな声</h2>
-      
-      <div class="testimonials-image-container">
-        <img src="assets/images/7.png" alt="受講生の声" class="testimonials-main-image">
+      <div class="testimonials-v2-header">
+        <span class="testimonials-v2-subtitle">Customer's Review</span>
+        <h2 class="section-title">受講生のリアルな声</h2>
       </div>
-      
-      <div class="advisors-voices-quotes">
-        <div class="voice-quote-box">
-          <p class="voice-quote">「受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです」</p>
+
+      <div class="testimonial-slider-container-v2">
+        <div class="testimonial-slider-track-v2">
+          <!-- 口コミカード 1 -->
+          <div class="testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="受講生1" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">Voice 01</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「自分らしいお教室の形が見えてきました」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">山田 花子</span> 様 
+                <span class="testimonial-author-age-v2">32歳</span>
+              </p>
+              <p class="testimonial-full-text-v2">受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです。</p>
+            </div>
+          </div>
+
+          <!-- 口コミカード 2 -->
+          <div class="testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="受講生2" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">Voice 02</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「育児経験が活かせる！自信につながりました」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">佐藤 あかり</span> 様 
+                <span class="testimonial-author-age-v2">29歳</span>
+              </p>
+              <p class="testimonial-full-text-v2">専業主婦期間が長かったため、育児しかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました。</p>
+            </div>
+          </div>
+
+          <!-- 口コミカード 3 -->
+          <div class="testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="受講生3" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">Voice 03</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「集客方法まで学べてフリーランス活動に光が！」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">鈴木 さくら</span> 様 
+                <span class="testimonial-author-age-v2">35歳</span>
+              </p>
+              <p class="testimonial-full-text-v2">フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます。</p>
+            </div>
+          </div>
+
+          <!-- 口コミカード 4 -->
+          <div class="testimonial-card-v2">
+            <div class="testimonial-card-v2-header">
+              <img src="assets/images/voice_avatar_placeholder.png" alt="受講生4" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
+              <span class="testimonial-voice-label-v2">Voice 04</span>
+            </div>
+            <div class="testimonial-card-v2-body">
+              <p class="testimonial-quote-v2">「温かい協会で、全てのママにおすすめ！」</p>
+              <p class="testimonial-author-info-v2">
+                <span class="testimonial-author-name-v2">高橋 みどり</span> 様 
+                <span class="testimonial-author-age-v2">38歳</span>
+              </p>
+              <p class="testimonial-full-text-v2">特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです。</p>
+            </div>
+          </div>
         </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「専業主婦期間が長かったため、育児をしかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました」</p>
-        </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます」</p>
-        </div>
-        
-        <div class="voice-quote-box">
-          <p class="voice-quote">「特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです」</p>
+        <div class="testimonial-slider-nav-v2">
+          <button class="testimonial-prev-btn-v2">◀</button>
+          <div class="testimonial-dots-v2">
+            <!-- ドットはJSで動的に生成 -->
+          </div>
+          <button class="testimonial-next-btn-v2">▶</button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- あなたらしい活躍を応援セクション -->
-  <section class="section your-style-section">
+  <section class="section your-style-section your-style-section--yaml-inspired">
     <div class="container">
-      <h2 class="section-title">あなたらしい活躍を応援</h2>
+      <div class="decorative-shape shape-top-left"></div>
+      <div class="decorative-shape shape-top-right"></div>
+      <div class="decorative-shape shape-bottom-left"></div>
+      <div class="decorative-shape shape-bottom-right"></div>
       
-      <div class="style-cards">
-        <div class="style-card">
-          <h3>「子ども時間・お仕事のバランス自由」</h3>
-          <p>今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
-        </div>
-        
-        <div class="style-card">
-          <h3>「わが子のためにがんばってきたことが価値に」</h3>
-          <p>子育ての経験はみんなそれぞれちがいます<br>だからこそ、今から始めてもあなたらしく活躍できます</p>
-        </div>
-        
-        <div class="style-card">
-          <h3>「"自分らしい"を発見できる働き方」</h3>
-          <p>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
-            </div>
-            </div>
-            
-      <div class="style-conclusion">
-        <p>あなたも無理なく"自分らしい"<br>働き方をはじめてみませんか？</p>
-            </div>
-            </div>
+      <h2 class="main-catchphrase">あなたらしい活躍を応援</h2>
+      <h3 class="sub-catchphrase"><span class="dotted-underline-mint">子ども時間・お仕事のバランス自由</span></h3>
+      
+      <div class="body-text-group">
+        <p class="body-paragraph">今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
+        <p class="body-paragraph">"自分らしい"を発見できる働き方」<br>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
+      </div>
+      
+      <p class="closing-text">あなたも無理なく<span class="highlight-mint">"自分らしい"</span>働き方をはじめてみませんか？</p>
+    </div>
   </section>
 
   <!-- コミュニティセクションとフォームセクションの間の雲のような区切り -->
   <div class="section-divider cloud-divider">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="cloud-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#fffafa" />
-          <stop offset="50%" style="stop-color:#fff6f6" />
-          <stop offset="100%" style="stop-color:#fff" />
-        </linearGradient>
-      </defs>
-      <path d="M0,0 L0,120 L1200,120 L1200,0 C1000,60 800,0 600,30 C400,60 200,0 0,30 L0,0 Z" fill="url(#cloud-gradient)"></path>
-    </svg>
-        </div>
-
-  <!-- フォームセクション -->
-  <section class="section" id="form">
-    <div class="container">
-      <h2 class="section-title">無料説明会に申し込む</h2>
-      <div class="seminar-info">
-        <h3><span class="seminar-info-icon">📅</span>説明会日程のご案内</h3>
-        <p class="seminar-description">下記の日程で無料説明会を開催いたします。<span class="emphasis">各回定員3～5名の少人数制</span>です。</p>
-        
-        <div class="seminar-calendar">
-          <div class="calendar-month">
-            <div class="month-badge">5月</div>
-            <div class="calendar-dates">
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">29</span>
-                  <span class="date-day">木</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">3</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">4</span></span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">30</span>
-                  <span class="date-day">金</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">5</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">5</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="calendar-month">
-            <div class="month-badge">6月</div>
-            <div class="calendar-dates">
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">3</span>
-                  <span class="date-day">火</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">4</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">3</span></span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">4</span>
-                  <span class="date-day">水</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">5</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">4</span></span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">11</span>
-                  <span class="date-day">水</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">5</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">5</span></span>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="calendar-card">
-                <div class="calendar-date">
-                  <span class="date-number">12</span>
-                  <span class="date-day">木</span>
-                </div>
-                <div class="calendar-times">
-                  <div class="time-slot">
-                    <span class="time-icon">🕙</span>
-                    <span class="time-text">11:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">3</span></span>
-                  </div>
-                  <div class="time-slot">
-                    <span class="time-icon">🕐</span>
-                    <span class="time-text">13:00～</span>
-                    <span class="seat-status">残席<span class="seat-number">4</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="seminar-note">
-          <span class="note-icon">💡</span>
-          <p>ご希望の日時をお選びください。説明会は<span class="emphasis">Zoomで開催</span>します。</p>
-        </div>
-      </div>
-      <form id="lead-form" class="contact-form" action="https://example.com/submit" method="POST">
-        <div class="form-group">
-          <label for="name">お名前 <span class="required">*</span></label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">メールアドレス <span class="required">*</span></label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-          <label for="prefecture">お住まいの地域 <span class="required">*</span></label>
-          <select id="prefecture" name="prefecture" required>
-            <option value="">選択してください</option>
-            <option value="北海道">北海道</option>
-            <option value="青森県">青森県</option>
-            <option value="岩手県">岩手県</option>
-            <option value="宮城県">宮城県</option>
-            <option value="秋田県">秋田県</option>
-            <option value="山形県">山形県</option>
-            <option value="福島県">福島県</option>
-            <option value="茨城県">茨城県</option>
-            <option value="栃木県">栃木県</option>
-            <option value="群馬県">群馬県</option>
-            <option value="埼玉県">埼玉県</option>
-            <option value="千葉県">千葉県</option>
-            <option value="東京都">東京都</option>
-            <option value="神奈川県">神奈川県</option>
-            <option value="新潟県">新潟県</option>
-            <option value="富山県">富山県</option>
-            <option value="石川県">石川県</option>
-            <option value="福井県">福井県</option>
-            <option value="山梨県">山梨県</option>
-            <option value="長野県">長野県</option>
-            <option value="岐阜県">岐阜県</option>
-            <option value="静岡県">静岡県</option>
-            <option value="愛知県">愛知県</option>
-            <option value="三重県">三重県</option>
-            <option value="滋賀県">滋賀県</option>
-            <option value="京都府">京都府</option>
-            <option value="大阪府">大阪府</option>
-            <option value="兵庫県">兵庫県</option>
-            <option value="奈良県">奈良県</option>
-            <option value="和歌山県">和歌山県</option>
-            <option value="鳥取県">鳥取県</option>
-            <option value="島根県">島根県</option>
-            <option value="岡山県">岡山県</option>
-            <option value="広島県">広島県</option>
-            <option value="山口県">山口県</option>
-            <option value="徳島県">徳島県</option>
-            <option value="香川県">香川県</option>
-            <option value="愛媛県">愛媛県</option>
-            <option value="高知県">高知県</option>
-            <option value="福岡県">福岡県</option>
-            <option value="佐賀県">佐賀県</option>
-            <option value="長崎県">長崎県</option>
-            <option value="熊本県">熊本県</option>
-            <option value="大分県">大分県</option>
-            <option value="宮崎県">宮崎県</option>
-            <option value="鹿児島県">鹿児島県</option>
-            <option value="沖縄県">沖縄県</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="seminar-date">希望日時 <span class="required">*</span></label>
-          <select id="seminar-date" name="seminar-date" required>
-            <option value="">選択してください</option>
-            <option value="2025-05-29-11">2025年5月29日(木) 11:00～ [残席3]</option>
-            <option value="2025-05-29-13">2025年5月29日(木) 13:00～ [残席4]</option>
-            <option value="2025-05-30-11">2025年5月30日(金) 11:00～ [残席5]</option>
-            <option value="2025-05-30-13">2025年5月30日(金) 13:00～ [残席5]</option>
-            <option value="2025-06-03-11">2025年6月3日(火) 11:00～ [残席4]</option>
-            <option value="2025-06-03-13">2025年6月3日(火) 13:00～ [残席3]</option>
-            <option value="2025-06-04-11">2025年6月4日(水) 11:00～ [残席5]</option>
-            <option value="2025-06-04-13">2025年6月4日(水) 13:00～ [残席4]</option>
-            <option value="2025-06-11-11">2025年6月11日(水) 11:00～ [残席5]</option>
-            <option value="2025-06-11-13">2025年6月11日(水) 13:00～ [残席5]</option>
-            <option value="2025-06-12-11">2025年6月12日(木) 11:00～ [残席3]</option>
-            <option value="2025-06-12-13">2025年6月12日(木) 13:00～ [残席4]</option>
-          </select>
-          <p class="form-hint">※各回定員3～5名の少人数制で実施します</p>
-        </div>
-        <div class="form-group">
-          <label class="checkbox-container">
-            <input type="checkbox" id="consent" name="consent" required>
-            <span class="checkmark"></span>
-            <a href="#" target="_blank">プライバシーポリシー</a>に同意します
-          </label>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn btn-primary">申し込む</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
   <!-- フッター -->
   <footer>
     <div class="container">
@@ -3748,6 +4095,209 @@
         });
       }
     });
+  </script>
+
+  <script>
+    // 既存のスクリプトがある場合はその下に追加
+
+    function initTestimonialSliderV2() {
+      const track = document.querySelector('.testimonial-slider-track-v2');
+      if (!track) return;
+
+      const cards = Array.from(track.children);
+      const nextButton = document.querySelector('.testimonial-next-btn-v2');
+      const prevButton = document.querySelector('.testimonial-prev-btn-v2');
+      const dotsContainer = document.querySelector('.testimonial-dots-v2');
+
+      if (!cards.length || !nextButton || !prevButton || !dotsContainer) return;
+
+      let cardWidth = cards[0].getBoundingClientRect().width;
+      let visibleCards = window.innerWidth >= 768 ? 2 : 1; 
+      let currentIndex = 0;
+      let dots = [];
+
+      function setupDots() {
+        dotsContainer.innerHTML = ''; // ドットをクリア
+        dots = [];
+        const numDots = Math.ceil(cards.length / visibleCards);
+        for (let i = 0; i < numDots; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('testimonial-dot-v2');
+          dot.addEventListener('click', () => {
+            currentIndex = i * visibleCards;
+            // Ensure currentIndex does not exceed possible scroll positions
+            if (currentIndex >= cards.length - visibleCards + 1 && cards.length > visibleCards) {
+                currentIndex = cards.length - visibleCards;
+            }
+            if (cards.length <= visibleCards) { // if less cards than visible spots, always go to 0
+                currentIndex = 0;
+            }
+            updateSliderPosition();
+            updateActiveDot();
+          });
+          dotsContainer.appendChild(dot);
+          dots.push(dot);
+        }
+        updateActiveDot();
+      }
+
+      function updateActiveDot() {
+        const currentDotIndex = Math.floor(currentIndex / visibleCards);
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentDotIndex);
+        });
+      }
+
+      function updateSliderPosition() {
+        const cardMarginRight = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
+        const totalCardWidth = cardWidth + cardMarginRight;
+        track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+      }
+      
+      function reinitializeSlider() {
+        if (!cards.length) return;
+        cardWidth = cards[0].getBoundingClientRect().width;
+        visibleCards = window.innerWidth >= 768 ? 2 : 1;
+        // Clamp currentIndex to prevent going out of bounds after resize
+        if (currentIndex + visibleCards > cards.length) {
+            currentIndex = Math.max(0, cards.length - visibleCards);
+        }
+        if (cards.length <= visibleCards) {
+            currentIndex = 0; 
+        }
+        setupDots();
+        updateSliderPosition();
+      }
+
+      nextButton.addEventListener('click', () => {
+        if (currentIndex < cards.length - visibleCards) {
+          currentIndex += 1; // 1カードずつスライドさせるように変更
+        } else {
+          // currentIndex = 0; // ループする場合
+        }
+        // Ensure currentIndex does not exceed possible scroll positions
+        if (currentIndex >= cards.length - visibleCards +1 && cards.length > visibleCards) {
+             currentIndex = cards.length - visibleCards;
+        }
+         if (cards.length <= visibleCards) {
+            currentIndex = 0; 
+        }
+        updateSliderPosition();
+        updateActiveDot();
+      });
+
+      prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1; // 1カードずつスライドさせるように変更
+        } else {
+          // currentIndex = cards.length - visibleCards; // ループする場合
+        }
+        updateSliderPosition();
+        updateActiveDot();
+      });
+      
+      window.addEventListener('resize', reinitializeSlider);
+
+      // 初期化
+      reinitializeSlider();
+    }
+
+    document.addEventListener('DOMContentLoaded', initTestimonialSliderV2);
+
+    function initAdvisorVoicesSlider() {
+      const track = document.querySelector('.advisor-voice-slider-track');
+      if (!track) return;
+
+      const cards = Array.from(track.children);
+      const nextButton = document.querySelector('.advisor-voice-next-btn');
+      const prevButton = document.querySelector('.advisor-voice-prev-btn');
+      const dotsContainer = document.querySelector('.advisor-voice-dots');
+
+      if (!cards.length || !nextButton || !prevButton || !dotsContainer) return;
+
+      let cardWidth = cards[0].getBoundingClientRect().width;
+      // visibleCards は常に1とする (1カードずつ表示)
+      const visibleCards = 1; 
+      let currentIndex = 0;
+      let dots = [];
+
+      function setupDots() {
+        dotsContainer.innerHTML = ''; // ドットをクリア
+        dots = [];
+        // 1カードずつなので、カードの枚数分ドットを作成
+        const numDots = cards.length;
+        for (let i = 0; i < numDots; i++) {
+          const dot = document.createElement('button');
+          dot.classList.add('testimonial-dot-v2'); // 受講生の声のドットスタイルを再利用
+          dot.addEventListener('click', () => {
+            currentIndex = i;
+            updateSliderPosition();
+            updateActiveDot();
+          });
+          dotsContainer.appendChild(dot);
+          dots.push(dot);
+        }
+        updateActiveDot();
+      }
+
+      function updateActiveDot() {
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      function updateSliderPosition() {
+        // カード間のマージンを考慮（CSSで margin: 0 10px; としているので、左右で20px）
+        const cardMargin = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginLeft) + parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
+        // スクロール位置計算を修正：(カード幅 + マージン) * 現在のインデックス
+        // ここではカードがコンテナ幅100%なので、マージンはtransformに直接影響しないように見えるが、
+        // スライド全体の幅の計算には影響する可能性がある。ただし、min-width: 100%で、trackがtransformされるので、カード自体の幅で良いはず。
+        const totalCardWidth = cardWidth; // marginはカード自体に含まれないので、transformではカード幅のみ考慮
+        track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+      }
+      
+      function reinitializeSlider() {
+        if (!cards.length) return;
+        // スライダーコンテナの幅を基準にカード幅を再計算する
+        const sliderContainerWidth = track.parentElement.getBoundingClientRect().width;
+        // CSSでmargin: 0 10px があるため、カードの実際の表示領域はコンテナ幅からマージンを引いたものになる。
+        // min-width: 100% は、親要素である track の幅に対して100%となる。
+        // track はカードの数 * カードの表示幅となるので、ここではコンテナ幅をカード幅とするのがシンプル。
+        cardWidth = sliderContainerWidth; 
+        // currentIndex の再計算は不要 (常に1枚表示)
+        if (currentIndex >= cards.length) {
+            currentIndex = cards.length -1;
+        }
+        setupDots();
+        updateSliderPosition();
+      }
+
+      nextButton.addEventListener('click', () => {
+        if (currentIndex < cards.length - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // ループする場合
+        }
+        updateSliderPosition();
+        updateActiveDot();
+      });
+
+      prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = cards.length - 1; // ループする場合
+        }
+        updateSliderPosition();
+        updateActiveDot();
+      });
+      
+      window.addEventListener('resize', reinitializeSlider);
+
+      // 初期化
+      reinitializeSlider();
+    }
+    document.addEventListener('DOMContentLoaded', initAdvisorVoicesSlider);
   </script>
 </body>
 </html> 

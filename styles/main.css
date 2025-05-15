@@ -3877,3 +3877,354 @@ select {
     font-size: 0.95rem;
   }
 }
+
+/* 協会紹介スライダーの画像スタイル調整 */
+#association-slider .slider-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 70vh; /* PCでは高さをある程度確保し、スマホでは調整 */
+}
+
+/* ベビー発育アドバイザーになると何ができる？セクション更新 */
+.job-options {
+  padding: 5rem 0;
+  background-color: #fffaf9; /* 薄いピンク背景 */
+}
+
+.job-options .section-title {
+  margin-bottom: 3rem;
+}
+
+.job-cards-updated {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.job-card-updated {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card-updated:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.job-card-updated img {
+  width: 100%;
+  max-width: 280px; /* 画像サイズ調整 */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  object-fit: cover; /* 画像がコンテナに収まるように */
+}
+
+.job-card-updated h3 {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6b6b; /* テーマカラー */
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.job-card-updated p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 既存の .job-cards と .job-card スタイルをコメントアウトまたは削除 */
+/*
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.job-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-card-inner {
+  padding: 2rem;
+}
+
+.job-card h3 {
+  color: #ff4778;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.job-card p {
+  margin: 0;
+  line-height: 1.6;
+}
+*/
+
+@media (max-width: 992px) {
+  .job-cards-updated {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #association-slider .slider-item img {
+    max-height: 50vh; /* スマホでは高さをさらに抑える */
+  }
+
+  .job-cards-updated {
+    grid-template-columns: 1fr;
+  }
+  .job-card-updated img {
+    max-width: 100%; /* スマホでは画像幅をカードに合わせる */
+  }
+}
+
+/* 受講生のリアルな声セクション V2 スタイル */
+.testimonials-v2 {
+  padding: 5rem 0;
+  background-color: #fdfcfa; /* 淡いクリーム色背景 */
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-v2-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonials-v2-subtitle {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-gray);
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.testimonials-v2 .section-title {
+  font-size: 2.2rem;
+  color: var(--text-dark);
+}
+
+.testimonial-slider-container-v2 {
+  position: relative;
+  max-width: 1000px; /* スライダー全体の最大幅 */
+  margin: 0 auto;
+}
+
+.testimonial-slider-track-v2 {
+  display: flex;
+  overflow-x: hidden; /* JSでスクロール制御 */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 1.5rem; /* ドットナビゲーションとのスペース */
+}
+
+.testimonial-card-v2 {
+  flex: 0 0 100%; /* 基本は1カード表示 */
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-right: 2rem; /* カード間のスペース */
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* 角丸のため */
+}
+
+.testimonial-card-v2:last-child {
+  margin-right: 0;
+}
+
+.testimonial-card-v2-header {
+  padding: 1.5rem;
+  background-color: #f9f9f9; /* ヘッダー背景色 */
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.testimonial-avatar-v2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 3px solid var(--primary-light);
+}
+
+.testimonial-voice-label-v2 {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.testimonial-card-v2-body {
+  padding: 1.5rem 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-quote-v2 {
+  font-family: 'Shippori Mincho', serif; /* 明朝体 */
+  font-size: 1.3rem; /* 引用文のサイズ */
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-left: 2.5rem; /* 引用符スペース */
+}
+
+.testimonial-quote-v2::before {
+  content: '\201C'; /* 左引用符 */
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3.5rem;
+  color: var(--primary-light);
+  position: absolute;
+  left: 0;
+  top: -0.5rem;
+  line-height: 1;
+}
+
+.testimonial-author-info-v2 {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-author-name-v2 {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.testimonial-author-age-v2 {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  border-left: 1px solid #ccc;
+  padding-left: 0.5rem;
+}
+
+.testimonial-full-text-v2 {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  flex-grow: 1;
+}
+
+.testimonial-slider-nav-v2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.testimonial-prev-btn-v2,
+.testimonial-next-btn-v2 {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+.testimonial-prev-btn-v2:hover,
+.testimonial-next-btn-v2:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.testimonial-dots-v2 {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.testimonial-dot-v2 {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-dot-v2.active {
+  background-color: var(--primary);
+  transform: scale(1.2);
+}
+
+/* レスポンシブ調整 */
+@media (min-width: 768px) {
+  .testimonial-slider-track-v2 {
+    /* 2カード表示にする場合、flex-basisを変更 */
+    /* .testimonial-card-v2 { flex: 0 0 calc(50% - 1rem); } */ 
+  }
+  .testimonial-card-v2 {
+    flex: 0 0 calc(50% - 1rem); /* 768px以上で2カード表示 */
+  }
+}
+
+@media (min-width: 992px) {
+  .testimonial-card-v2 {
+     /* 3カード表示にする場合、flex-basisを変更 */
+    /* flex: 0 0 calc(33.333% - 1.33rem); */
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial-card-v2-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .testimonial-avatar-v2 {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
+  .testimonial-voice-label-v2 {
+    position: static;
+    margin-top: 0.5rem;
+  }
+  .testimonial-quote-v2 {
+    font-size: 1.1rem;
+  }
+}
