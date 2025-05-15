@@ -1,0 +1,110 @@
+/* START: Senior Adviser Voice Slider Styles */
+/* 「先輩アドバイザーの声」セクションのスライダー用スタイルです。 */
+/* testimonialスライダーの一般的なデザインに倣い、清潔で機能的なデザインを目指します。 */
+
+.senior-adviser-slider {
+  width: 100%;
+  overflow: hidden; /* スライダーでは重要 */
+  position: relative; /* ナビゲーション/ページネーションの絶対配置のため */
+  padding: 20px 0; /* 上下の余白を追加 */
+}
+
+/* Swiper.jsや同様のライブラリでラッパー要素がある場合 */
+.senior-adviser-slider .swiper-wrapper {
+  display: flex; /* 水平レイアウトのキー */
+}
+
+.senior-adviser-slider .adviser-slide {
+  flex-shrink: 0; /* スライドが縮まないようにする */
+  width: 100%; /* 単一スライド表示の場合は全幅。複数表示の場合は調整 */
+  box-sizing: border-box;
+  padding: 25px;
+  text-align: center;
+  background-color: #ffffff; /* カード背景は白 */
+  border: 1px solid #e0e0e0; /* やわらかい境界線 */
+  border-radius: 10px; /* 角丸 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 奥行きを出すための薄い影 */
+  /* Swiperがspacebetweenでマージンを管理する場合や、一度に1スライドのみ表示する場合はmargin-rightを削除または調整 */
+  /* margin-right: 15px; */
+}
+
+.senior-adviser-slider .adviser-slide img.avatar {
+  width: 90px; /* やや大きめのアバター */
+  height: 90px;
+  border-radius: 50%;
+  margin: 0 auto 15px auto; /* アバターを中央揃え */
+  object-fit: cover;
+  border: 3px solid #007bff; /* オプション: アバターにテーマカラーの枠線 */
+}
+
+.senior-adviser-slider .adviser-slide .quote {
+  font-size: 1.1em; /* 相対フォントサイズ */
+  line-height: 1.6;
+  color: #444; /* 可読性の高い濃いめのテキスト色 */
+  margin-bottom: 15px;
+  position: relative;
+  padding: 0 15px; /* 引用符のためのパディング */
+}
+
+.senior-adviser-slider .adviser-slide .quote::before,
+.senior-adviser-slider .adviser-slide .quote::after {
+  font-family: Georgia, serif; /* 引用符用のフォント */
+  font-size: 2.5em; /* 大きめの引用符 */
+  color: #007bff; /* 引用符にテーマカラー */
+  position: absolute;
+  opacity: 0.8;
+}
+
+.senior-adviser-slider .adviser-slide .quote::before {
+  content: "“"; /* 開始引用符 */
+  top: -10px;
+  left: -5px;
+}
+
+.senior-adviser-slider .adviser-slide .quote::after {
+  content: "”"; /* 終了引用符 */
+  bottom: -25px; /* 大きめの引用符に合わせて調整 */
+  right: -5px;
+}
+
+.senior-adviser-slider .adviser-slide .name {
+  font-size: 1.2em;
+  font-weight: 600; /* 'bold'より少し細め */
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.senior-adviser-slider .adviser-slide .title {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 0; /* 最後のエレメントであればマージンなし */
+}
+
+/* Swiper ナビゲーションとページネーションのスタイル */
+/* (これらを使用する場合、SwiperのCSSがリンクされていることを確認してください) */
+.senior-adviser-slider .swiper-button-next,
+.senior-adviser-slider .swiper-button-prev {
+  color: #007bff; /* メインテーマカラー */
+  /* background-color: rgba(255, 255, 255, 0.7); /* 可視性のための薄い背景 */
+  /* border-radius: 50%; */
+  /* width: 40px; */ /* サイズ調整 */
+  /* height: 40px; */
+}
+
+/* Swiperのデフォルトスタイルを尊重し、色のみ変更する例 */
+.senior-adviser-slider .swiper-button-next::after,
+.senior-adviser-slider .swiper-button-prev::after {
+  /* font-size: 18px; */ /* 矢印のサイズ調整はSwiperのCSSに依存することが多い */
+}
+
+.senior-adviser-slider .swiper-pagination .swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+  /* width: 10px; */ /* 大きめのバレット */
+  /* height: 10px; */
+}
+
+.senior-adviser-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background: #007bff; /* アクティブなバレットにメインテーマカラー */
+}
+/* END: Senior Adviser Voice Slider Styles */ 
