@@ -435,6 +435,8 @@
        text-transform: uppercase;
        margin-bottom: 0.5rem;
        position: relative;
+       text-align: center;
+       width: 100%;
      }
      
      .association-label::after {
@@ -1796,9 +1798,7 @@
          flex-direction: column;
        }
        
-       .reason-item.reverse .reason-image-wrap {
-         order: -1;
-       }
+       /* スマホ表示では常に画像を下に配置するため、ここのスタイルは削除 */
        
        .reason-content,
        .reason-item.reverse .reason-content {
@@ -1829,6 +1829,16 @@
        
        .reason-items {
          gap: 4rem;
+       }
+       
+       .reason-item,
+       .reason-item.reverse {
+         flex-direction: column;
+         gap: 2rem;
+       }
+       
+       .reason-image-wrap {
+         order: 2 !important;
        }
        
        .reason-number {
@@ -2458,11 +2468,23 @@
        line-height: 1.6;
      }
      
-     .advisor-description {
+           .advisor-description {
        text-align: center;
        font-size: 1.3rem;
        margin: 1rem 0 2rem;
        color: #666;
+       position: relative;
+       z-index: 2;
+     }
+     
+     /* ベビー発育アドバイザーとは？セクションのタイトル強化 */
+     .child-experience .section-title {
+       position: relative;
+       z-index: 2;
+       background: rgba(255, 255, 255, 0.7);
+       display: inline-block;
+       padding: 5px 15px;
+       border-radius: 10px;
      }
      
      .job-cards {
@@ -2556,10 +2578,23 @@
         .job-cards, .style-cards, .features-grid {
           grid-template-columns: 1fr;
         }
+        
+        .features-grid {
+          margin-top: 3rem;
+          gap: 1.2rem;
+        }
+        
+        .feature-card {
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 1.5rem;
+          text-align: center;
+          position: relative;
+          z-index: 2;
+        }
       }
 
      /* スマホでのカードレイアウト調整 */
-       .card-grid, .testimonials-grid, .risk-questions, .worry-cards {
+       .card-grid, .testimonials-grid, .risk-questions {
          grid-template-columns: 1fr !important;
          display: flex;
          flex-direction: column;
@@ -3330,6 +3365,86 @@
          text-align: center;
        }
      }
+
+           /* ベビー発育アドバイザーとは？セクション背景画像 */
+      .child-experience {
+        position: relative;
+        z-index: 1;
+        padding: 60px 0;
+      }
+      
+      .child-experience::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('assets/images/mother.jpeg');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.15;
+        z-index: -1;
+      }
+      
+      /* アドバイザーセクションスライダー強化 */
+      #advisor-slider {
+        position: relative;
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      
+      #advisor-slider .advisor-caption {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-bottom: 3px solid #ff85a2;
+      }
+      
+      .slider-dots .slider-dot {
+        width: 12px;
+        height: 12px;
+        background-color: #ddd;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .slider-dots .slider-dot.active {
+        background-color: #ff85a2;
+        transform: scale(1.2);
+      }
+      
+      /* レスポンシブ対応 */
+      @media (max-width: 768px) {
+        .child-experience {
+          padding: 40px 0;
+        }
+        
+        .child-experience::before {
+          background-position: 70% center;
+          opacity: 0.1;
+        }
+        
+        .child-experience .section-title,
+        .advisor-description {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+          position: relative;
+          z-index: 3;
+        }
+        
+        #advisor-slider {
+          margin-left: -15px;
+          margin-right: -15px;
+          width: calc(100% + 30px);
+          border-radius: 0;
+        }
+        
+        .advisor-image {
+          max-height: 200px;
+        }
+      }
    </style>
 </head>
 <body>
@@ -3397,23 +3512,32 @@
       </p>
       
       <style>
+        /* 子育てママのお悩みセクション2カラム表示のスタイル */
         @media (max-width: 768px) {
-          .worry-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+          #pain .worry-cards {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 1rem !important;
           }
-          .worry-card {
-            margin-bottom: 0;
-            padding: 0.6rem;
+          #pain .worry-card {
+            margin-bottom: 0 !important;
+            padding: 0.6rem !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: auto !important;
+            flex: none !important;
           }
-          .worry-image {
-            max-width: 80px;
-            margin-bottom: 0.3rem;
+          #pain .worry-image {
+            max-width: 80px !important;
+            margin-bottom: 0.3rem !important;
           }
-          .worry-text {
-            font-size: 0.7rem;
-            line-height: 1.3;
+          #pain .worry-text {
+            font-size: 0.7rem !important;
+            line-height: 1.3 !important;
+            text-align: center !important;
           }
         }
       </style>
@@ -3491,22 +3615,54 @@
       
       <div class="worry-cards">
         <div class="worry-card">
-          <img src="assets/images/worry5.png" alt="動けない理由のイメージ1" class="worry-image">
+          <img src="assets/images/character_circle_1.png" alt="動けない理由のイメージ1" class="worry-image">
           <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
         <div class="worry-card">
-          <img src="assets/images/worry5.png" alt="動けない理由のイメージ2" class="worry-image">
+          <img src="assets/images/character_circle_2.png" alt="動けない理由のイメージ2" class="worry-image">
           <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
         <div class="worry-card">
-          <img src="assets/images/worry5.png" alt="動けない理由のイメージ3" class="worry-image">
+          <img src="assets/images/character_circle_3.png" alt="動けない理由のイメージ3" class="worry-image">
           <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
         <div class="worry-card">
-          <img src="assets/images/worry5.png" alt="動けない理由のイメージ4" class="worry-image">
+          <img src="assets/images/character_circle_4.png" alt="動けない理由のイメージ4" class="worry-image">
           <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
       </div>
+      
+      <style>
+        /* キャラクターアイコンのスタイル調整 */
+        .worry-image {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 1rem;
+          transition: transform 0.3s ease;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .worry-card:hover .worry-image {
+          transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+          .worry-image {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 0.5rem;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .worry-image {
+            width: 70px;
+            height: 70px;
+          }
+        }
+      </style>
       
       <div class="solution-transition">
         <h3>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事です</h3>
@@ -3549,13 +3705,13 @@
     <div class="container">
       <div class="memories-header">
         <span class="memories-label">Experience</span><br>
-        <h2 class="section-title">ふと思い返してみてください。<br>子育て中、こんな経験ありませんでしたか？</h2>
+        <h2 class="section-title">ふと思い返してみてください。子育て中、こんな経験ありませんでしたか？</h2>
       </div>
       
       <div class="memories-timeline">
         <div class="memory-card">
-          <div class="memory-icon">
-            <img src="assets/images/sleep_icon.png" alt="睡眠の悩み" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;28&quot; fill=&quot;%23fff0f5&quot; stroke=&quot;%23ff85a2&quot; stroke-width=&quot;2&quot;/><text x=&quot;30&quot; y=&quot;35&quot; font-family=&quot;Arial&quot; font-size=&quot;25&quot; fill=&quot;%23ff85a2&quot; text-anchor=&quot;middle&quot;>Z</text></svg>'">
+          <div class="memory-icon character-icon">
+            <img src="assets/images/character_circle_3.png" alt="睡眠の悩み" class="character-image">
           </div>
           <div class="memory-content">
             <p>まわりの子はたくさん寝るのに<br><strong>わが子は全然寝なくて辛い</strong></p>
@@ -3563,8 +3719,8 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon">
-            <img src="assets/images/search_icon.png" alt="検索の悩み" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;28&quot; fill=&quot;%23fff0f5&quot; stroke=&quot;%23ff85a2&quot; stroke-width=&quot;2&quot;/><text x=&quot;30&quot; y=&quot;35&quot; font-family=&quot;Arial&quot; font-size=&quot;25&quot; fill=&quot;%23ff85a2&quot; text-anchor=&quot;middle&quot;>?</text></svg>'">
+          <div class="memory-icon character-icon">
+            <img src="assets/images/character_circle_5.png" alt="検索の悩み" class="character-image">
           </div>
           <div class="memory-content">
             <p>毎日何しよう？どこにいこう？で<br><strong>検索ばかりしていた</strong></p>
@@ -3572,8 +3728,8 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon">
-            <img src="assets/images/food_icon.png" alt="離乳食の悩み" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;28&quot; fill=&quot;%23fff0f5&quot; stroke=&quot;%23ff85a2&quot; stroke-width=&quot;2&quot;/><text x=&quot;30&quot; y=&quot;35&quot; font-family=&quot;Arial&quot; font-size=&quot;25&quot; fill=&quot;%23ff85a2&quot; text-anchor=&quot;middle&quot;>♨</text></svg>'">
+          <div class="memory-icon character-icon">
+            <img src="assets/images/character_circle_1.png" alt="離乳食の悩み" class="character-image">
           </div>
           <div class="memory-content">
             <p>離乳食のレパートリーがなくて<br><strong>ＳＮＳを見漁っていた</strong></p>
@@ -3581,14 +3737,59 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon">
-            <img src="assets/images/growth_icon.png" alt="成長の不安" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot;><circle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;28&quot; fill=&quot;%23fff0f5&quot; stroke=&quot;%23ff85a2&quot; stroke-width=&quot;2&quot;/><text x=&quot;30&quot; y=&quot;35&quot; font-family=&quot;Arial&quot; font-size=&quot;25&quot; fill=&quot;%23ff85a2&quot; text-anchor=&quot;middle&quot;>↗</text></svg>'">
+          <div class="memory-icon character-icon">
+            <img src="assets/images/character_circle_6.png" alt="成長の不安" class="character-image">
           </div>
           <div class="memory-content">
             <p>ほかの子と比べて<br><strong>成長が遅れていないか不安だった</strong></p>
           </div>
         </div>
       </div>
+      
+      <style>
+        /* キャラクターアイコンのスタイル調整 */
+        .character-icon {
+          width: 70px;
+          height: 70px;
+          min-width: 70px;
+          border-radius: 50%;
+          background-color: transparent;
+          overflow: hidden;
+          padding: 0;
+          margin-right: 1.2rem;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .character-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+          transition: transform 0.3s ease;
+        }
+        
+        .memory-card:hover .character-image {
+          transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+          .memories-timeline {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+          
+          .character-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            margin-right: 1rem;
+          }
+          
+          .memory-content p {
+            font-size: 0.9rem;
+          }
+        }
+      </style>
       
       <div class="memory-message">
         <div class="message-highlight">
@@ -3921,9 +4122,33 @@
             <p class="reason-item-description">全国で活躍中のメンバーとつながったり<br>わからないことはいつでも質問できて<br>相談出来て<br>これで良いのかな？をすぐに解決できるのは<br>ゼロから始める方に必須な環境です</p>
           </div>
           <div class="reason-image-content">
-            <img src="assets/images/reason_placeholder_3.png" alt="一人で悩まない環境 イメージ">
+            <img src="assets/images/community_support.jpeg" alt="一人で悩まない環境 イメージ" class="community-support-image">
           </div>
         </div>
+        
+        <style>
+          /* 一人で悩まない環境セクションの画像スタイル */
+          .community-support-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+          }
+          
+          .reason-item:hover .community-support-image {
+            transform: translateY(-5px);
+          }
+          
+          @media (max-width: 768px) {
+            .community-support-image {
+              max-width: 85%;
+              margin: 0 auto;
+              display: block;
+              border-radius: 8px;
+            }
+          }
+        </style>
       </div>
     </div>
   </section>
@@ -4027,6 +4252,46 @@
       <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
       </div>
       
+      <style>
+        @media (max-width: 768px) {
+          .reason-item, .reason-item.reverse {
+            flex-direction: column;
+            gap: 2rem;
+          }
+          .reason-image-wrap {
+            order: 2 !important;
+          }
+          .reason-content, .reason-item.reverse .reason-content {
+            padding: 0;
+          }
+          .reason-image-content {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+          }
+          .reason-item-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+          }
+          .reason-text-content {
+            padding: 0 0.5rem;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .reason-item-description {
+            font-size: 0.85rem;
+          }
+          .reason-number {
+            font-size: 1.8rem;
+          }
+          .reason-item-title {
+            font-size: 1.2rem;
+          }
+        }
+      </style>
+      
       <div class="reason-items">
         <div class="reason-item">
           <div class="reason-content">
@@ -4100,16 +4365,16 @@
           </div>
         </div>
         
-        <div class="reason-item">
+                <div class="reason-item">
           <div class="reason-content">
             <div class="reason-number">05</div>
             <h3 class="reason-title">ママとしてだけじゃなく"私"としての人生を生きたい</h3>
             <p class="reason-quote">「子育ても大切だけど、"私"自身の人生も大切にしたい」</p>
             <ul class="reason-points">
-            <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
-            <li>好きなことで、社会と関わり続けたいという希望</li>
-          </ul>
-        </div>
+              <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
+              <li>好きなことで、社会と関わり続けたいという希望</li>
+            </ul>
+          </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
               <img src="assets/images/stance5.jpg" alt="私としての人生" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>私としての人生画像</text></svg>'">
