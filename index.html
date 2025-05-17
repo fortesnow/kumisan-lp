@@ -3731,9 +3731,31 @@
     <div class="container">
       <h2 class="section-title">多くのママが<br>同じ気持ちです。でも…</h2>
       <p class="problem-intro">
+        「いつか自分に合ったお仕事をしたい」<br>と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
       </p>
       
       <style>
+        /* 問題文とソリューションの間に適切なスペースを確保 */
+        .problem-intro {
+          margin-bottom: 2rem;
+        }
+        
+        .solution-transition {
+          margin-top: 3rem;
+          text-align: center;
+          padding: 1.5rem;
+          background: linear-gradient(135deg, rgba(255, 240, 245, 0.8), rgba(255, 250, 250, 0.8));
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .solution-transition h3 {
+          font-size: 1.4rem;
+          color: #333;
+          line-height: 1.6;
+          font-weight: 600;
+        }
+        
         @media (max-width: 768px) {
           .problem-statement .worry-cards {
             display: grid;
@@ -3771,69 +3793,101 @@
         }
       </style>
       
-      <div class="worry-cards">
-        <div class="worry-card">
-          <div class="character-container">
-            <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
+            <div class="worry-cards concern-cards">
+        <div class="worry-card concern-card">
+          <div class="character-container concern-container">
+            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ1" class="worry-image">
           </div>
-          <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
+          <div class="worry-text concern-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
-        <div class="worry-card">
-          <div class="character-container">
-            <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
+        <div class="worry-card concern-card">
+          <div class="character-container concern-container">
+            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ2" class="worry-image">
           </div>
-          <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
+          <div class="worry-text concern-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
-        <div class="worry-card">
-          <div class="character-container">
-            <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
+        <div class="worry-card concern-card">
+          <div class="character-container concern-container">
+            <img src="assets/images/circle_aligned_3.png" alt="動けない理由のイメージ3" class="worry-image">
           </div>
-          <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
+          <div class="worry-text concern-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
-        <div class="worry-card">
-          <div class="character-container">
-            <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
+        <div class="worry-card concern-card">
+          <div class="character-container concern-container">
+            <img src="assets/images/circle_aligned_4.png" alt="動けない理由のイメージ4" class="worry-image">
           </div>
-          <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
+          <div class="worry-text concern-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
       </div>
       
       <style>
-        /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
-        .character-container {
-          width: 120px;
-          height: 120px;
+        /* 第二のセクション用のスタイル */
+        .concern-container {
+          width: 130px;
+          height: 130px;
           border-radius: 50%;
           overflow: hidden;
           position: relative;
           margin: 0 auto 1rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease;
+          background-color: #f0f8ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
-        .worry-card:hover .character-container {
+        .concern-card:hover .concern-container {
           transform: scale(1.05);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
-        .worry-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.3s ease;
+        .concern-text {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          text-align: center;
+          color: #444;
+          transition: color 0.3s ease;
+        }
+        
+        .concern-card:hover .concern-text {
+          color: #000;
+        }
+        
+        @media (max-width: 992px) {
+          .concern-container {
+            width: 110px;
+            height: 110px;
+          }
+          
+          .concern-text {
+            font-size: 0.9rem;
+          }
         }
         
         @media (max-width: 768px) {
-          .character-container {
+          .concern-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+          }
+          
+          .concern-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
           }
         }
         
         @media (max-width: 576px) {
-          .character-container {
-            width: 70px;
-            height: 70px;
+          .concern-container {
+            width: 75px;
+            height: 75px;
+          }
+          
+          .concern-text {
+            font-size: 0.7rem;
+            line-height: 1.3;
           }
         }
       </style>
@@ -4413,19 +4467,19 @@
       <div class="job-cards-updated">
         <div class="job-card-updated">
           <img src="assets/images/job_image_1.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'">
-          <h3>「カフェやおうちで<br>おやこサポート」</h3>
+          <h3>カフェやおうちで<br>おやこサポート</h3>
           <p>地域のおやこ向けに<br>好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
         </div>
       
         <div class="job-card-updated">
           <img src="assets/images/job_image_2.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
-          <h3>「子育て支援のプロとして<br>地域連携と連携して活躍」</h3>
+          <h3>子育て支援のプロとして<br>地域連携と連携して活躍</h3>
           <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
         </div>
         
         <div class="job-card-updated">
           <img src="assets/images/job_image_3.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
-          <h3>「おうちでオンライン<br>のみの活動もＯＫ」</h3>
+          <h3>おうちでオンライン<br>のみの活動もＯＫ</h3>
           <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
         </div>
       </div>
@@ -4443,6 +4497,21 @@
       </div>
       
       <style>
+        /* 追加した画像のスタイル */
+        .reason-image img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          border-radius: 10px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .reason-image img:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
         @media (max-width: 768px) {
           .reason-item, .reason-item.reverse {
             flex-direction: column;
@@ -4504,7 +4573,7 @@
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
             <div class="reason-image">
-              <img src="assets/images/stance2.jpg" alt="わが子のために学んだこと" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>学んだこと画像</text></svg>'">
+              <img src="assets/images/value2.png" alt="わが子のために学んだこと" style="width:100%; height:auto; object-fit:cover; border-radius:10px;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -4531,7 +4600,7 @@
           </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
-              <img src="assets/images/stance3.jpg" alt="自分の価値を感じる" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>自分の価値画像</text></svg>'">
+              <img src="assets/images/value3.png" alt="自分の価値を感じる" style="width:100%; height:auto; object-fit:cover; border-radius:10px;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
