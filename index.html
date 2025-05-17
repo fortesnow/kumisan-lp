@@ -1639,10 +1639,34 @@
      
      .reason-heading {
        text-align: center;
-       margin-bottom: 5rem;
+       margin-bottom: 3rem; /* 基準スタイルに合わせて調整 */
        position: relative;
      }
      
+     /* 基準スタイルに合わせるための変更 */
+     .values-stance .reason-decorative-text { /* 新しいクラス */
+       display: block; /* もしくは inline-block */
+       font-family: 'Montserrat', sans-serif; /* 基準に合わせる */
+       font-size: 1.5rem; /* 基準に合わせる */
+       font-weight: 700;
+       color: #ff85a2; /* 基準のピンク色 */
+       letter-spacing: 1px; /* 基準に合わせる */
+       text-transform: uppercase;
+       margin-bottom: 0.8rem; /* 基準に合わせる */
+       line-height: 1;
+     }
+
+     .values-stance .section-title { /* 既存の .section-title を流用 */
+       font-family: 'Noto Sans JP', sans-serif; /* 基準に合わせる */
+       font-size: 2.2rem; /* 基準に合わせる */
+       font-weight: 700;
+       color: #333; /* 基準の黒色 */
+       margin-bottom: 0; /* 基準に合わせる */
+       line-height: 1.4; /* 追加 */
+     }
+     
+     /* 既存の .reason-label のスタイルは .reason-decorative-text に移行するため、元は削除または調整 */
+     /*
      .reason-label {
        display: block;
        font-family: 'Noto Sans JP', cursive;
@@ -1651,15 +1675,8 @@
        margin-bottom: 1rem;
        font-weight: 300;
      }
-     
-     .values-stance .section-title {
-       font-family: 'Noto Sans JP', sans-serif;
-       font-size: 2.2rem;
-       font-weight: 700;
-       color: #333;
-       margin-bottom: 0;
-     }
-     
+     */
+
      .reason-items {
        display: flex;
        flex-direction: column;
@@ -4446,8 +4463,8 @@
   <section class="section association-intro" id="association">
     <div class="container">
       <div class="association-title-container">
-        <span class="association-label">About</span>
-        <h2 class="association-title">協会の紹介</h2>
+        <span class="reason-decorative-text">About</span> <!-- クラス名とテキスト変更 -->
+        <h2 class="section-title">協会の紹介</h2> <!-- クラス名変更 -->
       </div>
       
         <p class="association-description">
@@ -4518,12 +4535,12 @@
       
         <div class="job-card-updated">
           <img src="assets/images/job_image_2.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
-          <h3>子育て支援のプロとして<br>地域連携と連携して活躍</h3>
+          <h3>子育て支援のプロとして<br>地域と連携して活躍</h3>
           <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
         </div>
         
         <div class="job-card-updated">
-          <img src="assets/images/job_image_3.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
+          <img src="assets/images/value1.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
           <h3>おうちでオンライン<br>のみの活動もＯＫ</h3>
           <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
         </div>
@@ -4537,7 +4554,7 @@
   <section class="section values-stance" id="values">
     <div class="container">
       <div class="reason-heading">
-        <span class="reason-label">Reason</span>
+        <span class="reason-decorative-text">Reason</span> <!-- クラス名変更 -->
       <h2 class="section-title">あなたらしさを尊重する<br>私たちのスタンス</h2>
       </div>
       
