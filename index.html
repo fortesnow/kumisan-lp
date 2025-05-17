@@ -3700,12 +3700,17 @@
   </div>
 
   <!-- 痛みポイントセクション -->
-  <section class="section pain gradient-section gradient-primary">
+  <section class="section pain gradient-section gradient-primary" style="position: relative;">
+    <!-- 背景画像のパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
+    <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
+    
     <div class="floating-shape floating-shape-1"></div>
     <div class="floating-shape floating-shape-2"></div>
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
-    <div class="container">
+    <div class="container" style="position: relative; z-index: 2;">
       <h2 class="section-title">子育てママの９０％が<br>抱えているお悩み</h2>
       <div class="text-wrapper">
         <p class="problem-intro text">
@@ -3714,38 +3719,29 @@
       </div>
       
       <style>
-        /* 子育てママのお悩みセクション4カラム表示のスタイル */
+        /* 子育てママのお悩みセクション2カラム表示のスタイル */
         /* 改行を確実に維持するためにword-breakを追加 */
         .worry-text br, .concern-text br {
           display: inline-block; /* PC用にも指定 */
           white-space: pre; /* 空白と改行を維持 */
         }
         
-        /* ワイド画面での表示 */
+        /* ワイド画面でも2カラム表示 */
         .worry-cards {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
           gap: 1.5rem;
           margin: 0 auto;
-          max-width: 1000px;
+          max-width: 800px;
         }
         
         .worry-card {
-          flex: 0 0 calc(25% - 1.5rem);
           display: flex;
           flex-direction: column;
           align-items: center;
           padding: 1rem;
           box-sizing: border-box;
           text-align: center;
-        }
-        
-        /* タブレット表示 */
-        @media (max-width: 992px) {
-          .worry-card {
-            flex: 0 0 calc(50% - 1.5rem);
-          }
         }
         
         /* キャラクターアイコンのスタイル調整 */
@@ -3860,15 +3856,20 @@
   </section>
 
   <!-- 問題提起セクション -->
-  <section class="section problem-statement" id="problem">
+  <section class="section problem-statement" id="problem" style="position: relative;">
+    <!-- 背景画像のパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
+    <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
+    
     <div class="floating-shape floating-shape-1"></div>
     <div class="floating-shape floating-shape-2"></div>
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
-    <div class="container">
-      <h2 class="section-title">多くのママが<br>同じ気持ちです。でも…</h2>
+    <div class="container" style="position: relative; z-index: 2;">
+      <h2 class="section-title" style="color: #6F4B3E;">多くのママが<br>同じ気持ちです。でも…</h2>
       <div class="text-wrapper">
-        <p class="problem-intro text">
+        <p class="problem-intro text" style="color: #6F4B3E;">
           「いつか自分に合ったお仕事をしたい」<br>と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
         </p>
       </div>
@@ -3931,6 +3932,10 @@
             box-sizing: border-box !important; /* ボックスサイズを調整 */
             padding: 0 2px !important; /* 左右の余白を少し追加 */
             overflow-wrap: break-word !important; /* 長い単語を折り返す */
+            height: 2.6em !important; /* スマホでも2行分の高さを確保 */
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
           }
           
           /* スマホでの改行を統一するためのスタイル */
@@ -3964,6 +3969,7 @@
             #pain .worry-text, #problem .worry-text {
               font-size: 0.65rem !important;
               padding: 0 1px !important;
+              height: 2.6em !important; /* 小さいスマホでも2行確保 */
             }
             #pain .worry-cards, #problem .worry-cards {
               gap: 0.3rem !important;
@@ -4031,12 +4037,21 @@
           font-size: 0.95rem;
           line-height: 1.5;
           text-align: center;
-          color: #444;
+          color: #6F4B3E;
           transition: color 0.3s ease;
+          height: 3em; /* 2行分の高さを確保 */
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
         .worry-card:hover .worry-text {
-          color: #000;
+          color: #554236;
+        }
+        
+        /* 改行を確実に表示させる */
+        .worry-text br {
+          display: block !important;
         }
         
         @media (max-width: 992px) {
@@ -4507,7 +4522,7 @@
   <!-- ベビー発育アドバイザーとは？セクション -->
   <section class="section child-experience" id="features" style="position: relative;">
     <!-- 複数の背景画像を配置してパターン化 -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
     
@@ -4641,14 +4656,19 @@
   </section>
 
   <!-- 協会紹介セクション（短縮版） -->
-  <section class="section association-intro" id="association">
-    <div class="container">
+  <section class="section association-intro" id="association" style="position: relative;">
+    <!-- 複数の背景画像を配置してパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
+    <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
       <div class="association-title-container">
         <span class="reason-decorative-text">About</span> <!-- クラス名とテキスト変更 -->
         <h2 class="section-title">協会の紹介</h2> <!-- クラス名変更 -->
       </div>
       
-      <p class="association-description">
+      <p class="association-description" style="color: #6F4B3E;">
         一般社団法人乳幼児発達推進協会は、<br>子どもたちの健やかな成長を支援するために設立されました<br>
         全国２３０名が受講し、優良企業提携・専門家監修と実績ある組織です
       </p>
@@ -4696,6 +4716,11 @@
           text-align: center;
           padding: 8px 12px;
           font-weight: 600;
+        }
+        
+        /* 追加：協会紹介セクションのテキスト色統一 */
+        .association-description {
+          color: #6F4B3E;
         }
         
         #association-slider .slider-nav {
@@ -4806,8 +4831,13 @@
       </div>
 
   <!-- ベビー発育アドバイザーになると何ができる？セクション -->
-  <section class="section job-options" id="advisor-features">
-    <div class="container">
+  <section class="section job-options" id="advisor-features" style="position: relative;">
+    <!-- 背景画像のパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
+    <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
       <h2 class="section-title">お仕事のイメージ</h2>
       
       <style>
@@ -4847,12 +4877,14 @@
           margin: 1rem 0;
           line-height: 1.4;
           text-align: center;
+          color: #6F4B3E; /* 茶色に統一 */
         }
         
         .job-card-updated p {
           font-size: 0.95rem;
           line-height: 1.6;
           text-align: center;
+          color: #6F4B3E; /* 茶色に統一 */
         }
         
         /* スマホ表示の最適化 */
@@ -4862,7 +4894,7 @@
           }
           
           .job-card-updated {
-            flex: 0 0 calc(50% - 1.5rem);
+            flex: 0 0 100%; /* スマホでは1カラム表示に変更 */
           }
           
           .job-card-updated h3 {
@@ -4918,7 +4950,7 @@
   <!-- 価値観とスタンスセクション -->
   <section class="section values-stance" id="values" style="position: relative;">
     <!-- 複数の背景画像を配置してパターン化 -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
@@ -5079,17 +5111,19 @@
         
                 <div class="reason-item">
           <div class="reason-content">
-            <div class="reason-number">05</div>
-            <h3 class="reason-title">ママとしてだけじゃなく"私"としての人生を生きたい</h3>
-            <p class="reason-quote">「子育ても大切だけど、"私"自身の人生も大切にしたい」</p>
-            <ul class="reason-points">
-              <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
-              <li>好きなことで、社会と関わり続けたいという希望</li>
-            </ul>
+            <div class="text-wrapper">
+              <div class="reason-number">05</div>
+              <h3 class="reason-title">ママとしてだけじゃなく"私"としての人生を生きたい</h3>
+              <p class="reason-quote">「子育ても大切だけど、"私"自身の人生も大切にしたい」</p>
+              <ul class="reason-points">
+                <li>子育てだけの平凡な毎日を過ごすだけ、お金のために働くからの脱却</li>
+                <li>好きなことで、社会と関わり続けたいという希望</li>
+              </ul>
+            </div>
           </div>
           <div class="reason-image-wrap">
-            <div class="reason-image">
-              <img src="assets/images/value7.png" alt="私としての人生" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>私としての人生画像</text></svg>'">
+            <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
+              <img src="assets/images/value7.png" alt="私としての人生" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>私としての人生画像</text></svg>'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
