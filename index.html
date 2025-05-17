@@ -38,6 +38,28 @@
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        color: #6F4B3E; /* デフォルトテキストカラーを画像の茶色に合わせて変更 */
+       overflow-x: hidden;
+     }
+     
+     /* スマホでのレスポンシブ改善 */
+     @media (max-width: 576px) {
+       .section {
+         padding: 3rem 0.5rem;
+       }
+       
+       .container {
+         padding-left: 0.5rem;
+         padding-right: 0.5rem;
+       }
+       
+       .section-title {
+         font-size: 1.8rem;
+         margin-bottom: 1.5rem;
+       }
+       
+       .text-wrapper {
+         max-width: 95%;
+       }
      }
      
      h1, h2, h3, h4, h5, h6 {
@@ -3768,46 +3790,12 @@
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          overflow: hidden;
-          position: relative;
-          margin: 0 auto 1rem;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
-        }
-        
-        .worry-card:hover .character-container {
-          transform: scale(1.05);
-        }
-        
-        .worry-image {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.3s ease;
-        }
-        
-        @media (max-width: 768px) {
-          .character-container {
-            width: 90px;
-            height: 90px;
-            margin-bottom: 0.5rem;
-          }
-        }
-        
-        @media (max-width: 576px) {
-          .character-container {
-            width: 70px;
-            height: 70px;
-          }
+          width: 70px;
+          height: 70px;
         }
       </style>
       
-      <div class="solution-transition">
-        <h3>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事です</h3>
-      </div>
+      <!-- "そんなあなたにぴったりなのが子育て経験を活かせるお仕事です" 削除 -->
     </div>
   </section>
 
@@ -4065,10 +4053,8 @@
       
       <div class="memories-timeline">
         <div class="memory-card">
-          <div class="memory-icon character-icon">
-            <div class="memory-character-container">
-              <img src="assets/images/circle_aligned_3.png" alt="睡眠の悩み" class="memory-character-image">
-            </div>
+          <div class="memory-icon fancy-number">
+            <span>01</span>
           </div>
           <div class="memory-content">
             <p>まわりの子はたくさん寝るのに<br><strong>わが子は全然寝なくて辛い</strong></p>
@@ -4076,10 +4062,8 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon character-icon">
-            <div class="memory-character-container">
-              <img src="assets/images/circle_aligned_5.png" alt="検索の悩み" class="memory-character-image">
-            </div>
+          <div class="memory-icon fancy-number">
+            <span>02</span>
           </div>
           <div class="memory-content">
             <p>毎日何しよう？どこにいこう？で<br><strong>検索ばかりしていた</strong></p>
@@ -4087,10 +4071,8 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon character-icon">
-            <div class="memory-character-container">
-              <img src="assets/images/circle_aligned_1.png" alt="離乳食の悩み" class="memory-character-image">
-            </div>
+          <div class="memory-icon fancy-number">
+            <span>03</span>
           </div>
           <div class="memory-content">
             <p>離乳食のレパートリーがなくて<br><strong>ＳＮＳを見漁っていた</strong></p>
@@ -4098,16 +4080,49 @@
         </div>
         
         <div class="memory-card">
-          <div class="memory-icon character-icon">
-            <div class="memory-character-container">
-              <img src="assets/images/circle_aligned_6.png" alt="成長の不安" class="memory-character-image">
-            </div>
+          <div class="memory-icon fancy-number">
+            <span>04</span>
           </div>
           <div class="memory-content">
             <p>ほかの子と比べて<br><strong>成長が遅れていないか不安だった</strong></p>
           </div>
         </div>
       </div>
+      
+      <style>
+        /* 可愛い番号スタイル */
+        .fancy-number {
+          width: 60px;
+          height: 60px;
+          min-width: 60px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, #ff85a2, #ff9cbe);
+          color: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: 'M PLUS Rounded 1c', sans-serif;
+          font-weight: 700;
+          font-size: 1.3rem;
+          box-shadow: 0 5px 15px rgba(255, 133, 162, 0.4);
+          margin-right: 1.2rem;
+        }
+        
+        .fancy-number span {
+          display: block;
+          transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+          .fancy-number {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+          }
+        }
+      </style>
       
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
@@ -4684,10 +4699,85 @@
     <div class="container">
       <h2 class="section-title">お仕事のイメージ</h2>
       
+      <style>
+        /* お仕事イメージセクションのレイアウト修正 */
+        .job-cards-updated {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+        
+        .job-card-updated {
+          flex: 0 0 calc(33.333% - 2rem);
+          background: #fff;
+          border-radius: 15px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          padding: 1.5rem;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .job-card-updated:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .job-card-updated img {
+          width: 100%;
+          height: 180px;
+          object-fit: contain;
+          margin-bottom: 1rem;
+          border-radius: 8px;
+        }
+        
+        .job-card-updated h3 {
+          font-size: 1.2rem;
+          margin: 1rem 0;
+          line-height: 1.4;
+          text-align: center;
+        }
+        
+        .job-card-updated p {
+          font-size: 0.95rem;
+          line-height: 1.6;
+          text-align: center;
+        }
+        
+        /* スマホ表示の最適化 */
+        @media (max-width: 768px) {
+          .job-cards-updated {
+            gap: 1.5rem;
+          }
+          
+          .job-card-updated {
+            flex: 0 0 calc(50% - 1.5rem);
+          }
+          
+          .job-card-updated h3 {
+            font-size: 1.1rem;
+          }
+          
+          .job-card-updated p {
+            font-size: 0.9rem;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .job-card-updated {
+            flex: 0 0 100%;
+          }
+          
+          .job-card-updated img {
+            height: 160px;
+          }
+        }
+      </style>
+      
       <div class="job-cards-updated">
         <div class="job-card-updated">
           <div class="text-wrapper">
-            <img src="assets/images/value5.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <img src="assets/images/value5.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'">
             <h3>カフェやおうちで<br>おやこサポート</h3>
             <p>地域のおやこ向けに<br>好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
           </div>
@@ -4695,7 +4785,7 @@
       
         <div class="job-card-updated">
           <div class="text-wrapper">
-            <img src="assets/images/value4.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <img src="assets/images/value4.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
             <h3>子育て支援のプロとして<br>地域と連携して活躍</h3>
             <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
           </div>
@@ -4703,7 +4793,7 @@
         
         <div class="job-card-updated">
           <div class="text-wrapper">
-            <img src="assets/images/value1.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <img src="assets/images/value1.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
             <h3>おうちでオンライン<br>のみの活動もＯＫ</h3>
             <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
           </div>
@@ -4898,7 +4988,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
+                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあっても<br>なかなか行動に移せなかったり行動しても<br>途中で辞めてしまうことが多かったのですが、<br>受講後は、周りの先輩方のお話を聞いたり、<br>インスタを参考にさせてもらいながら進めていくと、<br>フォロワーさんが増えたり、「気になってました！」と<br>言って頂けるようになり、それがとても嬉しくて」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩A</span> 様 
@@ -4913,7 +5003,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
+                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、<br>写真の撮り方やストーリーの作り方、<br>毎日教室のことを色々と進めていくことが<br>出来ています。受講前のように自分が暗のように<br>ストーリーを作ったり、告知を作るのが楽しくなり、<br>前よりも自分の考えを発信することが楽しくなりました」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩B</span> 様
@@ -4928,7 +5018,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
+                <p class="testimonial-quote-v2 text">「やる気と情熱はあったけれど、やり方、<br>何をすべきか全く分からない段階からスタートでした。<br>この講座で、お教室運営で大切な事、<br>ベビー用のボディケア、その他もろもろを<br>楽しく学ぶことができました。<br>受講完了後、翌月にはお教室オープン。<br>初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩C</span> 様
@@ -4943,7 +5033,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
+                <p class="testimonial-quote-v2 text">「心愛協会が世界に広がれば、<br>みんながハッピーになれる存在です。<br>私にとって人生のお守りであり、母性です。<br>講座で学んだ内容で特に活かしたいことは、<br>お教室を通して素敵な縁を広げて<br>人生を子育てで豊かにしたいです」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩D</span> 様
@@ -5101,13 +5191,49 @@
   <section class="section contact-form" id="contact">
     <div class="container">
       <h2 class="section-title">無料説明会お申し込み</h2>
-      <p class="contact-description">
-        ベビー発育アドバイザー講座についてより詳しく知りたい方へ無料説明会をご案内しています。<br>
-        以下のフォームに必要事項をご記入の上、送信ボタンをクリックしてください。
-      </p>
+      <div class="text-wrapper">
+        <p class="contact-description">
+          ベビー発育アドバイザー講座についてもっと詳しく知りたい方へ<br>
+          無料オンライン説明会をご用意しています。<br>
+          <span class="highlight-text">お子様と一緒に参加OK！完全無料です</span>
+        </p>
+        <ul class="form-benefits">
+          <li>✓ 講座の具体的な内容と流れが分かる</li>
+          <li>✓ 質問にその場で回答</li>
+          <li>✓ 先輩アドバイザーの実績例も紹介</li>
+          <li>✓ 説明会参加者限定の特典あり</li>
+        </ul>
+      </div>
+      
+      <style>
+        .form-benefits {
+          margin: 1.5rem auto;
+          padding-left: 1rem;
+          list-style: none;
+          text-align: left;
+          max-width: 500px;
+          color: #6F4B3E;
+        }
+        
+        .form-benefits li {
+          margin-bottom: 0.5rem;
+          font-size: 1.1rem;
+          line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+          .form-benefits {
+            padding-left: 0;
+          }
+          
+          .form-benefits li {
+            font-size: 1rem;
+          }
+        }
+      </style>
       
       <div class="google-form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" width="100%" height="1696" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
       </div>
       
       <style>
@@ -5118,12 +5244,34 @@
           border-radius: 10px;
           overflow: hidden;
         }
+        
+        .google-form-wrapper iframe {
+          width: 100%;
+          border: none;
+        }
+        
         @media (max-width: 768px) {
           .google-form-wrapper {
             width: 100%;
+            margin: 1.5rem auto 0;
+            box-shadow: none;
+            padding: 0;
           }
+          
           .google-form-wrapper iframe {
-            height: 1200px;
+            height: 1200px !important;
+            width: 100% !important;
+            transform: scale(0.98);
+            transform-origin: top left;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .google-form-wrapper iframe {
+            height: 1100px !important;
+            transform: scale(0.95);
           }
         }
       </style>
