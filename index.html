@@ -3879,6 +3879,27 @@
       </p>
       
       <style>
+        /* 問題文とソリューションの間に適切なスペースを確保 */
+        .problem-intro {
+          margin-bottom: 2rem;
+        }
+        
+        .solution-transition {
+          margin-top: 3rem;
+          text-align: center;
+          padding: 1.5rem;
+          background: linear-gradient(135deg, rgba(255, 240, 245, 0.8), rgba(255, 250, 250, 0.8));
+          border-radius: 12px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .solution-transition h3 {
+          font-size: 1.4rem;
+          color: #333;
+          line-height: 1.6;
+          font-weight: 600;
+        }
+        
         @media (max-width: 768px) {
           .problem-statement .worry-cards {
             display: grid;
@@ -3912,6 +3933,15 @@
             font-size: 0.9rem;
             line-height: 1.6;
             padding: 0 15px;
+          }
+          
+          .solution-transition {
+            margin-top: 2rem;
+            padding: 1.2rem 1rem;
+          }
+          
+          .solution-transition h3 {
+            font-size: 1.2rem;
           }
         }
       </style>
@@ -4076,7 +4106,7 @@
   <section class="section parenting-memories" id="memories">
     <div class="container">
       <div class="memories-header">
-        <span class="memories-label">Experience</span><br>
+        <span class="memories-label">Experience</span><br><br>
         <h2 class="section-title">ふと思い返してみてください。子育て中、こんな経験ありませんでしたか？</h2>
       </div>
       
@@ -4476,9 +4506,41 @@
   <section class="section reason-section-updated">
     <div class="container">
       <div class="reason-section-header">
-        <span class="reason-decorative-text">Reason</span>
+        <span class="reason-label">Reason</span>
         <h2 class="section-title">ベビー発育アドバイザーが選ばれる理由</h2>
       </div>
+      
+      <style>
+        /* Reasonラベルのスタイル統一 */
+        .reason-label {
+          display: inline-block;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #ff85a2;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 0.5rem;
+          position: relative;
+        }
+        
+        .reason-label::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: -5px;
+          transform: translateX(-50%);
+          width: 40px;
+          height: 2px;
+          background-color: #ff85a2;
+        }
+        
+        .reason-section-header {
+          text-align: center;
+          position: relative;
+          margin-bottom: 3rem;
+        }
+      </style>
       <div class="reason-items-container">
         <!-- Item 1 -->
         <div class="reason-item">
