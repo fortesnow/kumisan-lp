@@ -3552,6 +3552,97 @@
          height: 70px;
        }
      }
+
+     /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
+     .character-container {
+       width: 130px;
+       height: 130px;
+       border-radius: 50%;
+       overflow: hidden;
+       position: relative;
+       margin: 0 auto 1rem;
+       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+       transition: all 0.3s ease;
+       background-color: #f0f8ff;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+     }
+     
+     .worry-card:hover .character-container {
+       transform: scale(1.05);
+       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+     }
+     
+     .worry-image {
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       transition: transform 0.3s ease;
+     }
+     
+     .worry-card:hover .worry-image {
+       transform: scale(1.02);
+     }
+     
+     .worry-card {
+       transition: all 0.3s ease;
+       padding: 0.5rem;
+       margin-bottom: 1rem;
+     }
+     
+     .worry-text {
+       font-size: 0.95rem;
+       line-height: 1.5;
+       text-align: center;
+       color: #444;
+       transition: color 0.3s ease;
+     }
+     
+     .worry-card:hover .worry-text {
+       color: #000;
+     }
+     
+     @media (max-width: 992px) {
+       .character-container {
+         width: 110px;
+         height: 110px;
+       }
+       
+       .worry-text {
+         font-size: 0.9rem;
+       }
+     }
+     
+     @media (max-width: 768px) {
+       .character-container {
+         width: 90px;
+         height: 90px;
+         margin-bottom: 0.5rem;
+         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+       }
+       
+       .worry-text {
+         font-size: 0.8rem;
+         line-height: 1.4;
+       }
+     }
+     
+     @media (max-width: 576px) {
+       .character-container {
+         width: 75px;
+         height: 75px;
+       }
+       
+       .worry-text {
+         font-size: 0.7rem;
+         line-height: 1.3;
+       }
+       
+       .problem-statement .worry-cards {
+         gap: 0.7rem !important;
+       }
+     }
    </style>
 </head>
 <body>
@@ -3652,25 +3743,25 @@
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry1.png" alt="動けない理由のイメージ1" class="worry-image">
+            <img src="assets/images/circle_aligned_1.png" alt="動けない理由のイメージ1" class="worry-image">
           </div>
           <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry2.png" alt="動けない理由のイメージ2" class="worry-image">
+            <img src="assets/images/circle_aligned_2.png" alt="動けない理由のイメージ2" class="worry-image">
           </div>
           <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry3.png" alt="動けない理由のイメージ3" class="worry-image">
+            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ3" class="worry-image">
           </div>
           <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry4.png" alt="動けない理由のイメージ4" class="worry-image">
+            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ4" class="worry-image">
           </div>
           <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
@@ -3679,18 +3770,23 @@
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 120px;
-          height: 120px;
+          width: 130px;
+          height: 130px;
           border-radius: 50%;
           overflow: hidden;
           position: relative;
           margin: 0 auto 1rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease;
+          background-color: #f0f8ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
         .worry-card:hover .character-container {
           transform: scale(1.05);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .worry-image {
@@ -3700,18 +3796,66 @@
           transition: transform 0.3s ease;
         }
         
+        .worry-card:hover .worry-image {
+          transform: scale(1.02);
+        }
+        
+        .worry-card {
+          transition: all 0.3s ease;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        .worry-text {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          text-align: center;
+          color: #444;
+          transition: color 0.3s ease;
+        }
+        
+        .worry-card:hover .worry-text {
+          color: #000;
+        }
+        
+        @media (max-width: 992px) {
+          .character-container {
+            width: 110px;
+            height: 110px;
+          }
+          
+          .worry-text {
+            font-size: 0.9rem;
+          }
+        }
+        
         @media (max-width: 768px) {
           .character-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+          }
+          
+          .worry-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
           }
         }
         
         @media (max-width: 576px) {
           .character-container {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
+          }
+          
+          .worry-text {
+            font-size: 0.7rem;
+            line-height: 1.3;
+          }
+          
+          .problem-statement .worry-cards {
+            gap: 0.7rem !important;
           }
         }
       </style>
@@ -3775,25 +3919,25 @@
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry1.png" alt="動けない理由のイメージ1" class="worry-image">
+            <img src="assets/images/circle_aligned_1.png" alt="動けない理由のイメージ1" class="worry-image">
           </div>
           <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry2.png" alt="動けない理由のイメージ2" class="worry-image">
+            <img src="assets/images/circle_aligned_2.png" alt="動けない理由のイメージ2" class="worry-image">
           </div>
           <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry3.png" alt="動けない理由のイメージ3" class="worry-image">
+            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ3" class="worry-image">
           </div>
           <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry4.png" alt="動けない理由のイメージ4" class="worry-image">
+            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ4" class="worry-image">
           </div>
           <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
@@ -3802,18 +3946,23 @@
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 120px;
-          height: 120px;
+          width: 130px;
+          height: 130px;
           border-radius: 50%;
           overflow: hidden;
           position: relative;
           margin: 0 auto 1rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease;
+          background-color: #f0f8ff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         
         .worry-card:hover .character-container {
           transform: scale(1.05);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .worry-image {
@@ -3823,18 +3972,66 @@
           transition: transform 0.3s ease;
         }
         
+        .worry-card:hover .worry-image {
+          transform: scale(1.02);
+        }
+        
+        .worry-card {
+          transition: all 0.3s ease;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+        }
+        
+        .worry-text {
+          font-size: 0.95rem;
+          line-height: 1.5;
+          text-align: center;
+          color: #444;
+          transition: color 0.3s ease;
+        }
+        
+        .worry-card:hover .worry-text {
+          color: #000;
+        }
+        
+        @media (max-width: 992px) {
+          .character-container {
+            width: 110px;
+            height: 110px;
+          }
+          
+          .worry-text {
+            font-size: 0.9rem;
+          }
+        }
+        
         @media (max-width: 768px) {
           .character-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+          }
+          
+          .worry-text {
+            font-size: 0.8rem;
+            line-height: 1.4;
           }
         }
         
         @media (max-width: 576px) {
           .character-container {
-            width: 70px;
-            height: 70px;
+            width: 75px;
+            height: 75px;
+          }
+          
+          .worry-text {
+            font-size: 0.7rem;
+            line-height: 1.3;
+          }
+          
+          .problem-statement .worry-cards {
+            gap: 0.7rem !important;
           }
         }
       </style>
