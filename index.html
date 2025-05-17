@@ -4479,14 +4479,17 @@
   </style>
   
   <!-- ベビー発育アドバイザーとは？セクション -->
-  <section class="section child-experience" id="features">
-    <div class="container">
+  <section class="section child-experience" id="features" style="background: url('assets/images/mother.jpeg') no-repeat center center; background-size: cover; background-attachment: fixed; position: relative;">
+    <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
       <h2 class="section-title">ベビー発育アドバイザー<br>とは？</h2>
       <p class="advisor-description">赤ちゃんの発育を専門的に支援できる<br>子育てサポートの専門家です</p>
       
       <!-- ベビー発育アドバイザーとは？画像 -->
-      <div class="advisor-image-container">
-        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image">
+      <div class="advisor-image-container" style="line-height: 0;">
+        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image" style="display: block; margin: 0 auto; padding: 0;">
       </div>
       
       <style>
@@ -4494,6 +4497,7 @@
           max-width: 800px;
           margin: 2rem auto;
           text-align: center;
+          line-height: 0; /* 画像下の余白を確実に削除 */
         }
         .advisor-main-image {
           width: 100%;
@@ -4502,10 +4506,12 @@
           object-fit: contain;
           border-radius: 12px;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+          display: block; /* 画像下の余白を削除 */
         }
         @media (max-width: 768px) {
           .advisor-image-container {
             margin: 1.5rem auto;
+            line-height: 0; /* スマホ表示でも余白を削除 */
           }
           .advisor-main-image {
             max-height: 350px;
@@ -4535,8 +4541,11 @@
   </section>
 
   <!-- ベビー発育アドバイザーが選ばれる理由 -->
-  <section class="section reason-section-updated">
-    <div class="container">
+  <section class="section reason-section-updated" style="position: relative;">
+    <!-- 背景画像を追加 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat center center; background-size: cover; background-attachment: fixed; z-index: 0; opacity: 0.1;"></div>
+    
+    <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-section-header">
         <span class="reason-decorative-text">Reason</span>
         <h2 class="section-title">ベビー発育アドバイザーが選ばれる理由</h2>
@@ -4549,8 +4558,8 @@
             <h3 class="reason-item-title">最短１ヶ月で収益化</h3>
             <p class="reason-item-description">受講生全員が未経験から！<br>初めに何をしたら良いかから丁寧にひとつずつ<br>講義の中で一緒に行動にうつしていけるので<br>最短ルートでお仕事として確立できます</p>
           </div>
-          <div class="reason-image-content">
-            <img src="assets/images/community_support3.jpeg" alt="最短１ヶ月で収益化 イメージ">
+          <div class="reason-image-content" style="line-height: 0;">
+            <img src="assets/images/community_support3.jpeg" alt="最短１ヶ月で収益化 イメージ" style="display: block; margin: 0; padding: 0;">
           </div>
         </div>
         <!-- Item 2 -->
@@ -4560,8 +4569,8 @@
             <h3 class="reason-item-title">家事育児と両立ができる</h3>
             <p class="reason-item-description">学ぶ知識は今の子育てにも活かせたり<br>わが子と一緒に実践できるあそびもたくさん！<br>パソコンだけの在宅ワークと異なるので<br>子どもとの時間を大切にしたい方におすすめ</p>
           </div>
-          <div class="reason-image-content">
-            <img src="assets/images/community_support2.jpeg" alt="家事育児と両立ができる イメージ">
+          <div class="reason-image-content" style="line-height: 0;">
+            <img src="assets/images/community_support2.jpeg" alt="家事育児と両立ができる イメージ" style="display: block; margin: 0; padding: 0;">
           </div>
         </div>
         <!-- Item 3 -->
@@ -4571,8 +4580,8 @@
             <h3 class="reason-item-title">一人で悩まない環境</h3>
             <p class="reason-item-description">全国で活躍中のメンバーとつながったり<br>わからないことはいつでも相談できて<br>これで良いのかな？をすぐに解決できるのは<br>ゼロから始める方に必須な環境です</p>
           </div>
-          <div class="reason-image-content">
-            <img src="assets/images/community_support.jpeg" alt="一人で悩まない環境 イメージ" class="community-support-image">
+          <div class="reason-image-content" style="line-height: 0;">
+            <img src="assets/images/community_support.jpeg" alt="一人で悩まない環境 イメージ" class="community-support-image" style="display: block; margin: 0; padding: 0;">
           </div>
         </div>
         
@@ -4899,6 +4908,7 @@
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
           transition: transform 0.3s ease, box-shadow 0.3s ease;
           margin-bottom: 0; /* 余白を削除 */
+          display: block; /* 画像下の余白を完全に削除するため */
         }
         
         .reason-image img:hover {
@@ -4913,6 +4923,7 @@
         
         .reason-image-wrap {
           margin-bottom: 0;
+          line-height: 0; /* 画像下の余白を確実に削除 */
         }
         
         @media (max-width: 768px) {
@@ -4922,6 +4933,7 @@
           }
           .reason-image-wrap {
             order: 2 !important;
+            line-height: 0; /* スマホ表示でも余白を削除 */
           }
           .reason-content, .reason-item.reverse .reason-content {
             padding: 0;
@@ -4930,6 +4942,7 @@
             display: flex;
             justify-content: center;
             margin-top: 1rem;
+            line-height: 0; /* 余白を削除 */
           }
           .reason-item-description {
             font-size: 0.9rem;
@@ -4968,17 +4981,16 @@
             </div>
           </div>
           <div class="reason-image-wrap">
-            <div class="reason-image">
-              <img src="assets/images/value6.png" alt="子育ての経験が役に立つ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>子育ての経験画像</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
+              <img src="assets/images/value6.png" alt="子育ての経験が役に立つ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>子育ての経験画像</text></svg>'" style="object-fit: contain; width: 100%; height: auto; display: block; margin: 0; padding: 0;">
             </div>
-            <div class="reason-accent-line"></div>
           </div>
         </div>
         
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
-            <div class="reason-image">
-              <img src="assets/images/value7.png" alt="わが子のために学んだこと" style="width:100%; height:auto; object-fit:contain; border-radius:10px;">
+            <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
+              <img src="assets/images/value7.png" alt="わが子のために学んだこと" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -5008,8 +5020,8 @@
             </div>
           </div>
           <div class="reason-image-wrap">
-            <div class="reason-image">
-              <img src="assets/images/value8.png" alt="自分の価値を感じる" style="width:100%; height:auto; object-fit:contain; border-radius:10px;">
+            <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
+              <img src="assets/images/value8.png" alt="自分の価値を感じる" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -5017,6 +5029,7 @@
         
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
+            <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
             <div class="reason-image">
               <img src="assets/images/value8.png" alt="やりがいと笑顔" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'">
             </div>
