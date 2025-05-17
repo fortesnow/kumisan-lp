@@ -37,38 +37,26 @@
      /* 共通フォントスタイル - 全体統一 */
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
-       color: #6A4A3C; /* 画像の茶色に変更 */
+       color: #333; /* デフォルトテキストカラーを濃いグレーに変更 */
      }
      
      h1, h2, h3, h4, h5, h6 {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        font-weight: 700;
-       color: #6A4A3C; /* 画像の茶色に変更 */
+       color: #333; /* 見出しのカラーを濃いグレーに統一 */
      }
      
      p, li, .btn {
        font-family: 'M PLUS Rounded 1c', sans-serif;
-       color: #6A4A3C; /* 追加：茶色に変更 */
      }
      
-     /* テキストカラーのグローバル設定 - 茶色に統一 */
-     .feature-title, .feature-description, 
-     .community-headline, .community-subtext,
-     .value-card h3, .value-quote, .value-points li,
-     .problem-statement .section-title, .problem-intro,
-     .problem-text, .conclusion-text p, .conclusion-text h3,
-     .testimonial-body p, .advisor-voice-card-body,
-     .body-paragraph, .footer-logo, .footer-info p {
-       color: #6A4A3C !important; /* 茶色に統一 */
-     }
-     
-     /* 重要ポイント強調スタイル - ピンク色は保持 */
+     /* 重要ポイント強調スタイル */
      .highlight-text {
        color: #e6587c; /* 重要テキストを強調する濃いピンク */
        font-weight: 700;
      }
      
-     /* コントラスト強化のためのボタンスタイル更新 - 白色テキストは保持 */
+     /* コントラスト強化のためのボタンスタイル更新 */
      .btn-primary {
        background-color: #ff4778; /* CTAボタンの色を鮮やかなピンクに変更 */
        color: #fff;
@@ -124,7 +112,7 @@
      .organization-name {
        display: block;
        font-size: 0.85rem;
-       color: #6A4A3C;
+       color: #777;
        letter-spacing: 0.05em;
        margin-bottom: 3px;
      }
@@ -133,7 +121,7 @@
        display: block;
        font-size: 1.1rem;
        font-weight: 600;
-       color: #6A4A3C;
+       color: #333;
        letter-spacing: 0.1em;
      }
      
@@ -181,7 +169,7 @@
      
      .hero h1 {
        font-family: 'M PLUS Rounded 1c', serif;
-       color: #6A4A3C;
+       color: #333;
        font-size: 2.6rem;
        font-weight: 700;
        line-height: 1.3;
@@ -190,7 +178,7 @@
      }
      
      .hero .sub-heading {
-       color: #6A4A3C;
+       color: #555;
        font-size: 1.2rem;
        font-weight: 500;
        margin-bottom: 2rem;
@@ -3112,7 +3100,7 @@
      .advisor-voice-quote {
        font-size: 1rem;
        line-height: 1.7;
-       color: #6A4A3C;
+       color: #555;
        margin: 0;
        font-family: 'M PLUS Rounded 1c', sans-serif;
      }
@@ -3206,7 +3194,7 @@
      .contact-description {
        text-align: center;
        font-size: 1.1rem;
-       color: #6A4A3C;
+       color: #555;
        margin-bottom: 2.5rem;
      }
      
@@ -3227,7 +3215,7 @@
        display: block;
        margin-bottom: 0.5rem;
        font-weight: 500;
-       color: #6A4A3C;
+       color: #333;
      }
      
      .form-group input,
@@ -3564,97 +3552,6 @@
          height: 70px;
        }
      }
-
-     /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
-     .character-container {
-       width: 130px;
-       height: 130px;
-       border-radius: 50%;
-       overflow: hidden;
-       position: relative;
-       margin: 0 auto 1rem;
-       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-       transition: all 0.3s ease;
-       background-color: #f0f8ff;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-     }
-     
-     .worry-card:hover .character-container {
-       transform: scale(1.05);
-       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-     }
-     
-     .worry-image {
-       width: 100%;
-       height: 100%;
-       object-fit: cover;
-       transition: transform 0.3s ease;
-     }
-     
-     .worry-card:hover .worry-image {
-       transform: scale(1.02);
-     }
-     
-     .worry-card {
-       transition: all 0.3s ease;
-       padding: 0.5rem;
-       margin-bottom: 1rem;
-     }
-     
-     .worry-text {
-       font-size: 0.95rem;
-       line-height: 1.5;
-       text-align: center;
-       color: #444;
-       transition: color 0.3s ease;
-     }
-     
-     .worry-card:hover .worry-text {
-       color: #000;
-     }
-     
-     @media (max-width: 992px) {
-       .character-container {
-         width: 110px;
-         height: 110px;
-       }
-       
-       .worry-text {
-         font-size: 0.9rem;
-       }
-     }
-     
-     @media (max-width: 768px) {
-       .character-container {
-         width: 90px;
-         height: 90px;
-         margin-bottom: 0.5rem;
-         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-       }
-       
-       .worry-text {
-         font-size: 0.8rem;
-         line-height: 1.4;
-       }
-     }
-     
-     @media (max-width: 576px) {
-       .character-container {
-         width: 75px;
-         height: 75px;
-       }
-       
-       .worry-text {
-         font-size: 0.7rem;
-         line-height: 1.3;
-       }
-       
-       .problem-statement .worry-cards {
-         gap: 0.7rem !important;
-       }
-     }
    </style>
 </head>
 <body>
@@ -3755,50 +3652,45 @@
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_1.png" alt="動けない理由のイメージ1" class="worry-image">
+            <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
           </div>
-          <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
+          <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_2.png" alt="動けない理由のイメージ2" class="worry-image">
+            <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
           </div>
-          <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
+          <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ3" class="worry-image">
+            <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
           </div>
-          <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
+          <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ4" class="worry-image">
+            <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
           </div>
-          <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
+          <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
         </div>
       </div>
       
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 130px;
-          height: 130px;
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
           overflow: hidden;
           position: relative;
           margin: 0 auto 1rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-          background-color: #f0f8ff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          transition: transform 0.3s ease;
         }
         
         .worry-card:hover .character-container {
           transform: scale(1.05);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .worry-image {
@@ -3808,66 +3700,18 @@
           transition: transform 0.3s ease;
         }
         
-        .worry-card:hover .worry-image {
-          transform: scale(1.02);
-        }
-        
-        .worry-card {
-          transition: all 0.3s ease;
-          padding: 0.5rem;
-          margin-bottom: 1rem;
-        }
-        
-        .worry-text {
-          font-size: 0.95rem;
-          line-height: 1.5;
-          text-align: center;
-          color: #444;
-          transition: color 0.3s ease;
-        }
-        
-        .worry-card:hover .worry-text {
-          color: #000;
-        }
-        
-        @media (max-width: 992px) {
-          .character-container {
-            width: 110px;
-            height: 110px;
-          }
-          
-          .worry-text {
-            font-size: 0.9rem;
-          }
-        }
-        
         @media (max-width: 768px) {
           .character-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-          }
-          
-          .worry-text {
-            font-size: 0.8rem;
-            line-height: 1.4;
           }
         }
         
         @media (max-width: 576px) {
           .character-container {
-            width: 75px;
-            height: 75px;
-          }
-          
-          .worry-text {
-            font-size: 0.7rem;
-            line-height: 1.3;
-          }
-          
-          .problem-statement .worry-cards {
-            gap: 0.7rem !important;
+            width: 70px;
+            height: 70px;
           }
         }
       </style>
@@ -3887,31 +3731,9 @@
     <div class="container">
       <h2 class="section-title">多くのママが<br>同じ気持ちです。でも…</h2>
       <p class="problem-intro">
-        「いつか自分に合ったお仕事をしたい」<br>と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
       </p>
       
       <style>
-        /* 問題文とソリューションの間に適切なスペースを確保 */
-        .problem-intro {
-          margin-bottom: 2rem;
-        }
-        
-        .solution-transition {
-          margin-top: 3rem;
-          text-align: center;
-          padding: 1.5rem;
-          background: linear-gradient(135deg, rgba(255, 240, 245, 0.8), rgba(255, 250, 250, 0.8));
-          border-radius: 12px;
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .solution-transition h3 {
-          font-size: 1.4rem;
-          color: #333;
-          line-height: 1.6;
-          font-weight: 600;
-        }
-        
         @media (max-width: 768px) {
           .problem-statement .worry-cards {
             display: grid;
@@ -3946,65 +3768,51 @@
             line-height: 1.6;
             padding: 0 15px;
           }
-          
-          .solution-transition {
-            margin-top: 2rem;
-            padding: 1.2rem 1rem;
-          }
-          
-          .solution-transition h3 {
-            font-size: 1.2rem;
-          }
         }
       </style>
       
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_1.png" alt="動けない理由のイメージ1" class="worry-image">
+            <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
           </div>
-          <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
+          <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_2.png" alt="動けない理由のイメージ2" class="worry-image">
+            <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
           </div>
-          <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
+          <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ3" class="worry-image">
+            <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
           </div>
-          <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
+          <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ4" class="worry-image">
+            <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
           </div>
-          <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
+          <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
         </div>
       </div>
       
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 130px;
-          height: 130px;
+          width: 120px;
+          height: 120px;
           border-radius: 50%;
           overflow: hidden;
           position: relative;
           margin: 0 auto 1rem;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease;
-          background-color: #f0f8ff;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          transition: transform 0.3s ease;
         }
         
         .worry-card:hover .character-container {
           transform: scale(1.05);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .worry-image {
@@ -4014,66 +3822,18 @@
           transition: transform 0.3s ease;
         }
         
-        .worry-card:hover .worry-image {
-          transform: scale(1.02);
-        }
-        
-        .worry-card {
-          transition: all 0.3s ease;
-          padding: 0.5rem;
-          margin-bottom: 1rem;
-        }
-        
-        .worry-text {
-          font-size: 0.95rem;
-          line-height: 1.5;
-          text-align: center;
-          color: #444;
-          transition: color 0.3s ease;
-        }
-        
-        .worry-card:hover .worry-text {
-          color: #000;
-        }
-        
-        @media (max-width: 992px) {
-          .character-container {
-            width: 110px;
-            height: 110px;
-          }
-          
-          .worry-text {
-            font-size: 0.9rem;
-          }
-        }
-        
         @media (max-width: 768px) {
           .character-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-          }
-          
-          .worry-text {
-            font-size: 0.8rem;
-            line-height: 1.4;
           }
         }
         
         @media (max-width: 576px) {
           .character-container {
-            width: 75px;
-            height: 75px;
-          }
-          
-          .worry-text {
-            font-size: 0.7rem;
-            line-height: 1.3;
-          }
-          
-          .problem-statement .worry-cards {
-            gap: 0.7rem !important;
+            width: 70px;
+            height: 70px;
           }
         }
       </style>
@@ -4118,7 +3878,7 @@
   <section class="section parenting-memories" id="memories">
     <div class="container">
       <div class="memories-header">
-        <span class="memories-label">Experience</span><br><br>
+        <span class="memories-label">Experience</span><br>
         <h2 class="section-title">ふと思い返してみてください。子育て中、こんな経験ありませんでしたか？</h2>
       </div>
       
@@ -4217,7 +3977,6 @@
           
           .memory-content p {
             font-size: 0.9rem;
-            color: #6A4A3C;
           }
         }
       </style>
@@ -4519,41 +4278,9 @@
   <section class="section reason-section-updated">
     <div class="container">
       <div class="reason-section-header">
-        <span class="reason-label">Reason</span>
+        <span class="reason-decorative-text">Reason</span>
         <h2 class="section-title">ベビー発育アドバイザーが選ばれる理由</h2>
       </div>
-      
-      <style>
-        /* Reasonラベルのスタイル統一 */
-        .reason-label {
-          display: inline-block;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 1.2rem;
-          font-weight: 700;
-          color: #ff85a2;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          margin-bottom: 0.5rem;
-          position: relative;
-        }
-        
-        .reason-label::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          bottom: -5px;
-          transform: translateX(-50%);
-          width: 40px;
-          height: 2px;
-          background-color: #ff85a2;
-        }
-        
-        .reason-section-header {
-          text-align: center;
-          position: relative;
-          margin-bottom: 3rem;
-        }
-      </style>
       <div class="reason-items-container">
         <!-- Item 1 -->
         <div class="reason-item">
@@ -4692,14 +4419,14 @@
       
         <div class="job-card-updated">
           <img src="assets/images/job_image_2.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
-          <h3>「子育て支援のプロとして<br>地域連携をして活躍」</h3>
+          <h3>「子育て支援のプロとして<br>地域連携と連携して活躍」</h3>
           <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
         </div>
         
         <div class="job-card-updated">
           <img src="assets/images/job_image_3.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
           <h3>「おうちでオンライン<br>のみの活動もＯＫ」</h3>
-          <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>好きな時間にお家で気軽に<br>始めることが出来ます</p>
+          <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
         </div>
       </div>
     </div>
@@ -5106,7 +4833,8 @@
       <div class="footer-container">
         <div class="footer-info">
           <h3 class="footer-logo">一般社団法人<br>乳幼児発達推進協会</h3>
-          <!-- 連絡先情報は削除されました -->
+          <p class="footer-address">〒538-0044<br>大阪府大阪市鶴見区放出東3-12-21</p>
+          <p class="footer-contact">TEL: 03-1234-5678<br>Email: info@example.com</p>
         </div>
       </div>
       <div class="copyright">
