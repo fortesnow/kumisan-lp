@@ -3914,27 +3914,39 @@
         }
         
         @media (max-width: 576px) {
-          #pain .worry-cards {
+          #pain .worry-cards, #problem .worry-cards {
             gap: 0.5rem;
           }
           
-          #pain .worry-card {
+          #pain .worry-card, #problem .worry-card {
             padding: 0.4rem;
           }
           
-          #pain .character-container {
+          #pain .character-container, #problem .character-container {
             width: 70px;
             height: 70px;
             margin-bottom: 0.3rem;
           }
           
-          #pain .worry-image {
+          #pain .worry-image, #problem .worry-image {
             max-width: 60px;
           }
           
-          #pain .worry-text {
-            font-size: 0.65rem;
+          #pain .worry-text, #problem .worry-text {
+            font-size: 0.6rem;
             line-height: 1.2;
+            width: 100%;
+            box-sizing: border-box;
+            word-break: break-word;
+            white-space: normal;
+            overflow-wrap: break-word;
+            padding: 0;
+            max-height: none;
+            height: auto;
+          }
+          
+          #pain .worry-text br, #problem .worry-text br {
+            display: none;
           }
         }
       </style>
@@ -3989,7 +4001,10 @@
     <div class="floating-shape floating-shape-2"></div>
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
-    <div class="container" style="position: relative; z-index: 2;">
+    <div class="container" style="position: relative; z-index: 2; text-align: center;">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="testimonials-v2-subtitle">Message</span>
+      </div>
       <h2 class="section-title" style="color: #6F4B3E;">多くのママが<br>同じ気持ちです。でも…</h2>
       <div class="text-wrapper">
         <p class="problem-intro text" style="color: #6F4B3E;">
@@ -4928,15 +4943,14 @@
       <style>
         /* お仕事イメージセクションのレイアウト修正 */
         .job-cards-updated {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           justify-content: center;
           gap: 2rem;
           margin-top: 2rem;
         }
         
         .job-card-updated {
-          flex: 0 0 calc(33.333% - 2rem);
           background: #fff;
           border-radius: 15px;
           box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -4970,6 +4984,20 @@
           line-height: 1.6;
           text-align: center;
           color: #6F4B3E; /* 茶色に統一 */
+        }
+        
+        @media (max-width: 992px) {
+          .job-cards-updated {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          .job-cards-updated {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
         }
         
         /* スマホ表示の最適化 */
