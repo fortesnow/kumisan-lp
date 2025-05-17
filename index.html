@@ -3646,6 +3646,48 @@
       color: #6F4B3E !important;
     }
   </style>
+  <style>
+    /* テキスト表示の最適化用スタイル */
+    .text-wrapper {
+      width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* スマホサイズでの口コミテキスト最適化 */
+    @media (max-width: 767px) {
+      .testimonial-card-v2-body {
+        padding: 1rem;
+      }
+      
+      .testimonial-quote-v2.text {
+        font-size: 1rem;
+        padding-left: 1.8rem;
+        word-break: break-word;
+      }
+      
+      .testimonial-quote-v2::before {
+        font-size: 2.5rem;
+        left: 0;
+        top: -0.3rem;
+      }
+      
+      .testimonial-full-text-v2.text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+        word-break: break-word;
+      }
+      
+      /* 先輩アドバイザーの声のレイアウト調整 */
+      #voices .testimonial-quote-v2.text br {
+        display: none;
+      }
+      
+      #voices .testimonial-quote-v2.text {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
     <!-- スマホ用固定CTAボタン -->
@@ -5037,7 +5079,7 @@
     
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-heading">
-        <span class="reason-decorative-text">Reason</span> <!-- クラス名変更 -->
+        <span class="testimonials-v2-subtitle">Support</span>
       <h2 class="section-title">あなたらしさを尊重する<br>私達の活動</h2>
       </div>
       
@@ -5234,7 +5276,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあっても<br>なかなか行動に移せなかったり行動しても<br>途中で辞めてしまうことが多かったのですが、<br>受講後は、周りの先輩方のお話を聞いたり、<br>インスタを参考にさせてもらいながら進めていくと、<br>フォロワーさんが増えたり、「気になってました！」と<br>言って頂けるようになり、それがとても嬉しくて」</p>
+                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩A</span> 様 
@@ -5249,7 +5291,7 @@
             </div>
             <div class="testimonial-card-v2-body">
               <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、<br>写真の撮り方やストーリーの作り方、<br>毎日教室のことを色々と進めていくことが<br>出来ています。受講前のように自分が暗のように<br>ストーリーを作ったり、告知を作るのが楽しくなり、<br>前よりも自分の考えを発信することが楽しくなりました」</p>
+                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
               </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩B</span> 様
