@@ -3726,70 +3726,96 @@
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
-          gap: 1rem;
+          gap: 1.5rem;
+          margin: 0 auto;
+          max-width: 1000px;
         }
         
         .worry-card {
-          flex: 0 0 calc(25% - 1rem);
+          flex: 0 0 calc(25% - 1.5rem);
           display: flex;
           flex-direction: column;
           align-items: center;
           padding: 1rem;
           box-sizing: border-box;
+          text-align: center;
         }
         
         /* タブレット表示 */
         @media (max-width: 992px) {
           .worry-card {
-            flex: 0 0 calc(50% - 1rem);
+            flex: 0 0 calc(50% - 1.5rem);
           }
+        }
+        
+        /* キャラクターアイコンのスタイル調整 */
+        .character-container {
+          width: 120px;
+          height: 120px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+        }
+        
+        .worry-image {
+          max-width: 100%;
+          height: auto;
+          transition: transform 0.3s ease;
+        }
+        
+        .worry-card:hover .worry-image {
+          transform: translateY(-5px);
         }
         
         /* スマホ表示 */
         @media (max-width: 768px) {
           #pain .worry-cards {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-            gap: 0.5rem !important; /* ギャップを減らす */
-            width: 100% !important; /* 幅を100%に設定 */
-            box-sizing: border-box !important; /* ボックスサイズを調整 */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            width: 100%;
+            padding: 0 0.5rem;
+            box-sizing: border-box;
           }
+          
           #pain .worry-card {
-            margin-bottom: 0 !important;
-            padding: 0.5rem !important; /* パディングを少し減らす */
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            width: 100% !important; /* 幅を100%に設定 */
-            max-width: 100% !important; /* 最大幅を100%に制限 */
-            flex: none !important;
-            box-sizing: border-box !important; /* ボックスサイズを調整 */
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            flex: none;
+            box-sizing: border-box;
           }
+          
           #pain .character-container {
-            width: 70px !important;
-            height: 70px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin: 0 auto !important;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.5rem;
           }
+          
           #pain .worry-image {
-            max-width: 60px !important; /* 少し小さくする */
-            margin-bottom: 0.3rem !important;
-            display: block !important;
+            max-width: 80px;
+            height: auto;
+            display: block;
           }
+          
           #pain .worry-text {
-            font-size: 0.7rem !important;
-            line-height: 1.3 !important;
-            text-align: center !important;
-            word-break: keep-all !important; /* 単語の途中での改行を防止 */
-            white-space: pre-line !important; /* 改行を保持 */
-            width: 100% !important; /* 幅を100%に設定 */
-            box-sizing: border-box !important; /* ボックスサイズを調整 */
-            padding: 0 2px !important; /* 左右の余白を少し追加 */
-            overflow-wrap: break-word !important; /* 長い単語を折り返す */
+            font-size: 0.8rem;
+            line-height: 1.4;
+            text-align: center;
+            word-break: keep-all;
+            white-space: pre-line;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 2px;
+            overflow-wrap: break-word;
           }
         }
       </style>
@@ -4479,7 +4505,9 @@
   </style>
   
   <!-- ベビー発育アドバイザーとは？セクション -->
-  <section class="section child-experience" id="features" style="background: url('assets/images/mother.jpeg') no-repeat center center; background-size: cover; background-attachment: fixed; position: relative;">
+  <section class="section child-experience" id="features" style="position: relative;">
+    <!-- 複数の背景画像を配置してパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;">
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
     
@@ -4888,7 +4916,9 @@
 
 
   <!-- 価値観とスタンスセクション -->
-  <section class="section values-stance" id="values" style="background: url('assets/images/mother.jpeg') no-repeat center center; background-size: cover; background-attachment: fixed; position: relative;">
+  <section class="section values-stance" id="values" style="position: relative;">
+    <!-- 複数の背景画像を配置してパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;">
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
@@ -5030,19 +5060,20 @@
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
             <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
-            <div class="reason-image">
-              <img src="assets/images/value8.png" alt="やりがいと笑顔" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'">
+              <img src="assets/images/value8.png" alt="やりがいと笑顔" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
           <div class="reason-content">
-            <div class="reason-number">04</div>
-            <h3 class="reason-title">誰かの笑顔と感謝に直結するやりがい</h3>
-            <p class="reason-quote">「子どもができるようになる瞬間に立ち会うのが、心からうれしい」</p>
-            <ul class="reason-points">
-            <li>日々の活動が喜びや感謝の言葉につながる</li>
-            <li>目の前で変化が見られる達成感がある</li>
-          </ul>
+            <div class="text-wrapper">
+              <div class="reason-number">04</div>
+              <h3 class="reason-title">誰かの笑顔と感謝に直結するやりがい</h3>
+              <p class="reason-quote">「子どもができるようになる瞬間に立ち会うのが、心からうれしい」</p>
+              <ul class="reason-points">
+                <li>日々の活動が喜びや感謝の言葉につながる</li>
+                <li>目の前で変化が見られる達成感がある</li>
+              </ul>
+            </div>
           </div>
         </div>
         
