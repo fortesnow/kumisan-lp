@@ -50,6 +50,23 @@
        font-family: 'M PLUS Rounded 1c', sans-serif;
      }
      
+     /* テキスト表示の最適化 */
+     .text-wrapper {
+       max-width: 36ch;
+       margin: 0 auto;
+       line-height: 1.6;
+     }
+     
+     /* 段落テキストにも茶色を適用 */
+     p {
+       color: #6F4B3E;
+     }
+
+     /* リストアイテムにも茶色を適用 */
+     li {
+       color: #6F4B3E;
+     }
+     
      /* 重要ポイント強調スタイル */
      .highlight-text {
        color: #e6587c; /* 重要テキストを強調する濃いピンク */
@@ -4378,44 +4395,34 @@
       <h2 class="section-title">ベビー発育アドバイザー<br>とは？</h2>
       <p class="advisor-description">赤ちゃんの発育を専門的に支援できる<br>子育てサポートの専門家です</p>
       
-      <!-- ベビー発育アドバイザーとは？スライダー -->
-      <div class="advisor-slider" id="advisor-slider">
-        <div class="advisor-slider-track">
-          <div class="advisor-slide">
-            <img src="assets/images/advisor1.jpg" alt="ベビー発育アドバイザーとは 1" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ1</text></svg>'">
-            <div class="advisor-caption">
-              <h3>発達に合わせた適切な関わり方</h3>
-              <p>月齢・年齢に応じた発達段階を理解し、適切な遊びや関わり方を提案できます。子どもたちが自然と好奇心を広げられる環境づくりをサポートします。</p>
-        </div>
+      <!-- ベビー発育アドバイザーとは？画像 -->
+      <div class="advisor-image-container">
+        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image">
       </div>
-
-          <div class="advisor-slide">
-            <img src="assets/images/advisor2.jpg" alt="ベビー発育アドバイザーとは 2" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ2</text></svg>'">
-            <div class="advisor-caption">
-              <h3>子育ての専門的アドバイス</h3>
-              <p>科学的・学問的根拠に基づいた知識で、ママたちの不安やお悩みをサポートできます。同じ子育て経験を持つからこそ共感力の高いサポートが可能です。</p>
-          </div>
-        </div>
-
-          <div class="advisor-slide">
-            <img src="assets/images/advisor3.jpg" alt="ベビー発育アドバイザーとは 3" class="advisor-image" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;400&quot; viewBox=&quot;0 0 800 400&quot;><rect width=&quot;800&quot; height=&quot;400&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>ベビー発育アドバイザーイメージ3</text></svg>'">
-            <div class="advisor-caption">
-              <h3>子育て支援のプロとして活躍</h3>
-              <p>知識の習得だけではなく、お仕事として大切なポイントや親子との関わりもゼロから習得。あなたの子育て経験が社会で活かせる専門職として注目されています。</p>
-          </div>
-          </div>
-        </div>
-
-        <div class="advisor-slider-nav">
-          <button class="slider-nav-btn prev">◀</button>
-          <div class="slider-dots">
-            <div class="slider-dot active"></div>
-            <div class="slider-dot"></div>
-            <div class="slider-dot"></div>
-          </div>
-          <button class="slider-nav-btn next">▶</button>
-          </div>
-        </div>
+      
+      <style>
+        .advisor-image-container {
+          max-width: 800px;
+          margin: 2rem auto;
+          text-align: center;
+        }
+        .advisor-main-image {
+          width: 100%;
+          height: auto;
+          max-height: 500px;
+          object-fit: contain;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+          .advisor-image-container {
+            margin: 1.5rem auto;
+          }
+          .advisor-main-image {
+            max-height: 350px;
+          }
+        }
+      </style>
 
       <div class="features-grid">
         <div class="feature-card">
@@ -4679,21 +4686,27 @@
       
       <div class="job-cards-updated">
         <div class="job-card-updated">
-          <img src="assets/images/value5.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'">
-          <h3>カフェやおうちで<br>おやこサポート</h3>
-          <p>地域のおやこ向けに<br>好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
+          <div class="text-wrapper">
+            <img src="assets/images/value5.png" alt="カフェやおうちでおやこサポート" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ1</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <h3>カフェやおうちで<br>おやこサポート</h3>
+            <p>地域のおやこ向けに<br>好きな場所であそびや<br>レッスンを通して居場所づくりができます</p>
+          </div>
         </div>
       
         <div class="job-card-updated">
-          <img src="assets/images/value4.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'">
-          <h3>子育て支援のプロとして<br>地域と連携して活躍</h3>
-          <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
+          <div class="text-wrapper">
+            <img src="assets/images/value4.png" alt="子育て支援のプロとして地域連携" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ2</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <h3>子育て支援のプロとして<br>地域と連携して活躍</h3>
+            <p>子育て支援センターや地域の<br>おやこ広場など親子が集まる場所で<br>定期開催として活躍できる！</p>
+          </div>
         </div>
         
         <div class="job-card-updated">
-          <img src="assets/images/value1.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'">
-          <h3>おうちでオンライン<br>のみの活動もＯＫ</h3>
-          <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
+          <div class="text-wrapper">
+            <img src="assets/images/value1.png" alt="おうちでZOOMを使ってもOK" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;280&quot; height=&quot;200&quot; viewBox=&quot;0 0 280 200&quot;><rect width=&quot;280&quot; height=&quot;200&quot; fill=&quot;%23f0f0f0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;16&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>仕事イメージ3</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
+            <h3>おうちでオンライン<br>のみの活動もＯＫ</h3>
+            <p>ＺＯＯＭサポートで<br>全国的に繋がることも出来ます<br>マンツーマンでの相談も、ママたちに大好評！</p>
+          </div>
         </div>
       </div>
     </div>
@@ -4767,17 +4780,19 @@
       <div class="reason-items">
         <div class="reason-item">
           <div class="reason-content">
-            <div class="reason-number">01</div>
-            <h3 class="reason-title">子育ての大変だった経験が役に立つ</h3>
-            <p class="reason-quote">「自分が子育てで苦しかったとき、誰かに寄り添ってほしかった」</p>
-            <ul class="reason-points">
-            <li>今度は"私が"寄り添う側になりたいという気持ち</li>
-            <li>辛かった自分の体験が誰かのためになる喜び</li>
-          </ul>
+            <div class="text-wrapper">
+              <div class="reason-number">01</div>
+              <h3 class="reason-title">子育ての大変だった経験が役に立つ</h3>
+              <p class="reason-quote">「自分が子育てで苦しかったとき、誰かに寄り添ってほしかった」</p>
+              <ul class="reason-points">
+                <li>今度は"私が"寄り添う側になりたいという気持ち</li>
+                <li>辛かった自分の体験が誰かのためになる喜び</li>
+              </ul>
+            </div>
           </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
-              <img src="assets/images/value6.png" alt="子育ての経験が役に立つ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>子育ての経験画像</text></svg>'">
+              <img src="assets/images/value6.png" alt="子育ての経験が役に立つ" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>子育ての経験画像</text></svg>'" style="object-fit: contain; width: 100%; height: auto;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -4786,34 +4801,38 @@
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
             <div class="reason-image">
-              <img src="assets/images/value2.png" alt="わが子のために学んだこと" style="width:100%; height:auto; object-fit:cover; border-radius:10px;">
+              <img src="assets/images/value7.png" alt="わが子のために学んだこと" style="width:100%; height:auto; object-fit:contain; border-radius:10px;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
           <div class="reason-content">
-            <div class="reason-number">02</div>
-            <h3 class="reason-title">大切なわが子のためにしてきた＆学んだことが無駄にならない</h3>
-            <p class="reason-quote">「我が子の笑顔を守るために学んだことが、他のママや子にも役立つ」</p>
-            <ul class="reason-points">
-            <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
-            <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
-          </ul>
+            <div class="text-wrapper">
+              <div class="reason-number">02</div>
+              <h3 class="reason-title">大切なわが子のためにしてきた＆学んだことが無駄にならない</h3>
+              <p class="reason-quote">「我が子の笑顔を守るために学んだことが、他のママや子にも役立つ」</p>
+              <ul class="reason-points">
+                <li>一人の母としての経験が、社会への貢献に変わる瞬間</li>
+                <li>自分の育児が"誰かの役に立つ"と感じられることが、誇りになる</li>
+              </ul>
+            </div>
           </div>
         </div>
         
         <div class="reason-item">
           <div class="reason-content">
-            <div class="reason-number">03</div>
-            <h3 class="reason-title">自分の価値を感じたい</h3>
-            <p class="reason-quote">「ただの"ママ"じゃなくて、"社会とつながる私"でいたい」</p>
-            <ul class="reason-points">
-            <li>何のスキルもないと思っていた自分でもできることがある！</li>
-            <li>誰かに必要とされる存在でいたい</li>
-          </ul>
+            <div class="text-wrapper">
+              <div class="reason-number">03</div>
+              <h3 class="reason-title">自分の価値を感じたい</h3>
+              <p class="reason-quote">「ただの"ママ"じゃなくて、"社会とつながる私"でいたい」</p>
+              <ul class="reason-points">
+                <li>何のスキルもないと思っていた自分でもできることがある！</li>
+                <li>誰かに必要とされる存在でいたい</li>
+              </ul>
+            </div>
           </div>
           <div class="reason-image-wrap">
             <div class="reason-image">
-              <img src="assets/images/value3.png" alt="自分の価値を感じる" style="width:100%; height:auto; object-fit:cover; border-radius:10px;">
+              <img src="assets/images/value8.png" alt="自分の価値を感じる" style="width:100%; height:auto; object-fit:contain; border-radius:10px;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -5057,7 +5076,7 @@
       
       <div class="body-text-group">
         <p class="body-paragraph">今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
-        <p class="body-paragraph">"自分らしい"を発見できる働き方」<br>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
+        <p class="body-paragraph">"自分らしい"を発見できる働き方<br>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
       </div>
       
       <p class="closing-text">あなたも無理なく<span class="highlight-mint">"自分らしい"</span>働き方をはじめてみませんか？</p>
@@ -5087,49 +5106,27 @@
         以下のフォームに必要事項をご記入の上、送信ボタンをクリックしてください。
       </p>
       
-      <div class="form-container">
-        <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/xxxxxxxxxxxxxxxxxxxxx/formResponse" method="POST">
-          <div class="form-group">
-            <label for="name">お名前 <span class="required">*</span></label>
-            <input type="text" id="name" name="entry.xxxxxxxx" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">メールアドレス <span class="required">*</span></label>
-            <input type="email" id="email" name="entry.xxxxxxxx" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">電話番号</label>
-            <input type="tel" id="phone" name="entry.xxxxxxxx">
-          </div>
-          
-          <div class="form-group">
-            <label for="inquiry">お問い合わせ内容 <span class="required">*</span></label>
-            <select id="inquiry" name="entry.xxxxxxxx" required>
-              <option value="">選択してください</option>
-              <option value="無料説明会の申し込み">無料説明会の申し込み</option>
-              <option value="説明会日程について">説明会日程について</option>
-              <option value="講座内容について質問">講座内容について質問</option>
-              <option value="その他">その他</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">メッセージ</label>
-            <textarea id="message" name="entry.xxxxxxxx" rows="5"></textarea>
-          </div>
-          
-          <div class="form-group privacy-policy">
-            <input type="checkbox" id="privacy" required>
-            <label for="privacy"><a href="#" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span></label>
-          </div>
-          
-          <div class="form-submit">
-            <button type="submit" class="btn btn-primary">説明会に申し込む</button>
-          </div>
-        </form>
+      <div class="google-form-wrapper">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" width="100%" height="1696" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
       </div>
+      
+      <style>
+        .google-form-wrapper {
+          max-width: 800px;
+          margin: 2rem auto 0;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+        }
+        @media (max-width: 768px) {
+          .google-form-wrapper {
+            width: 100%;
+          }
+          .google-form-wrapper iframe {
+            height: 1200px;
+          }
+        }
+      </style>
     </div>
   </section>
   
@@ -5593,6 +5590,7 @@
       // 初期化
       reinitializeSlider();
     }
+
     document.addEventListener('DOMContentLoaded', initAdvisorVoicesSlider);
   </script>
 
@@ -5611,6 +5609,7 @@
       if (!track || !items.length || !dots.length || !prevBtn || !nextBtn) return;
       
       let currentIndex = 0;
+      let autoSlideInterval;
       
       // スライダーの位置を更新する関数
       function updateSlider() {
@@ -5628,6 +5627,7 @@
         dot.addEventListener('click', () => {
           currentIndex = index;
           updateSlider();
+          resetAutoSlideTimer();
         });
       });
       
@@ -5635,12 +5635,14 @@
       nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % items.length;
         updateSlider();
+        resetAutoSlideTimer();
       });
       
       // 前へボタンのイベントリスナー
       prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + items.length) % items.length;
         updateSlider();
+        resetAutoSlideTimer();
       });
       
       // ウィンドウリサイズ時にスライダーを更新
@@ -5652,8 +5654,14 @@
         updateSlider();
       }
       
+      // 自動スライドタイマーをリセット
+      function resetAutoSlideTimer() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(autoSlide, 5000);
+      }
+      
       // 5秒ごとに自動切り替え
-      const autoSlideInterval = setInterval(autoSlide, 5000);
+      autoSlideInterval = setInterval(autoSlide, 5000);
       
       // スライダーにホバーしたら自動切り替えを一時停止
       slider.addEventListener('mouseenter', () => {
@@ -5662,15 +5670,51 @@
       
       // スライダーからマウスが離れたら自動切り替えを再開
       slider.addEventListener('mouseleave', () => {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(autoSlide, 5000);
+        resetAutoSlideTimer();
       });
+      
+      // 画像の表示を最適化
+      items.forEach(item => {
+        const img = item.querySelector('img');
+        if (img) {
+          img.style.objectFit = 'contain';
+          img.style.width = '100%';
+          img.style.height = '100%';
+        }
+      });
+      
+      // タッチスワイプ対応
+      let startX = 0;
+      let endX = 0;
+      
+      slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        clearInterval(autoSlideInterval);
+      }, false);
+      
+      slider.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+      }, false);
+      
+      slider.addEventListener('touchend', () => {
+        const threshold = 50; // スワイプと判定する最小移動距離
+        
+        if (startX - endX > threshold) {
+          // 左スワイプ → 次へ
+          currentIndex = (currentIndex + 1) % items.length;
+          updateSlider();
+        } else if (endX - startX > threshold) {
+          // 右スワイプ → 前へ
+          currentIndex = (currentIndex - 1 + items.length) % items.length;
+          updateSlider();
+        }
+        
+        resetAutoSlideTimer();
+      }, false);
       
       // 初期化時にスライダーを更新
       updateSlider();
     });
-    
-    // 既存のスクリプトがある場合はその下に追加
   </script>
 </body>
 </html> 
