@@ -3613,6 +3613,12 @@
       
       <style>
         /* 子育てママのお悩みセクション2カラム表示のスタイル */
+        /* 改行を確実に維持するためにword-breakを追加 */
+        .worry-text br, .concern-text br {
+          display: inline-block; /* PC用にも指定 */
+          white-space: pre; /* 空白と改行を維持 */
+        }
+        
         @media (max-width: 768px) {
           #pain .worry-cards {
             display: grid !important;
@@ -3638,6 +3644,8 @@
             font-size: 0.7rem !important;
             line-height: 1.3 !important;
             text-align: center !important;
+            word-break: keep-all !important; /* 単語の途中での改行を防止 */
+            white-space: pre-line !important; /* 改行を保持 */
           }
         }
       </style>
@@ -3751,14 +3759,14 @@
           
         @media (max-width: 768px) {
           /* 「多くのママが同じ気持ちです。でも…」セクションのスマホ表示を「子育てママの９０％が抱えているお悩み」と同様にする */
-          #problem .worry-cards, #problem .concern-cards {
+          #problem .worry-cards {
             display: grid !important;
             grid-template-columns: repeat(2, 1fr) !important;
             flex-direction: row !important;
             flex-wrap: wrap !important;
             gap: 1rem !important;
           }
-          #problem .worry-card, #problem .concern-card {
+          #problem .worry-card {
             margin-bottom: 0 !important;
             padding: 0.6rem !important;
             display: flex !important;
@@ -3767,14 +3775,16 @@
             width: auto !important;
             flex: none !important;
           }
-          #problem .worry-image, #problem .concern-container {
+          #problem .worry-image, #problem .character-container {
             max-width: 80px !important;
             margin-bottom: 0.3rem !important;
           }
-          #problem .worry-text, #problem .concern-text {
+          #problem .worry-text {
             font-size: 0.7rem !important;
             line-height: 1.3 !important;
             text-align: center !important;
+            word-break: keep-all !important; /* 単語の途中での改行を防止 */
+            white-space: pre-line !important; /* 改行を保持 */
           }
           
           /* スマホでの改行を統一するためのスタイル */
@@ -3786,8 +3796,19 @@
           .association-description br,
           .job-card-updated h3 br,
           .job-card-updated p br,
-          .worry-text br {
+          .worry-text br,
+          .concern-text br {
             display: inline-block !important;
+            white-space: pre !important;
+          }
+          
+          /* iOSのSafariでの改行問題に対応 */
+          .worry-text, .concern-text {
+            -webkit-text-size-adjust: 100% !important;
+            word-break: keep-all !important;
+            -webkit-hyphens: none !important;
+            hyphens: none !important;
+            white-space: pre-line !important;
           }
           
           .problem-intro {
@@ -3798,36 +3819,36 @@
         }
       </style>
       
-            <div class="worry-cards concern-cards">
-        <div class="worry-card concern-card">
-          <div class="character-container concern-container">
+            <div class="worry-cards">
+        <div class="worry-card">
+          <div class="character-container">
             <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ1" class="worry-image">
           </div>
-          <div class="worry-text concern-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
+          <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
-        <div class="worry-card concern-card">
-          <div class="character-container concern-container">
+        <div class="worry-card">
+          <div class="character-container">
             <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ2" class="worry-image">
           </div>
-          <div class="worry-text concern-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
+          <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
-        <div class="worry-card concern-card">
-          <div class="character-container concern-container">
+        <div class="worry-card">
+          <div class="character-container">
             <img src="assets/images/circle_aligned_3.png" alt="動けない理由のイメージ3" class="worry-image">
           </div>
-          <div class="worry-text concern-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
+          <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
-        <div class="worry-card concern-card">
-          <div class="character-container concern-container">
+        <div class="worry-card">
+          <div class="character-container">
             <img src="assets/images/circle_aligned_4.png" alt="動けない理由のイメージ4" class="worry-image">
           </div>
-          <div class="worry-text concern-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
+          <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
       </div>
       
       <style>
-        /* 第二のセクション用のスタイル */
-        .concern-container {
+        /* 統一されたセクション用のスタイル */
+        .character-container {
           width: 130px;
           height: 130px;
           border-radius: 50%;
@@ -3842,12 +3863,12 @@
           justify-content: center;
         }
         
-        .concern-card:hover .concern-container {
+        .worry-card:hover .character-container {
           transform: scale(1.05);
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
-        .concern-text {
+        .worry-text {
           font-size: 0.95rem;
           line-height: 1.5;
           text-align: center;
@@ -3855,44 +3876,34 @@
           transition: color 0.3s ease;
         }
         
-        .concern-card:hover .concern-text {
+        .worry-card:hover .worry-text {
           color: #000;
         }
         
         @media (max-width: 992px) {
-          .concern-container {
+          .character-container {
             width: 110px;
             height: 110px;
           }
           
-          .concern-text {
+          .worry-text {
             font-size: 0.9rem;
           }
         }
         
         @media (max-width: 768px) {
-          .concern-container {
+          .character-container {
             width: 90px;
             height: 90px;
             margin-bottom: 0.5rem;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
           }
-          
-          .concern-text {
-            font-size: 0.8rem;
-            line-height: 1.4;
-          }
         }
         
         @media (max-width: 576px) {
-          .concern-container {
+          .character-container {
             width: 75px;
             height: 75px;
-          }
-          
-          .concern-text {
-            font-size: 0.7rem;
-            line-height: 1.3;
           }
         }
       </style>
