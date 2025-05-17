@@ -3563,6 +3563,33 @@
        }
      }
    </style>
+   <style>
+     .text-wrapper {
+       width: 36ch; /* 約36文字で折り返し */
+       max-width: 90vw;
+       margin: 0 auto;
+     }
+
+     .text {
+       font-size: 16px;
+       line-height: 1.6;
+       font-family: 'Noto Sans JP', sans-serif;
+       white-space: pre-wrap;
+       word-break: break-word;
+     }
+
+     @media screen and (max-width: 768px) {
+       .text-wrapper {
+         width: 36ch; /* スマホでも固定幅で維持 */
+         max-width: 90vw;
+       }
+
+       .text {
+         font-size: 16px;
+         line-height: 1.6;
+       }
+     }
+   </style>
 </head>
 <body>
     <!-- スマホ用固定CTAボタン -->
@@ -3624,9 +3651,11 @@
     <div class="floating-shape floating-shape-4"></div>
     <div class="container">
       <h2 class="section-title">子育てママの９０％が<br>抱えているお悩み</h2>
-      <p class="problem-intro">
-        できれば子どもが小さいうちは<br>おうちで働きたいけど<br>特別なスキルも経験もなくて<br>在宅ワークも何がむいているのかわからない
-      </p>
+      <div class="text-wrapper">
+        <p class="problem-intro text">
+          できれば子どもが小さいうちは<br>おうちで働きたいけど<br>特別なスキルも経験もなくて<br>在宅ワークも何がむいているのかわからない
+        </p>
+      </div>
       
       <style>
         /* 子育てママのお悩みセクション2カラム表示のスタイル */
@@ -3756,9 +3785,11 @@
     <div class="floating-shape floating-shape-4"></div>
     <div class="container">
       <h2 class="section-title">多くのママが<br>同じ気持ちです。でも…</h2>
-      <p class="problem-intro">
-        「いつか自分に合ったお仕事をしたい」<br>と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
-      </p>
+      <div class="text-wrapper">
+        <p class="problem-intro text">
+          「いつか自分に合ったお仕事をしたい」<br>と思っていても<br>一歩が踏み出せない方も多いんです。なぜなら...
+        </p>
+      </div>
       
       <style>
         /* 問題文とソリューションの間に適切なスペースを確保 */
@@ -4727,7 +4758,9 @@
               <span class="testimonial-voice-label-v2">先輩の声 01</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、くらちゃんを始め周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩A</span> 様 
               </p>
@@ -4740,7 +4773,9 @@
               <span class="testimonial-voice-label-v2">先輩の声 02</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩B</span> 様
               </p>
@@ -4753,7 +4788,9 @@
               <span class="testimonial-voice-label-v2">先輩の声 03</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「やる気と情熱はあったけれど、やり方、何をすべきか全く分からない段階からスタートでした。この講座で、お教室運営で大切な事、ベビー用のボディケア、その他もろもろを楽しく学ぶことができました。受講完了後、翌月にはお教室オープン。初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩C</span> 様
               </p>
@@ -4766,7 +4803,9 @@
               <span class="testimonial-voice-label-v2">先輩の声 04</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「心愛協会が世界に広がれば、みんながハッピーになれる存在です。私にとって人生のお守りであり、母性です。講座で学んだ内容で特に活かしたいことは、お教室を通して素敵な縁を広げて人生を子育てで豊かにしたいです」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">先輩D</span> 様
               </p>
@@ -4801,12 +4840,16 @@
               <span class="testimonial-voice-label-v2">Voice 01</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「自分らしいお教室の形が見えてきました」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「自分らしいお教室の形が見えてきました」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">山田 花子</span> 様 
                 <span class="testimonial-author-age-v2">32歳</span>
               </p>
-              <p class="testimonial-full-text-v2">受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです。</p>
+              <div class="text-wrapper">
+                <p class="testimonial-full-text-v2 text">受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです。</p>
+              </div>
             </div>
           </div>
 
@@ -4817,12 +4860,16 @@
               <span class="testimonial-voice-label-v2">Voice 02</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「育児経験が活かせる！自信につながりました」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「育児経験が活かせる！自信につながりました」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">佐藤 あかり</span> 様 
                 <span class="testimonial-author-age-v2">29歳</span>
               </p>
-              <p class="testimonial-full-text-v2">専業主婦期間が長かったため、育児しかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました。</p>
+              <div class="text-wrapper">
+                <p class="testimonial-full-text-v2 text">専業主婦期間が長かったため、育児しかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました。</p>
+              </div>
             </div>
           </div>
 
@@ -4833,12 +4880,16 @@
               <span class="testimonial-voice-label-v2">Voice 03</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「集客方法まで学べてフリーランス活動に光が！」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「集客方法まで学べてフリーランス活動に光が！」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">鈴木 さくら</span> 様 
                 <span class="testimonial-author-age-v2">35歳</span>
               </p>
-              <p class="testimonial-full-text-v2">フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます。</p>
+              <div class="text-wrapper">
+                <p class="testimonial-full-text-v2 text">フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます。</p>
+              </div>
             </div>
           </div>
 
@@ -4849,12 +4900,16 @@
               <span class="testimonial-voice-label-v2">Voice 04</span>
             </div>
             <div class="testimonial-card-v2-body">
-              <p class="testimonial-quote-v2">「温かい協会で、全てのママにおすすめ！」</p>
+              <div class="text-wrapper">
+                <p class="testimonial-quote-v2 text">「温かい協会で、全てのママにおすすめ！」</p>
+              </div>
               <p class="testimonial-author-info-v2">
                 <span class="testimonial-author-name-v2">高橋 みどり</span> 様 
                 <span class="testimonial-author-age-v2">38歳</span>
               </p>
-              <p class="testimonial-full-text-v2">特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです。</p>
+              <div class="text-wrapper">
+                <p class="testimonial-full-text-v2 text">特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです。</p>
+              </div>
             </div>
           </div>
         </div>
