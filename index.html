@@ -4826,39 +4826,38 @@
       </p>
       
       <style>
-        /* 協会紹介スライダーのスタイル改善 */
-        #association-slider {
+        /* 協会紹介画像のグリッドレイアウト */
+        .association-images-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
           margin: 30px auto;
-          max-width: 800px;
+          max-width: 1000px;
         }
         
-        #association-slider .slider-container {
-          overflow: hidden;
-          margin-bottom: 15px;
+        .association-image-item {
+          position: relative;
           border-radius: 8px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          background-color: #fff;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
-        #association-slider .slider-track {
-          display: flex;
-          transition: transform 0.5s ease;
+        .association-image-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
-        #association-slider .slider-item {
-          min-width: 100%;
-          position: relative;
-        }
-        
-        #association-slider .slider-item img {
+        .association-image-item img {
           width: 100%;
           height: auto;
           object-fit: contain;
           display: block;
-          background-color: #fff;
-          aspect-ratio: 16/9;
+          aspect-ratio: 16/10;
         }
         
-        #association-slider .slider-caption {
+        .association-image-caption {
           position: absolute;
           bottom: 0;
           left: 0;
@@ -4870,99 +4869,33 @@
           font-weight: 600;
         }
         
-        /* 追加：協会紹介セクションのテキスト色統一 */
-        .association-description {
-          color: #6F4B3E;
-        }
-        
-        #association-slider .slider-nav {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 15px;
-        }
-        
-        #association-slider .slider-prev-btn,
-        #association-slider .slider-next-btn {
-          background-color: #ffebf1;
-          border: none;
-          color: #ff85a2;
-          font-size: 18px;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 10px;
-          transition: all 0.3s ease;
-        }
-        
-        #association-slider .slider-prev-btn:hover,
-        #association-slider .slider-next-btn:hover {
-          background-color: #ff85a2;
-          color: white;
-        }
-        
-        #association-slider .slider-dots {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        
-        #association-slider .slider-dot {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background-color: #ffcbd8;
-          margin: 0 5px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-        }
-        
-        #association-slider .slider-dot.active {
-          background-color: #ff85a2;
-          transform: scale(1.2);
-        }
-        
+        /* スマホサイズでのレスポンシブ対応 */
         @media (max-width: 768px) {
-          #association-slider {
-            max-width: 100%;
+          .association-images-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 0 10px;
           }
           
-          #association-slider .slider-item img {
-            aspect-ratio: 4/3;
+          .association-image-item img {
+            aspect-ratio: 16/9;
           }
         }
       </style>
       
-      <!-- 協会紹介スライダー -->
-      <div class="advisor-slider" id="association-slider">
-        <div class="slider-container">
-          <div class="slider-track">
-            <div class="slider-item">
-              <img src="assets/images/3.png" alt="協会紹介スライド1">
-              <div class="slider-caption">メディア掲載実績</div>
-            </div>
-            <div class="slider-item">
-              <img src="assets/images/4.png" alt="協会紹介スライド2">
-              <div class="slider-caption">実績（メンバー内で協力・応援）</div>
-            </div>
-            <div class="slider-item">
-              <img src="assets/images/5.png" alt="協会紹介スライド3">
-              <div class="slider-caption">おやこ体験型イベント企画</div>
-            </div>
-          </div>
+      <!-- 協会紹介画像グリッド（スライダーを置き換え） -->
+      <div class="association-images-grid">
+        <div class="association-image-item">
+          <img src="assets/images/3.png" alt="メディア掲載実績">
+          <div class="association-image-caption">メディア掲載実績</div>
         </div>
-        <div class="slider-nav">
-          <button class="slider-prev-btn">◀</button>
-          <div class="slider-dots">
-            <span class="slider-dot active" data-index="0"></span>
-            <span class="slider-dot" data-index="1"></span>
-            <span class="slider-dot" data-index="2"></span>
-          </div>
-          <button class="slider-next-btn">▶</button>
+        <div class="association-image-item">
+          <img src="assets/images/4.png" alt="実績（メンバー内で協力・応援）">
+          <div class="association-image-caption">実績（メンバー内で協力・応援）</div>
+        </div>
+        <div class="association-image-item">
+          <img src="assets/images/5.png" alt="おやこ体験型イベント企画">
+          <div class="association-image-caption">おやこ体験型イベント企画</div>
         </div>
       </div>
     </div>
@@ -6119,127 +6052,6 @@
     document.addEventListener('DOMContentLoaded', initAdvisorVoicesSlider);
   </script>
 
-  <!-- 協会紹介スライダー初期化 -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const slider = document.getElementById('association-slider');
-      if (!slider) return;
-      
-      const track = slider.querySelector('.slider-track');
-      const items = slider.querySelectorAll('.slider-item');
-      const dots = slider.querySelectorAll('.slider-dot');
-      const prevBtn = slider.querySelector('.slider-prev-btn');
-      const nextBtn = slider.querySelector('.slider-next-btn');
-      
-      if (!track || !items.length || !dots.length || !prevBtn || !nextBtn) return;
-      
-      let currentIndex = 0;
-      let autoSlideInterval;
-      
-      // スライダーの位置を更新する関数
-      function updateSlider() {
-        const itemWidth = items[0].offsetWidth;
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        
-        // アクティブなドットを更新
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
-        });
-      }
-      
-      // ドットクリックのイベントリスナー
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          currentIndex = index;
-          updateSlider();
-          resetAutoSlideTimer();
-        });
-      });
-      
-      // 次へボタンのイベントリスナー
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateSlider();
-        resetAutoSlideTimer();
-      });
-      
-      // 前へボタンのイベントリスナー
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateSlider();
-        resetAutoSlideTimer();
-      });
-      
-      // ウィンドウリサイズ時にスライダーを更新
-      window.addEventListener('resize', updateSlider);
-      
-      // 自動スライド切り替え
-      function autoSlide() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateSlider();
-      }
-      
-      // 自動スライドタイマーをリセット
-      function resetAutoSlideTimer() {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(autoSlide, 5000);
-      }
-      
-      // 5秒ごとに自動切り替え
-      autoSlideInterval = setInterval(autoSlide, 5000);
-      
-      // スライダーにホバーしたら自動切り替えを一時停止
-      slider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-      });
-      
-      // スライダーからマウスが離れたら自動切り替えを再開
-      slider.addEventListener('mouseleave', () => {
-        resetAutoSlideTimer();
-      });
-      
-      // 画像の表示を最適化
-      items.forEach(item => {
-        const img = item.querySelector('img');
-        if (img) {
-          img.style.objectFit = 'contain';
-          img.style.width = '100%';
-          img.style.height = '100%';
-        }
-      });
-      
-      // タッチスワイプ対応
-      let startX = 0;
-      let endX = 0;
-      
-      slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        clearInterval(autoSlideInterval);
-      }, false);
-      
-      slider.addEventListener('touchmove', (e) => {
-        endX = e.touches[0].clientX;
-      }, false);
-      
-      slider.addEventListener('touchend', () => {
-        const threshold = 50; // スワイプと判定する最小移動距離
-        
-        if (startX - endX > threshold) {
-          // 左スワイプ → 次へ
-          currentIndex = (currentIndex + 1) % items.length;
-          updateSlider();
-        } else if (endX - startX > threshold) {
-          // 右スワイプ → 前へ
-          currentIndex = (currentIndex - 1 + items.length) % items.length;
-          updateSlider();
-        }
-        
-        resetAutoSlideTimer();
-      }, false);
-      
-      // 初期化時にスライダーを更新
-      updateSlider();
-    });
-  </script>
+  <!-- 協会紹介のスライダーを廃止しました -->
 </body>
 </html> 
