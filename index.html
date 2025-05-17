@@ -3625,19 +3625,23 @@
             grid-template-columns: repeat(2, 1fr) !important;
             flex-direction: row !important;
             flex-wrap: wrap !important;
-            gap: 1rem !important;
+            gap: 0.5rem !important; /* ギャップを減らす */
+            width: 100% !important; /* 幅を100%に設定 */
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
           }
           #pain .worry-card {
             margin-bottom: 0 !important;
-            padding: 0.6rem !important;
+            padding: 0.5rem !important; /* パディングを少し減らす */
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            width: auto !important;
+            width: 100% !important; /* 幅を100%に設定 */
+            max-width: 100% !important; /* 最大幅を100%に制限 */
             flex: none !important;
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
           }
           #pain .worry-image {
-            max-width: 80px !important;
+            max-width: 75px !important; /* 少し小さくする */
             margin-bottom: 0.3rem !important;
           }
           #pain .worry-text {
@@ -3646,6 +3650,10 @@
             text-align: center !important;
             word-break: keep-all !important; /* 単語の途中での改行を防止 */
             white-space: pre-line !important; /* 改行を保持 */
+            width: 100% !important; /* 幅を100%に設定 */
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
+            padding: 0 2px !important; /* 左右の余白を少し追加 */
+            overflow-wrap: break-word !important; /* 長い単語を折り返す */
           }
         }
       </style>
@@ -3764,19 +3772,23 @@
             grid-template-columns: repeat(2, 1fr) !important;
             flex-direction: row !important;
             flex-wrap: wrap !important;
-            gap: 1rem !important;
+            gap: 0.5rem !important; /* ギャップを減らす */
+            width: 100% !important; /* 幅を100%に設定 */
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
           }
           #problem .worry-card {
             margin-bottom: 0 !important;
-            padding: 0.6rem !important;
+            padding: 0.5rem !important; /* パディングを少し減らす */
             display: flex !important;
             flex-direction: column !important;
             align-items: center !important;
-            width: auto !important;
+            width: 100% !important; /* 幅を100%に設定 */
+            max-width: 100% !important; /* 最大幅を100%に制限 */
             flex: none !important;
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
           }
           #problem .worry-image, #problem .character-container {
-            max-width: 80px !important;
+            max-width: 75px !important; /* 少し小さくする */
             margin-bottom: 0.3rem !important;
           }
           #problem .worry-text {
@@ -3785,6 +3797,10 @@
             text-align: center !important;
             word-break: keep-all !important; /* 単語の途中での改行を防止 */
             white-space: pre-line !important; /* 改行を保持 */
+            width: 100% !important; /* 幅を100%に設定 */
+            box-sizing: border-box !important; /* ボックスサイズを調整 */
+            padding: 0 2px !important; /* 左右の余白を少し追加 */
+            overflow-wrap: break-word !important; /* 長い単語を折り返す */
           }
           
           /* スマホでの改行を統一するためのスタイル */
@@ -3809,6 +3825,19 @@
             -webkit-hyphens: none !important;
             hyphens: none !important;
             white-space: pre-line !important;
+            max-width: 100% !important; /* 最大幅を制限 */
+            overflow-wrap: break-word !important; /* 長い単語を折り返す */
+          }
+          
+          /* 小さいスマホ画面用の追加調整 */
+          @media (max-width: 350px) {
+            #pain .worry-text, #problem .worry-text {
+              font-size: 0.65rem !important;
+              padding: 0 1px !important;
+            }
+            #pain .worry-cards, #problem .worry-cards {
+              gap: 0.3rem !important;
+            }
           }
           
           .problem-intro {
