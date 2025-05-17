@@ -3657,6 +3657,62 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   
+  <!-- エラー処理を改善するためのグローバルエラーハンドラー -->
+  <script>
+    // エラーカウンターを設定し、同じエラーが繰り返し発生するのを防止
+    const errorCounts = {};
+    
+    // グローバルエラーハンドラー
+    window.addEventListener('error', function(event) {
+      // エラーのソースURLを取得
+      const sourceUrl = event.target.src || event.target.href || '';
+      
+      // 同じリソースで繰り返しエラーが発生しないようカウント
+      if (sourceUrl) {
+        if (!errorCounts[sourceUrl]) {
+          errorCounts[sourceUrl] = 0;
+        }
+        
+        errorCounts[sourceUrl]++;
+        
+        // エラーが3回以上発生したら、それ以上のリクエストをキャンセル
+        if (errorCounts[sourceUrl] > 3) {
+          console.warn(`リソースの読み込みを中止しました: ${sourceUrl} (エラー回数: ${errorCounts[sourceUrl]})`);
+          return true; // エラーイベントを消費
+        }
+      }
+    }, true);
+    
+    // リソース読み込みを最適化
+    document.addEventListener('DOMContentLoaded', function() {
+      // 画像の遅延読み込み
+      const lazyImages = document.querySelectorAll('img');
+      
+      if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const lazyImage = entry.target;
+              
+              // すでに読み込みに失敗していない場合のみ読み込みを試行
+              if (!errorCounts[lazyImage.src]) {
+                if (lazyImage.dataset.src) {
+                  lazyImage.src = lazyImage.dataset.src;
+                }
+              }
+              
+              imageObserver.unobserve(lazyImage);
+            }
+          });
+        });
+        
+        lazyImages.forEach(function(lazyImage) {
+          imageObserver.observe(lazyImage);
+        });
+      }
+    });
+  </script>
+
   <header>
     <div class="container">
       <div class="header-inner">
@@ -3803,15 +3859,40 @@
           }
           
           #pain .worry-text {
-            font-size: 0.8rem;
-            line-height: 1.4;
+            font-size: 0.7rem;
+            line-height: 1.3;
             text-align: center;
-            word-break: keep-all;
+            word-break: break-word;
             white-space: pre-line;
             width: 100%;
             box-sizing: border-box;
-            padding: 0 2px;
+            padding: 0;
             overflow-wrap: break-word;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          #pain .worry-cards {
+            gap: 0.5rem;
+          }
+          
+          #pain .worry-card {
+            padding: 0.4rem;
+          }
+          
+          #pain .character-container {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 0.3rem;
+          }
+          
+          #pain .worry-image {
+            max-width: 60px;
+          }
+          
+          #pain .worry-text {
+            font-size: 0.65rem;
+            line-height: 1.2;
           }
         }
       </style>
@@ -5526,12 +5607,73 @@
       a.appendChild(r);
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
+  
+  <!-- 画像読み込みの最適化 -->
+  <script>
+    // 画像読み込みの最適化
+    function handleImageErrors() {
+      const images = document.querySelectorAll('img[onerror]');
+      images.forEach(img => {
+        // 属性を一時保存
+        const onErrorAttr = img.getAttribute('onerror');
+        // onerror属性を削除（無限ループを防止）
+        img.removeAttribute('onerror');
+        
+        // 画像読み込みエラーハンドラーを一度だけ設定
+        img.addEventListener('error', function(e) {
+          // 元のonerror処理を一度だけ実行するための安全な方法
+          try {
+            // 安全な方法でonerrorを評価
+            if (onErrorAttr && !this.src.includes('data:image/svg+xml')) {
+              // 代替SVGがすでに設定されていなければ実行
+              new Function('this.src="' + onErrorAttr.replace(/this.src=|'|"/g, '') + '"').call(this);
+            }
+          } catch (err) {
+            console.warn('画像の代替表示でエラーが発生しました:', err);
+          }
+        }, { once: true }); // イベントリスナーを一度だけ実行
+      });
+    }
+
+    // ページ読み込み完了時に実行
+    window.addEventListener('load', handleImageErrors);
+  </script>
 
   <!-- JavaScript -->
   <script>
     // スライダーの自動切り替え機能
     document.addEventListener('DOMContentLoaded', function() {
-      // 各スライダーの初期化
+      // パフォーマンス向上のためにタイマーベースのアニメーションを最適化
+      let rafId = null;
+      let lastScrollPosition = 0;
+      
+      // スクロールイベントの最適化（スロットリング）
+      window.addEventListener('scroll', function() {
+        // リクエストアニメーションフレームを使用して処理を最適化
+        if (!rafId) {
+          rafId = requestAnimationFrame(function() {
+            const scrollPosition = window.pageYOffset;
+            // 前回の位置と今回の位置が大きく変わった場合のみ処理を行う
+            if (Math.abs(scrollPosition - lastScrollPosition) > 5) {
+              // スクロール関連の処理をここに記述
+              const header = document.querySelector('header');
+              if (header) {
+                if (scrollPosition > 50) {
+                  header.classList.add('header-scrolled');
+                } else {
+                  header.classList.remove('header-scrolled');
+                }
+              }
+              
+              lastScrollPosition = scrollPosition;
+            }
+            
+            rafId = null;
+          });
+        }
+      }, { passive: true }); // パッシブイベントリスナーで処理を高速化
+      
+      // 各スライダーの初期化（既存のコード）
       initAdvisorSlider(); // 両方のスライダーを処理
       
       // モバイルメニュートグルのイベント
