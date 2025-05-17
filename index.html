@@ -37,26 +37,38 @@
      /* 共通フォントスタイル - 全体統一 */
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
-       color: #333; /* デフォルトテキストカラーを濃いグレーに変更 */
+       color: #6A4A3C; /* 画像の茶色に変更 */
      }
      
      h1, h2, h3, h4, h5, h6 {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        font-weight: 700;
-       color: #333; /* 見出しのカラーを濃いグレーに統一 */
+       color: #6A4A3C; /* 画像の茶色に変更 */
      }
      
      p, li, .btn {
        font-family: 'M PLUS Rounded 1c', sans-serif;
+       color: #6A4A3C; /* 追加：茶色に変更 */
      }
      
-     /* 重要ポイント強調スタイル */
+     /* テキストカラーのグローバル設定 - 茶色に統一 */
+     .feature-title, .feature-description, 
+     .community-headline, .community-subtext,
+     .value-card h3, .value-quote, .value-points li,
+     .problem-statement .section-title, .problem-intro,
+     .problem-text, .conclusion-text p, .conclusion-text h3,
+     .testimonial-body p, .advisor-voice-card-body,
+     .body-paragraph, .footer-logo, .footer-info p {
+       color: #6A4A3C !important; /* 茶色に統一 */
+     }
+     
+     /* 重要ポイント強調スタイル - ピンク色は保持 */
      .highlight-text {
        color: #e6587c; /* 重要テキストを強調する濃いピンク */
        font-weight: 700;
      }
      
-     /* コントラスト強化のためのボタンスタイル更新 */
+     /* コントラスト強化のためのボタンスタイル更新 - 白色テキストは保持 */
      .btn-primary {
        background-color: #ff4778; /* CTAボタンの色を鮮やかなピンクに変更 */
        color: #fff;
@@ -112,7 +124,7 @@
      .organization-name {
        display: block;
        font-size: 0.85rem;
-       color: #777;
+       color: #6A4A3C;
        letter-spacing: 0.05em;
        margin-bottom: 3px;
      }
@@ -121,7 +133,7 @@
        display: block;
        font-size: 1.1rem;
        font-weight: 600;
-       color: #333;
+       color: #6A4A3C;
        letter-spacing: 0.1em;
      }
      
@@ -169,7 +181,7 @@
      
      .hero h1 {
        font-family: 'M PLUS Rounded 1c', serif;
-       color: #333;
+       color: #6A4A3C;
        font-size: 2.6rem;
        font-weight: 700;
        line-height: 1.3;
@@ -178,7 +190,7 @@
      }
      
      .hero .sub-heading {
-       color: #555;
+       color: #6A4A3C;
        font-size: 1.2rem;
        font-weight: 500;
        margin-bottom: 2rem;
@@ -3100,7 +3112,7 @@
      .advisor-voice-quote {
        font-size: 1rem;
        line-height: 1.7;
-       color: #555;
+       color: #6A4A3C;
        margin: 0;
        font-family: 'M PLUS Rounded 1c', sans-serif;
      }
@@ -3194,7 +3206,7 @@
      .contact-description {
        text-align: center;
        font-size: 1.1rem;
-       color: #555;
+       color: #6A4A3C;
        margin-bottom: 2.5rem;
      }
      
@@ -3215,7 +3227,7 @@
        display: block;
        margin-bottom: 0.5rem;
        font-weight: 500;
-       color: #333;
+       color: #6A4A3C;
      }
      
      .form-group input,
@@ -4205,6 +4217,7 @@
           
           .memory-content p {
             font-size: 0.9rem;
+            color: #6A4A3C;
           }
         }
       </style>
