@@ -1,0 +1,21 @@
+      <style>
+        @media (max-width: 768px) {
+          .worry-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+          }
+          .worry-card {
+            margin-bottom: 0;
+            padding: 0.6rem;
+          }
+          .worry-image {
+            max-width: 80px;
+            margin-bottom: 0.3rem;
+          }
+          .worry-text {
+            font-size: 0.7rem;
+            line-height: 1.3;
+          }
+        }
+      </style> 

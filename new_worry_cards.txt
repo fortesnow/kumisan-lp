@@ -1,0 +1,16 @@
+        <div class="worry-card">
+          <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
+          <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
+        </div>
+        <div class="worry-card">
+          <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
+          <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
+        </div>
+        <div class="worry-card">
+          <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
+          <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
+        </div>
+        <div class="worry-card">
+          <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
+          <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
+        </div> 
