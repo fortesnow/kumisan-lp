@@ -5002,7 +5002,7 @@
          flex-direction: column;
          gap: 1.5rem;
        }
-     }
+     
          /* スタイル改善 - コントラスト強化 */
      .text-primary {
        color: #e6587c !important;
@@ -7810,24 +7810,68 @@
   </section>
 
   <!-- あなたらしい活躍を応援セクション -->
-  <section class="section your-style-section your-style-section--yaml-inspired">
-    <div class="container">
-      <div class="decorative-shape shape-top-left"></div>
-      <div class="decorative-shape shape-top-right"></div>
-      <div class="decorative-shape shape-bottom-left"></div>
-      <div class="decorative-shape shape-bottom-right"></div>
+  <section class="section your-style-section">
+    <div class="container" style="position: relative; z-index: 1; max-width: 800px; text-align: center;">
+      <!-- 装飾用図形 -->
+      <div style="position: absolute; opacity: 0.4; z-index: 0; width: 60px; height: 60px; background-color: #f7c0c0; border-radius: 50%; top: 10%; left: 5%;"></div>
+      <div style="position: absolute; opacity: 0.3; z-index: 0; width: 120px; height: 120px; background-color: #fbc2d0; border-radius: 50%; top: 5%; right: 3%;"></div>
+      <div style="position: absolute; opacity: 0.4; z-index: 0; width: 10px; height: 10px; background-color: #f7c0c0; border-radius: 50%; bottom: 20%; left: 15%; box-shadow: 15px 15px 0 #f8d0d8, -10px 30px 0 #fce0e5;"></div>
+      <div style="position: absolute; opacity: 0.4; z-index: 0; width: 8px; height: 8px; background-color: #f7c0c0; border-radius: 50%; bottom: 10%; right: 10%; box-shadow: -15px -10px 0 #f7c0c0, 10px -25px 0 #f7c0c0;"></div>
       
-      <h2 class="main-catchphrase">あなたらしい活躍を応援</h2>
-      <h3 class="sub-catchphrase"><span class="dotted-underline-mint">子ども時間・お仕事のバランス自由</span></h3>
+      <h2 style="font-size: 24pt; font-weight: bold; color: #4A4A4A; text-align: center; margin-bottom: 1rem;">あなたらしい活躍を応援</h2>
+      <h3 style="font-size: 20pt; text-align: center; color: #333; margin-bottom: 2.5rem; font-weight: 500;"><span style="border-bottom: 3px dotted #ff85a2; padding-bottom: 0.3rem; display: inline-block;">子ども時間・お仕事のバランス自由</span></h3>
       
-      <div class="body-text-group">
-        <p class="body-paragraph">今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
-        <p class="body-paragraph">"自分らしい"を発見できる働き方<br>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
+      <div style="margin-bottom: 2.5rem; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <p style="font-size: 16pt; line-height: 1.8; color: #555; margin-bottom: 1.5em;">今週は子どもの体調不良が…といったときにも<br>週何日お仕事するかをすべて自分で選択できます</p>
+        <p style="font-size: 16pt; line-height: 1.8; color: #555; margin-bottom: 1.5em;">"自分らしい"を発見できる働き方<br>お金のためだけに働くのではなく、あなた自身が<br>目の前の人へ笑顔をお届けできる価値あるお仕事です</p>
       </div>
       
-      <p class="closing-text">あなたも無理なく<span class="highlight-mint">"自分らしい"</span>働き方をはじめてみませんか？</p>
+      <p style="font-size: 18pt; font-weight: 500; color: #e6587c; text-align: center; margin-top: 1rem; line-height: 1.7;">あなたも無理なく<span style="font-weight: bold; color: #e6587c;">"自分らしい"</span>働き方をはじめてみませんか？</p>
     </div>
   </section>
+
+  <style>
+    /* あなたらしい活躍を応援セクション */
+    .your-style-section {
+      background: linear-gradient(to bottom, #fff0f5 0%, #fff0f5 20%, #fdfdfd 20%, #fdfdfd 80%, #fff0f5 80%, #fff0f5 100%); 
+      position: relative;
+      padding: 5rem 0;
+      overflow: hidden;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+    
+    @media (max-width: 768px) {
+      .your-style-section {
+        padding: 3.5rem 0;
+      }
+      .your-style-section h2 {
+        font-size: 20pt !important;
+      }
+      .your-style-section h3 {
+        font-size: 17pt !important;
+        margin-bottom: 2rem !important;
+      }
+      .your-style-section p {
+        font-size: 14pt !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .your-style-section {
+        padding: 2.5rem 0;
+      }
+      .your-style-section h2 {
+        font-size: 18pt !important;
+      }
+      .your-style-section h3 {
+        font-size: 15pt !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .your-style-section p {
+        font-size: 13pt !important;
+      }
+    }
+  </style>
 
   <!-- コミュニティセクションとフォームセクションの間の雲のような区切り -->
   <div class="section-divider cloud-divider">
