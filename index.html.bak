@@ -6635,7 +6635,11 @@
         <h2 class="section-title">子育て中、こんな経験ありませんでしたか？</h2>
       </div>
       
-
+      <div class="text-wrapper" style="text-align: center; margin-bottom: 2rem;">
+        <p class="problem-intro text" style="color: #6F4B3E;">
+          そんなあなたが積み重ねてきた<br>子育て経験やお悩みは<br><br>今同じように悩むママへ<br>笑顔と価値をお届けできるのです
+        </p>
+      </div>
       
       <div class="memories-timeline">
         <div class="memory-card">
@@ -6768,7 +6772,7 @@
           <svg class="highlight-wave" width="100%" height="12" viewBox="0 0 100 12" preserveAspectRatio="none">
             <path d="M0,0 Q25,12 50,0 T100,0" fill="rgba(255,133,162,0.2)"></path>
           </svg>
-          <p>そんなあなたが積み重ねてきた<br>子育て経験やお悩みは<br><br><span class="message-emphasis">今同じように悩むママへ<br>笑顔と価値をお届けできる</span>のです</p>
+          <p>そんなあなたが積み重ねてきた子育て経験やお悩みは、<br><span class="message-emphasis">今同じように悩むママへ<br>笑顔と価値をお届けできる</span>のです</p>
         </div>
       </div>
     </div>
@@ -7090,7 +7094,7 @@
     
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-heading">
-        <span class="reason-decorative-text">Achievements</span>
+        <span class="reason-decorative-text">Support</span>
       <h2 class="section-title">あなたらしさを尊重する<br>私達の活動</h2>
       </div>
       
@@ -7127,7 +7131,7 @@
         <div class="reason-item">
           <div class="reason-text-content">
             <span class="reason-number">01</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">最短１ヶ月で収益化</h3>
+            <h3 class="reason-item-title">最短１ヶ月で収益化</h3>
             <p class="reason-item-description">受講生全員が未経験から！<br>初めに何をしたら良いかから丁寧にひとつずつ<br>講義の中で一緒に行動にうつしていけるので<br>最短ルートでお仕事として確立できます</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7138,7 +7142,7 @@
         <div class="reason-item reverse">
           <div class="reason-text-content">
             <span class="reason-number">02</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">家事育児と両立ができる</h3>
+            <h3 class="reason-item-title">家事育児と両立ができる</h3>
             <p class="reason-item-description">学ぶ知識は今の子育てにも活かせたり<br>わが子と一緒に実践できるあそびもたくさん！<br>パソコンだけの在宅ワークと異なるので<br>子どもとの時間を大切にしたい方におすすめ</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7149,7 +7153,7 @@
         <div class="reason-item">
           <div class="reason-text-content">
             <span class="reason-number">03</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">一人で悩まない環境</h3>
+            <h3 class="reason-item-title">一人で悩まない環境</h3>
             <p class="reason-item-description">全国で活躍中のメンバーとつながったり<br>わからないことはいつでも相談できて<br>これで良いのかな？をすぐに解決できるのは<br>ゼロから始める方に必須な環境です</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7158,29 +7162,7 @@
         </div>
         
         <style>
-          /* 説明テキストの行間と改行の統一スタイル */
-          .reason-item-title {
-            color: #6F4B3E; /* 茶色のテキストカラーをグローバルに設定 */
-            font-weight: 700;
-          }
-          
-          .reason-item-description {
-            line-height: 1.8; /* 行間を統一 */
-            margin-top: 10px;
-            white-space: pre-line; /* 改行を保持 */
-            display: block;
-            font-size: 1rem;
-            word-break: keep-all; /* 単語の途中で改行しない */
-            overflow-wrap: break-word; /* 長い単語は折り返す */
-            padding: 8px 10px; /* テキストに余白をつける */
-            background-color: rgba(255, 255, 255, 0.7); /* 背景色を少し追加 */
-            border-radius: 8px; /* 角を丸くする */
-          }
-          
-          .reason-item-description br {
-            display: inline-block; /* 改行を強制的に表示 */
-          }
-          
+          /* 一人で悩まない環境セクションの画像スタイル */
           .community-support-image {
             width: 100%;
             height: auto;
@@ -7199,16 +7181,6 @@
               margin: 0 auto;
               display: block;
               border-radius: 8px;
-            }
-            
-            .reason-item-description {
-              font-size: 0.9rem;
-              line-height: 1.7;
-              padding: 0 5px;
-            }
-            
-            .reason-item-description br {
-              display: inline-block !important;
             }
           }
         </style>
@@ -7230,37 +7202,11 @@
       </div>
       
       <p class="association-description" style="color: #6F4B3E;">
-        一般社団法人乳幼児発達推進協会は、<br>子どもたちの健やかな成長を支援<br>するために設立されました<br><br>全国２３０名が受講し、優良企業提携<br>専門家監修と実績ある組織です
+        一般社団法人乳幼児発達推進協会は、<br>子どもたちの健やかな成長を支援するために設立されました<br>
+        全国２３０名が受講し、優良企業提携・専門家監修と実績ある組織です
       </p>
       
       <style>
-        /* 協会紹介テキストのスタイル設定 */
-        .association-description {
-          line-height: 1.8; /* 行間を統一 */
-          margin: 20px auto;
-          white-space: pre-line; /* 改行を保持 */
-          display: block;
-          font-size: 1rem;
-          word-break: keep-all; /* 単語の途中で改行しない */
-          overflow-wrap: break-word; /* 長い単語は折り返す */
-          padding: 8px 10px; /* テキストに余白をつける */
-          max-width: 800px;
-          text-align: center;
-        }
-        
-        /* スマホ用の調整 */
-        @media (max-width: 768px) {
-          .association-description {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            padding: 0 15px;
-          }
-          
-          .association-description br {
-            display: inline-block !important;
-          }
-        }
-        
         /* 協会紹介画像のグリッドレイアウト */
         .association-images-grid {
           display: grid;
@@ -7482,18 +7428,14 @@
 
   <!-- 価値観とスタンスセクション -->
   <section class="section values-stance" id="values" style="position: relative;">
-    <!-- 背景画像のパターン化 -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 200px auto; opacity: 0.15; z-index: 0;"></div>
+    <!-- 複数の背景画像を配置してパターン化 -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.jpeg') repeat; background-size: 500px auto; z-index: 0;"></div>
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.7); z-index: 1;"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
-    <div class="floating-shape floating-shape-1"></div>
-    <div class="floating-shape floating-shape-2"></div>
-    <div class="floating-shape floating-shape-3"></div>
-    <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-heading">
-        <span class="reason-decorative-text">Achievements</span>
+        <span class="reason-decorative-text">Support</span>
       <h2 class="section-title">あなたらしさを尊重する<br>私達の活動</h2>
       </div>
       
@@ -8548,6 +8490,5 @@
   </script>
   
   <!-- 協会紹介のスライダーを廃止しました -->
-  </script>
 </body>
 </html>

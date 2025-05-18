@@ -3704,7 +3704,7 @@ select {
 
 .reason-decorative-text {
   display: block;
-  font-family: 'Shippori Mincho', serif; /* フォント変更 */
+  font-family: 'Noto Serif JP', serif; /* フォント変更 */
   font-size: 2.8rem; /* サイズ調整 */
   color: #f0a0b8; /* 薄めのピンク */
   margin-bottom: -1rem; /* タイトルとの間隔調整 */
