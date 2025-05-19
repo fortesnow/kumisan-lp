@@ -1,0 +1,1276 @@
+/* フォームスタイル */
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* コミュニティセクション */
+.community-section {
+  padding: 5rem 0;
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+}
+
+.community-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.community-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.community-headline {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.community-headline .highlight {
+  color: #ff6b6b;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.2rem;
+}
+
+.community-headline .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(255, 107, 107, 0.2);
+  z-index: -1;
+}
+
+.community-subtext {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.community-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.community-image-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.community-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.community-img:hover {
+  transform: scale(1.02);
+}
+
+.community-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.community-feature {
+  background-color: white;
+  border-radius: 15px;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  margin-bottom: 1.2rem;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.community-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* 先輩アドバイザーの声セクション */
+.advisor-voices {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.testimonials-main-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.advisors-voices-quotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.voice-quote-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.voice-quote-box:hover {
+  transform: translateY(-5px);
+}
+
+.voice-quote {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  position: relative;
+  padding-left: 25px;
+}
+
+.voice-quote::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -5px;
+  font-size: 1.8rem;
+  color: #ff85a2;
+  font-family: serif;
+  line-height: 1;
+}
+
+/* 背景の動きを持つ要素 */
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 133, 162, 0.1);
+  animation: float 15s infinite ease-in-out;
+}
+
+.floating-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -150px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.floating-shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -80px;
+  left: -80px;
+  animation-delay: 4s;
+}
+
+.floating-shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 20%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.floating-shape-4 {
+  width: 100px;
+  height: 100px;
+  bottom: 30%;
+  left: 15%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(20px, 20px) rotate(5deg);
+  }
+  40% {
+    transform: translate(20px, -20px) rotate(10deg);
+  }
+  60% {
+    transform: translate(-20px, -20px) rotate(5deg);
+  }
+  80% {
+    transform: translate(-20px, 20px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* グラデーションセクション */
+.gradient-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, rgba(255, 236, 241, 0.8) 0%, rgba(255, 247, 247, 0.8) 100%);
+  z-index: -2;
+}
+
+/* 1人じゃがんばれない吹き出しセクション */
+.struggle-section {
+  padding: 3rem 0;
+  text-align: center;
+  background-color: #fffaf9;
+}
+
+.struggle-bubble {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+.struggle-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #fff;
+}
+
+.struggle-bubble p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #555;
+  margin: 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.reassurance-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 30px;
+}
+
+.reassurance-text .highlight {
+  color: #ff6b6b;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.reassurance-text .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 107, 107, 0.2);
+  z-index: -1;
+}
+
+/* やりたいのに動けない理由セクション */
+.problem-statement {
+  padding: 5rem 0;
+  background-color: #fffaf9;
+  position: relative;
+  overflow: hidden;
+}
+
+.problem-statement::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1.5" fill="%23ffecf1" /></svg>');
+  background-size: 24px 24px;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.problem-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-content {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.problem-statement .section-title {
+  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.problem-statement .section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #ff85a2, #ff6b6b);
+  border-radius: 3px;
+}
+
+.problem-intro {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.problem-flex-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.problem-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+  max-width: 600px;
+}
+
+.problem-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.problem-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.problem-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff85a2, #ff6b6b);
+  color: white;
+  font-size: 1.3rem;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+.problem-text {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.problem-image-container {
+  flex: 0 0 42%;
+  max-width: 42%;
+}
+
+.problem-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.problem-image:hover {
+  transform: translateY(-8px);
+}
+
+.problem-cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* あなたらしさを尊重するセクション */
+.values-stance {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.values-stance .section-title {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  color: #333;
+}
+
+.values-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 3rem auto 0;
+  max-width: 1200px;
+}
+
+.value-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ff85a2, #ff6b6b);
+  z-index: 1;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff8f8;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.value-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.value-quote {
+  font-style: italic;
+  color: #ff6b6b;
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.value-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.value-points li {
+  position: relative;
+  padding-left: 1.8rem;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.value-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
+/* スライダー */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  touch-action: pan-y;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.slider-item {
+  min-width: 20%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  opacity: 0.6;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slider-item.active-slide {
+  opacity: 1;
+}
+
+.slider-item img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.slider-caption {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.slider-navigation {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+  background-color: #ff85a2;
+}
+
+/* ベビー発育アドバイザーとしてできることセクション */
+.advisor-features {
+  padding: 5rem 0;
+  position: relative;
+  background-color: #fffaf9;
+}
+
+.advisor-image-slider {
+  margin: 2rem auto 3rem;
+  max-width: 1000px;
+}
+
+.advisor-img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.feature-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.features-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.swipe-indicator {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 8px 15px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.swipe-arrow {
+  font-size: 0.8rem;
+  color: #ff85a2;
+}
+
+.swipe-text {
+  margin: 0 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 992px) {
+  /* コミュニティセクション */
+  .community-content {
+    flex-direction: column;
+  }
+  
+  .community-image-wrapper {
+    max-width: 100%;
+    margin: 0 auto 2rem;
+  }
+  
+  /* 価値観セクション */
+  .values-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-flex-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .problem-list {
+    max-width: 90%;
+    order: 1;
+  }
+  
+  .problem-image-container {
+    max-width: 60%;
+    order: 2;
+  }
+  
+  .slider-item {
+    min-width: 33.333%;
+  }
+  
+  .advisor-image-slider {
+    margin: 1.5rem auto 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 4rem 0;
+  }
+  
+  /* コミュニティセクション */
+  .community-headline {
+    font-size: 1.5rem;
+  }
+  
+  .community-subtext {
+    font-size: 1rem;
+  }
+  
+  .community-features {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* 価値観セクション */
+  .values-cards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .value-card {
+    padding: 1.5rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .value-quote {
+    font-size: 1rem;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-statement .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .problem-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .problem-list {
+    width: 100%;
+    max-width: 95%;
+  }
+  
+  .problem-image-container {
+    max-width: 70%;
+  }
+  
+  .problem-icon {
+    min-width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  
+  .problem-text {
+    font-size: 0.95rem;
+  }
+  
+  .slider-item {
+    min-width: 50%;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .feature-card {
+    padding: 1.2rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 3rem 0;
+  }
+  
+  /* コミュニティセクション */
+  .community-headline {
+    font-size: 1.3rem;
+  }
+  
+  .community-subtext {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+  
+  .community-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .feature-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .feature-description {
+    font-size: 0.9rem;
+  }
+  
+  .community-feature {
+    padding: 1.2rem;
+  }
+  
+  /* 価値観セクション */
+  .values-cards {
+    margin-top: 2rem;
+    gap: 1.2rem;
+  }
+  
+  .value-card {
+    padding: 1.2rem;
+  }
+  
+  .value-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .value-quote {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-points li {
+    font-size: 0.9rem;
+    padding-left: 1.5rem;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-statement .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .problem-statement .section-title::after {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
+  .problem-intro {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+    padding: 0 1rem;
+  }
+  
+  .problem-flex-container {
+    gap: 1.5rem;
+  }
+  
+  .problem-list {
+    gap: 1.2rem;
+    max-width: 100%;
+  }
+  
+  .problem-image-container {
+    max-width: 85%;
+  }
+  
+  .problem-list li {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+  
+  .problem-icon {
+    min-width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .problem-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .problem-cta {
+    margin-top: 2rem;
+  }
+  
+  .problem-cta .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* 貴女の経験が輝く場所セクション */
+  .desire-intro-heading {
+    margin-bottom: 2rem;
+  }
+  
+  .desire-intro-heading h2 {
+    font-size: 1.6rem;
+  }
+  
+  .desire-intro-heading h2::after {
+    width: 80px;
+    height: 3px;
+  }
+  
+  .desire-content {
+    gap: 1.5rem;
+  }
+  
+  .desire-quote {
+    padding: 1.2rem;
+  }
+  
+  .quote-mark {
+    top: -10px;
+    font-size: 2rem;
+  }
+  
+  .desire-quote p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .desire-conclusion {
+    padding: 1.8rem 1.2rem;
+  }
+  
+  .conclusion-text p {
+    font-size: 1rem;
+  }
+  
+  .conclusion-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .conclusion-point {
+    gap: 0.8rem;
+  }
+  
+  .point-icon {
+    font-size: 1.5rem;
+  }
+  
+  .conclusion-point p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 共通 */
+  .community-section,
+  .values-stance,
+  .problem-statement,
+  .desire-intro {
+    padding: 3rem 0;
+  }
+  
+  /* コミュニティセクション */
+  .community-headline {
+    font-size: 1.2rem;
+  }
+  
+  .community-feature {
+    padding: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .feature-title {
+    font-size: 0.95rem;
+  }
+  
+  .feature-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  /* 価値観セクション */
+  .value-card {
+    padding: 1rem;
+  }
+  
+  .value-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1rem;
+  }
+  
+  .value-quote {
+    font-size: 0.85rem;
+  }
+  
+  .value-points li {
+    font-size: 0.85rem;
+    padding-left: 1.3rem;
+    line-height: 1.4;
+  }
+  
+  /* やりたいのに動けない理由セクション */
+  .problem-statement .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .problem-intro {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .problem-image-container {
+    max-width: 100%;
+    margin: 0 auto 1rem;
+  }
+  
+  .problem-list {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .problem-list li {
+    padding: 1rem;
+    gap: 0.8rem;
+    border-radius: 10px;
+  }
+  
+  .problem-icon {
+    min-width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .problem-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .problem-image {
+    border-radius: 12px;
+  }
+  
+  .problem-cta {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .problem-cta .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* スライダー関連 */
+  .slider-item {
+    min-width: 100%;
+    padding: 0 5px;
+  }
+  
+  .slider-caption {
+    font-size: 0.8rem;
+  }
+  
+  .advisor-features {
+    padding: 3rem 0;
+  }
+  
+  .advisor-image-slider {
+    margin: 1rem auto 2rem;
+  }
+  
+  .swipe-indicator {
+    bottom: 40%;
+    padding: 6px 12px;
+  }
+  
+  .swipe-text {
+    font-size: 0.8rem;
+  }
+  
+  .slider-dots {
+    margin-top: 10px;
+  }
+  
+  .slider-dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+  }
+  
+  /* 貴女の経験が輝く場所セクション */
+  .desire-intro-heading {
+    margin-bottom: 2rem;
+  }
+  
+  .desire-intro-heading h2 {
+    font-size: 1.6rem;
+  }
+  
+  .desire-intro-heading h2::after {
+    width: 80px;
+    height: 3px;
+  }
+  
+  .desire-content {
+    gap: 1.5rem;
+  }
+  
+  .desire-quote {
+    padding: 1.2rem;
+  }
+  
+  .quote-mark {
+    top: -10px;
+    font-size: 2rem;
+  }
+  
+  .desire-quote p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .desire-conclusion {
+    padding: 1.8rem 1.2rem;
+  }
+  
+  .conclusion-text p {
+    font-size: 1rem;
+  }
+  
+  .conclusion-text h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .conclusion-point {
+    gap: 0.8rem;
+  }
+  
+  .point-icon {
+    font-size: 1.5rem;
+  }
+  
+  .conclusion-point p {
+    font-size: 0.95rem;
+  }
+}
