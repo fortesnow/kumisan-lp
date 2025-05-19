@@ -6116,11 +6116,10 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-image-container" data-aos="fade-in">
-        <img src="assets/images/FV.png" alt="子育ても、仕事も、もう諦めない" class="hero-image">
+        <img src="assets/images/mother-group.jpg" alt="ベビー発育アドバイザー講座｜おうちから始める新しい働き方" class="hero-image">
       </div>
       <div class="hero-content" data-aos="fade-up">
-        <h1>子育ても、仕事も、<br>もう諦めない。</h1>
-        <p class="sub-heading">ベビー発育アドバイザー講座｜自宅から始める新しい働き方</p>
+        <h1>ベビー発育アドバイザー講座｜<br>おうちから始める新しい働き方</h1>
         <div class="hero-badges">
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">受講生満足度94%</div>
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="300">ママ支持率No.1</div>
@@ -6208,19 +6207,21 @@
           transform: translateY(-5px);
         }
         
-        /* スマホ表示 */
+        /* タブレット・スマホ表示 */
         @media (max-width: 768px) {
           #pain .worry-cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             width: 100%;
-            padding: 0 0.8rem;
+            padding: 0 1.2rem;
             box-sizing: border-box;
+            max-width: 600px;
+            margin: 0 auto;
           }
           
           #pain .worry-card {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             padding: 0.8rem;
             display: flex;
             flex-direction: column;
@@ -6250,49 +6251,55 @@
             font-size: 0.85rem;
             line-height: 1.5;
             text-align: center;
-            word-break: keep-all;
+            word-break: normal;
             white-space: pre-line;
             width: 100%;
             box-sizing: border-box;
-            padding: 0;
+            padding: 0 0.3rem;
             overflow-wrap: break-word;
+            max-width: 230px;
+            margin: 0 auto;
           }
         }
         
         @media (max-width: 576px) {
           #pain .worry-cards, #problem .worry-cards {
-            gap: 1rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            padding: 0 1rem;
           }
           
           #pain .worry-card, #problem .worry-card {
-            padding: 0.6rem;
+            padding: 1rem;
+            max-width: 100%;
+            margin: 0 auto;
           }
           
           #pain .character-container, #problem .character-container {
-            width: 85px;
-            height: 85px;
-            margin-bottom: 0.5rem;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 0.8rem;
           }
           
           #pain .worry-image, #problem .worry-image {
-            max-width: 75px;
+            max-width: 85px;
           }
           
           #pain .worry-text, #problem .worry-text {
-            font-size: 0.65rem;
-            line-height: 1.3;
+            font-size: 0.9rem;
+            line-height: 1.5;
             width: 100%;
             box-sizing: border-box;
-            word-break: keep-all;
-            white-space: normal;
+            word-break: normal;
+            white-space: pre-line;
             overflow-wrap: break-word;
-            padding: 0;
-            max-height: none;
-            height: auto;
+            padding: 0 0.5rem;
+            max-width: 280px;
+            margin: 0 auto;
           }
           
           #pain .worry-text br, #problem .worry-text br {
-            display: inline;
+            display: inline-block;
           }
         }
       </style>
@@ -6327,8 +6334,15 @@
       <style>
         /* キャラクターアイコンのスタイル調整 - 最適化画像対応 */
         .character-container {
-          width: 70px;
-          height: 70px;
+          width: 120px;
+          height: 120px;
+        }
+        
+        @media (max-width: 768px) {
+          .character-container {
+            width: 100px;
+            height: 100px;
+          }
         }
       </style>
     </div>
@@ -6346,15 +6360,23 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2; text-align: center;">
-      <h2 class="section-title" style="color: #6F4B3E;">多くのママが<br>同じ気持ちです</h2>
-      <div class="text-wrapper">
-        <p class="problem-intro text" style="color: #6F4B3E;">
+      <h2 class="section-title" style="color: #6F4B3E; text-align: center; width: 100%; display: block; margin: 0 auto;">多くのママが<br>同じ気持ちです</h2>
+      <div class="text-wrapper" style="text-align: center; width: 100%; max-width: 100%;">
+        <p class="problem-intro text" style="color: #6F4B3E; text-align: center; margin: 0 auto;">
           「いつか自分に合ったお仕事をしたい」<br>と思っていても一歩が踏み出せない方<br>も多いんです。なぜなら...<br><br>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事
         </p>
       </div>
       
       <style>
         /* 問題文とソリューションの間に適切なスペースを確保 */
+        .problem-statement .section-title {
+          text-align: center;
+          width: 100%;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        
         .problem-intro {
           margin-bottom: 2rem;
         }
@@ -7007,6 +7029,7 @@
       </div>
       
       <style>
+        /* ベビー発育アドバイザーセクションのスタイル */
         .advisor-image-container {
           max-width: 800px;
           margin: 2rem auto;
@@ -7022,6 +7045,54 @@
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
           display: block; /* 画像下の余白を削除 */
         }
+        
+        /* 特徴カードの基本スタイル */
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        
+        .feature-card {
+          background-color: #fff;
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          height: 100%;
+        }
+        
+        .feature-card h3 {
+          color: #6F4B3E;
+          font-size: 1.3rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+        
+        .feature-card p {
+          color: #555;
+          font-size: 1rem;
+          line-height: 1.7;
+          white-space: pre-line;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          display: block;
+          min-height: 3.4em; /* 2行分の高さを確保 */
+        }
+        
+        .feature-card p br {
+          display: inline-block;
+        }
+        
+        /* タブレット・スマホ表示 */
         @media (max-width: 768px) {
           .advisor-image-container {
             margin: 1.5rem auto;
@@ -7030,34 +7101,59 @@
           .advisor-main-image {
             max-height: 350px;
           }
+          
           /* ベビー発育アドバイザーのセクション2のスマホ表示改善 */
           .features-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             padding: 0.5rem;
+            margin-top: 2rem;
           }
+          
           .feature-card {
             padding: 1.5rem 1rem;
           }
+          
           .feature-card h3 {
             font-size: 1.1rem;
             margin-bottom: 0.8rem;
-            line-height: 1.4;
+            line-height: 1.5;
+            color: #e6587c; /* スマホ表示時にピンク色に統一 */
           }
+          
           .feature-card p {
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.7;
           }
         }
+        
         @media (max-width: 576px) {
           .features-grid {
             gap: 1rem;
           }
+          
           .feature-card {
             padding: 1.2rem 0.8rem;
           }
+          
+          .feature-card h3 {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #e6587c; /* スマホ表示時にピンク色に統一 */
+          }
+          
           .feature-card p {
             font-size: 0.85rem;
+            line-height: 1.7;
+            white-space: pre-line;
+            min-height: 3.4em; /* 2行分の高さを確保 - スマホでも統一 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+          
+          .feature-card p br {
+            display: inline-block !important;
           }
         }
       </style>
@@ -7066,15 +7162,15 @@
         <div class="feature-card">
           <h3>発達に合わせた適切な関わり方</h3>
           <p>月齢・年齢に応じた発達段階を理解し、<br>適切な遊びや関わり方を提案できます。</p>
-          </div>
+        </div>
         <div class="feature-card">
           <h3>子育ての専門的アドバイス</h3>
           <p>科学的・学問的根拠に基づいた知識で、<br>ママたちの不安やお悩みをサポートできます。</p>
-            </div>
+        </div>
         <div class="feature-card">
           <h3>子どもの可能性を引き出す<br>声掛けや関わり</h3>
           <p>一人ひとりの個性や特性を尊重し、<br>才能や可能性を最大限に伸ばします。</p>
-            </div>
+        </div>
         <div class="feature-card">
           <h3>子育て支援のプロとして活躍</h3>
           <p>知識の習得だけではなく、お仕事として<br>大切なポイントや親子との関わりもゼロから習得</p>
@@ -8659,5 +8755,47 @@
     (function() {})();
   </script>
   <!-- 協会紹介のスライダーを廃止しました -->
+  
+  <!-- ヒーローセクション修正用のカスタムスタイル -->
+  <style>
+    @media (max-width: 480px) {
+      .hero {
+        margin-top: 0;
+        padding: 0;
+      }
+      
+      .hero .container {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+      }
+      
+      .hero-image-container {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .hero-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: none;
+        display: block;
+      }
+      
+      .hero-content {
+        margin-top: 0;
+        padding: 1.2rem 0.8rem;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </body>
 </html>
