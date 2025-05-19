@@ -6116,10 +6116,11 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-image-container" data-aos="fade-in">
-        <img src="assets/images/mother-group.jpg" alt="ベビー発育アドバイザー講座｜おうちから始める新しい働き方" class="hero-image">
+        <img src="assets/images/top.png" alt="子育ても、仕事も、もう諦めない" class="hero-image">
       </div>
       <div class="hero-content" data-aos="fade-up">
-        <h1>ベビー発育アドバイザー講座｜<br>おうちから始める新しい働き方</h1>
+        <h1>子育ても、仕事も、<br>もう諦めない。</h1>
+        <p class="sub-heading">ベビー発育アドバイザー講座｜おうちから始める新しい働き方</p>
         <div class="hero-badges">
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="100">受講生満足度94%</div>
           <div class="hero-badge" data-aos="fade-up" data-aos-delay="300">ママ支持率No.1</div>
@@ -6264,13 +6265,13 @@
         
         @media (max-width: 576px) {
           #pain .worry-cards, #problem .worry-cards {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            padding: 0 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            padding: 0 0.5rem;
           }
           
           #pain .worry-card, #problem .worry-card {
-            padding: 1rem;
+            padding: 0.5rem;
             max-width: 100%;
             margin: 0 auto;
           }
@@ -6286,15 +6287,15 @@
           }
           
           #pain .worry-text, #problem .worry-text {
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.75rem;
+            line-height: 1.3;
             width: 100%;
             box-sizing: border-box;
-            word-break: normal;
+            word-break: break-word;
             white-space: pre-line;
             overflow-wrap: break-word;
-            padding: 0 0.5rem;
-            max-width: 280px;
+            padding: 0;
+            max-width: 100%;
             margin: 0 auto;
           }
           
@@ -8755,47 +8756,5 @@
     (function() {})();
   </script>
   <!-- 協会紹介のスライダーを廃止しました -->
-  
-  <!-- ヒーローセクション修正用のカスタムスタイル -->
-  <style>
-    @media (max-width: 480px) {
-      .hero {
-        margin-top: 0;
-        padding: 0;
-      }
-      
-      .hero .container {
-        padding: 0;
-        margin: 0;
-        max-width: 100%;
-      }
-      
-      .hero-image-container {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0;
-      }
-      
-      .hero-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        max-height: none;
-        display: block;
-      }
-      
-      .hero-content {
-        margin-top: 0;
-        padding: 1.2rem 0.8rem;
-        border-radius: 0;
-        box-shadow: none;
-      }
-      
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
 </body>
 </html>
