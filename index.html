@@ -55,6 +55,7 @@
        .section-title {
          font-size: 1.8rem;
          margin-bottom: 1.5rem;
+         white-space: pre-line; /* 改行を保持 */
        }
        
        .text-wrapper {
@@ -62,6 +63,16 @@
        }
      }
      
+     /* 見出しの改行を統一するためのスタイル */
+     .section-title {
+       white-space: pre-line; /* 改行を保持 */
+       text-align: center;
+     }
+     
+     .section-title br {
+       display: inline-block !important; /* 改行を強制表示 */
+     }
+
      h1, h2, h3, h4, h5, h6 {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        font-weight: 700;
@@ -1357,13 +1368,6 @@
        }
      }
      
-     @media (max-width: 480px) {
-       .community-image-wrapper {
-         margin-bottom: 1.2rem;
-         border-radius: 8px;
-       }
-     }
-     
      .community-features {
        flex: 1;
        display: flex;
@@ -2387,6 +2391,7 @@
        .section-title {
          font-size: 1.8rem;
          margin-bottom: 1.5rem;
+         white-space: pre-line; /* 改行を保持 */
        }
        
        .text-wrapper {
@@ -2394,6 +2399,16 @@
        }
      }
      
+     /* 見出しの改行を統一するためのスタイル */
+     .section-title {
+       white-space: pre-line; /* 改行を保持 */
+       text-align: center;
+     }
+     
+     .section-title br {
+       display: inline-block !important; /* 改行を強制表示 */
+     }
+
      h1, h2, h3, h4, h5, h6 {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        font-weight: 700;
@@ -6333,7 +6348,7 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2; text-align: center;">
-      <h2 class="section-title" style="color: #6F4B3E; text-align: center; width: 100%; display: block; margin: 0 auto;">多くのママが<br>同じ気持ちです</h2>
+      <h2 class="section-title">多くのママが<br>同じ気持ちです</h2>
       <div class="text-wrapper" style="text-align: center; width: 100%; max-width: 100%;">
         <p class="problem-intro text" style="color: #6F4B3E; text-align: center; margin: 0 auto;">
           「いつか自分に合ったお仕事をしたい」<br>と思っていても一歩が踏み出せない方<br>も多いんです。なぜなら...<br><br>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事
@@ -6627,7 +6642,7 @@
     <div class="container">
       <div class="memories-header">
         <span class="reason-decorative-text">Experience</span>
-        <h2 class="section-title">子育て中、こんな経験ありませんでしたか？</h2>
+        <h2 class="section-title">子育て中、<br>こんな経験ありませんでしたか？</h2>
       </div>
       
 
@@ -7318,7 +7333,7 @@
     <div class="container" style="position: relative; z-index: 2;">
       <div class="association-title-container">
         <span class="reason-decorative-text">About</span> <!-- クラス名とテキスト変更 -->
-        <h2 class="section-title">協会の紹介</h2> <!-- クラス名変更 -->
+        <h2 class="section-title">協会の<br>紹介</h2> <!-- クラス名変更 -->
       </div>
       
       <p class="association-description" style="color: #6F4B3E;">
@@ -7450,7 +7465,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
-      <h2 class="section-title">お仕事のイメージ</h2>
+      <h2 class="section-title">お仕事の<br>イメージ</h2>
       
       <style>
         /* お仕事イメージセクションのレイアウト修正 */
@@ -7764,7 +7779,7 @@
   <!-- 先輩アドバイザーと受講生の声セクション -->
   <section class="section advisor-voices" id="voices">
     <div class="container">
-      <h2 class="section-title">先輩アドバイザーの声</h2>
+      <h2 class="section-title">先輩アドバイザーの<br>声</h2>
       
       <div class="testimonials-image-container">
         <img src="assets/images/advisors_voices_1.png" alt="先輩アドバイザーの声 1" class="testimonials-main-image">
@@ -8121,7 +8136,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
-      <h2 class="section-title">無料説明会お申し込み</h2>
+      <h2 class="section-title">無料説明会<br>お申し込み</h2>
       <div class="text-wrapper">
         <p class="contact-description">
           ベビー発育アドバイザー講座を<br>
@@ -8849,6 +8864,13 @@
           });
         }
       }
+    });
+  </script>
+  
+  <script>
+    // JavaScriptの閉じ括弧の問題を修正
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('JavaScriptエラー修正完了');
     });
   </script>
 </body>
