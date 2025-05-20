@@ -8563,18 +8563,23 @@
   <script src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    // AOS初期化 - スクロールアニメーション
+    // AOS初期化 - スクロールアニメーション（モバイルでのクラッシュ防止のために最適化）
     AOS.init({
-      duration: 600,           // 速度を上げる
-      easing: 'ease-out',      // より軽いイージング
+      duration: 400,           // アニメーション速度をさらに上げる
+      easing: 'ease',          // よりシンプルなイージング
       once: true,              // 一度だけ表示
       mirror: false,
-      offset: 50,              // オフセットを小さくしてトリガーを早める
-      disable: 'mobile',       // モバイルでは無効化
-      throttleDelay: 150       // スロットル遅延を増やしてパフォーマンス向上
+      offset: 30,              // オフセットをさらに小さくする
+      disable: function() {
+        // 低スペックのモバイルデバイスでは無効化（メモリ使用量削減）
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return isMobile && window.innerWidth < 768;
+      },
+      throttleDelay: 250,      // スロットル遅延をさらに増やす
+      delay: 0                 // 遅延を削除
     });
     
-    // スクロール監視 - カスタムアニメーション
+    // スクロール監視 - パフォーマンス最適化版
     document.addEventListener('DOMContentLoaded', function() {
       // スマホ用CTAボタンのスクロール表示制御
       const heroSection = document.querySelector('#hero');
@@ -8582,33 +8587,43 @@
       const mobileCta = document.querySelector('.mobile-fixed-cta');
       
       if (heroSection && mobileCta && contactSection) {
-        // スクロールイベントのスロットル処理
+        // 状態変数
         let scrollTimeout;
         let lastScrollY = window.scrollY;
+        let ticking = false;
+        let ctaVisible = false;
         
+        // より効率的なスクロールハンドラ - requestAnimationFrameを使用
         window.addEventListener('scroll', function() {
-          if (!scrollTimeout) {
-            scrollTimeout = setTimeout(function() {
-              // 50px以上スクロールした場合のみ処理を実行（細かな移動は無視）
-              if (Math.abs(lastScrollY - window.scrollY) > 50) {
-                const heroBottom = heroSection.getBoundingClientRect().bottom;
-                const contactTop = contactSection.getBoundingClientRect().top;
-                const contactBottom = contactSection.getBoundingClientRect().bottom;
-                const windowHeight = window.innerHeight;
-                
-                // ヒーローセクションの下かつ申し込みセクションの上部が見えていない場合はCTAを表示
-                if (heroBottom < 0 && (contactTop > windowHeight || contactBottom < 0)) {
-                  mobileCta.style.opacity = '1';
-                } else {
-                  mobileCta.style.opacity = '0';
-                }
-                
-                lastScrollY = window.scrollY;
+          lastScrollY = window.scrollY;
+          
+          // requestAnimationFrameでスクロールイベントを制限
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              // スクロールの頻度を制限（350ms間隔）
+              if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function() {
+                  const heroBottom = heroSection.getBoundingClientRect().bottom;
+                  const contactTop = contactSection.getBoundingClientRect().top;
+                  const windowHeight = window.innerHeight;
+                  
+                  // 状態が変わる場合のみDOMを更新（不要なスタイル再計算を防ぐ）
+                  const shouldShowCta = heroBottom < 0 && contactTop > windowHeight;
+                  
+                  if (ctaVisible !== shouldShowCta) {
+                    ctaVisible = shouldShowCta;
+                    mobileCta.style.opacity = shouldShowCta ? '1' : '0';
+                  }
+                  
+                  scrollTimeout = null;
+                }, 350); // スロットル時間を増加
               }
-              scrollTimeout = null;
-            }, 200); // 200msのスロットル
+              ticking = false;
+            });
+            
+            ticking = true;
           }
-        }, { passive: true }); // パッシブイベントリスナーでさらに最適化
+        }, { passive: true });
       }
     });
   </script>
@@ -8671,14 +8686,39 @@
         });
       }
 
+      // スライド位置更新の最適化（スクロール中のパフォーマンス向上）
       function updateSliderPosition() {
-        // requestAnimationFrameを使用して滑らかなアニメーションを実現
+        // スクロール中は高負荷のアニメーションを延期
+        if (window.isScrolling) {
+          setTimeout(updateSliderPosition, 100);
+          return;
+        }
+        
+        // トランスフォームアニメーションを最適化
         requestAnimationFrame(() => {
-          const cardMarginRight = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
-          const totalCardWidth = cardWidth + cardMarginRight;
-          track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+          // スタイル計算の最小化
+          if (!cardMarginCache) {
+            cardMarginCache = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
+          }
+          const totalCardWidth = cardWidth + cardMarginCache;
+          // GPU支援のためにtranslate3dを使用
+          track.style.transform = `translate3d(-${currentIndex * totalCardWidth}px, 0, 0)`;
         });
       }
+      
+      // スクロール状態の監視（スクロール中のアニメーション最適化）
+      let cardMarginCache = null;
+      window.isScrolling = false;
+      let scrollEndTimer;
+      
+      window.addEventListener('scroll', function() {
+        window.isScrolling = true;
+        clearTimeout(scrollEndTimer);
+        
+        scrollEndTimer = setTimeout(function() {
+          window.isScrolling = false;
+        }, 250);
+      }, { passive: true });
       
       function reinitializeSlider() {
         if (isResizing || !cards.length) return;
@@ -8915,5 +8955,61 @@
   </script>
   
   <!-- ブラウザとスマホの両方で見出しの行数と改行を統一 -->
+<script>
+  // スクロールパフォーマンスを改善
+  document.addEventListener('DOMContentLoaded', function() {
+    // 画像の遅延読み込み
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if ('loading' in HTMLImageElement.prototype) {
+      // ブラウザがネイティブの遅延読み込みをサポートしている場合
+      lazyImages.forEach(img => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+        }
+      });
+    } else {
+      // IntersectionObserverのポリフィル
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            if (lazyImage.dataset.src) {
+              lazyImage.src = lazyImage.dataset.src;
+            }
+            lazyImage.classList.remove("lazy");
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+
+      lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    }
+    
+    // モバイルでのスクロールパフォーマンス最適化
+    let isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (isMobile) {
+      // アニメーションを減らす
+      const animatedElements = document.querySelectorAll('[data-aos]');
+      animatedElements.forEach(function(el) {
+        // 要素のアニメーションを軽くする
+        if (el.getAttribute('data-aos') === 'fade-up') {
+          el.setAttribute('data-aos-once', 'true');
+          el.setAttribute('data-aos-duration', '500');
+        }
+      });
+      
+      // スクロールイベントの最適化
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+          // スクロール後の処理を軽量化
+        }, 100);
+      }, { passive: true });
+    }
+  });
+</script>
 </body>
 </html>
