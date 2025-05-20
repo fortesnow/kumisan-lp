@@ -2208,22 +2208,8 @@
        }
      }
 
-     /* アニメーション効果 - 修正版 */
-     .fade-in-up {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-       transform: translateY(0); /* 初期位置を正常に */
-     }
-     
-     .fade-in {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-     }
+     /* アニメーション効果 - パフォーマンス最適化済み */
 
-     /* スタガー表示アニメーション - 修正版 */
-     .stagger-item {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-       transform: translateY(0); /* 初期位置を正常に */
-     }
-     
      /* 強調アニメーション */
      .pulse {
        animation: pulse-animation 2s infinite;
@@ -4554,22 +4540,8 @@
        }
      }
 
-     /* アニメーション効果 - 修正版 */
-     .fade-in-up {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-       transform: translateY(0); /* 初期位置を正常に */
-     }
-     
-     .fade-in {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-     }
+     /* アニメーション効果 - パフォーマンス最適化済み */
 
-     /* スタガー表示アニメーション - 修正版 */
-     .stagger-item {
-       opacity: 1; /* 初期状態から表示されるように変更 */
-       transform: translateY(0); /* 初期位置を正常に */
-     }
-     
      /* 強調アニメーション */
      .pulse {
        animation: pulse-animation 2s infinite;
@@ -6116,7 +6088,7 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-image-container" data-aos="fade-in">
-        <img src="assets/images/top.png" alt="子育ても、仕事も、もう諦めない" class="hero-image">
+        <img src="assets/images/top.png" alt="子育ても、仕事も、もう諦めない" class="hero-image" loading="lazy">
       </div>
       <div class="hero-content" data-aos="fade-up">
         <h1>子育ても、仕事も、<br>もう諦めない。</h1>
@@ -7026,7 +6998,7 @@
       
       <!-- ベビー発育アドバイザーとは？画像 -->
       <div class="advisor-image-container" style="line-height: 0;">
-        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image" style="display: block; margin: 0 auto; padding: 0;">
+        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image" loading="lazy" style="display: block; margin: 0 auto; padding: 0;">
       </div>
       
       <style>
@@ -8182,7 +8154,7 @@
       </style>
       
       <div class="google-form-wrapper">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" style="width:100%; height:1500px; border:none;">読み込んでいます…</iframe>
+        <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" style="width:100%; height:1500px; border:none;">読み込んでいます…</iframe>
       </div>
       
       <style>
@@ -8515,37 +8487,50 @@
   <script>
     // AOS初期化 - スクロールアニメーション
     AOS.init({
-      duration: 800,
-      easing: 'ease-in-out',
-      once: true,
+      duration: 600,           // 速度を上げる
+      easing: 'ease-out',      // より軽いイージング
+      once: true,              // 一度だけ表示
       mirror: false,
-      disable: 'mobile' // モバイルでは無効化して安定性を高める
+      offset: 50,              // オフセットを小さくしてトリガーを早める
+      disable: 'mobile',       // モバイルでは無効化
+      throttleDelay: 150       // スロットル遅延を増やしてパフォーマンス向上
     });
     
     // スクロール監視 - カスタムアニメーション
     document.addEventListener('DOMContentLoaded', function() {
-      // アニメーション効果を追加する関数は削除（過剰なアニメーションが問題を引き起こしている）
-      // この関数を呼び出さないことで、HTML内に手動で追加されたアニメーションのみが有効になる
-      
       // スマホ用CTAボタンのスクロール表示制御
       const heroSection = document.querySelector('#hero');
       const contactSection = document.querySelector('#contact');
       const mobileCta = document.querySelector('.mobile-fixed-cta');
       
       if (heroSection && mobileCta && contactSection) {
+        // スクロールイベントのスロットル処理
+        let scrollTimeout;
+        let lastScrollY = window.scrollY;
+        
         window.addEventListener('scroll', function() {
-          const heroBottom = heroSection.getBoundingClientRect().bottom;
-          const contactTop = contactSection.getBoundingClientRect().top;
-          const contactBottom = contactSection.getBoundingClientRect().bottom;
-          const windowHeight = window.innerHeight;
-          
-          // ヒーローセクションの下かつ申し込みセクションの上部が見えていない場合はCTAを表示
-          if (heroBottom < 0 && (contactTop > windowHeight || contactBottom < 0)) {
-            mobileCta.style.opacity = '1';
-          } else {
-            mobileCta.style.opacity = '0';
+          if (!scrollTimeout) {
+            scrollTimeout = setTimeout(function() {
+              // 50px以上スクロールした場合のみ処理を実行（細かな移動は無視）
+              if (Math.abs(lastScrollY - window.scrollY) > 50) {
+                const heroBottom = heroSection.getBoundingClientRect().bottom;
+                const contactTop = contactSection.getBoundingClientRect().top;
+                const contactBottom = contactSection.getBoundingClientRect().bottom;
+                const windowHeight = window.innerHeight;
+                
+                // ヒーローセクションの下かつ申し込みセクションの上部が見えていない場合はCTAを表示
+                if (heroBottom < 0 && (contactTop > windowHeight || contactBottom < 0)) {
+                  mobileCta.style.opacity = '1';
+                } else {
+                  mobileCta.style.opacity = '0';
+                }
+                
+                lastScrollY = window.scrollY;
+              }
+              scrollTimeout = null;
+            }, 200); // 200msのスロットル
           }
-        });
+        }, { passive: true }); // パッシブイベントリスナーでさらに最適化
       }
     });
   </script>
@@ -8568,6 +8553,18 @@
       let visibleCards = window.innerWidth >= 768 ? 2 : 1; 
       let currentIndex = 0;
       let dots = [];
+      let isResizing = false;
+
+      // デバウンス関数
+      function debounce(func, delay) {
+        let timeoutId;
+        return function() {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => func.apply(context, args), delay);
+        };
+      }
 
       function setupDots() {
         dotsContainer.innerHTML = ''; // ドットをクリア
@@ -8578,13 +8575,8 @@
           dot.classList.add('testimonial-dot-v2');
           dot.addEventListener('click', () => {
             currentIndex = i * visibleCards;
-            // Ensure currentIndex does not exceed possible scroll positions
-            if (currentIndex >= cards.length - visibleCards + 1 && cards.length > visibleCards) {
-                currentIndex = cards.length - visibleCards;
-            }
-            if (cards.length <= visibleCards) { // if less cards than visible spots, always go to 0
-                currentIndex = 0;
-            }
+            // インデックスの制限をシンプルに
+            currentIndex = Math.min(currentIndex, Math.max(0, cards.length - visibleCards));
             updateSliderPosition();
             updateActiveDot();
           });
@@ -8602,38 +8594,34 @@
       }
 
       function updateSliderPosition() {
-        const cardMarginRight = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
-        const totalCardWidth = cardWidth + cardMarginRight;
-        track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+        // requestAnimationFrameを使用して滑らかなアニメーションを実現
+        requestAnimationFrame(() => {
+          const cardMarginRight = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
+          const totalCardWidth = cardWidth + cardMarginRight;
+          track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+        });
       }
       
       function reinitializeSlider() {
-        if (!cards.length) return;
+        if (isResizing || !cards.length) return;
+        
+        isResizing = true;
         cardWidth = cards[0].getBoundingClientRect().width;
         visibleCards = window.innerWidth >= 768 ? 2 : 1;
-        // Clamp currentIndex to prevent going out of bounds after resize
-        if (currentIndex + visibleCards > cards.length) {
-            currentIndex = Math.max(0, cards.length - visibleCards);
-        }
-        if (cards.length <= visibleCards) {
-            currentIndex = 0; 
-        }
+        
+        // インデックスの調整をシンプルに
+        currentIndex = Math.min(currentIndex, Math.max(0, cards.length - visibleCards));
+        
         setupDots();
         updateSliderPosition();
+        
+        // リサイズ完了後にフラグをリセット
+        setTimeout(() => { isResizing = false; }, 200);
       }
 
       nextButton.addEventListener('click', () => {
         if (currentIndex < cards.length - visibleCards) {
-          currentIndex += 1; // 1カードずつスライドさせるように変更
-        } else {
-          // currentIndex = 0; // ループする場合
-        }
-        // Ensure currentIndex does not exceed possible scroll positions
-        if (currentIndex >= cards.length - visibleCards +1 && cards.length > visibleCards) {
-             currentIndex = cards.length - visibleCards;
-        }
-         if (cards.length <= visibleCards) {
-            currentIndex = 0; 
+          currentIndex += 1;
         }
         updateSliderPosition();
         updateActiveDot();
@@ -8641,15 +8629,14 @@
 
       prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
-          currentIndex -= 1; // 1カードずつスライドさせるように変更
-        } else {
-          // currentIndex = cards.length - visibleCards; // ループする場合
+          currentIndex -= 1;
         }
         updateSliderPosition();
         updateActiveDot();
       });
       
-      window.addEventListener('resize', reinitializeSlider);
+      // リサイズイベントをデバウンス処理
+      window.addEventListener('resize', debounce(reinitializeSlider, 250));
 
       // 初期化
       reinitializeSlider();
@@ -8680,6 +8667,18 @@
       const visibleCards = 1; 
       let currentIndex = 0;
       let dots = [];
+      let isResizing = false;
+
+      // デバウンス関数
+      function debounce(func, delay) {
+        let timeoutId;
+        return function() {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => func.apply(context, args), delay);
+        };
+      }
 
       function setupDots() {
         dotsContainer.innerHTML = ''; // ドットをクリア
@@ -8707,29 +8706,28 @@
       }
 
       function updateSliderPosition() {
-        // カード間のマージンを考慮（CSSで margin: 0 10px; としているので、左右で20px）
-        const cardMargin = cards.length > 1 ? parseFloat(getComputedStyle(cards[0]).marginLeft) + parseFloat(getComputedStyle(cards[0]).marginRight) : 0;
-        // スクロール位置計算を修正：(カード幅 + マージン) * 現在のインデックス
-        // ここではカードがコンテナ幅100%なので、マージンはtransformに直接影響しないように見えるが、
-        // スライド全体の幅の計算には影響する可能性がある。ただし、min-width: 100%で、trackがtransformされるので、カード自体の幅で良いはず。
-        const totalCardWidth = cardWidth; // marginはカード自体に含まれないので、transformではカード幅のみ考慮
-        track.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`;
+        // requestAnimationFrameを使用して滑らかなアニメーションを実現
+        requestAnimationFrame(() => {
+          track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        });
       }
       
       function reinitializeSlider() {
-        if (!cards.length) return;
+        if (isResizing || !cards.length) return;
+        
+        isResizing = true;
         // スライダーコンテナの幅を基準にカード幅を再計算する
         const sliderContainerWidth = track.parentElement.getBoundingClientRect().width;
-        // CSSでmargin: 0 10px があるため、カードの実際の表示領域はコンテナ幅からマージンを引いたものになる。
-        // min-width: 100% は、親要素である track の幅に対して100%となる。
-        // track はカードの数 * カードの表示幅となるので、ここではコンテナ幅をカード幅とするのがシンプル。
-        cardWidth = sliderContainerWidth; 
-        // currentIndex の再計算は不要 (常に1枚表示)
-        if (currentIndex >= cards.length) {
-            currentIndex = cards.length -1;
-        }
+        cardWidth = sliderContainerWidth;
+        
+        // インデックスの調整
+        currentIndex = Math.min(currentIndex, cards.length - 1);
+        
         setupDots();
         updateSliderPosition();
+        
+        // リサイズ完了後にフラグをリセット
+        setTimeout(() => { isResizing = false; }, 200);
       }
 
       nextButton.addEventListener('click', () => {
@@ -8751,7 +8749,9 @@
         updateSliderPosition();
         updateActiveDot();
       });
-      window.addEventListener('resize', reinitializeSlider);
+      
+      // リサイズイベントをデバウンス処理
+      window.addEventListener('resize', debounce(reinitializeSlider, 250));
       
       // 初期化
       reinitializeSlider();
@@ -8760,19 +8760,73 @@
     document.addEventListener('DOMContentLoaded', initAdvisorVoicesSlider);
   </script>
   
-  <!-- スクリプトの終了 -->
+  <!-- モバイルパフォーマンス最適化 -->
   <script>
-    // この空のスクリプトは全体の構文エラーを解消するためのもの
-    (function() {
-      // JavaScriptの構文問題を隔離する即時実行関数
-      try {
-        console.log("構文エラーを修正しました");
-      } catch(e) {
-        console.error("エラー処理:", e);
+    document.addEventListener('DOMContentLoaded', function() {
+      // インタラクション要素の初期化
+      initAdvisorVoicesSlider();
+      
+      // iframe読み込みの最適化
+      const lazyIframes = document.querySelectorAll('iframe');
+      if (lazyIframes.length > 0) {
+        if ('IntersectionObserver' in window) {
+          const iframeObserver = new IntersectionObserver(
+            function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  const iframe = entry.target;
+                  if (iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    iframeObserver.unobserve(iframe);
+                  }
+                }
+              });
+            },
+            { rootMargin: '200px 0px' }
+          );
+          
+          lazyIframes.forEach(function(iframe) {
+            // すでにsrc属性があるiframeには適用しない
+            if (iframe.src) return;
+            
+            if (iframe.dataset.src) {
+              iframeObserver.observe(iframe);
+            }
+          });
+        }
       }
-    })();
+
+      // 画像の遅延読み込み
+      if ('loading' in HTMLImageElement.prototype) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+        });
+      } else {
+        // Intersection Observerのフォールバック
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        if (lazyImages.length > 0 && 'IntersectionObserver' in window) {
+          const imageObserver = new IntersectionObserver(
+            function(entries) {
+              entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  img.src = img.dataset.src;
+                  imageObserver.unobserve(img);
+                }
+              });
+            },
+            { rootMargin: '200px 0px' }
+          );
+          
+          lazyImages.forEach(function(img) {
+            imageObserver.observe(img);
+          });
+        }
+      }
+    });
   </script>
-  <!-- 協会紹介のスライダーを廃止しました -->
-  <!-- 修正: 閉じタグの追加 -->
 </body>
 </html>
