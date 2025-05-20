@@ -2303,6 +2303,9 @@
      /* スマホでの固定CTAボタン */
      .mobile-fixed-cta {
        display: none;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.3s ease, visibility 0.3s ease;
      }
      
      @media (max-width: 768px) {
@@ -4653,6 +4656,9 @@
      /* スマホでの固定CTAボタン */
      .mobile-fixed-cta {
        display: none;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.3s ease, visibility 0.3s ease;
      }
      
      @media (max-width: 768px) {
@@ -5073,6 +5079,9 @@
      /* スマホでの固定CTAボタン */
      .mobile-fixed-cta {
        display: none;
+       opacity: 0;
+       visibility: hidden;
+       transition: opacity 0.3s ease, visibility 0.3s ease;
      }
      
      @media (max-width: 768px) {
@@ -8605,14 +8614,19 @@
                 scrollTimeout = setTimeout(function() {
                   const heroBottom = heroSection.getBoundingClientRect().bottom;
                   const contactTop = contactSection.getBoundingClientRect().top;
+                  const contactBottom = contactSection.getBoundingClientRect().bottom;
                   const windowHeight = window.innerHeight;
                   
-                  // 状態が変わる場合のみDOMを更新（不要なスタイル再計算を防ぐ）
-                  const shouldShowCta = heroBottom < 0 && contactTop > windowHeight;
+                  // 無料説明会セクションが表示されている場合は非表示にする
+                  const isContactVisible = (contactTop < windowHeight && contactBottom > 0);
+                  
+                  // ヒーローセクションを過ぎて、かつ無料説明会セクションが表示されていない場合に表示
+                  const shouldShowCta = heroBottom < 0 && !isContactVisible;
                   
                   if (ctaVisible !== shouldShowCta) {
                     ctaVisible = shouldShowCta;
                     mobileCta.style.opacity = shouldShowCta ? '1' : '0';
+                    mobileCta.style.visibility = shouldShowCta ? 'visible' : 'hidden';
                   }
                   
                   scrollTimeout = null;
