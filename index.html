@@ -6992,8 +6992,8 @@
     <!-- オーバーレイを追加して背景画像の上にコンテンツを見やすくする -->
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
     
-    <div class="container" style="position: relative; z-index: 2;">
-      <h2 class="section-title">ベビー発育アドバイザー<br>とは？</h2>
+          <div class="container" style="position: relative; z-index: 2;">
+      <h2 class="section-title title-with-break">ベビー発育アドバイザー<br>とは？</h2>
       <p class="advisor-description">赤ちゃんの発育を専門的に支援できる<br>子育てサポートの専門家です</p>
       
       <!-- ベビー発育アドバイザーとは？画像 -->
@@ -7160,10 +7160,33 @@
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-heading">
         <span class="reason-decorative-text">Support</span>
-      <h2 class="section-title">ベビー発育アドバイザーで<br>出来ること</h2>
+      <h2 class="section-title title-with-break">ベビー発育アドバイザーで<br>出来ること</h2>
       </div>
       
       <style>
+        /* タイトルの改行を統一するスタイル */
+        .title-with-break {
+          white-space: pre-line;
+          text-align: center;
+          display: block;
+        }
+        
+        .title-with-break br {
+          display: inline-block !important;
+        }
+
+        @media (max-width: 767px) {
+          .title-with-break {
+            font-size: 1.8rem;
+            line-height: 1.4;
+            white-space: pre-line;
+          }
+          
+          .title-with-break br {
+            display: inline-block !important;
+          }
+        }
+        
         /* 背景画像の最適化 */
         @media (max-width: 767px) {
           .reason-section-updated::before {
