@@ -1942,6 +1942,27 @@
        display: inline-block;
      }
      
+     /* 見出しの上の装飾テキストのスタイルを統一 */
+     .reason-decorative-text {
+       display: block;
+       font-family: 'Montserrat', sans-serif;
+       font-size: 1.2rem;
+       font-weight: 700;
+       color: #ff85a2;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       margin-bottom: 0.5rem;
+       text-align: center;
+       line-height: 1.5;
+     }
+     
+     @media (max-width: 768px) {
+       .reason-decorative-text {
+         font-size: 1rem;
+         margin-bottom: 0.3rem;
+       }
+     }
+     
      @media (max-width: 576px) {
        .community-card {
          min-height: auto;
@@ -6142,6 +6163,7 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2;">
+      <span class="reason-decorative-text">Worry</span>
       <h2 class="section-title">子育てママの９０％が<br>抱えているお悩み</h2>
       <div class="text-wrapper">
         <p class="problem-intro text">
@@ -6348,6 +6370,7 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2; text-align: center;">
+      <span class="reason-decorative-text">Same</span>
       <h2 class="section-title">多くのママが<br>同じ気持ちです</h2>
       <div class="text-wrapper" style="text-align: center; width: 100%; max-width: 100%;">
         <p class="problem-intro text" style="color: #6F4B3E; text-align: center; margin: 0 auto;">
@@ -7008,6 +7031,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.9); z-index: 1;"></div>
     
           <div class="container" style="position: relative; z-index: 2;">
+      <span class="reason-decorative-text">About</span>
       <h2 class="section-title title-with-break">ベビー発育アドバイザー<br>とは？</h2>
       <p class="advisor-description">赤ちゃんの発育を専門的に支援できる<br>子育てサポートの専門家です</p>
       
@@ -7333,7 +7357,7 @@
     <div class="container" style="position: relative; z-index: 2;">
       <div class="association-title-container">
         <span class="reason-decorative-text">About</span> <!-- クラス名とテキスト変更 -->
-        <h2 class="section-title">協会の<br>紹介</h2> <!-- クラス名変更 -->
+        <h2 class="section-title">協会の紹介</h2> <!-- クラス名変更 -->
       </div>
       
       <p class="association-description" style="color: #6F4B3E;">
@@ -7465,7 +7489,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
-      <h2 class="section-title">お仕事の<br>イメージ</h2>
+      <h2 class="section-title">お仕事のイメージ</h2>
       
       <style>
         /* お仕事イメージセクションのレイアウト修正 */
@@ -7600,7 +7624,7 @@
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2;">
       <div class="reason-heading">
-        <span class="reason-decorative-text">Achievements</span>
+        <span class="reason-decorative-text">Support</span>
       <h2 class="section-title">あなたらしさを尊重する<br>私達の活動</h2>
       </div>
       
@@ -8136,6 +8160,7 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.85); z-index: 1;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
+      <span class="reason-decorative-text">Contact</span>
       <h2 class="section-title">無料説明会<br>お申し込み</h2>
       <div class="text-wrapper">
         <p class="contact-description">
@@ -8873,5 +8898,7 @@
       console.log('JavaScriptエラー修正完了');
     });
   </script>
+  
+  <!-- ブラウザとスマホの両方で見出しの行数と改行を統一 -->
 </body>
 </html>
