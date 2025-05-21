@@ -1694,7 +1694,39 @@
        position: relative;
      }
      
-     /* 基準スタイルに合わせるための変更 */
+     /* 見出しの上の装飾テキストのスタイルを統一 */
+     .reason-decorative-text {
+       display: block;
+       font-family: 'Montserrat', sans-serif;
+       font-size: 1.2rem;
+       font-weight: 700;
+       color: #ff85a2;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+       margin-bottom: 0.5rem;
+       text-align: center;
+       line-height: 1.5;
+     }
+
+     @media (max-width: 768px) {
+       .reason-decorative-text {
+         font-size: 1rem;
+         margin-bottom: 0.3rem;
+       }
+     }
+
+     /* 見出しコンテナのスタイル統一 */
+     .reason-heading {
+       width: 100%;
+       margin-bottom: 1.5rem;
+     }
+     
+     .reason-heading .section-title {
+       font-family: 'M PLUS Rounded 1c', sans-serif;
+       font-weight: 700;
+       margin-top: 0.2rem;
+     }
+
      .values-stance .reason-decorative-text { /* 新しいクラス */
        display: block; /* もしくは inline-block */
        font-family: 'Montserrat', sans-serif; /* 基準に合わせる */
@@ -6394,8 +6426,10 @@
     <div class="floating-shape floating-shape-3"></div>
     <div class="floating-shape floating-shape-4"></div>
     <div class="container" style="position: relative; z-index: 2; text-align: center;">
-      <span class="reason-decorative-text">Feeling</span>
-      <h2 class="section-title">多くのママが<br>同じ気持ちです</h2>
+      <div class="reason-heading" style="text-align: center;">
+        <span class="reason-decorative-text">Feeling</span>
+        <h2 class="section-title">多くのママが<br>同じ気持ちです</h2>
+      </div>
       <div class="text-wrapper" style="text-align: center; width: 100%; max-width: 100%;">
         <p class="problem-intro text" style="color: #6F4B3E; text-align: center; margin: 0 auto;">
     「いつか自分に合ったお仕事をしたい」<br>と思っていても一歩が踏み出せない方<br>も多いんです。なぜなら...<br><br>そんなあなたにぴったりなのが<br>子育て経験を活かせるお仕事
@@ -7056,7 +7090,7 @@
     
           <div class="container" style="position: relative; z-index: 2;">
       <span class="reason-decorative-text">About</span>
-      <h2 class="section-title title-with-break">ベビー発育アドバイザー<br>とは？</h2>
+      <h2 class="section-title">ベビー発育アドバイザー<br>とは？</h2>
       <p class="advisor-description" style="text-align: center;">赤ちゃんの発育を専門的に支援<br>子育てサポートのプロ集団</p>
       
       <!-- ベビー発育アドバイザーとは？画像 -->
@@ -7221,9 +7255,9 @@
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/images/mother.webp') no-repeat center center; background-size: cover; z-index: 0; opacity: 0.15;"></div>
     
     <div class="container" style="position: relative; z-index: 2;">
-      <div class="reason-heading">
+      <div class="reason-heading" style="text-align: center;">
         <span class="reason-decorative-text">Support</span>
-      <h2 class="section-title title-with-break">ベビー発育アドバイザーで<br>出来ること</h2>
+      <h2 class="section-title">ベビー発育アドバイザーで<br>出来ること</h2>
       </div>
       
       <style>
@@ -7282,7 +7316,7 @@
         <div class="reason-item">
           <div class="reason-text-content">
             <span class="reason-number">01</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">最短１ヶ月で収益化</h3>
+            <h3 class="reason-item-title">最短１ヶ月で収益化</h3>
             <p class="reason-item-description">受講生全員が未経験から！<br>初めに何をしたら良いかから丁寧にひとつずつ<br>講義の中で一緒に行動にうつしていけるので<br>最短ルートでお仕事として確立できます</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7293,7 +7327,7 @@
         <div class="reason-item reverse">
           <div class="reason-text-content">
             <span class="reason-number">02</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">家事育児と両立ができる</h3>
+            <h3 class="reason-item-title">家事育児と両立ができる</h3>
             <p class="reason-item-description">学ぶ知識は今の子育てにも活かせたり<br>わが子と一緒に実践できるあそびもたくさん！<br>パソコンだけの在宅ワークと異なるので<br>子どもとの時間を大切にしたい方におすすめ</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7304,7 +7338,7 @@
         <div class="reason-item">
           <div class="reason-text-content">
             <span class="reason-number">03</span>
-            <h3 class="reason-item-title" style="color: #6F4B3E;">一人で悩まない環境</h3>
+            <h3 class="reason-item-title">一人で悩まない環境</h3>
             <p class="reason-item-description">全国で活躍中のメンバーとつながったり<br>わからないことはいつでも相談できて<br>これで良いのかな？をすぐに解決できるのは<br>ゼロから始める方に必須な環境です</p>
           </div>
           <div class="reason-image-content" style="line-height: 0;">
@@ -7923,7 +7957,7 @@
                 <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
               </div>
               <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">先輩A</span> 様 
+                <span class="testimonial-author-name-v2">大阪市2児童のママ</span> 
               </p>
             </div>
           </div>
