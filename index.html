@@ -7858,245 +7858,6 @@
     </div>
   </section>
 
-  <!-- 先輩アドバイザーと受講生の声セクション -->
-  <section class="section advisor-voices" id="voices">
-    <div class="container">
-      <h2 class="section-title">先輩アドバイザーの声</h2>
-      
-      <div class="testimonials-image-container">
-        <img src="assets/images/advisors_voices_1.png" alt="先輩アドバイザーの声 1" class="testimonials-main-image">
-        <img src="assets/images/advisors_voices_2.png" alt="先輩アドバイザーの声 2" class="testimonials-main-image">
-      </div>
-      
-      <style>
-        /* 先輩アドバイザーと受講生の声スライダーのスタイル調整 */
-        .advisor-voices .testimonial-slider-container-v2 {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-        
-        .advisor-voices .testimonial-slider-track-v2 {
-          display: flex;
-          transition: transform 0.5s ease;
-        }
-        
-        .advisor-voices .testimonial-card-v2 {
-          flex: 0 0 100%;
-          min-width: 100%;
-          box-sizing: border-box;
-          padding: 0 10px;
-        }
-        
-        .advisor-voices .testimonial-slider-nav-v2 {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-top: 20px;
-        }
-        
-        .advisor-voices .testimonial-dots-v2 {
-          display: flex;
-          justify-content: center;
-          margin: 0 15px;
-        }
-        
-        .advisor-voices .testimonial-dot-v2 {
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          background-color: #ddd;
-          border: none;
-          margin: 0 5px;
-          padding: 0;
-          cursor: pointer;
-        }
-        
-        .advisor-voices .testimonial-dot-v2.active {
-          background-color: #e6587c;
-        }
-        
-        .advisor-voices .testimonial-prev-btn-v2,
-        .advisor-voices .testimonial-next-btn-v2 {
-          background-color: transparent;
-          border: none;
-          color: #6F4B3E;
-          font-size: 18px;
-          cursor: pointer;
-          width: 30px;
-          height: 30px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          transition: background-color 0.3s;
-        }
-        
-        .advisor-voices .testimonial-prev-btn-v2:hover,
-        .advisor-voices .testimonial-next-btn-v2:hover {
-          background-color: rgba(231, 88, 124, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-          .advisor-voices .testimonial-card-v2 {
-            padding: 0 5px;
-          }
-        }
-      </style>
-      
-      <!-- 新しいスライダー構造 - 先輩アドバイザーと受講生の声を統合 -->
-      <div class="testimonial-slider-container-v2">
-        <div class="testimonial-slider-track-v2">
-          <!-- 先輩アドバイザーの声 1 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_5.png" alt="先輩アドバイザー1" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">先輩の声 01</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「受講前までは、自分にやりたいことがあってもなかなか行動に移せなかったり行動しても途中で辞めてしまうことが多かったのですが、受講後は、周りの先輩方のお話を聞いたり、インスタを参考にさせてもらいながら進めていくと、フォロワーさんが増えたり、「気になってました！」と言って頂けるようになり、それがとても嬉しくて」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">大阪市2児童のママ</span> 
-              </p>
-            </div>
-          </div>
-          <!-- 先輩アドバイザーの声 2 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_6.png" alt="先輩アドバイザー2" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">先輩の声 02</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「講座で学んだ内容で特に活かせているのは、写真の撮り方やストーリーの作り方、毎日教室のことを色々と進めていくことが出来ています。受講前のように自分が暗のようにストーリーを作ったり、告知を作るのが楽しくなり、前よりも自分の考えを発信することが楽しくなりました」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">先輩B</span> 様
-              </p>
-            </div>
-          </div>
-          <!-- 先輩アドバイザーの声 3 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_1.png" alt="先輩アドバイザー3" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">先輩の声 03</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「やる気と情熱はあったけれど、やり方、<br>何をすべきか全く分からなかった段階からスタートでした。<br>この講座で、お教室運営で大切な事、<br>ベビー用のボディケア、その他もろもろを<br>楽しく学ぶことができました。<br>受講完了後、翌月にはお教室オープン。<br>初回から毎日レッスン満席で喜びと充実感でいっぱいです」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">先輩C</span> 様
-              </p>
-            </div>
-          </div>
-          <!-- 先輩アドバイザーの声 4 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_4.png" alt="先輩アドバイザー4" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">先輩の声 04</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「心愛協会が世界に広がれば、<br>みんながハッピーになれる存在です。<br>私にとって人生のお守りであり、母性です。<br>講座で学んだ内容で特に活かしたいことは、<br>お教室を通して素敵な縁を広げて<br>人生を子育てで豊かにしたいです」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">先輩D</span> 様
-              </p>
-            </div>
-          </div>
-          
-          <!-- 受講生の声 1 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_1.png" alt="受講生1" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">受講生の声 01</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「自分らしいお教室の形が見えてきました」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">山田 花子</span> 様 
-                <span class="testimonial-author-age-v2">32歳</span>
-              </p>
-              <div class="text-wrapper">
-                <p class="testimonial-full-text-v2 text">受講前は何から始めれば良いかわからなかったけど、講座で学んだ内容のおかげで自分らしいお教室の形が見えてきました。毎日が充実していて、とても楽しいです。</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 受講生の声 2 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_2.png" alt="受講生2" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">受講生の声 02</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「育児経験が活かせる！自信につながりました」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">佐藤 あかり</span> 様 
-                <span class="testimonial-author-age-v2">29歳</span>
-              </p>
-              <div class="text-wrapper">
-                <p class="testimonial-full-text-v2 text">専業主婦期間が長かったため、育児しかしてこなかったから、今からできる仕事はないかなと、自信を無くしていました。この講座のお話を聞いて、自分がしてきた育児こそが活かせるかもしれないと思い、受講を決めました。</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 受講生の声 3 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_3.png" alt="受講生3" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">受講生の声 03</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「集客方法まで学べてフリーランス活動に光が！」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">鈴木 さくら</span> 様 
-                <span class="testimonial-author-age-v2">35歳</span>
-              </p>
-              <div class="text-wrapper">
-                <p class="testimonial-full-text-v2 text">フリーランスのヨガインストラクターとして活動していましたが、SNSの使い方やサロン作成などを学んでこなかったので集客に大苦戦していました。この講座ではベビーの発達や知育あそびはもちろん、講座やイベント開催時の宣伝・集客方法もしっかり学べます。</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 受講生の声 4 -->
-          <div class="testimonial-card-v2">
-            <div class="testimonial-card-v2-header">
-              <img src="assets/images/avatar_4.png" alt="受講生4" class="testimonial-avatar-v2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100&quot; height=&quot;100&quot; viewBox=&quot;0 0 100 100&quot;><rect width=&quot;100&quot; height=&quot;100&quot; fill=&quot;%23e0e0e0&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;12&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>Avatar</text></svg>'">
-              <span class="testimonial-voice-label-v2">受講生の声 04</span>
-            </div>
-            <div class="testimonial-card-v2-body">
-              <div class="text-wrapper">
-                <p class="testimonial-quote-v2 text">「温かい協会で、全てのママにおすすめ！」</p>
-              </div>
-              <p class="testimonial-author-info-v2">
-                <span class="testimonial-author-name-v2">高橋 みどり</span> 様 
-                <span class="testimonial-author-age-v2">38歳</span>
-              </p>
-              <div class="text-wrapper">
-                <p class="testimonial-full-text-v2 text">特にすごいと感じる講座の特徴は、どれも丁寧でわかりやすいです。それ以上に協会自体が凄いです。こんなにも人間性、心の温もりを感じる場はないと思う。なにか始めたい、やってみたいと思う全てのママにオススメしたいです。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-slider-nav-v2">
-          <button class="testimonial-prev-btn-v2">◀</button>
-          <div class="testimonial-dots-v2">
-            <!-- ドットはJSで動的に生成 -->
-          </div>
-          <button class="testimonial-next-btn-v2">▶</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
@@ -8116,13 +7877,13 @@
         <p class="your-style-text" style="font-size: 16pt; line-height: 1.8; color: #555; margin-bottom: 1.5em; text-align: center; width: 100%;">子どもの体調不良がつづくときも<br>週何日お仕事するかの選択も自由！</p>
         <p class="your-style-text" style="font-size: 16pt; line-height: 1.8; color: #555; margin-bottom: 1.5em; text-align: center; width: 100%;">"自分らしい"を発見できる働き方</p>
         <p class="your-style-text" style="font-size: 16pt; line-height: 1.8; color: #555; margin-bottom: 1.5em; text-align: center; width: 100%;">目の前の人へ笑顔をお届けできる<br>とってもやりがいのあるお仕事です</p>
-      </div>
+          </div>
       
       <p style="font-size: 18pt; font-weight: 500; color: #e6587c; text-align: center; margin-top: 1rem; line-height: 1.7;">あなたも無理なく<span style="font-weight: bold; color: #e6587c;">"自分らしい"</span><br>働き方をはじめてみませんか？</p>
-    </div>
+          </div>
   </section>
-
-  <style>
+      
+      <style>
     /* あなたらしい活躍を応援セクション */
     .your-style-section {
       background: linear-gradient(to bottom, #fff0f5 0%, #fff0f5 20%, #fdfdfd 20%, #fdfdfd 80%, #fff0f5 80%, #fff0f5 100%); 
@@ -8168,7 +7929,7 @@
       }
       .your-style-text {
         line-height: 1.7;
-        padding: 0;
+          padding: 0;
         text-align: center;
         width: 100%;
       }
@@ -8230,9 +7991,9 @@
           お子様と一緒に参加OK！完全無料です
         </p>
         <ul class="form-benefits">
-          <li>✓ 具体的な内容と流れが分かる</li>
-          <li>✓ 気になることや不安もその場で回答</li>
-          <li>✓ 先輩アドバイザーの実績例もご紹介</li>
+          <li>✓ 具体的なお仕事内容が分かる</li>
+          <li>✓ 収入になるまでの方法を知れる</li>
+          <li>✓ 勧誘などは一切ありません</li>
         </ul>
       </div>
       
@@ -8276,8 +8037,8 @@
       
       <div class="google-form-wrapper">
         <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" style="width:100%; height:1500px; border:none;">読み込んでいます…</iframe>
-      </div>
-      
+          </div>
+
       <style>
         .google-form-wrapper {
           max-width: 800px;
@@ -8319,7 +8080,7 @@
       </style>
     </div>
   </section>
-  
+
   <!-- フッター -->
   <footer>
     <div class="container">
@@ -8327,7 +8088,7 @@
         <div class="footer-info">
           <h3 class="footer-logo">一般社団法人<br>乳幼児発達推進協会</h3>
         </div>
-      </div>
+        </div>
       <div class="copyright">
         <p>© 2025 一般社団法人乳幼児発達推進協会 All Rights Reserved.</p>
       </div>
@@ -8975,7 +8736,7 @@
         const lazyImages = document.querySelectorAll('img[data-src]');
         if (lazyImages.length > 0 && 'IntersectionObserver' in window) {
           const imageObserver = new IntersectionObserver(
-            function(entries) {
+            function(entries, observer) {
               entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                   const img = entry.target;
