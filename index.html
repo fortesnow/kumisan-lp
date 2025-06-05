@@ -8,13 +8,25 @@
   <meta property="og:image" content="/assets/images/og_baby_growth_advisor.jpg">
   <meta property="og:locale" content="ja_JP">
   <link rel="canonical" href="https://example.com/baby-growth-advisor-lp">
+  <!-- LCP最適化: 重要画像のプリロード -->
+  <link rel="preload" as="image" href="assets/images/top.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/for-1.webp">
+  
+  <!-- フォント最適化 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/mobile-optimization.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="section_title_style.css">
+  <!-- 重要CSS（インライン化済み）-->
+  <link rel="preload" href="styles/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="styles/mobile-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="section_title_style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mobile-optimization.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="section_title_style.css">
+  </noscript>
   
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -35,11 +47,46 @@
   <!-- End Microsoft Clarity -->
    
    <style>
+     /* LCP最適化 - クリティカルCSS */
+     .hero-image {
+       width: 100%;
+       height: auto;
+       max-width: 100%;
+       object-fit: cover;
+       display: block;
+       transform: translateZ(0); /* GPU加速 */
+       will-change: auto;
+     }
+
+     /* 画像読み込み最適化 */
+     img[loading="lazy"] {
+       background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+       background-size: 200% 100%;
+       animation: shimmer 1.5s infinite;
+     }
+
+     img.loaded {
+       animation: none;
+       background: none;
+     }
+
+     @keyframes shimmer {
+       0% { background-position: -200% 0; }
+       100% { background-position: 200% 0; }
+     }
+
+     /* レイアウトシフト防止 */
+     .worry-image, .testimonial-avatar-v2 {
+       aspect-ratio: 1 / 1;
+       object-fit: cover;
+     }
+
      /* 共通フォントスタイル - 全体統一 */
      body {
        font-family: 'M PLUS Rounded 1c', sans-serif;
        color: #6F4B3E; /* デフォルトテキストカラーを画像の茶色に合わせて変更 */
        overflow-x: hidden;
+       font-display: swap; /* フォント最適化 */
      }
      
      /* スマホでのレスポンシブ改善 */
@@ -6180,7 +6227,7 @@
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-image-container" data-aos="fade-in">
-        <img src="assets/images/top.webp" alt="子育ても、仕事も、もう諦めない" class="hero-image" loading="lazy">
+        <img src="assets/images/top.webp" alt="子育ても、仕事も、もう諦めない" class="hero-image" fetchpriority="high">
       </div>
       <div class="hero-content" data-aos="fade-up">
         <h1>子育ても、仕事も、<br>もう諦めない。</h1>
@@ -6373,25 +6420,25 @@
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry1.png" alt="子育ての悩み1" class="worry-image">
+            <img src="assets/images/worry1.webp" alt="子育ての悩み1" class="worry-image" loading="lazy" onerror="this.src='assets/images/worry1.png'">
           </div>
           <div class="worry-text">自分に何がむいているのか<br>何から始めれば良いかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry2.png" alt="子育ての悩み2" class="worry-image">
+            <img src="assets/images/worry2.webp" alt="子育ての悩み2" class="worry-image" loading="lazy" onerror="this.src='assets/images/worry2.png'">
           </div>
           <div class="worry-text">安定した収入を得られる<br>働き方を模索している</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry3.png" alt="子育ての悩み3" class="worry-image">
+            <img src="assets/images/worry3.webp" alt="子育ての悩み3" class="worry-image" loading="lazy" onerror="this.src='assets/images/worry3.png'">
           </div>
           <div class="worry-text">子どもとの時間と<br>お仕事を両立させたい</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/worry4.png" alt="子育ての悩み4" class="worry-image">
+            <img src="assets/images/worry4.webp" alt="子育ての悩み4" class="worry-image" loading="lazy" onerror="this.src='assets/images/worry4.png'">
           </div>
           <div class="worry-text">直近では子育てしかしてなくて<br>スキルも経験もなくて劣等感…</div>
         </div>
@@ -6563,25 +6610,25 @@
       <div class="worry-cards">
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_5.png" alt="動けない理由のイメージ1" class="worry-image">
+            <img src="assets/images/circle_aligned_5.webp" alt="動けない理由のイメージ1" class="worry-image" loading="lazy" onerror="this.src='assets/images/circle_aligned_5.png'">
           </div>
           <div class="worry-text">自分に合ったものも始め方もわからず、<br>忙しく毎日を過ごしている</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_6.png" alt="動けない理由のイメージ2" class="worry-image">
+            <img src="assets/images/circle_aligned_6.webp" alt="動けない理由のイメージ2" class="worry-image" loading="lazy" onerror="this.src='assets/images/circle_aligned_6.png'">
           </div>
           <div class="worry-text">資格をとってもそれをどう活かして<br>お仕事にしたらいいかわからない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_3.png" alt="動けない理由のイメージ3" class="worry-image">
+            <img src="assets/images/circle_aligned_3.webp" alt="動けない理由のイメージ3" class="worry-image" loading="lazy" onerror="this.src='assets/images/circle_aligned_3.png'">
           </div>
           <div class="worry-text">「私にできるのかな…」という不安で<br>行動にうつすことができない</div>
         </div>
         <div class="worry-card">
           <div class="character-container">
-            <img src="assets/images/circle_aligned_4.png" alt="動けない理由のイメージ4" class="worry-image">
+            <img src="assets/images/circle_aligned_4.webp" alt="動けない理由のイメージ4" class="worry-image" loading="lazy" onerror="this.src='assets/images/circle_aligned_4.png'">
           </div>
           <div class="worry-text">情報や選択肢が多すぎて<br>正解がわからないまま踏み出せない</div>
         </div>
@@ -7095,7 +7142,7 @@
       
       <!-- ベビー発育アドバイザーとは？画像 -->
       <div class="advisor-image-container" style="line-height: 0;">
-        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image" loading="lazy" style="display: block; margin: 0 auto; padding: 0;">
+        <img src="assets/images/for-1.webp" alt="ベビー発育アドバイザーとは" class="advisor-main-image" loading="lazy" width="800" height="600" style="display: block; margin: 0 auto; padding: 0;">
       </div>
       
       <style>
@@ -7510,15 +7557,15 @@
       <!-- 協会紹介画像グリッド（スライダーを置き換え） -->
       <div class="association-images-grid">
         <div class="association-image-item">
-          <img src="assets/images/3.png" alt="メディア掲載実績">
+          <img src="assets/images/3.webp" alt="メディア掲載実績" loading="lazy" onerror="this.src='assets/images/3.png'">
           <div class="association-image-caption">メディア掲載実績</div>
         </div>
         <div class="association-image-item">
-          <img src="assets/images/4.png" alt="実績（メンバー内で協力・応援）">
+          <img src="assets/images/4.webp" alt="実績（メンバー内で協力・応援）" loading="lazy" onerror="this.src='assets/images/4.png'">
           <div class="association-image-caption">実績（メンバー内で協力・応援）</div>
         </div>
         <div class="association-image-item">
-          <img src="assets/images/5.png" alt="おやこ体験型イベント企画">
+          <img src="assets/images/5.webp" alt="おやこ体験型イベント企画" loading="lazy" onerror="this.src='assets/images/5.png'">
           <div class="association-image-caption">おやこ体験型イベント企画</div>
         </div>
       </div>
@@ -7818,7 +7865,7 @@
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
             <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
-              <img src="assets/images/value8.png" alt="やりがいと笑顔" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;400&quot; height=&quot;300&quot; viewBox=&quot;0 0 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
+              <img src="assets/images/value8.webp" alt="やりがいと笑顔" loading="lazy" onerror="this.src='assets/images/value8.png'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;" 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -8166,35 +8213,37 @@
     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
   </script>
   
-  <!-- 画像読み込みの最適化 -->
+    <!-- 画像読み込み最適化 - 高速LCP対応 -->
   <script>
-    // 画像読み込みの最適化
-    function handleImageErrors() {
-      const images = document.querySelectorAll('img[onerror]');
-      images.forEach(img => {
-        // 属性を一時保存
-        const onErrorAttr = img.getAttribute('onerror');
-        // onerror属性を削除（無限ループを防止）
+    // 画像読み込み最適化（LCP改善）
+    document.addEventListener('DOMContentLoaded', function() {
+      // 画像読み込み完了時のアニメーション処理
+      var lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      lazyImages.forEach(function(img) {
+        img.addEventListener('load', function() {
+          this.classList.add('loaded');
+        });
+      });
+
+      // WebP対応フォールバック
+      var images = document.querySelectorAll('img[onerror]');
+      for (var i = 0; i < images.length; i++) {
+        var img = images[i];
+        var onErrorAttr = img.getAttribute('onerror');
         img.removeAttribute('onerror');
         
-        // 画像読み込みエラーハンドラーを一度だけ設定
         img.addEventListener('error', function(e) {
-          // 元のonerror処理を一度だけ実行するための安全な方法
           try {
-            // 安全な方法でonerrorを評価
-            if (onErrorAttr && !this.src.includes('data:image/svg+xml')) {
-              // 代替SVGがすでに設定されていなければ実行
-              new Function('this.src="' + onErrorAttr.replace(/this.src=|'|"/g, '') + '"').call(this);
+            if (onErrorAttr && this.src.indexOf('data:image/svg+xml') === -1) {
+              // PNG/JPEGフォールバックに切り替え
+              this.src = this.src.replace('.webp', '.png');
             }
           } catch (err) {
             console.warn('画像の代替表示でエラーが発生しました:', err);
           }
-        }, { once: true }); // イベントリスナーを一度だけ実行
-      });
-    }
-
-    // ページ読み込み完了時に実行
-    window.addEventListener('load', handleImageErrors);
+        }, { once: true });
+      }
+    });
   </script>
 
   <!-- JavaScript -->
@@ -8367,20 +8416,23 @@
   <script src="js/main.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    // AOS初期化 - スクロールアニメーション（モバイルでのクラッシュ防止のために最適化）
-    AOS.init({
-      duration: 400,           // アニメーション速度をさらに上げる
-      easing: 'ease',          // よりシンプルなイージング
-      once: true,              // 一度だけ表示
-      mirror: false,
-      offset: 30,              // オフセットをさらに小さくする
-      disable: function() {
-        // 低スペックのモバイルデバイスでは無効化（メモリ使用量削減）
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        return isMobile && window.innerWidth < 768;
-      },
-      throttleDelay: 250,      // スロットル遅延をさらに増やす
-      delay: 0                 // 遅延を削除
+    // AOS初期化 - LCP最適化版（遅延実行）
+    window.addEventListener('load', function() {
+      AOS.init({
+        duration: 300,           // 高速化
+        easing: 'ease',
+        once: true,
+        mirror: false,
+        offset: 20,              // さらに最適化
+        disable: function() {
+          // 低スペックデバイスでは無効化
+          var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          var isLowEnd = window.innerWidth < 768 || (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4);
+          return isMobile && isLowEnd;
+        },
+        throttleDelay: 300,
+        delay: 0
+      });
     });
     
     // スクロール監視 - パフォーマンス最適化版
