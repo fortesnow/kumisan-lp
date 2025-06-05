@@ -5849,6 +5849,8 @@
      .footer-logo {
        font-size: 1.2rem;
        margin-bottom: 1rem;
+       text-align: center;
+       color: #e6587c;
      }
      
      .copyright {
@@ -7865,7 +7867,7 @@
         <div class="reason-item reverse">
           <div class="reason-image-wrap">
             <div class="reason-image" style="margin: 0; padding: 0; line-height: 0;">
-              <img src="assets/images/value8.webp" alt="やりがいと笑顔" loading="lazy" onerror="this.src='assets/images/value8.png'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;" 400 300&quot;><rect width=&quot;400&quot; height=&quot;300&quot; fill=&quot;%23f8f8f8&quot;/><text x=&quot;50%&quot; y=&quot;50%&quot; font-family=&quot;Arial&quot; font-size=&quot;24&quot; fill=&quot;%23999&quot; text-anchor=&quot;middle&quot; dominant-baseline=&quot;middle&quot;>笑顔と感謝画像</text></svg>'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
+              <img src="assets/images/value8.webp" alt="やりがいと笑顔" loading="lazy" onerror="this.src='assets/images/value8.png'" style="width:100%; height:auto; object-fit:contain; border-radius:10px; display:block; margin:0; padding:0;">
             </div>
             <div class="reason-accent-line"></div>
           </div>
@@ -8082,46 +8084,128 @@
         }
       </style>
       
-      <div class="google-form-wrapper">
-        <iframe data-src="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform?embedded=true" style="width:100%; height:1500px; border:none;">読み込んでいます…</iframe>
-          </div>
+      <div class="contact-button-wrapper">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTVJg3s7B2etapKYsnQTaLMFmy7hysEmGQZGX47Pqu1ciZaA/viewform" target="_blank" rel="noopener noreferrer" class="contact-form-button">
+          <span class="button-icon">📝</span>
+          <span class="button-text">
+            <strong>無料説明会に申し込む</strong>
+            <small>Googleフォームが新しいタブで開きます</small>
+          </span>
+          <span class="button-arrow">→</span>
+        </a>
+      </div>
 
       <style>
-        .google-form-wrapper {
-          max-width: 800px;
+        .contact-button-wrapper {
+          max-width: 600px;
           margin: 2rem auto 0;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-          border-radius: 10px;
-          overflow: hidden;
+          text-align: center;
         }
         
-        .google-form-wrapper iframe {
+        .contact-form-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
           width: 100%;
+          max-width: 500px;
+          padding: 1.5rem 2rem;
+          background: linear-gradient(135deg, #ff4778, #e63e6c);
+          color: white;
+          text-decoration: none;
+          border-radius: 15px;
+          box-shadow: 0 8px 25px rgba(255, 71, 120, 0.3);
+          transition: all 0.3s ease;
+          font-family: 'M PLUS Rounded 1c', sans-serif;
           border: none;
+          cursor: pointer;
+        }
+        
+        .contact-form-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 12px 30px rgba(255, 71, 120, 0.4);
+          background: linear-gradient(135deg, #e63e6c, #d43760);
+          text-decoration: none;
+          color: white;
+        }
+        
+        .contact-form-button:active {
+          transform: translateY(-1px);
+        }
+        
+        .button-icon {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+        }
+        
+        .button-text {
+          flex: 1;
+          text-align: left;
+        }
+        
+        .button-text strong {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 0.3rem;
+        }
+        
+        .button-text small {
+          display: block;
+          font-size: 0.85rem;
+          opacity: 0.9;
+          font-weight: 400;
+        }
+        
+        .button-arrow {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-left: 1rem;
+          transition: transform 0.3s ease;
+        }
+        
+        .contact-form-button:hover .button-arrow {
+          transform: translateX(5px);
         }
         
         @media (max-width: 768px) {
-          .google-form-wrapper {
-            width: 100%;
+          .contact-button-wrapper {
             margin: 1.5rem auto 0;
-            box-shadow: none;
-            padding: 0;
+            padding: 0 1rem;
           }
           
-          .google-form-wrapper iframe {
-            height: 1200px !important;
-            width: 100% !important;
-            transform: scale(0.98);
-            transform-origin: top left;
-            margin: 0;
-            padding: 0;
+          .contact-form-button {
+            padding: 1.2rem 1.5rem;
+            max-width: 100%;
+          }
+          
+          .button-text strong {
+            font-size: 1.1rem;
+          }
+          
+          .button-text small {
+            font-size: 0.8rem;
           }
         }
         
         @media (max-width: 576px) {
-          .google-form-wrapper iframe {
-            height: 1100px !important;
-            transform: scale(0.95);
+          .contact-form-button {
+            padding: 1rem 1.2rem;
+            flex-direction: column;
+            text-align: center;
+          }
+          
+          .button-icon {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+          }
+          
+          .button-text {
+            text-align: center;
+            margin-bottom: 0.5rem;
+          }
+          
+          .button-arrow {
+            margin-left: 0;
           }
         }
       </style>
